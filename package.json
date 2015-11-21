@@ -4,7 +4,8 @@
   "description": "The code that powers heartlessgaming.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node start.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,9 @@
   "homepage": "https://github.com/heartless-gaming/heartlessgaming.com#readme",
   "dependencies": {
     "normalize.css": "^3.0.3"
+  },
+  "devDependencies": {
+    "chalk": "^1.1.1",
+    "node-sass": "^3.4.2"
   }
 }
