@@ -1,0 +1,104 @@
+@import url(../node_modules/normalize.css/normalize.css);
+  /**********************
+
+      1#VARAIBLES
+
+  **********************/
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+  /**********************
+
+      2#HEADER
+
+  **********************/
+body {
+  background: #202020;
+  color: white; }
+
+header {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-size: 8.33333%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
+  background: url(../img/header.jpg);
+  height: 375px;
+  overflow: auto;
+  border-bottom: 2px solid red; }
+  header:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  header h1 {
+    max-width: 298px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+    background-size: 8.33333%;
+    background-origin: content-box;
+    background-clip: content-box;
+    background-position: left top;
+    margin-top: 120px; }
+    header h1:after {
+      content: " ";
+      display: block;
+      clear: both; }
+
+  /**********************
+
+      3#DECOUVRIR
+
+  **********************/
+.decouvrir {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-size: 8.33333%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
+  margin-top: 70px;
+  font-size: 19px;
+  line-height: 30px;
+  text-align: center; }
+  .decouvrir:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .decouvrir img {
+    display: block;
+    margin: 80px 0;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+    background-size: 8.33333%;
+    background-origin: content-box;
+    background-clip: content-box;
+    background-position: left top; }
+    .decouvrir img:after {
+      content: " ";
+      display: block;
+      clear: both; }
+  .decouvrir .yt {
+    background: #d42627; }
+  .decouvrir .tw {
+    background: #663398; }
+  .decouvrir button {
+    width: 50%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    height: 50px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold; }
+
+/*# sourceMappingURL=style.css.map */
