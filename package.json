@@ -1,0 +1,23 @@
+{
+  "name": "heartlessgaming.com",
+  "version": "0.0.1",
+  "description": "The code that powers heartlessgaming.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heartless-gaming/heartlessgaming.com.git"
+  },
+  "keywords": [
+    "heartlessgaming.com",
+    "website"
+  ],
+  "author": "https://github.com/heartless-gaming/heartlessgaming.com/graphs/contributors",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/heartless-gaming/heartlessgaming.com/issues"
+  },
+  "homepage": "https://github.com/heartless-gaming/heartlessgaming.com#readme"
+}
