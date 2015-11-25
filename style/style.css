@@ -11,7 +11,51 @@
 
   /**********************
 
-      2#HEADER
+      2#NAVIGATION
+
+  **********************/
+nav {
+  position: fixed;
+  width: 100%;
+  background: #FFF;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  nav:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+li {
+  list-style-type: none; }
+  li a {
+    color: #101010;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase; }
+
+.logo {
+  width: 25%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%; }
+
+.item {
+  width: 12.5%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  text-align: center; }
+
+.icon {
+  width: 4.16667%;
+  float: right;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%; }
+
+  /**********************
+
+      3#HEADER
 
   **********************/
 body {
@@ -22,15 +66,11 @@ header {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
-  background-size: 8.33333%;
-  background-origin: content-box;
-  background-clip: content-box;
-  background-position: left top;
-  background: url(../img/header.jpg);
+  background: url(../img/header.jpg) no-repeat center;
+  background-size: cover;
   height: 375px;
   overflow: auto;
-  border-bottom: 2px solid red; }
+  border-bottom: 2px solid #b70900; }
   header:after {
     content: " ";
     display: block;
@@ -39,11 +79,6 @@ header {
     max-width: 298px;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
-    background-size: 8.33333%;
-    background-origin: content-box;
-    background-clip: content-box;
-    background-position: left top;
     margin-top: 120px; }
     header h1:after {
       content: " ";
@@ -52,19 +87,14 @@ header {
 
   /**********************
 
-      3#DECOUVRIR
+      4#DECOUVRIR
 
   **********************/
 .decouvrir {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
-  background-size: 8.33333%;
-  background-origin: content-box;
-  background-clip: content-box;
-  background-position: left top;
-  margin-top: 70px;
+  margin-top: 100px;
   font-size: 19px;
   line-height: 30px;
   text-align: center; }
@@ -77,12 +107,7 @@ header {
     margin: 80px 0;
     max-width: 100%;
     margin-left: auto;
-    margin-right: auto;
-    background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
-    background-size: 8.33333%;
-    background-origin: content-box;
-    background-clip: content-box;
-    background-position: left top; }
+    margin-right: auto; }
     .decouvrir img:after {
       content: " ";
       display: block;
@@ -100,5 +125,29 @@ header {
     border: none;
     text-transform: uppercase;
     font-weight: bold; }
+
+  /**********************
+
+      5#REGARDER
+
+  **********************/
+.regarder {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 0;
+  background: #404040;
+  border-bottom: 2px solid #b70900; }
+  .regarder:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .regarder .video {
+    width: 16.66667%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    height: 180px;
+    background: url(../img/video.jpg); }
 
 /*# sourceMappingURL=style.css.map */

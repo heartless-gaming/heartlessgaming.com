@@ -14,17 +14,48 @@
     container: $width,
     columns: 12,
     gutter-position: inside,
-   debug: (
-     image: show,
-   )
+/*  debug: (
+ image: show,
+) */
   );
 
   @include border-box-sizing;
+  $red:#b70900;
 
 
   /**********************
 
-      2#HEADER
+      2#NAVIGATION
+
+  **********************/
+
+  nav {
+    position: fixed;
+    width:100%;
+    background: #FFF;
+    @include container;
+  }
+
+  li {
+    list-style-type:none;
+    a {
+      color: #101010;
+      font-size: 18px;
+      text-decoration:none;
+      text-transform: uppercase;
+    }
+  }
+
+  .logo { @include span(3); }
+
+  .item { @include span(1.5); text-align:center;}
+
+  .icon { @include span(0.5 last); }
+
+
+  /**********************
+
+      3#HEADER
 
   **********************/
 
@@ -35,25 +66,27 @@
 
   header {
     @include container;
-    background: url(../img/header.jpg);
+    background: url(../img/header.jpg) no-repeat center;
+    background-size:cover;
     height: 375px;
     overflow:auto;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid $red;
     h1 {
       @include container (298px);
       margin-top: 120px;
     }
   }
 
+
   /**********************
 
-      3#DECOUVRIR
+      4#DECOUVRIR
 
   **********************/
 
   .decouvrir {
     @include container($m_width);
-    margin-top: 70px;
+    margin-top: 100px;
     font-size: 19px;
     line-height:30px;
     text-align:center;
@@ -77,3 +110,21 @@
     }
   }
 
+
+  /**********************
+
+      5#REGARDER
+
+  **********************/
+
+  .regarder {
+    @include container;
+    padding: 50px 0;
+    background:#404040;
+    border-bottom: 2px solid $red;
+    .video {
+      @include span(2);
+      height: 180px;
+      background: url(../img/video.jpg);
+    }
+  }
