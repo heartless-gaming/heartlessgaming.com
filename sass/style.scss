@@ -15,10 +15,14 @@
     columns: 12,
     gutter-position: inside,
 
-    // debug: (
-    //  image: show,
-    // )
+    debug: (
+     image: show,
+    )
 
+  );
+
+  $video: (
+    columns: 13
   );
 
   @include border-box-sizing;
@@ -144,10 +148,19 @@
     padding: 50px 0;
     background:#404040;
     border-bottom: 2px solid $red;
+
     .video {
-      @include span(2);
+      @include span(3);
       height: 180px;
-      background: url(../img/video.jpg);
+      background-image: url(../img/video.jpg);
+      background-repeat: no-repeat;
+      border: 1px solid red;
+    }
+
+    .separator {
+      @include span(1);
+      height: 180px;
+
     }
   }
 

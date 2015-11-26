@@ -22,6 +22,11 @@ nav {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-size: 8.33333%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
   opacity: .75;
 }
 
@@ -83,6 +88,11 @@ header {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-size: 8.33333%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
   background: url(../img/header.jpg) no-repeat center;
   background-size: cover;
   height: 375px;
@@ -100,6 +110,11 @@ header h1 {
   max-width: 298px;
   margin-left: auto;
   margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-size: 8.33333%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
   margin-top: 120px;
 }
 
@@ -118,6 +133,11 @@ header h1:after {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-size: 8.33333%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
   margin-top: 100px;
   font-size: 19px;
   line-height: 30px;
@@ -136,6 +156,11 @@ header h1:after {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-size: 8.33333%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
 }
 
 .decouvrir img:after {
@@ -179,6 +204,11 @@ header h1:after {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-size: 8.33333%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
   padding: 50px 0;
   background: #404040;
   border-bottom: 2px solid #b70900;
@@ -191,12 +221,22 @@ header h1:after {
 }
 
 .regarder .video {
-  width: 16.66667%;
+  width: 25%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
   height: 180px;
-  background: url(../img/video.jpg);
+  background-image: url(../img/video.jpg);
+  background-repeat: no-repeat;
+  border: 1px solid red;
+}
+
+.regarder .separator {
+  width: 8.33333%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  height: 180px;
 }
 
 /*# sourceMappingURL=style.css.map */
