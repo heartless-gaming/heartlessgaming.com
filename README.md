@@ -11,4 +11,12 @@ Dependencies are handle exclusivly by npm and nothing else. Type this command be
 $ npm install
 ```
 
+This project use sass. Enable live reloading of html, sass & js file by typing
+
+```shell
+$ npm run start
+```
+
+You will no longer have to manually refresh your browser each time. Happy coding.
+
 *Play more, care less, be an Heartless. :broken_heart:*
