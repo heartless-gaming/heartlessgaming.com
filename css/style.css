@@ -144,23 +144,30 @@ header h1:after {
   clear: both;
 }
 
-.decouvrir .yt {
-  background: #d42627;
-}
-
-.decouvrir .tw {
-  background: #663398;
-}
-
-.decouvrir button {
+.yt, .tw {
   width: 50%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
   height: 50px;
+  padding-top: 10px;
   border: none;
   text-transform: uppercase;
   font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.yt:hover, .tw:hover {
+  color: #eee;
+}
+
+.yt {
+  background-color: #d42627;
+}
+
+.tw {
+  background-color: #663398;
 }
 
 /**********************
