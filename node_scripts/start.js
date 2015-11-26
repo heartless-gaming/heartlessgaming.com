@@ -20,19 +20,19 @@ log( chalk.red(' ### ###  ') );
 log( chalk.red('  #####   ') );
 log( chalk.red('  # # #   ') + chalk.grey(' Play more, care less, be an heartless' ));
 
-// Reload all browser on html change
+// Reload all browser on HTML change
 bs.watch("*.html").on("change", function(){
   bs.notify("<span color='green'>HTML Reloaded</span>", 2000);
   bs.reload();
 });
 
-// Reload all browser on html change
+// Reload all browser on JS change
 bs.watch("js/**.js").on("change", function(){
   bs.notify("<span color='green'>JS Reloaded</span>", 2000);
   bs.reload();
 });
 
-// Specific compilation for sass file
+// Specific compilation for SASS file
 bs.watch("sass/**.scss", function (event, file) {
     if (event === "change") {
 
