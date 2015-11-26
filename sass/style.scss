@@ -34,6 +34,7 @@
     width:100%;
     background: #FFF;
     @include container;
+    opacity: .75;
   }
 
   li {
@@ -48,9 +49,17 @@
 
   .logo { @include span(3); }
 
-  .item { @include span(1.5); text-align:center;}
+  // Vertical Centering of items and icons
+  .item, .icon {
+    position: relative;
+    top: 5px;
+  }
+
+  .item {
+    @include span(1.5); text-align: center; }
 
   .icon { @include span(0.5 last); }
+
 
 
   /**********************

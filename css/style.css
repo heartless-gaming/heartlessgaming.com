@@ -22,6 +22,7 @@ nav {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  opacity: .75;
 }
 
 nav:after {
@@ -46,6 +47,11 @@ li a {
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
+}
+
+.item, .icon {
+  position: relative;
+  top: 5px;
 }
 
 .item {
