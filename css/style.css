@@ -205,7 +205,7 @@ header h1:after {
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
-  background-size: 8.33333%;
+  background-size: 7.69231%;
   background-origin: content-box;
   background-clip: content-box;
   background-position: left top;
@@ -220,23 +220,37 @@ header h1:after {
   clear: both;
 }
 
-.regarder .video {
-  width: 25%;
-  float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
+.video, .separator {
   height: 180px;
-  background-image: url(../img/video.jpg);
-  background-repeat: no-repeat;
-  border: 1px solid red;
 }
 
-.regarder .separator {
-  width: 8.33333%;
+.video {
+  width: 23.07692%;
   float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
-  height: 180px;
+  padding-left: 0.76923%;
+  padding-right: 0.76923%;
+  background-image: url(../img/video.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.separator {
+  width: 7.69231%;
+  float: left;
+  padding-left: 0.76923%;
+  padding-right: 0.76923%;
+}
+
+/**********************
+
+      6#SUIVRE
+
+  **********************/
+/**********************
+
+      7#FOOTER
+
+  **********************/
 
 /*# sourceMappingURL=style.css.map */

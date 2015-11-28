@@ -22,7 +22,8 @@
   );
 
   $video: (
-    columns: 13
+    columns: 13,
+    gutter-position: inside
   );
 
   @include border-box-sizing;
@@ -144,23 +145,39 @@
   **********************/
 
   .regarder {
+    @include layout($video)
     @include container;
     padding: 50px 0;
     background:#404040;
     border-bottom: 2px solid $red;
-
-    .video {
-      @include span(3);
-      height: 180px;
-      background-image: url(../img/video.jpg);
-      background-repeat: no-repeat;
-      border: 1px solid red;
-    }
-
-    .separator {
-      @include span(1);
-      height: 180px;
-
-    }
   }
 
+  .video, .separator {
+    height: 180px;
+  }
+
+  .video {
+    @include span(3);
+    background-image: url(../img/video.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .separator {
+    @include span(1);
+  }
+
+
+  /**********************
+
+      6#SUIVRE
+
+  **********************/
+
+
+  /**********************
+
+      7#FOOTER
+
+  **********************/
