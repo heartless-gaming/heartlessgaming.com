@@ -23,7 +23,6 @@ nav {
   width: 100%;
   height: 50px;
   background: #FFF;
-  opacity: .75;
 }
 
 nav:after {
@@ -221,23 +220,19 @@ header h1:after {
   clear: both;
 }
 
-.video, .separator {
-  height: 180px;
-}
-
-.video {
-  width: 23.07692%;
-  float: left;
-  padding-left: 0.76923%;
-  padding-right: 0.76923%;
-  background-image: url(../img/video.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.separator, #player1, #player2, #player3 {
+  height: 230px;
 }
 
 .separator {
   width: 7.69231%;
+  float: left;
+  padding-left: 0.76923%;
+  padding-right: 0.76923%;
+}
+
+#player1, #player2, #player3 {
+  width: 23.07692%;
   float: left;
   padding-left: 0.76923%;
   padding-right: 0.76923%;
@@ -260,6 +255,45 @@ header h1:after {
   content: " ";
   display: block;
   clear: both;
+}
+
+.jeux {
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.jeux:not(:last-child):after {
+  content: " / ";
+}
+
+.j-active {
+  color: #b70900;
+}
+
+table {
+  margin-top: 30px;
+  border-collapse: separate;
+}
+
+table th {
+  padding: 10px;
+  background: #b70900;
+  text-transform: uppercase;
+  border-right: 10px solid #202020;
+}
+
+table td {
+  padding-top: 10px;
+}
+
+table .sname {
+  text-align: left;
+}
+
+table .infos {
+  text-align: center;
+  border-right: 10px solid #202020;
 }
 
 /**********************

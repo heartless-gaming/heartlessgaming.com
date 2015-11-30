@@ -28,6 +28,7 @@
 
   @include border-box-sizing;
   $red:#b70900;
+  $gris: #202020;
 
 
   /**********************
@@ -42,7 +43,6 @@
     width:100%;
     height: 50px;
     background: #FFF;
-    opacity: .75;
 
     ul {
       // Reset of ul for inline use
@@ -77,7 +77,6 @@
 
   .item, .icon {
     text-align: center;
-
     a {
       display: block;
       height: 50px;
@@ -110,8 +109,6 @@
   }
 
 
-
-
   /**********************
 
       3#HEADER
@@ -119,7 +116,7 @@
   **********************/
 
   body {
-    background: #202020;
+    background: $gris;
     color: white;
   }
 
@@ -196,20 +193,16 @@
     border-bottom: 2px solid $red;
   }
 
-  .video, .separator {
-    height: 180px;
-  }
-
-  .video {
-    @include span(3);
-    background-image: url(../img/video.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  .separator, #player1, #player2, #player3 {
+    height: 230px;
   }
 
   .separator {
     @include span(1);
+  }
+
+  #player1, #player2, #player3 {
+    @include span(3);
   }
 
   /**********************
@@ -223,6 +216,37 @@
     padding-top: 100px;
     padding-bottom: 100px;
   }
+
+  .jeux {
+    font-size:18px;
+    text-transform: uppercase;
+    cursor:pointer;
+  }
+
+  .jeux:not(:last-child):after { content:" / "; }
+
+  .j-active { color: $red; }
+
+  table {
+    margin-top:30px;
+    border-collapse: separate;
+    th {
+      padding:10px;
+      background:$red;
+      text-transform:uppercase;
+      border-right: 10px solid $gris;
+    }
+    td {
+      padding-top:10px;
+    }
+    .sname { text-align:left; }
+
+    .infos {
+      text-align:center;
+      border-right:10px solid $gris;
+    }
+  }
+
 
 
   /**********************
@@ -242,7 +266,6 @@
   footer {
     background-color: #303030;
     height: 250px;
-
     section {
       @include container($m_width);
     }
