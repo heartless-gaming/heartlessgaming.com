@@ -85,6 +85,7 @@
     position: fixed;
     width:100%;
     height: 50px;
+    z-index: 1;
     background: #FFF;
 
     ul {
@@ -212,7 +213,6 @@
 
   .yt, .tw {
     position: relative;
-    z-index: -1;
     @include span(6);
     height: 50px;
     padding-top: 10px;
