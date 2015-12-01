@@ -212,6 +212,7 @@
 
   .yt, .tw {
     position: relative;
+    z-index: -1;
     @include span(6);
     height: 50px;
     padding-top: 10px;
@@ -222,7 +223,7 @@
     text-decoration: none;
 
     &:hover {
-      color: #eee
+      color: #ddd;
     }
 
     img {
@@ -314,6 +315,10 @@
     .infos {
       text-align:center;
       border-right:10px solid $gris;
+
+      img {
+        width: 20px;
+      }
     }
   }
 

@@ -209,6 +209,7 @@ header h1:after {
 
 .yt, .tw {
   position: relative;
+  z-index: -1;
   width: 50%;
   float: left;
   padding-left: 0.83333%;
@@ -223,7 +224,7 @@ header h1:after {
 }
 
 .yt:hover, .tw:hover {
-  color: #eee;
+  color: #ddd;
 }
 
 .yt img, .tw img {
@@ -333,6 +334,10 @@ table .sname {
 table .infos {
   text-align: center;
   border-right: 10px solid #202020;
+}
+
+table .infos img {
+  width: 20px;
 }
 
 /**********************
