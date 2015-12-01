@@ -128,6 +128,10 @@ nav li a {
   background: #ffffff;
 }
 
+.icon img {
+  color: #840100;
+}
+
 /**********************
 
       4#HEADER
@@ -175,7 +179,7 @@ header h1:after {
   text-align: center;
 }
 
-.decouvrir img {
+.decouvrir .decouvrir-arrowdown {
   display: block;
   width: 100px;
   height: 100px;
@@ -185,7 +189,7 @@ header h1:after {
   margin-right: auto;
 }
 
-.decouvrir img:after {
+.decouvrir .decouvrir-arrowdown:after {
   content: " ";
   display: block;
   clear: both;
@@ -204,6 +208,7 @@ header h1:after {
 }
 
 .yt, .tw {
+  position: relative;
   width: 50%;
   float: left;
   padding-left: 0.83333%;
@@ -221,12 +226,26 @@ header h1:after {
   color: #eee;
 }
 
+.yt img, .tw img {
+  position: absolute;
+}
+
 .yt {
   background-color: #d42627;
 }
 
+.yt img {
+  width: 45px;
+  left: 70px;
+}
+
 .tw {
   background-color: #663398;
+}
+
+.tw img {
+  width: 30px;
+  right: 95px;
 }
 
 /**********************

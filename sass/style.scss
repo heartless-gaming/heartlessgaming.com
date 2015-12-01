@@ -149,6 +149,10 @@
       padding-top: 10px;
       background: #ffffff;
     }
+
+    img {
+      color: $darkred;
+    }
   }
 
 
@@ -184,7 +188,8 @@
     font-size: 19px;
     line-height:30px;
     text-align:center;
-    img {
+
+    .decouvrir-arrowdown {
       display:block;
       width: 100px;
       height: 100px;
@@ -206,6 +211,7 @@
   }
 
   .yt, .tw {
+    position: relative;
     @include span(6);
     height: 50px;
     padding-top: 10px;
@@ -214,18 +220,33 @@
     font-weight: bold;
     color: #fff;
     text-decoration: none;
+
     &:hover {
       color: #eee
+    }
+
+    img {
+      position: absolute;
     }
 
   }
 
   .yt {
     background-color: $youtube;
+
+    img {
+      width: 45px;
+      left: 70px;
+    }
   }
 
   .tw {
     background-color: $twitch;
+
+    img {
+      width: 30px;
+      right: 95px;
+    }
   }
 
 
