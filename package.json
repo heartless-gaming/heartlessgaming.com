@@ -4,7 +4,8 @@
   "description": "The code that powers heartlessgaming.com",
   "main": "index.js",
   "scripts": {
-    "start": "node node_scripts/start.js"
+    "start": "node node_scripts/start.js",
+    "build": "node node_scripts/build.js"
   },
   "repository": {
     "type": "git",
