@@ -1,5 +1,15 @@
+/**********************
+
+    0#IMPORT
+
+**********************/
+
+// External lib
 @import '../node_modules/susy/sass/susy';
 @import '../node_modules/normalize.css/normalize.css';
+
+// Project specific
+@import '../font/montserrat.css';
 
   /**********************
 
@@ -8,14 +18,20 @@
   **********************/
 
   // Color
-  $red:#b70900;
-  $orange: #f93f00;
-  $darkred: #840100;
-  $gris: #202020;
-  $lightgrey: #303030;
-  $lightergrey: #404040;
-  $youtube: #d42627;
-  $twitch: #663398;
+  $red         : #b70900;
+  $orange      : #f93f00;
+  $darkred     : #840100;
+  $gris        : #202020;
+  $lightgrey   : #303030;
+  $lightergrey : #404040;
+  $youtube     : #d42627;
+  $twitch      : #663398;
+
+  // Font family
+  $montserrat          : 'montserratregular';
+  $montserrat_light    : 'montserratlight';
+  $montserrat_semibold : 'montserratregular';
+  $montserrat_bold     : 'montserratsemi_bold';
 
   // Container width
   $width: 100%;
@@ -30,7 +46,6 @@
     // debug: (
     //  image: show,
     // )
-
   );
 
   $video: (
@@ -42,6 +57,18 @@
   // Glorious * { Box-sizing: Border-box } FTW
   @include border-box-sizing;
 
+
+  /**********************
+
+      1#RESET
+
+  **********************/
+
+  body {
+    background: $gris;
+    color: white;
+    font-family: $montserrat, sans-serif;
+  }
 
   /**********************
 
@@ -126,11 +153,6 @@
       3#HEADER
 
   **********************/
-
-  body {
-    background: $gris;
-    color: white;
-  }
 
   header {
     @include container;

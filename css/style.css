@@ -1,4 +1,10 @@
+/**********************
+
+    0#IMPORT
+
+**********************/
 @import url(../node_modules/normalize.css/normalize.css);
+@import url(../font/montserrat.css);
 /**********************
 
       1#VARAIBLES
@@ -8,6 +14,17 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/**********************
+
+      1#RESET
+
+  **********************/
+body {
+  background: #202020;
+  color: white;
+  font-family: "montserratregular", sans-serif;
 }
 
 /**********************
@@ -104,11 +121,6 @@ nav li a {
       3#HEADER
 
   **********************/
-body {
-  background: #202020;
-  color: white;
-}
-
 header {
   max-width: 100%;
   margin-left: auto;
