@@ -1,4 +1,4 @@
-# heartlessgaming.com
+# Heartlessgaming.com
 The code behind [heartlessgaming.com](http://heartlessgaming.com).
 
 ## Contribute
@@ -18,5 +18,14 @@ $ npm run start
 ```
 
 You will no longer have to manually refresh your browser each time. Happy coding.
+
+## Build
+
+```shell
+$ npm run build
+```
+
+Will get your the code ready for production use (code minification, asset compression...). The build folder will be placed in the rootpath of the project with the name **dist/**.
+
 
 *Play more, care less, be an Heartless. :broken_heart:*
