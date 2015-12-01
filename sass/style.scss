@@ -60,7 +60,7 @@
 
   /**********************
 
-      2#RESET
+      2#RESET & General Page Settings
 
   **********************/
 
@@ -68,6 +68,10 @@
     background: $gris;
     color: white;
     font-family: $montserrat, sans-serif;
+  }
+
+  .decouvrir, .jouer, .suivre, .footer-container {
+    @include container($m_width);
   }
 
   /**********************
@@ -176,17 +180,29 @@
   **********************/
 
   .decouvrir {
-    @include container($m_width);
     margin-top: 100px;
     font-size: 19px;
     line-height:30px;
     text-align:center;
     img {
       display:block;
+      width: 100px;
+      height: 100px;
       margin: 80px 0;
       @include container;
     }
 
+    a {
+      color: #fff;
+    }
+
+    .decouvrir-youtube:hover {
+      color: $youtube;
+    }
+
+    .decouvrir-autre:hover, .decouvrir-server:hover {
+      color: #ddd;
+    }
   }
 
   .yt, .tw {
@@ -246,7 +262,6 @@
   **********************/
 
   .jouer {
-    @include container($m_width);
     padding-top: 100px;
     padding-bottom: 100px;
   }
@@ -289,7 +304,9 @@
 
   **********************/
 
-
+  .suivre {
+    padding: 10px 0;
+  }
 
   /**********************
 
@@ -298,11 +315,9 @@
   **********************/
 
   footer {
+    padding: 10px 0;
     background-color: $lightgrey;
     height: 250px;
-    section {
-      @include container($m_width);
-    }
   }
 
   .tsquote {

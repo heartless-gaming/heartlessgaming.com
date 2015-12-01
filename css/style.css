@@ -18,13 +18,25 @@
 
 /**********************
 
-      2#RESET
+      2#RESET & General Page Settings
 
   **********************/
 body {
   background: #202020;
   color: white;
   font-family: "montserratregular", sans-serif;
+}
+
+.decouvrir, .jouer, .suivre, .footer-container {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.decouvrir:after, .jouer:after, .suivre:after, .footer-container:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 /**********************
@@ -157,23 +169,16 @@ header h1:after {
 
   **********************/
 .decouvrir {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 100px;
   font-size: 19px;
   line-height: 30px;
   text-align: center;
 }
 
-.decouvrir:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
 .decouvrir img {
   display: block;
+  width: 100px;
+  height: 100px;
   margin: 80px 0;
   max-width: 100%;
   margin-left: auto;
@@ -184,6 +189,18 @@ header h1:after {
   content: " ";
   display: block;
   clear: both;
+}
+
+.decouvrir a {
+  color: #fff;
+}
+
+.decouvrir .decouvrir-youtube:hover {
+  color: #d42627;
+}
+
+.decouvrir .decouvrir-autre:hover, .decouvrir .decouvrir-server:hover {
+  color: #ddd;
 }
 
 .yt, .tw {
@@ -256,17 +273,8 @@ header h1:after {
 
   **********************/
 .jouer {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
   padding-top: 100px;
   padding-bottom: 100px;
-}
-
-.jouer:after {
-  content: " ";
-  display: block;
-  clear: both;
 }
 
 .jeux {
@@ -313,26 +321,19 @@ table .infos {
       8#SUIVRE
 
   **********************/
+.suivre {
+  padding: 10px 0;
+}
+
 /**********************
 
       9#FOOTER
 
   **********************/
 footer {
+  padding: 10px 0;
   background-color: #303030;
   height: 250px;
-}
-
-footer section {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-footer section:after {
-  content: " ";
-  display: block;
-  clear: both;
 }
 
 .tsquote {
