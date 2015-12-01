@@ -91,7 +91,7 @@ nav li a {
   color: #fff;
   background: #f93f00;
   background: linear-gradient(to bottom, #f93f00 0%, #840100 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f93f00', endColorstr='#840100',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$orange', endColorstr='$darkred',GradientType=0 );
 }
 
 .icon a {

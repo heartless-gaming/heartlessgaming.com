@@ -7,9 +7,21 @@
 
   **********************/
 
+  // Color
+  $red:#b70900;
+  $orange: #f93f00;
+  $darkred: #840100;
+  $gris: #202020;
+  $lightgrey: #303030;
+  $lightergrey: #404040;
+  $youtube: #d42627;
+  $twitch: #663398;
+
+  // Container width
   $width: 100%;
   $m_width: 700px;
 
+  // Some Susy layout settings
   $susy: (
     container: $width,
     columns: 12,
@@ -26,9 +38,9 @@
     gutter-position: inside
   );
 
+  //  http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+  // Glorious * { Box-sizing: Border-box } FTW
   @include border-box-sizing;
-  $red:#b70900;
-  $gris: #202020;
 
 
   /**********************
@@ -45,7 +57,7 @@
     background: #FFF;
 
     ul {
-      // Reset of ul for inline use
+      // Reset ul for inline use
       margin: 0;
       padding-left: 0;
     }
@@ -94,9 +106,9 @@
 
     .active{
       color: #fff;
-      background: #f93f00;
-      background: linear-gradient(to bottom, #f93f00 0%,#840100 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f93f00', endColorstr='#840100',GradientType=0 );
+      background: $orange;
+      background: linear-gradient(to bottom, $orange 0%,$darkred 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$orange', endColorstr='$darkred',GradientType=0 );
     }
 
   }
@@ -171,11 +183,11 @@
   }
 
   .yt {
-    background-color: #d42627;
+    background-color: $youtube;
   }
 
   .tw {
-    background-color: #663398;
+    background-color: $twitch;
   }
 
 
@@ -189,7 +201,7 @@
     @include layout($video)
     @include container;
     padding: 50px 0;
-    background:#404040;
+    background: $lightergrey;
     border-bottom: 2px solid $red;
   }
 
@@ -264,7 +276,7 @@
   **********************/
 
   footer {
-    background-color: #303030;
+    background-color: $lightgrey;
     height: 250px;
     section {
       @include container($m_width);
