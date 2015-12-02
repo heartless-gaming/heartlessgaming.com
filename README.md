@@ -14,10 +14,10 @@ $ npm install
 This project use sass. Enable live reloading of html, sass & js file by typing
 
 ```shell
-$ npm run start
+$ npm start
 ```
 
-You will no longer have to manually refresh your browser each time. Happy coding.
+With the help of browser-sync You will no longer have to manually refresh your browser each time. Happy coding.
 
 ## Build
 

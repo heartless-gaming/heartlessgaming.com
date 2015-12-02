@@ -1,8 +1,11 @@
 var fs = require('fs');
 var chalk = require('chalk');
 var dateFormat = require('dateformat');
+var rimraf = require('rimraf');
+var mkdirp = require('mkdirp');
 var sass = require('node-sass');
-var bs = require("browser-sync").create();
+
+
 
 // console.log for 1337 h4X0r
 var log = console.log.bind(console);
@@ -19,3 +22,4 @@ log( chalk.red('######### ') + chalk.grey(' Please wait while I get your stuff r
 log( chalk.red(' ### ###  ') );
 log( chalk.red('  #####   ') );
 log( chalk.red('  # # #   ') + chalk.grey(' Play more, care less, be an heartless' ));
+
