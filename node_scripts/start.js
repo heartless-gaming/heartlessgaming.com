@@ -36,46 +36,46 @@ bs.watch("js/**.js").on("change", function(){
 bs.watch("sass/**.scss", function (event, file) {
     if (event === "change") {
 
-        sass.render({
-          file: 'sass/style.scss',
-          outputStyle: 'expanded',
-          outFile: 'css/style.css',
-          sourceMap: true
-        }, function(error, result) {
-          if (error) {
-            // Pretty Debug Message on sass error
+      sass.render({
+        file: 'sass/style.scss',
+        outputStyle: 'expanded',
+        outFile: 'css/style.css',
+        sourceMap: true
+      }, function(error, result) {
+        if (error) {
+          // Pretty Debug Message on sass error
 
-            var nowFormat = dateFormat(new Date(), "HH:MM:ss");
+          var nowFormat = dateFormat(new Date(), "HH:MM:ss");
 
-            log( chalk.red('[SASS ERROR ' + nowFormat + '] ' ) + error.file )
-            log( chalk.red('[SASS ERROR ' + nowFormat + '] ' ) + 'On line ' + chalk.red(error.line) + ' at column ' + chalk.red(error.column) );
-            log( chalk.red('[SASS ERROR ' + nowFormat + '] ' ) + error.message );
+          log( chalk.red('[SASS ERROR ' + nowFormat + '] ' ) + error.file );
+          log( chalk.red('[SASS ERROR ' + nowFormat + '] ' ) + 'On line ' + chalk.red(error.line) + ' at column ' + chalk.red(error.column) );
+          log( chalk.red('[SASS ERROR ' + nowFormat + '] ' ) + error.message );
 
-          } else {
+        } else {
 
-            // Creating css style files
-            fs.writeFile('css/style.css', result.css, function(err){
-              if(!err){
+          // Creating css style files
+          fs.writeFile('css/style.css', result.css, function(err){
+            if(!err){
 
-                // Creating css map file
-                fs.writeFile('css/style.map.css', result.map, function(err) {
-                  if(!err){
-                    var nowFormat = dateFormat(new Date(), "[HH:MM:ss]");
-                    log( nowFormat + chalk.green(' CSS Reloaded') );
-                    bs.notify("<span color='green'>CSS Reloaded</span>", 2000);
-                  } else {
-                    log( err );
-                  }
-                });
+              // Creating css map file
+              fs.writeFile('css/style.map.css', result.map, function(err) {
+                if(!err){
+                  var nowFormat = dateFormat(new Date(), "[HH:MM:ss]");
+                  log( nowFormat + chalk.green(' CSS Reloaded') );
+                  bs.notify("<span color='green'>CSS Reloaded</span>", 2000);
+                } else {
+                  log( err );
+                }
+              });
 
-              } else {
-                log( err );
-              }
-            });
-            // Injecting the CSS change in BrowserSync
-            bs.reload('css/style.css');
-          }
-        });
+            } else {
+              log( err );
+            }
+          });
+          // Injecting the CSS change in BrowserSync
+          bs.reload('css/style.css');
+        }
+      });
 
     }
 });
