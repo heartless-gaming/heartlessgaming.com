@@ -1,4 +1,3 @@
-var fs          = require('fs');
 var Promise     = require('bluebird');
 var chalk       = require('chalk');
 var dateFormat  = require('dateformat');
@@ -7,18 +6,19 @@ var rimraf      = require('rimraf-promise');
 var compressor  = require('node-minify');
 
 // http://bluebirdjs.com/docs/api/promisification.html
+var fs = Promise.promisifyAll(require('fs'));
 var mkdirp = Promise.promisifyAll(require("mkdirp"));
 
 // console.log for 1337 h4X0r
 var log = console.log.bind(console);
 
 // ISO date format to use for debuging
-var now = new Date();
 var nowFormat = dateFormat(new Date(), "HH:MM:ss");
 
 // File & folder path used by this program
 var buildFolderName = 'dist';
 var cssFile = 'css/style.css';
+var jsFile = 'js/main.js';
 
 // Greeting Message
 log( chalk.red('  #####   ') );
@@ -59,11 +59,46 @@ var compressCss = function() {
   });
 };
 
+var compressJs = function(){
+  return new Promise(function(resolve, reject){
+    new compressor.minify({
+      type: 'uglifyjs',
+      fileIn: jsFile,
+      fileOut: buildFolderName + '/' + jsFile,
+      callback: function(err, min) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(min);
+        }
+      }
+    });
+  });
+};
+
+
 var minifyCss = function() {
   return compressCss()
-    .then( console.log )
+    .then( function(res){
+      fs.writeFileAsync( buildFolderName + '/css/style.css', res);
+    })
+    .then(function(res){
+      log( chalk.green('[' + nowFormat + '] ') + 'CSS Minified' );
+    })
+    .catch( console.err );
+};
+
+var minifyJs = function() {
+  return compressJs()
+    .then( function(res){
+      fs.writeFileAsync( buildFolderName + '/css/style.css', res);
+    })
+    .then(function(res){
+      log( chalk.green('[' + nowFormat + '] ') + 'JS Minified' );
+    })
     .catch( console.err );
 };
 
 cleanDistFolder()
-  .then( minifyCss );
+  .then( minifyCss )
+  .then( minifyJs );
