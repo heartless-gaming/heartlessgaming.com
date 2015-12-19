@@ -16,6 +16,8 @@ var nowFormat = dateFormat(new Date(), "HH:MM:ss");
 
 // File & folder path used by this program
 var buildFolderName = 'dist';
+var buildFolderNameCss = 'css';
+var buildFolderNameJs = 'js';
 var cssFile = 'css/style.css';
 var jsFile = 'js/main.js';
 
@@ -31,8 +33,12 @@ log( chalk.red('  # # #   ') + chalk.grey(' Play more, care less, be an heartles
 
 var cleanDistFolder = function() {
   return rimraf( buildFolderName )
+    .then( function(res){
+      // log( mkdirp );
+      return mkdirp.mkdirpAsync( buildFolderName + '/' + buildFolderNameCss );
+    })
     .then( function(){
-      return mkdirp.syncAsync( buildFolderName );
+      return mkdirp.mkdirpAsync( buildFolderName + '/' + buildFolderNameJs );
     })
     .then(function(res){
       log( chalk.green('[' + nowFormat + '] ') + buildFolderName + ' folder cleaned' );
@@ -87,9 +93,9 @@ var minifyCss = function() {
 };
 
 var minifyJs = function() {
-  return compressCss()
+  return compressJs()
     .then( function(res){
-      fs.writeFileAsync( buildFolderName + '/' + jsFile, res);
+      fs.writeFileAsync( buildFolderName + '/' + jsFile, res );
     })
     .then(function(res){
       log( chalk.green('[' + nowFormat + '] ') + 'JS Minified' );
