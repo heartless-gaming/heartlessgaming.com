@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/heartless-gaming/heartlessgaming.com#readme",
   "devDependencies": {
+    "babel-cli": "^6.3.17",
     "bluebird": "^3.0.6",
     "browser-sync": "^2.10.0",
     "chalk": "^1.1.1",
@@ -36,6 +37,8 @@
   },
   "dependencies": {
     "clean-css": "^3.4.8",
+    "imagemin": "^4.0.0",
+    "ncp": "^2.0.0",
     "node-minify": "^1.3.7"
   }
 }
