@@ -1,7 +1,6 @@
 var Promise     = require('bluebird');
 var chalk       = require('chalk');
 var dateFormat  = require('dateformat');
-var sass        = require('node-sass');
 var rimraf      = require('rimraf-promise');
 var compressor  = require('node-minify');
 
@@ -33,7 +32,7 @@ log( chalk.red('  # # #   ') + chalk.grey(' Play more, care less, be an heartles
 var cleanDistFolder = function() {
   return rimraf( buildFolderName )
     .then( function(){
-      return mkdirp.mkdirpAsync( buildFolderName );
+      return mkdirp.syncAsync( buildFolderName );
     })
     .then(function(res){
       log( chalk.green('[' + nowFormat + '] ') + buildFolderName + ' folder cleaned' );
@@ -76,11 +75,10 @@ var compressJs = function(){
   });
 };
 
-
 var minifyCss = function() {
   return compressCss()
-    .then( function(res){
-      fs.writeFileAsync( buildFolderName + '/css/style.css', res);
+    .then(function(res){
+      fs.writeFileAsync( buildFolderName + '/' + cssFile, res);
     })
     .then(function(res){
       log( chalk.green('[' + nowFormat + '] ') + 'CSS Minified' );
@@ -89,9 +87,9 @@ var minifyCss = function() {
 };
 
 var minifyJs = function() {
-  return compressJs()
+  return compressCss()
     .then( function(res){
-      fs.writeFileAsync( buildFolderName + '/css/style.css', res);
+      fs.writeFileAsync( buildFolderName + '/' + jsFile, res);
     })
     .then(function(res){
       log( chalk.green('[' + nowFormat + '] ') + 'JS Minified' );
@@ -100,5 +98,5 @@ var minifyJs = function() {
 };
 
 cleanDistFolder()
-  .then( minifyCss )
-  .then( minifyJs );
+  .then( minifyCss() )
+  .then( minifyJs() );
