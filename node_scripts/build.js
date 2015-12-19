@@ -34,10 +34,34 @@ log( chalk.red(' ### ###  ') );
 log( chalk.red('  #####   ') );
 log( chalk.red('  # # #   ') + chalk.grey(' Play more, care less, be an heartless' ));
 
+// Promise Version of :
+// https://stackoverflow.com/questions/11293857/fastest-way-to-copy-file-in-node-js
+var copyFile = function (source, target) {
+  return new Promise( function(resolve, reject) {
+
+    var rd = fs.createReadStream(source);
+    rd.on("error", function(err) {
+      reject(err);
+    });
+
+    var wr = fs.createWriteStream(target);
+    wr.on("error", function(err) {
+      reject(err);
+    });
+    wr.on("close", function(ex) {
+      resolve();
+    });
+
+    rd.pipe(wr);
+
+  });
+};
+
+
 var cleanDistFolder = function() {
   return rimraf( buildFolderName )
     .then( function(res){
-      log( chalk.green('[' + dateFormat(new Date(), "HH:MM:ss") + '] ') + buildFolderName + ' folder cleaned' );
+      log( chalk.green('[' + dateFormat(new Date(), "HH:MM:ss") + '] ') + 'Old build folder cleaned' );
     })
     .catch( console.error );
 };
@@ -116,21 +140,21 @@ var imgmin= function() {
 
 };
 
-// var copyFont = function(){
-//   return log(ncp.ncpAsync);
-// };
-// function copyFont(){
-//   return log(ncp.ncpAsync);
-// }
+var copyFont = function(){
+  return ncp.ncpAsync(fontFolderName, buildFolderName + '/' + fontFolderName)
+    .then(function(){
+      log( chalk.green('[' + dateFormat(new Date(), "HH:MM:ss") + '] ') + 'Font folder copied' );
+    })
+    .catch(console.err);
+};
 
-/*
- * Clean task is always late to the party
- * I shall learn hos to chain promise corectly
- */
-// cleanDistFolder()
-//   .then( minifyCss() )
-//   .then( minifyJs() )
-//   .then( imgmin() );
+var copyHtml = function() {
+  return copyFile('index.html', 'dist/index.html')
+    .then(function(res){
+      log( chalk.green('[' + dateFormat(new Date(), "HH:MM:ss") + '] ') + 'index.html copied' );
+    })
+    .catch( console.err);
+};
 
 
 /*
@@ -141,8 +165,10 @@ var imgmin= function() {
  * copy all the html file in the root on the dist directory
  *
  */
-minifyCss()
-  .then( minifyJs() )
-  .then( imgmin() )
+
+cleanDistFolder()
+  .then( minifyCss )
+  .then( minifyJs )
+  .then( imgmin )
   .then( copyFont )
-  .catch( console.err );
+  .then( copyHtml );
