@@ -1,13 +1,13 @@
 <template>
-  <section>
-    <p class="quote">{{ quote }}</p>
+  <section class="quote">
+    <blockquote>{{ quote }}</blockquote>
   </section>
 </template>
 
 <script>
 export default {
   data: () => ({
-    interval: 600, // 1000*60*5 That's 5minutes !
+    interval: 60000, // 1000*60*5 That's 5minutes !
     quote: 'We will find a way',
     quotes: [
       `Bon c'est une bonne addition à mon dossier "grossisant" ! - GuiltysparK`,
@@ -22,7 +22,19 @@ export default {
       `Tu va te retrouver comme le culmasher, avec un serveur sur les bras et des trou du cul dessus - Skullmasher`,
       `Ça fait tellement longtemps qu'on part a volo que ça m'etonne qu'on soit pas deja arrivé ! - Guiltyspark`,
       `On va y jouer regulierement souvent. - Skullmasher`,
-      `Ah mais on peut jouer a plusieurs en MMO ?? - Skullmasher`
+      `Ah mais on peut jouer a plusieurs en MMO ?? - Skullmasher`,
+      `D'ailleurs guilty tout a l'heure je me suis mouché sa a fait la tete a coppé - Don`,
+      `Je vait pas aller me perdre sans un pays ou ya pas de saucisson ! j'ai deja fait trois mois en angleterre - Eljam`,
+      `Tu voit je t'avait dit que c'est toi qui allez me le payez arma 3 - Don`,
+      `Bah quoi tu me demande entre la peste et le cholera moi je te proposes le cancer - Don`,
+      `Enfin don toi entre macron et lepen tu voterais christine boutin - Guilty`,
+      `Tiens j'ai envie de boire du jus d'orange, il est ou mon couteau ? - Eljam`,
+      `C'est les russes qui ont crée jupiter a partir des pets d'hitler - Don`,
+      `JE VAIS ME LAVER !! - Markus`,
+      `En même temps le "ta mere elle se fait prendre par des poney dans les buissons" il a peut etre pas kiffer - Markus`,
+      `La c'est la défaillance de nationalité et la déchéance du skill - Guilty`,
+      `Si on l'avait pas trouvé on l'aurait pas inventé - Killdaddy`,
+      `Pedo bear euh bear euh bear traverse tout les continent, a la recherche d'enfaaaaannt - chants traditionel`
     ]
   }),
   mounted() {
@@ -44,8 +56,10 @@ export default {
 
 <style>
 .quote {
-  margin-right: 10px;
   text-align: right;
-  color: #666;
+  color: #8a8a8a;
+  max-width: 480px;
+  justify-self: end;
+  font-style: italic;
 }
 </style>

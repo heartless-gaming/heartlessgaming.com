@@ -1,5 +1,5 @@
 <template>
-  <section class="wrapper">
+  <section class="wrapper mbm">
     <h2 class="mbm">Les dernières vidéos Youtube</h2>
     <div class="mlm">
       <p v-for="(video, index) in videos" :key="index">

@@ -6,13 +6,13 @@
         <main-call-to-action />
       </div>
     </header>
-    <main>
+    <main class="flex-center">
       <div class="autogrid wrapper mtl mbl">
         <last-youtube-videos />
         <vocal-war />
       </div>
     </main>
-    <footer>
+    <footer class="page-footer">
       <div class="footer-grid wrapper">
         <credits />
         <quotes />
@@ -65,6 +65,22 @@ export default {
 
   @media (min-width: 768px) {
     height: 50vh;
+  }
+}
+
+.page-footer {
+  position: relative;
+  background-color: #222327;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  clip-path: polygon(0 calc(0% + 4vw), 100% 0, 100% 100%, 0 100%);
+
+  @media (min-width: 576px) {
+    padding-top: 70px;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 120px;
   }
 }
 </style>

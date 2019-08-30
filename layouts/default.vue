@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  background: #333;
+  background-color: #26262b;
   color: #fafafa;
   font-size: 1.4rem;
 
@@ -50,12 +50,10 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-@media (min-width: 480px) {
-  .footer-grid {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-column: auto 1fr;
-  }
+.footer-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 2rem;
 }
 // Reset
 h1 {
@@ -109,6 +107,10 @@ a {
 
 .mtl {
   margin-top: 20px;
+}
+
+.ptl {
+  padding-top: 20px;
 }
 
 .mbl {
