@@ -19,7 +19,7 @@
             class="btn btn--big btn--twitch"
             href="https://www.twitch.tv/heartlessgaming_live"
           >
-            Twitch
+            <svg-twitch-logo />
           </a>
         </div>
       </div>
@@ -41,11 +41,13 @@
 <script>
 import SvgHeartlessLogo from '~/assets/heartlessgaming-logo-white.svg'
 import SvgYoutubeLogo from '~/assets/youtube.svg'
+import SvgTwitchLogo from '~/assets/twitch.svg'
 
 export default {
   components: {
     SvgHeartlessLogo,
-    SvgYoutubeLogo
+    SvgYoutubeLogo,
+    SvgTwitchLogo
   },
   head() {
     return {
@@ -66,7 +68,7 @@ export default {
 
 <style lang="scss">
 .page-head--masthead {
-  height: 60vh;
+  height: 70vh;
   background: #0f2027;
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   border-bottom: 3px #e52f00 solid;

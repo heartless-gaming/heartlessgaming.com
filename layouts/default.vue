@@ -121,6 +121,11 @@ a.btn {
 
   &--youtube,
   &--twitch {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     > svg {
       width: 100px;
       fill: white;
@@ -139,10 +144,6 @@ a.btn {
   &--twitch {
     border: 2px #663398 solid;
     background-color: #663398;
-
-    > svg {
-      width: 60px;
-    }
 
     &:hover {
       background-color: transparent;
