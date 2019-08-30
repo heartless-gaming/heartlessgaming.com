@@ -2,26 +2,8 @@
   <div class="main-grid">
     <header class="page-head--masthead flex-center">
       <div class="mtl">
-        <div class="wrapper txtcenter mbl">
-          <svg-heartless-logo class="logo mbl bounceInDown" />
-          <h1 class="subtitle zoomIn">
-            La communautée multigaming avec 0 skill&nbsp;!
-          </h1>
-        </div>
-        <div class="wrapper wrapper--small flex-around mbl">
-          <a
-            class="btn btn--big btn--youtube"
-            href="https://www.youtube.com/channel/UCvItaPYGwf5bI7HelUiu14w"
-          >
-            <svg-youtube-logo />
-          </a>
-          <a
-            class="btn btn--big btn--twitch"
-            href="https://www.twitch.tv/heartlessgaming_live"
-          >
-            <svg-twitch-logo />
-          </a>
-        </div>
+        <logo-and-title />
+        <main-call-to-action />
       </div>
     </header>
     <main></main>
@@ -39,15 +21,13 @@
 </template>
 
 <script>
-import SvgHeartlessLogo from '~/assets/heartlessgaming-logo-white.svg'
-import SvgYoutubeLogo from '~/assets/youtube.svg'
-import SvgTwitchLogo from '~/assets/twitch.svg'
+import LogoAndTitle from '~/components/LogoAndTitle.vue'
+import MainCallToAction from '~/components/MainCallToAction.vue'
 
 export default {
   components: {
-    SvgHeartlessLogo,
-    SvgYoutubeLogo,
-    SvgTwitchLogo
+    LogoAndTitle,
+    MainCallToAction
   },
   head() {
     return {
@@ -77,23 +57,5 @@ export default {
   @media (min-width: 768px) {
     height: 50vh;
   }
-}
-.logo {
-  max-width: 420px;
-}
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  word-spacing: 5px;
-  text-shadow: #000 0px 0px 10px;
 }
 </style>
