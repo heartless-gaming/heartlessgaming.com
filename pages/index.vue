@@ -1,14 +1,14 @@
 <template>
   <div class="main-grid">
     <header class="page-head--masthead flex-center">
-      <div>
-        <div class="wrapper txtcenter">
+      <div class="mtl">
+        <div class="wrapper txtcenter mbl">
           <svg-heartless-logo class="logo mbl bounceInDown" />
-          <h1 class="subtitle mbl zoomIn">
+          <h1 class="subtitle zoomIn">
             La communautée multigaming avec 0 skill&nbsp;!
           </h1>
         </div>
-        <div class="wrapper wrapper--small flex-around">
+        <div class="wrapper wrapper--small flex-around mbl">
           <a
             class="btn btn--big btn--youtube"
             href="https://www.youtube.com/channel/UCvItaPYGwf5bI7HelUiu14w"
@@ -68,12 +68,15 @@ export default {
 
 <style lang="scss">
 .page-head--masthead {
-  height: 70vh;
   background: #0f2027;
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   border-bottom: 3px #e52f00 solid;
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+
+  @media (min-width: 768px) {
+    height: 50vh;
+  }
 }
 .logo {
   max-width: 420px;

@@ -8,7 +8,7 @@
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
+  font-size: 62.5%; // equiv "10px", which is adapted to rem unit
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -27,6 +27,11 @@ html {
 body {
   background: #333;
   color: #fafafa;
+  font-size: 1.4rem;
+
+  @media (min-width: 576px) {
+    font-size: 1.6rem;
+  }
 }
 
 // layout
@@ -36,6 +41,14 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 // Reset
+h1 {
+  font-size: 2.8rem;
+
+  @media (min-width: 576px) {
+    font-size: 3.2rem;
+  }
+}
+
 p {
   margin-bottom: 10px;
 }
@@ -48,13 +61,12 @@ svg {
 .wrapper {
   max-width: 960px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .wrapper--small {
   max-width: 575px;
   margin: 0 auto;
-  padding: 10px;
 }
 
 /* Helpers */
@@ -72,6 +84,10 @@ svg {
 
 .mbm {
   margin-bottom: 15px;
+}
+
+.mtl {
+  margin-top: 20px;
 }
 
 .mbl {
