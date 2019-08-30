@@ -13,7 +13,7 @@
             class="btn btn--big btn--youtube"
             href="https://www.youtube.com/channel/UCvItaPYGwf5bI7HelUiu14w"
           >
-            Youtube
+            <svg-youtube-logo />
           </a>
           <a
             class="btn btn--big btn--twitch"
@@ -40,10 +40,12 @@
 
 <script>
 import SvgHeartlessLogo from '~/assets/heartlessgaming-logo-white.svg'
+import SvgYoutubeLogo from '~/assets/youtube.svg'
 
 export default {
   components: {
-    SvgHeartlessLogo
+    SvgHeartlessLogo,
+    SvgYoutubeLogo
   },
   head() {
     return {

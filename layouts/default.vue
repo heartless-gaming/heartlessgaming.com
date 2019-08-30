@@ -119,8 +119,16 @@ a.btn {
     font-size: 1.2rem;
   }
 
+  &--youtube,
+  &--twitch {
+    > svg {
+      width: 100px;
+      fill: white;
+    }
+  }
+
   &--youtube {
-    border: 1px #d42627 solid;
+    border: 2px #d42627 solid;
     background-color: #d42627;
 
     &:hover {
@@ -129,8 +137,12 @@ a.btn {
   }
 
   &--twitch {
-    border: 1px #663398 solid;
+    border: 2px #663398 solid;
     background-color: #663398;
+
+    > svg {
+      width: 60px;
+    }
 
     &:hover {
       background-color: transparent;
