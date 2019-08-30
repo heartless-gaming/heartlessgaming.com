@@ -83,4 +83,114 @@ svg {
   justify-content: center;
   align-items: center;
 }
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+}
+// Buttons
+a.btn {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn {
+  padding: 10px 30px;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+
+  &:hover {
+    color: #fff;
+    background-color: #35495e;
+  }
+
+  > svg {
+    width: 30px;
+  }
+
+  &--small {
+    padding: 5px 15px;
+  }
+
+  &--big {
+    padding: 15px 35px;
+    font-size: 1.2rem;
+  }
+
+  &--youtube {
+    border: 1px #d42627 solid;
+    background-color: #d42627;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &--twitch {
+    border: 1px #663398 solid;
+    background-color: #663398;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+// Animations
+@keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInDown {
+  animation-name: bounceInDown;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+}
 </style>

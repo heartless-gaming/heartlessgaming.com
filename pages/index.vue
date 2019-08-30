@@ -1,11 +1,27 @@
 <template>
   <div class="main-grid">
     <header class="page-head--masthead flex-center">
-      <div class="wrapper txtcenter">
-        <svg-heartless-logo class="logo mbl" />
-        <h1 class="subtitle">
-          La communautée multigaming avec 0 skill
-        </h1>
+      <div>
+        <div class="wrapper txtcenter">
+          <svg-heartless-logo class="logo mbl bounceInDown" />
+          <h1 class="subtitle mbl zoomIn">
+            La communautée multigaming avec 0 skill !
+          </h1>
+        </div>
+        <div class="wrapper wrapper--small flex-around">
+          <a
+            class="btn btn--big btn--youtube"
+            href="https://www.youtube.com/channel/UCvItaPYGwf5bI7HelUiu14w"
+          >
+            Youtube
+          </a>
+          <a
+            class="btn btn--big btn--twitch"
+            href="https://www.twitch.tv/heartlessgaming_live"
+          >
+            Twitch
+          </a>
+        </div>
       </div>
     </header>
     <main></main>
@@ -49,6 +65,9 @@ export default {
 <style lang="scss">
 .page-head--masthead {
   height: 60vh;
+  background: #0f2027;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  border-bottom: 3px #e52f00 solid;
 }
 .logo {
   max-width: 420px;
@@ -66,6 +85,5 @@ export default {
 .subtitle {
   font-weight: 300;
   word-spacing: 5px;
-  padding-bottom: 15px;
 }
 </style>
