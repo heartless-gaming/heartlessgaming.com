@@ -13,7 +13,7 @@
       </div>
     </main>
     <footer>
-      <div class="footer-grid">
+      <div class="footer-grid wrapper">
         <credits />
         <quotes />
       </div>

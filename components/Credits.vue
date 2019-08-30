@@ -1,6 +1,6 @@
 <template>
   <section>
-    <p>Logo Heartless Gaming par Markus</p>
+    <p>Logo par Markus</p>
     <p>
       <a href="https://github.com/heartless-gaming/heartlessgaming.com">
         Code source
