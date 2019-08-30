@@ -5,7 +5,7 @@
         <div class="wrapper txtcenter">
           <svg-heartless-logo class="logo mbl bounceInDown" />
           <h1 class="subtitle mbl zoomIn">
-            La communautée multigaming avec 0 skill !
+            La communautée multigaming avec 0 skill&nbsp;!
           </h1>
         </div>
         <div class="wrapper wrapper--small flex-around">

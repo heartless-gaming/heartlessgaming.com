@@ -127,8 +127,12 @@ a.btn {
     align-items: center;
 
     > svg {
-      width: 100px;
+      width: 80px;
       fill: white;
+
+      @media (min-width: 575px) {
+        width: 150px;
+      }
     }
   }
 
