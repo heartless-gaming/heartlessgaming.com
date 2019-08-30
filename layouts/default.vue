@@ -35,4 +35,52 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+// Reset
+p {
+  margin-bottom: 10px;
+}
+
+svg {
+  // max-width: 100%;
+}
+
+// Helper
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.wrapper--small {
+  max-width: 575px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Helpers */
+.txtcenter {
+  text-align: center;
+}
+
+.txtright {
+  text-align: right;
+}
+
+.mbs {
+  margin-bottom: 10px;
+}
+
+.mbm {
+  margin-bottom: 15px;
+}
+
+.mbl {
+  margin-bottom: 20px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
