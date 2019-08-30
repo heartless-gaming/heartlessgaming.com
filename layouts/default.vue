@@ -93,6 +93,7 @@ svg {
 a.btn {
   color: #fff;
   text-decoration: none;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.7), 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .btn {

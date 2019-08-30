@@ -68,6 +68,8 @@ export default {
   background: #0f2027;
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   border-bottom: 3px #e52f00 solid;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
 .logo {
   max-width: 420px;
@@ -85,5 +87,6 @@ export default {
 .subtitle {
   font-weight: 300;
   word-spacing: 5px;
+  text-shadow: #000 0px 0px 10px;
 }
 </style>
