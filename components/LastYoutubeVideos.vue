@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper wrapper mtl mbl">
+  <section class="wrapper">
     <h2 class="mbm">Les dernières vidéos Youtube</h2>
     <div class="mlm">
       <p v-for="(video, index) in videos" :key="index">
@@ -7,7 +7,7 @@
         <small>{{ video.duration }}</small>
       </p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

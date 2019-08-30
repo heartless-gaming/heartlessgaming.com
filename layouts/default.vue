@@ -35,10 +35,27 @@ body {
 }
 
 // layout
+@media (min-width: 480px) {
+  .autogrid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    grid-gap: 1rem;
+  }
+}
+
 .main-grid {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+@media (min-width: 480px) {
+  .footer-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-column: auto 1fr;
+  }
 }
 // Reset
 h1 {
@@ -152,6 +169,9 @@ a.btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-width: 3px;
+    border-style: solid;
+    transition: background-color 250ms linear;
 
     > svg {
       width: 80px;
@@ -161,24 +181,20 @@ a.btn {
         width: 150px;
       }
     }
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   &--youtube {
-    border: 2px #d42627 solid;
+    border-color: #d42627;
     background-color: #d42627;
-
-    &:hover {
-      background-color: transparent;
-    }
   }
 
   &--twitch {
-    border: 2px #663398 solid;
+    border-color: #663398;
     background-color: #663398;
-
-    &:hover {
-      background-color: transparent;
-    }
   }
 }
 // Animations

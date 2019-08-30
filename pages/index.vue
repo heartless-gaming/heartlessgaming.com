@@ -7,18 +7,16 @@
       </div>
     </header>
     <main>
-      <last-youtube-videos />
+      <div class="autogrid wrapper mtl mbl">
+        <last-youtube-videos />
+        <vocal-war />
+      </div>
     </main>
     <footer>
-      <div>
-        <p>Logo by Markus</p>
-        <p>
-          <a href="https://github.com/heartless-gaming/heartlessgaming.com">
-            Code source
-          </a>
-        </p>
+      <div class="footer-grid">
+        <credits />
+        <quotes />
       </div>
-      <quotes />
     </footer>
   </div>
 </template>
@@ -27,6 +25,8 @@
 import LogoAndTitle from '~/components/LogoAndTitle.vue'
 import MainCallToAction from '~/components/MainCallToAction.vue'
 import LastYoutubeVideos from '~/components/LastYoutubeVideos.vue'
+import VocalWar from '~/components/VocalWar.vue'
+import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
 
 export default {
@@ -34,6 +34,8 @@ export default {
     LogoAndTitle,
     MainCallToAction,
     LastYoutubeVideos,
+    VocalWar,
+    Credits,
     Quotes
   },
   head() {

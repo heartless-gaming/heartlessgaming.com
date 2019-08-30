@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper wrapper--small flex-around mbl">
+  <section class="wrapper wrapper--small flex-around mbl">
     <a
       class="btn btn--big btn--youtube"
       href="https://www.youtube.com/channel/UCvItaPYGwf5bI7HelUiu14w"
@@ -12,7 +12,7 @@
     >
       <svg-twitch-logo />
     </a>
-  </div>
+  </section>
 </template>
 
 <script>

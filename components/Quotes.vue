@@ -1,11 +1,13 @@
 <template>
-  <p class="quote">{{ quote }}</p>
+  <section>
+    <p class="quote">{{ quote }}</p>
+  </section>
 </template>
 
 <script>
 export default {
   data: () => ({
-    interval: 300000, // 1000*60*5 That's 5minutes !
+    interval: 60000, // 1000*60*5 That's 5minutes !
     quote: 'We will find a way',
     quotes: [
       `Bon c'est une bonne addition à mon dossier "grossisant" ! - GuiltysparK`,
@@ -42,15 +44,8 @@ export default {
 
 <style>
 .quote {
-  display: none;
   margin-right: 10px;
   text-align: right;
   color: #666;
-}
-
-@media (min-width: 576px) {
-  .quote {
-    display: block;
-  }
 }
 </style>
