@@ -53,8 +53,12 @@ p {
   margin-bottom: 10px;
 }
 
-svg {
-  // max-width: 100%;
+a {
+  color: #2ba8e6;
+
+  &:hover {
+    color: darken(#2ba8e6, 20);
+  }
 }
 
 // Helper
@@ -94,6 +98,14 @@ svg {
   margin-bottom: 20px;
 }
 
+.mlm {
+  margin-left: 15px;
+}
+
+.pls {
+  padding-left: 10px;
+}
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -103,7 +115,6 @@ svg {
 .flex-around {
   display: flex;
   justify-content: space-around;
-  align-items: space-around;
 }
 // Buttons
 a.btn {

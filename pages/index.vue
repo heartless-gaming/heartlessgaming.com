@@ -6,7 +6,9 @@
         <main-call-to-action />
       </div>
     </header>
-    <main></main>
+    <main>
+      <last-youtube-videos />
+    </main>
     <footer>
       <div>
         <p>Logo by Markus</p>
@@ -16,6 +18,7 @@
           </a>
         </p>
       </div>
+      <quotes />
     </footer>
   </div>
 </template>
@@ -23,11 +26,15 @@
 <script>
 import LogoAndTitle from '~/components/LogoAndTitle.vue'
 import MainCallToAction from '~/components/MainCallToAction.vue'
+import LastYoutubeVideos from '~/components/LastYoutubeVideos.vue'
+import Quotes from '~/components/Quotes.vue'
 
 export default {
   components: {
     LogoAndTitle,
-    MainCallToAction
+    MainCallToAction,
+    LastYoutubeVideos,
+    Quotes
   },
   head() {
     return {
