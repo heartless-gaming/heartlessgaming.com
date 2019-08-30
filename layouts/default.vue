@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -22,5 +22,17 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+body {
+  background: #333;
+  color: #fafafa;
+}
+
+// layout
+.main-grid {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 </style>
