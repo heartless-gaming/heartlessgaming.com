@@ -15,8 +15,7 @@
         </p>
         <p>
           Pour suivre la progression du serveur vous pouvez consulter
-          <a href="https://www.heartlessgaming.com/mcmap">l'overviewer</a>
-          (dynmap)
+          <a href="https://www.heartlessgaming.com/mcmap">l'overviewer</a>.
         </p>
       </div>
     </div>

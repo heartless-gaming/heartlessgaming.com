@@ -1,14 +1,14 @@
 <template>
   <div class="main-grid">
-    <main-nav />
     <header class="page-head--masthead flex-center">
+      <main-nav />
       <div class="mtl">
         <logo-and-title />
         <main-call-to-action />
       </div>
     </header>
     <main class="flex-around">
-      <div>
+      <div class="mtl mbl">
         <div class="autogrid wrapper mtl mbl">
           <last-youtube-videos />
           <vocal-war />
