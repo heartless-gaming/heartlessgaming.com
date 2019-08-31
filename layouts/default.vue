@@ -44,6 +44,10 @@ body {
   }
 }
 
+.grid-gap-large {
+  grid-gap: 4rem;
+}
+
 .main-grid {
   height: 100vh;
   display: grid;
@@ -134,18 +138,28 @@ a {
 .flex-around {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 // Buttons
 a.btn {
   color: #fff;
   text-decoration: none;
-  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.7), 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .btn {
+  display: inline-block;
   padding: 10px 30px;
   border-radius: 4px;
   border: 1px solid #35495e;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.7), 0 3px 6px rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
 
   &:hover {
     color: #fff;
@@ -163,40 +177,6 @@ a.btn {
   &--big {
     padding: 15px 35px;
     font-size: 1.2rem;
-  }
-
-  &--youtube,
-  &--twitch {
-    display: block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-width: 3px;
-    border-style: solid;
-    transition: background-color 250ms linear;
-
-    > svg {
-      width: 80px;
-      fill: white;
-
-      @media (min-width: 575px) {
-        width: 150px;
-      }
-    }
-
-    &:hover {
-      background-color: transparent;
-    }
-  }
-
-  &--youtube {
-    border-color: #d42627;
-    background-color: #d42627;
-  }
-
-  &--twitch {
-    border-color: #663398;
-    background-color: #663398;
   }
 }
 // Animations

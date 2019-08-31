@@ -20,11 +20,12 @@ export default {
 <style>
 .logo {
   max-width: 420px;
+  filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.7));
 }
 
 .title {
   font-weight: 300;
   word-spacing: 5px;
-  text-shadow: #000 0px 0px 10px;
+  text-shadow: #000 0px 0px 10px, #000 0px 0px 10px;
 }
 </style>

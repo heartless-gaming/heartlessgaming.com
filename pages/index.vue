@@ -1,15 +1,19 @@
 <template>
   <div class="main-grid">
+    <main-nav />
     <header class="page-head--masthead flex-center">
       <div class="mtl">
         <logo-and-title />
         <main-call-to-action />
       </div>
     </header>
-    <main class="flex-center">
-      <div class="autogrid wrapper mtl mbl">
-        <last-youtube-videos />
-        <vocal-war />
+    <main class="flex-around">
+      <div>
+        <div class="autogrid wrapper mtl mbl">
+          <last-youtube-videos />
+          <vocal-war />
+        </div>
+        <active-servers />
       </div>
     </main>
     <footer class="page-footer">
@@ -22,19 +26,23 @@
 </template>
 
 <script>
+import MainNav from '~/components/MainNav.vue'
 import LogoAndTitle from '~/components/LogoAndTitle.vue'
 import MainCallToAction from '~/components/MainCallToAction.vue'
 import LastYoutubeVideos from '~/components/LastYoutubeVideos.vue'
 import VocalWar from '~/components/VocalWar.vue'
+import ActiveServers from '~/components/ActiveServers.vue'
 import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
 
 export default {
   components: {
+    MainNav,
     LogoAndTitle,
     MainCallToAction,
     LastYoutubeVideos,
     VocalWar,
+    ActiveServers,
     Credits,
     Quotes
   },
@@ -60,8 +68,7 @@ export default {
   background: #0f2027;
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   border-bottom: 3px #e52f00 solid;
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
 
   @media (min-width: 768px) {
     height: 50vh;
