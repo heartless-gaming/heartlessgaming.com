@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="wrapper wrapper--small">
+    <div class="wrapper wrapper--small mbl card">
       <h2 class="mbm">Les serveurs actifs</h2>
       <div class="mlm">
         <h3 class="mbs">Minecraft</h3>
@@ -15,7 +15,9 @@
         </p>
         <p>
           Pour suivre la progression du serveur vous pouvez consulter
-          <a href="https://www.heartlessgaming.com/mcmap">l'overviewer</a>.
+          <a href="https://www.heartlessgaming.com/mcmap">
+            l'overviewer&nbsp;➞
+          </a>
         </p>
       </div>
     </div>
