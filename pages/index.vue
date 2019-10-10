@@ -21,6 +21,7 @@
         <credits />
         <quotes />
       </div>
+      <mentra />
     </footer>
   </div>
 </template>
@@ -34,6 +35,7 @@ import VocalWar from '~/components/VocalWar.vue'
 import ActiveServers from '~/components/ActiveServers.vue'
 import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
+import Mentra from '~/components/Mentra.vue'
 
 export default {
   components: {
@@ -44,7 +46,8 @@ export default {
     VocalWar,
     ActiveServers,
     Credits,
-    Quotes
+    Quotes,
+    Mentra
   },
   head() {
     return {
@@ -55,7 +58,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            "Heartless Gaming est une communauté qui s'anime autour de différant jeux vidéos. Créer en 2010 sur Minecraft, elle propose multiple serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+            "Heartless Gaming est une communauté qui s'anime autour de différant jeux vidéos. Retrouvez, nos aventures sur Youtube et twitch. Créer en 2010 sur Minecraft, elle propose multiple serveurs de jeux public et privé en fonction de l'humeur des joueurs."
         }
       ]
     }

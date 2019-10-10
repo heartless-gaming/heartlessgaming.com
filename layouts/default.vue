@@ -9,7 +9,6 @@ html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 62.5%; // equiv "10px", which is adapted to rem unit
-  word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -21,10 +20,10 @@ html {
 *:before,
 *:after {
   box-sizing: border-box;
-  margin: 0;
 }
 
 body {
+  margin: 0;
   background-color: #26262b;
   color: #fafafa;
   font-size: 1.4rem;
@@ -80,7 +79,7 @@ a {
   }
 }
 
-// Helper
+// Helpers
 .wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -92,7 +91,6 @@ a {
   margin: 0 auto;
 }
 
-/* Helpers */
 .txtcenter {
   text-align: center;
 }
@@ -113,10 +111,6 @@ a {
   margin-top: 20px;
 }
 
-.ptl {
-  padding-top: 20px;
-}
-
 .mbl {
   margin-bottom: 20px;
 }
@@ -125,8 +119,20 @@ a {
   margin-left: 15px;
 }
 
+.ptl {
+  padding-top: 20px;
+}
+
 .pls {
   padding-left: 10px;
+}
+
+.pll {
+  padding-left: 20px;
+}
+
+.no-list-style {
+  list-style: none;
 }
 
 .flex-center {
