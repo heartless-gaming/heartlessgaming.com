@@ -34,7 +34,8 @@ export default {
       `En même temps le "ta mere elle se fait prendre par des poney dans les buissons" il a peut etre pas kiffer - Markus`,
       `La c'est la défaillance de nationalité et la déchéance du skill - Guilty`,
       `Si on l'avait pas trouvé on l'aurait pas inventé - Killdaddy`,
-      `Pedo bear euh bear euh bear traverse tout les continent, a la recherche d'enfaaaaannt - chants traditionel`
+      `Pedo bear euh bear euh bear traverse tout les continent, a la recherche d'enfaaaaannt - chants traditionel`,
+      `Tu parles Espagnole ? Oui je fais des éfforts. Je ne savais pas que tu savais en faire, je ne parle pas de l'éspagnole.`
     ]
   }),
   mounted() {
