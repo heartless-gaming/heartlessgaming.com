@@ -1,6 +1,6 @@
 <template>
-  <section class="quote">
-    <blockquote>{{ quote }}</blockquote>
+  <section>
+    <blockquote class="quote">{{ quote }}</blockquote>
   </section>
 </template>
 
@@ -24,8 +24,7 @@ export default {
       `On va y jouer regulierement souvent. - Skullmasher`,
       `Ah mais on peut jouer a plusieurs en MMO ?? - Skullmasher`,
       `D'ailleurs guilty tout a l'heure je me suis mouché sa a fait la tete a coppé - Don`,
-      `Je vait pas aller me perdre sans un pays ou ya pas de saucisson ! j'ai deja fait trois mois en angleterre - Eljam`,
-      `Tu voit je t'avait dit que c'est toi qui allez me le payez arma 3 - Don`,
+      `Je vait pas aller me perdre dans un pays ou ya pas de saucisson ! J'ai deja fait trois mois en angleterre - Eljam`,
       `Bah quoi tu me demande entre la peste et le cholera moi je te proposes le cancer - Don`,
       `Enfin don toi entre macron et lepen tu voterais christine boutin - Guilty`,
       `Tiens j'ai envie de boire du jus d'orange, il est ou mon couteau ? - Eljam`,
@@ -55,12 +54,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .quote {
+  margin-right: 0;
   text-align: right;
   color: #8a8a8a;
-  max-width: 480px;
-  justify-self: end;
   font-style: italic;
 }
 </style>
