@@ -5,6 +5,6 @@
 .mentra {
   color: firebrick;
   text-align: center;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 </style>
