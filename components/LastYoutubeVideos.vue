@@ -15,22 +15,21 @@ export default {
   data: () => ({
     videos: [
       {
-        title: 'Heartless Gaming | 2017 - 2018',
-        url: 'https://www.youtube.com/watch?v=8mBQLjkws0E',
-        duration: '10:59'
-      },
-      {
-        title: 'Pipoune: La Revanche du Sel - CS:GO',
-        url: 'https://www.youtube.com/watch?v=w5hxjXyh2Do',
-        duration: '14:49'
-      },
-      {
-        title: 'Counter Sel #9',
-        url: 'https://www.youtube.com/watch?v=wUDSdj-IxBE',
+        title: 'Les conneries du peuple Heartless',
+        url: 'https://youtu.be/OYXCsTerTv4',
         duration: '13:51'
+      },
+      {
+        title: 'Une semaine dans la vie de Guiltyspark',
+        url: 'https://youtu.be/ozb98rBbRi4',
+        duration: '9:34'
+      },
+      {
+        title: 'Timelapse course de bateau sur glace (Minecraft)',
+        url: 'https://youtu.be/qNIH7V0BsWU',
+        duration: '2:21'
       }
     ],
-    kek: '',
     error: null
   })
 }
