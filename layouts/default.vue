@@ -88,7 +88,6 @@ a {
 
 .wrapper--small {
   max-width: 575px;
-  margin: 0 auto;
 }
 
 .txtcenter {
@@ -124,6 +123,11 @@ a {
 }
 
 .pls {
+  padding-left: 10px;
+}
+
+.pys {
+  padding-right: 10px;
   padding-left: 10px;
 }
 
