@@ -43,8 +43,8 @@ body {
   }
 }
 
-.grid-gap-large {
-  grid-gap: 4rem;
+.grid-gap-medium {
+  grid-gap: 2rem;
 }
 
 .main-grid {
@@ -88,6 +88,10 @@ a {
 
 .wrapper--small {
   max-width: 575px;
+}
+
+.wrapper--large {
+  max-width: 1200px;
 }
 
 .txtcenter {

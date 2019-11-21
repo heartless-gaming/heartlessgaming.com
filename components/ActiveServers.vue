@@ -3,7 +3,7 @@
     <div class="wrapper mbl mls mrs">
       <h2 class="mbl">Les serveurs de jeux actifs</h2>
     </div>
-    <div class="wrapper autogrid">
+    <div class="wrapper autogrid grid-gap-medium">
       <div class="pys">
         <h3 class="mbs">MINECRAFT</h3>
         <p>
@@ -23,7 +23,7 @@
         </p>
       </div>
       <div class="pys">
-        <h3 class="mbl">KILLING FLOOR 2</h3>
+        <h3 class="mbl">KILLING FLOOR&nbsp;2</h3>
         <p>
           3 serveurs disponible avec des niveaux de difficulté différant.
           Choisis ta manière favorite de mourir au bout de 1h sur le boss final.
