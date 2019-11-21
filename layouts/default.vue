@@ -130,6 +130,10 @@ a {
   padding-left: 10px;
 }
 
+.prs {
+  padding-right: 10px;
+}
+
 .pys {
   padding-right: 10px;
   padding-left: 10px;
