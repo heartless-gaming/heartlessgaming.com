@@ -7,7 +7,7 @@
 <script>
 export default {
   data: () => ({
-    interval: 60000, // 1000*60*5 That's 5minutes !
+    interval: 60000, // Curently 1minute, 1000*60*5 That's 5minutes !
     quote: 'We will find a way',
     quotes: [
       `Bon c'est une bonne addition à mon dossier "grossisant" ! - GuiltysparK`,
