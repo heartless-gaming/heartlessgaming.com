@@ -5,7 +5,7 @@
     </div>
     <div class="wrapper autogrid grid-gap-medium">
       <div class="pys">
-        <h3 class="mbs"><svg-minecraft class="game-logo" />MINECRAFT</h3>
+        <h3 class="mbl"><svg-minecraft class="game-logo" />MINECRAFT</h3>
         <p>
           Contacter un membre de la communauté pour rejoindre le serveur et
           faire
