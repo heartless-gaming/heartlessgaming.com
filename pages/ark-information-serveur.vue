@@ -4,7 +4,7 @@
       <main-nav />
       <div class="mtl">
         <logo-and-title />
-        <main-call-to-action />
+        <h1>Hello There !</h1>
       </div>
     </header>
     <main class="flex-around">
@@ -29,7 +29,6 @@
 <script>
 import MainNav from '~/components/MainNav.vue'
 import LogoAndTitle from '~/components/LogoAndTitle.vue'
-import MainCallToAction from '~/components/MainCallToAction.vue'
 import LastYoutubeVideos from '~/components/LastYoutubeVideos.vue'
 import VocalWar from '~/components/VocalWar.vue'
 import ActiveServers from '~/components/ActiveServers.vue'
@@ -41,7 +40,6 @@ export default {
   components: {
     MainNav,
     LogoAndTitle,
-    MainCallToAction,
     LastYoutubeVideos,
     VocalWar,
     ActiveServers,
