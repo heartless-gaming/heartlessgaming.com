@@ -15,8 +15,6 @@
   </section>
 </template>
 
-<script></script>
-
 <style>
 .voip-icons {
   width: 80px;

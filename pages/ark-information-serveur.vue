@@ -3,8 +3,7 @@
     <header class="page-head--masthead flex-center">
       <main-nav />
       <div class="mtl">
-        <logo-and-title />
-        <h1>Hello There !</h1>
+        <logo />
       </div>
     </header>
     <main class="flex-around">
@@ -28,7 +27,7 @@
 
 <script>
 import MainNav from '~/components/MainNav.vue'
-import LogoAndTitle from '~/components/LogoAndTitle.vue'
+import Logo from '~/components/Logo.vue'
 import LastYoutubeVideos from '~/components/LastYoutubeVideos.vue'
 import VocalWar from '~/components/VocalWar.vue'
 import ActiveServers from '~/components/ActiveServers.vue'
@@ -39,7 +38,7 @@ import Mentra from '~/components/Mentra.vue'
 export default {
   components: {
     MainNav,
-    LogoAndTitle,
+    Logo,
     LastYoutubeVideos,
     VocalWar,
     ActiveServers,
