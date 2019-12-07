@@ -12,6 +12,12 @@ module.exports = {
         name: 'description',
         content:
           "Heartless Gaming la communauté qui propose multiples serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+      },
+      {
+        'og:title': 'Heartless Gaming',
+        'og:description':
+          "Heartless Gaming est une communauté qui s'anime autour de différant jeux vidéos. Retrouvez, nos aventures sur Youtube et twitch. Créer en 2010 sur Minecraft, elle propose multiple serveurs de jeux public et privé en fonction de l'humeur des joueurs.",
+        'og:image': 'https://heartlessgaming.com/icon.png'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
