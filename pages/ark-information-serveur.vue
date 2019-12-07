@@ -28,7 +28,19 @@
         défaut, pour avoir une éxpérience de jeu plus agréable.
       </p>
       <h2>Configuration du serveur</h2>
-      <p>Je vais faire mes courses et je vous dis après.</p>
+      <ul>
+        <li>
+          Pas d'attente de 24h pour changer ses statistiques après consomation
+          d'un mind wipe tonic.
+        </li>
+        <li>Vitesse d'éclosion des oeufs x10</li>
+        <li>Maturation des bébé dino x20</li>
+        <li>
+          Qualité des loots dans les rayons 2 (valeur original 1, valeur maximal
+          5)
+        </li>
+        <li>Les dino capturer ont deux fois moins faim que la normal.</li>
+      </ul>
     </main>
     <footer class="page-footer">
       <div class="footer-grid wrapper">
