@@ -3,7 +3,7 @@
     <div class="wrapper mbl mls mrs">
       <h2 class="mbl">Les serveurs de jeux</h2>
     </div>
-    <div class="wrapper autogrid grid-gap-medium">
+    <div class="wrapper grid-2 grid-gap-medium">
       <div class="pys">
         <h3 class="mbl"><svg-minecraft class="game-logo" />MINECRAFT</h3>
         <p>
@@ -27,8 +27,21 @@
           <img class="game-logo" src="~/assets/kf2.png" /> KILLING FLOOR&nbsp;2
         </h3>
         <p>
-          3 serveurs disponible avec des niveaux de difficulté différant.
-          Choisis ta manière favorite de mourir au bout de 1h sur le boss final.
+          3 serveurs disponible en hard, suicidal et endless. Choisis ta manière
+          favorite de mourir au bout de 1h sur le boss final.
+        </p>
+      </div>
+      <div class="pys">
+        <h3 class="mbl">
+          <img class="game-logo" src="~/assets/kf2.png" /> ARK: Survival Evolved
+        </h3>
+        <p>
+          Le meilleur simulateur de caca (et de dinausoaur) du monde. Serveur
+          privée
+          <nuxt-link to="ark-information-serveur">
+            configuré par vote démocratique
+          </nuxt-link>
+          à sensibilité communiste.
         </p>
       </div>
     </div>

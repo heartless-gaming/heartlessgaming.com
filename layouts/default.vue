@@ -43,6 +43,14 @@ body {
   }
 }
 
+@media (min-width: 480px) {
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
 .grid-gap-medium {
   grid-gap: 2rem;
 }
