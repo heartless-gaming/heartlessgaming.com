@@ -27,6 +27,7 @@ body {
   background-color: #26262b;
   color: #fafafa;
   font-size: 1.4rem;
+  line-height: 1.5;
 
   @media (min-width: 576px) {
     font-size: 1.6rem;
