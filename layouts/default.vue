@@ -205,6 +205,37 @@ a.btn {
     font-size: 1.2rem;
   }
 }
+
+// Layout
+.page-head {
+  background: #0f2027;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  border-bottom: 3px #e52f00 solid;
+  box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
+}
+
+.page-head--masthead {
+  @media (min-width: 768px) {
+    height: 50vh;
+  }
+}
+
+.page-footer {
+  position: relative;
+  background-color: #222327;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  clip-path: polygon(0 calc(0% + 4vw), 100% 0, 100% 100%, 0 100%);
+
+  @media (min-width: 576px) {
+    padding-top: 70px;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 120px;
+  }
+}
+
 // Animations
 @keyframes bounceInDown {
   from,

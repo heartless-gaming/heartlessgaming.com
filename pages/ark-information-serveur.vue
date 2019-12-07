@@ -1,19 +1,34 @@
 <template>
   <div class="main-grid">
-    <header class="page-head--masthead flex-center">
+    <header class="page-head flex-center">
       <main-nav />
       <div class="mtl">
-        <logo />
+        <nuxt-link to="/">
+          <logo />
+        </nuxt-link>
       </div>
     </header>
-    <main class="flex-around">
-      <div class="mtl mbl">
-        <div class="autogrid wrapper mtl mbl">
-          <last-youtube-videos />
-          <vocal-war />
-        </div>
-        <active-servers />
-      </div>
+    <main class="wrapper">
+      <h1 class="txtcenter">Information serveur ARK</h1>
+      <h2 id="server-access">Accéder au serveur</h2>
+      <ol>
+        <li>Afficher la liste des serveurs "non officiel" en bas à droite</li>
+        <li>Chercher le terme "Heartless Gaming"</li>
+        <li>
+          <strong>Attendre longuement</strong> que le serveur s'affiche enfin.
+        </li>
+      </ol>
+      <h2 id="server-goal">Objectifs du serveur</h2>
+      <p>
+        L'objectif principal du serveur est de pouvoir compléter le
+        <a href="https://ark.gamepedia.com/Ascension">processus d'ascension</a>.
+      </p>
+      <p>
+        Pour accomplir ce but nous avons décidé de modifier les paramètres par
+        défaut, pour avoir une éxpérience de jeu plus agréable.
+      </p>
+      <h2>Configuration du serveur</h2>
+      <p>Je vais faire mes courses et je vous dis après.</p>
     </main>
     <footer class="page-footer">
       <div class="footer-grid wrapper">
@@ -28,9 +43,6 @@
 <script>
 import MainNav from '~/components/MainNav.vue'
 import Logo from '~/components/Logo.vue'
-import LastYoutubeVideos from '~/components/LastYoutubeVideos.vue'
-import VocalWar from '~/components/VocalWar.vue'
-import ActiveServers from '~/components/ActiveServers.vue'
 import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
 import Mentra from '~/components/Mentra.vue'
@@ -39,9 +51,6 @@ export default {
   components: {
     MainNav,
     Logo,
-    LastYoutubeVideos,
-    VocalWar,
-    ActiveServers,
     Credits,
     Quotes,
     Mentra
@@ -49,31 +58,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.page-head--masthead {
-  background: #0f2027;
-  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-  border-bottom: 3px #e52f00 solid;
-  box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
-
-  @media (min-width: 768px) {
-    height: 50vh;
-  }
-}
-
-.page-footer {
-  position: relative;
-  background-color: #222327;
-  padding-top: 40px;
-  padding-bottom: 20px;
-  clip-path: polygon(0 calc(0% + 4vw), 100% 0, 100% 100%, 0 100%);
-
-  @media (min-width: 576px) {
-    padding-top: 70px;
-  }
-
-  @media (min-width: 992px) {
-    padding-top: 120px;
-  }
-}
-</style>
+<style lang="scss"></style>
