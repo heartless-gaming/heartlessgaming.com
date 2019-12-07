@@ -3,7 +3,10 @@
     <header class="page-head--masthead flex-center">
       <main-nav />
       <div class="mtl">
-        <logo-and-title />
+        <div class="wrapper mtl txtcenter">
+          <logo />
+          <main-title />
+        </div>
         <main-call-to-action />
       </div>
     </header>
@@ -28,7 +31,8 @@
 
 <script>
 import MainNav from '~/components/MainNav.vue'
-import LogoAndTitle from '~/components/LogoAndTitle.vue'
+import Logo from '~/components/Logo.vue'
+import MainTitle from '~/components/MainTitle.vue'
 import MainCallToAction from '~/components/MainCallToAction.vue'
 import LastYoutubeVideos from '~/components/LastYoutubeVideos.vue'
 import VocalWar from '~/components/VocalWar.vue'
@@ -40,7 +44,8 @@ import Mentra from '~/components/Mentra.vue'
 export default {
   components: {
     MainNav,
-    LogoAndTitle,
+    Logo,
+    MainTitle,
     MainCallToAction,
     LastYoutubeVideos,
     VocalWar,
