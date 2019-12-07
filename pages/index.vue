@@ -59,6 +59,12 @@ export default {
           name: 'description',
           content:
             "Heartless Gaming est une communauté qui s'anime autour de différant jeux vidéos. Retrouvez, nos aventures sur Youtube et twitch. Créer en 2010 sur Minecraft, elle propose multiple serveurs de jeux public et privé en fonction de l'humeur des joueurs."
+        },
+        {
+          'og:title': 'Heartless Gaming',
+          'og:description':
+            "Heartless Gaming est une communauté qui s'anime autour de différant jeux vidéos. Retrouvez, nos aventures sur Youtube et twitch. Créer en 2010 sur Minecraft, elle propose multiple serveurs de jeux public et privé en fonction de l'humeur des joueurs.",
+          'og:image': 'https://heartlessgaming.com/icon.png'
         }
       ]
     }

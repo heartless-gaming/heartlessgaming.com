@@ -11,7 +11,7 @@ module.exports = {
         hid: 'description',
         name: 'description',
         content:
-          "Heartless Gaming est une communauté qui s'anime autour de différant jeux vidéos. Créer en 2010 sur Minecraft, elle propose multiple serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+          "Heartless Gaming la communauté qui propose multiples serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -19,7 +19,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#e52f00' },
   /*
    ** Global CSS
    */
