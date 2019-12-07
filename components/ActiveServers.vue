@@ -33,11 +33,10 @@
       </div>
       <div class="pys">
         <h3 class="mbl">
-          <img class="game-logo" src="~/assets/kf2.png" /> ARK: Survival Evolved
+          <img class="game-logo" src="~/assets/ark.png" /> ARK: Survival Evolved
         </h3>
         <p>
-          Le meilleur simulateur de caca (et de dinausoaur) du monde. Serveur
-          privée
+          Le meilleur simulateur de caca du monde. Serveur privée
           <nuxt-link to="ark-information-serveur">
             configuré par vote démocratique
           </nuxt-link>
