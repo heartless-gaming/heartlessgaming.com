@@ -1,6 +1,6 @@
 <template>
   <div class="main-grid">
-    <header class="page-head--masthead flex-center">
+    <header class="page-head page-head--masthead flex-center">
       <main-nav />
       <div class="mtl">
         <div class="wrapper mtl txtcenter">
@@ -10,7 +10,7 @@
         <main-call-to-action />
       </div>
     </header>
-    <main class="flex-around">
+    <main class="flex-center">
       <div class="mtl mbl">
         <div class="autogrid wrapper mtl mbl">
           <last-youtube-videos />
@@ -57,31 +57,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.page-head--masthead {
-  background: #0f2027;
-  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-  border-bottom: 3px #e52f00 solid;
-  box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
-
-  @media (min-width: 768px) {
-    height: 50vh;
-  }
-}
-
-.page-footer {
-  position: relative;
-  background-color: #222327;
-  padding-top: 40px;
-  padding-bottom: 20px;
-  clip-path: polygon(0 calc(0% + 4vw), 100% 0, 100% 100%, 0 100%);
-
-  @media (min-width: 576px) {
-    padding-top: 70px;
-  }
-
-  @media (min-width: 992px) {
-    padding-top: 120px;
-  }
-}
-</style>
+<style lang="scss"></style>
