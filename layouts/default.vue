@@ -166,7 +166,8 @@ button,
 
 .page-head--masthead {
   @media (min-width: 768px) {
-    height: 50vh;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 }
 
