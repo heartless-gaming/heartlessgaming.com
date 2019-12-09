@@ -3,6 +3,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
+    titleTemplate: '%s - Heartless Gaming',
     title: 'Heartless Gaming',
     meta: [
       { charset: 'utf-8' },
