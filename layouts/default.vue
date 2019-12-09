@@ -134,11 +134,11 @@ button,
   border-radius: 4px;
   border: 3px solid #126c99;
   transition: background-color 250ms ease-in-out;
-  background-color: transparent;
   color: #fff;
+  background-color: #126c99;
 
   &:hover {
-    background-color: #126c99;
+    background-color: transparent;
   }
 
   > svg {
