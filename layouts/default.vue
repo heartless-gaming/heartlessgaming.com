@@ -136,6 +136,7 @@ button,
   transition: background-color 250ms ease-in-out;
   color: #fff;
   background-color: #126c99;
+  cursor: pointer;
 
   &:hover {
     background-color: transparent;
