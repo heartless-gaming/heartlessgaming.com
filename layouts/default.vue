@@ -127,15 +127,17 @@ a.btn {
   text-decoration: none;
 }
 
+button,
 .btn {
   display: inline-block;
   padding: 10px 30px;
   border-radius: 4px;
   border: 3px solid #126c99;
   transition: background-color 250ms ease-in-out;
+  background-color: transparent;
+  color: #fff;
 
   &:hover {
-    color: #fff;
     background-color: #126c99;
   }
 
@@ -150,7 +152,6 @@ a.btn {
 
   &--big {
     padding: 15px 35px;
-    font-size: 1.2rem;
   }
 }
 

@@ -14,7 +14,7 @@
       <div class="mtl mbl">
         <div class="flex-center">
           <div class="card pyl">
-            <h2 class="mt0">Le soundboard est arrivé !</h2>
+            <h2 class="mt0">Le soundboard est (presque) arrivé !</h2>
             <nuxt-link to="soundboard" class="btn">
               <strong>Accéder au Soundboard</strong><svg-arrow class="pls" />
             </nuxt-link>
