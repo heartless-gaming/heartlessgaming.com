@@ -114,7 +114,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            "Heartless Gaming la communauté qui propose multiples serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+            'Objectifs, informations et varialbles de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
         },
         {
           hid: 'og:url',
@@ -130,7 +130,7 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           content:
-            "Heartless Gaming la communauté qui propose multiples serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+            'Objectifs, informations et varialbles de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
         },
         {
           hid: 'og:image',
