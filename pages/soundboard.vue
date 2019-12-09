@@ -68,6 +68,7 @@ export default {
   },
   head: {
     title: 'Soundboard',
+    titleTemplate: '%s - Heartless Gaming',
     meta: [
       {
         hid: 'description',
