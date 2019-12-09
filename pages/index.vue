@@ -10,8 +10,16 @@
         <main-call-to-action />
       </div>
     </header>
-    <main class="flex-center">
+    <main class="flex-center mtl">
       <div class="mtl mbl">
+        <div class="flex-center">
+          <div class="card pyl">
+            <h2 class="mt0">Le soundboard est arrivé !</h2>
+            <nuxt-link to="soundboard" class="btn">
+              <strong>Accéder au Soundboard</strong><svg-arrow class="pls" />
+            </nuxt-link>
+          </div>
+        </div>
         <div class="autogrid wrapper mtl mbl">
           <last-youtube-videos />
           <vocal-war />
@@ -40,6 +48,7 @@ import ActiveServers from '~/components/ActiveServers.vue'
 import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
 import Mentra from '~/components/Mentra.vue'
+import SvgArrow from '~/assets/arrow.svg'
 
 export default {
   components: {
@@ -52,7 +61,8 @@ export default {
     ActiveServers,
     Credits,
     Quotes,
-    Mentra
+    Mentra,
+    SvgArrow
   }
 }
 </script>

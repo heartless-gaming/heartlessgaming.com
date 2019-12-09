@@ -33,6 +33,7 @@ export default {
   &--twitch {
     border-width: 3px;
     border-style: solid;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.7), 0 3px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 250ms linear;
     padding: 10px 20px;
 
