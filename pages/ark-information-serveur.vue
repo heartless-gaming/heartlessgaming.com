@@ -25,54 +25,55 @@
       </p>
       <p>
         Pour accomplir ce but nous avons décidé de modifier les paramètres par
-        défaut, pour avoir une éxpérience de jeu plus agréable.
+        défaut, pour avoir une expérience de jeu plus agréable.
       </p>
       <h2>Configuration du serveur</h2>
       <ul>
         <li>PVE activé</li>
         <li>
-          Pas d'attente de 24h pour changer ses statistiques après consomation
+          Pas d'attente de 24h pour changer ses statistiques après consommation
           d'un mind wipe tonic
         </li>
         <li>Vitesse d'éclosion des oeufs x10</li>
-        <li>Maturation des bébé dino x20</li>
+        <li>Maturation des bébés dino x20</li>
         <li>
-          Qualité des loots dans les rayons 2 (valeur original 1, valeur maximal
-          5)
+          Qualité des loots dans les rayons 2 (valeur originale 1, valeur
+          maximale 5)
         </li>
+        <li>Les dinos capturés ont deux fois moins faim</li>
         <li>
-          Les dinos capturer ont deux fois moins faim que la normal
-        </li>
-        <li>
-          Les dinos volants sont autorisé à transporter les joueur du serveur
+          Les dinos volants sont autorisés à transporter les joueurs du serveur
         </li>
         <li>La caméra 3ème personnes est autorisé</li>
-        <li>Notifications lorsqu'un joueur ce connecte ou ce déconnecte</li>
-        <li>Sauvegarde du monde toute les 15 minutes</li>
-        <li>Niveau des dinos entre 1 et 150</li>
-        <li>Crosshair et hitmarker pour les armes à feu</li>
+        <li>Notifications lorsqu'un joueur se connecte ou se déconnecte</li>
+        <li>Sauvegarde du monde toutes les 15 minutes</li>
+        <li>
+          Niveaux des dinos entre 1 et 150 (sauf les wyvern et les dinos des
+          cavernes parce qu'ils sont méchants comme sa)
+        </li>
+        <li>Crosshair et hitmarker activer</li>
         <li>
           Commande gamma autorisé dans la console, utile pour les nuits sombres
         </li>
         <li>Affichage des autres joueurs sur la carte</li>
         <li>La nuit est deux fois plus rapide que le jour.</li>
-        <li>Recolte des ressources 5x plus éfficace</li>
+        <li>Récolte des ressources 5x plus efficaces</li>
         <li>
-          Votre personnage a faim moins rapidement (valeur acutel 0.6 valeur
-          original 1)
+          Votre personnage a moins rapidement faim (valeur actuelle 0.6 valeur
+          originale 1)
         </li>
         <li>
-          Votre personnage se désydrate plus lentement (valeur actuel 0.75,
-          valeur original 1)
+          Votre personnage se déshydrate plus lentement (valeur actuelle 0.75,
+          valeur originale 1)
         </li>
-        <li>Capture des dinos 6x plus rapide</li>
+        <li>Capture des dinos 6x plus rapides</li>
         <li>XP gagné 7x plus rapidement</li>
         <li>
-          Toute les commandes éxécuté par une administrateur sont affiché dans
-          le chat
+          Toutes les commandes exécutées par un admin sont affichées dans le
+          chat à la vue de tous.
         </li>
-        <li>N'importe quel joueur est autorisé à s'occupé d'un bébé dino</li>
-        <li>Les dommages effectué sous forme de texte n'ai pas affiché</li>
+        <li>N'importe quel joueur est autorisé à s'occuper d'un bébé dino</li>
+        <li>Les dommages effectués ne sont pas affichés</li>
       </ul>
     </main>
     <footer class="page-footer">

@@ -27,8 +27,8 @@
           <img class="game-logo" src="~/assets/kf2.png" /> KILLING FLOOR&nbsp;2
         </h3>
         <p>
-          3 serveurs disponible en hard, suicidal et endless. Choisis ta manière
-          favorite de mourir au bout de 1h sur le boss final.
+          3 serveurs disponibles en hard, suicidal et endless. Choisis ta
+          manière favorite de mourir au bout de 1h sur le boss final.
         </p>
       </div>
       <div class="pys">
@@ -36,7 +36,7 @@
           <img class="game-logo" src="~/assets/ark.png" /> ARK: Survival Evolved
         </h3>
         <p>
-          Le meilleur simulateur de caca du monde. Serveur privée
+          Le meilleur simulateur de caca du monde. Serveur privé
           <nuxt-link to="ark-information-serveur">
             configuré par vote démocratique
           </nuxt-link>
