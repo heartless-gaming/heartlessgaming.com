@@ -11,7 +11,7 @@ module.exports = {
         hid: 'description',
         name: 'description',
         content:
-          "Heartless Gaming la communauté qui propose multiples serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+          "Heartless Gaming la communauté qui propose multiples serveurs de jeux publics et privés en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
       },
       { hid: 'og:url', name: 'og:url', content: 'https://heartlessgaming.com' },
       { hid: 'og:title', name: 'og:title', content: 'Heartless Gaming' },
@@ -19,7 +19,7 @@ module.exports = {
         hid: 'og:description',
         name: 'og:description',
         content:
-          "Heartless Gaming la communauté qui propose multiples serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+          "Heartless Gaming la communauté qui propose multiples serveurs de jeux publics et privés en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
       },
       {
         hid: 'og:image',
