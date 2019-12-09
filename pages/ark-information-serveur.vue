@@ -9,7 +9,7 @@
       </div>
     </header>
     <main class="wrapper">
-      <h1 class="txtcenter">Information serveur ARK</h1>
+      <h1 class="txtcenter">{{ title }}</h1>
       <h2 id="server-access">Accéder au serveur</h2>
       <ol>
         <li>Afficher la liste des serveurs "non officiel" en bas à droite</li>
@@ -100,6 +100,45 @@ export default {
     Credits,
     Quotes,
     Mentra
+  },
+  data() {
+    return {
+      title: 'Information serveur ARK'
+    }
+  },
+  head() {
+    return {
+      title: `${this.title} - Heartless Gaming`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            "Heartless Gaming la communauté qui propose multiples serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://heartlessgaming.com/ark-information-serveur'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `${this.title} - Heartless Gaming`
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content:
+            "Heartless Gaming la communauté qui propose multiples serveurs de jeux public et privé en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://heartlessgaming.com/icon.png'
+        }
+      ]
+    }
   }
 }
 </script>
