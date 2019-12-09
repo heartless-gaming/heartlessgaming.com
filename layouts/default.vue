@@ -189,6 +189,7 @@ button,
 
 // card
 .card {
+  margin: 10px;
   padding: 10px;
   background-color: #40404d;
   border-radius: 5px;

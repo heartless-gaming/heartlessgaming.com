@@ -2,7 +2,7 @@
   <div class="main-grid">
     <header class="page-head flex-center">
       <main-nav />
-      <div class="mtl">
+      <div class="wrapper mtl">
         <nuxt-link to="/">
           <logo />
         </nuxt-link>
@@ -106,11 +106,9 @@ export default {
     Quotes,
     Mentra
   },
-  data() {
-    return {
-      title: 'Information serveur ARK'
-    }
-  },
+  data: () => ({
+    title: 'Information serveur ARK'
+  }),
   head() {
     return {
       title: `${this.title} - Heartless Gaming`,

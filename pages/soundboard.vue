@@ -2,7 +2,7 @@
   <div class="main-grid">
     <header class="page-head flex-center">
       <main-nav />
-      <div class="mtl">
+      <div class="wrapper mtl">
         <nuxt-link to="/">
           <logo />
         </nuxt-link>
@@ -10,8 +10,15 @@
     </header>
     <main class="wrapper">
       <h1 class="txtcenter">{{ title }}</h1>
-      <p>Içi un moyen de filtrer les sons par catégorie</p>
-      <button class="btn--soundboard">lodr c skul</button>
+      <p>(Içi il devrait y avoir un moyen de filtrer les sons par catégorie)</p>
+      <div class="flex-around">
+        <div v-for="audio in audios" :key="audio.id" class="pys">
+          <button class="btn--soundboard" @click="playAudio($event)">
+            {{ audio.name }}
+          </button>
+          <audio :src="audio.file"></audio>
+        </div>
+      </div>
       <p>Partager moi les fichiers audio sur le cloud plz</p>
     </main>
     <footer class="page-footer">
@@ -39,44 +46,57 @@ export default {
     Quotes,
     Mentra
   },
-  data() {
-    return {
-      title: 'Soundboard'
+  data: () => ({
+    title: 'Soundboard',
+    audios: [
+      {
+        id: 1,
+        file: '/soundboard/lodr-c-skul.ogg',
+        name: 'lodr c skull'
+      },
+      {
+        id: 2,
+        file: '/soundboard/learn-to-play-bitcheu.ogg',
+        name: 'learn to play bitcheu'
+      }
+    ]
+  }),
+  methods: {
+    playAudio(event) {
+      event.target.nextElementSibling.play()
     }
   },
-  head() {
-    return {
-      title: `${this.title} - Heartless Gaming`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'."
-        },
-        {
-          hid: 'og:url',
-          name: 'og:url',
-          content: 'https://heartlessgaming.com/soundboard'
-        },
-        {
-          hid: 'og:title',
-          name: 'og:title',
-          content: `${this.title} - Heartless Gaming`
-        },
-        {
-          hid: 'og:description',
-          name: 'og:description',
-          content:
-            "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'."
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: 'https://heartlessgaming.com/icon.png'
-        }
-      ]
-    }
+  head: {
+    title: 'Soundboard',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'."
+      },
+      {
+        hid: 'og:url',
+        name: 'og:url',
+        content: 'https://heartlessgaming.com/soundboard'
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: `Soundboard - Heartless Gaming`
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content:
+          "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'."
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://heartlessgaming.com/icon.png'
+      }
+    ]
   }
 }
 </script>
