@@ -111,7 +111,8 @@ export default {
   }),
   head() {
     return {
-      title: `${this.title} - Heartless Gaming`,
+      title: 'Information serveur ARK',
+      titleTemplate: '%s - Heartless Gaming',
       meta: [
         {
           hid: 'description',
