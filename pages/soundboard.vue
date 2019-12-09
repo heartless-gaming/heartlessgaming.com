@@ -10,7 +10,9 @@
     </header>
     <main class="wrapper">
       <h1 class="txtcenter">{{ title }}</h1>
-      <button class="btn">lodr c skul</button>
+      <p>Içi un moyen de filtrer les sons par catégorie</p>
+      <button class="btn--big">lodr c skul</button>
+      <p>Partager moi les fichiers audio sur le cloud plz</p>
     </main>
     <footer class="page-footer">
       <div class="footer-grid wrapper">
