@@ -119,7 +119,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'Objectifs, informations et varialbles de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
+            'Objectifs, informations et variables de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
         },
         {
           hid: 'og:url',
@@ -135,7 +135,7 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           content:
-            'Objectifs, informations et varialbles de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
+            'Objectifs, informations et variables de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
         },
         {
           hid: 'og:image',

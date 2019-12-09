@@ -12,7 +12,7 @@
     </header>
     <main class="flex-center mtl">
       <div class="mtl mbl">
-        <div class="flex-center">
+        <div class="flex-center mbl">
           <div class="card pyl">
             <h2 class="mt0">Le soundboard est (presque) arrivé !</h2>
             <nuxt-link to="soundboard" class="btn">
@@ -20,7 +20,7 @@
             </nuxt-link>
           </div>
         </div>
-        <div class="autogrid wrapper mtl mbl">
+        <div class="autogrid wrapper mbl">
           <last-youtube-videos />
           <vocal-war />
         </div>
