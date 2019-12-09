@@ -52,12 +52,12 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'Objectifs, informations et varialbles de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
+            "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'."
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://heartlessgaming.com/ark-information-serveur'
+          content: 'https://heartlessgaming.com/soundboard'
         },
         {
           hid: 'og:title',
@@ -68,7 +68,7 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           content:
-            'Objectifs, informations et varialbles de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
+            "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'."
         },
         {
           hid: 'og:image',
