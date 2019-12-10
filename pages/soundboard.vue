@@ -20,6 +20,10 @@
         </div>
       </div>
       <p>Partager moi les fichiers audio sur le cloud plz</p>
+      <p>
+        Si vous le pouvez, encodez le fichier en OGG 80Ko/s (Sur audacity:
+        fichier export > OGG > qualité 3).
+      </p>
     </main>
     <footer class="page-footer">
       <div class="footer-grid wrapper">
