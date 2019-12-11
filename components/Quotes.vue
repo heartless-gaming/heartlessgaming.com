@@ -34,7 +34,8 @@ export default {
       `La c'est la défaillance de nationalité et la déchéance du skill - Guilty`,
       `Si on l'avait pas trouvé on l'aurait pas inventé - Killdaddy`,
       `Pedo bear euh bear euh bear traverse tout les continent, a la recherche d'enfaaaaannt - chants traditionel`,
-      `Tu parles Espagnole ? Oui je fais des éfforts. Je ne savais pas que tu savais en faire, je ne parle pas de l'éspagnole.`
+      `Tu parles Espagnole ? Oui je fais des éfforts. Je ne savais pas que tu savais en faire, je ne parle pas de l'éspagnole.`,
+      `Je ne suis pas une personne de haine, mais parfois tu arrives dans ma vie et je pense à l'holocauste - Skullmasher à Markus`
     ]
   }),
   mounted() {
