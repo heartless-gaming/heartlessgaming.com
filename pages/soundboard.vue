@@ -8,22 +8,21 @@
         </nuxt-link>
       </div>
     </header>
-    <main class="wrapper">
-      <h1 class="txtcenter">{{ title }}</h1>
-      <p>(Içi il devrait y avoir un moyen de filtrer les sons par catégorie)</p>
-      <div class="flex-around">
-        <div v-for="audio in audios" :key="audio.id" class="pys">
-          <button class="btn--soundboard" @click="playAudio($event)">
-            {{ audio.name }}
-          </button>
-          <audio :src="audio.file"></audio>
+    <main class="flex-center">
+      <div class="wrapper">
+        <h1 class="txtcenter">{{ title }}</h1>
+        <p>
+          (Içi il devrait y avoir un moyen de filtrer les sons par catégorie)
+        </p>
+        <div class="flex-around">
+          <div v-for="audio in audios" :key="audio.id" class="pas">
+            <button class="btn--soundboard" @click="playAudio($event)">
+              {{ audio.name }}
+            </button>
+            <audio :src="audio.file"></audio>
+          </div>
         </div>
       </div>
-      <p>Partager moi les fichiers audio sur le cloud plz</p>
-      <p>
-        Si vous le pouvez, encodez le fichier en OGG 80Ko/s (Sur audacity:
-        fichier export > OGG > qualité 3).
-      </p>
     </main>
     <footer class="page-footer">
       <div class="footer-grid wrapper">
@@ -62,6 +61,46 @@ export default {
         id: 2,
         file: '/soundboard/learn-to-play-bitcheu.ogg',
         name: 'learn to play bitcheu'
+      },
+      {
+        id: 3,
+        file: '/soundboard/baserape.ogg',
+        name: 'baserape'
+      },
+      {
+        id: 4,
+        file: '/soundboard/ceci-est-impossible.ogg',
+        name: 'ceci est impossible'
+      },
+      {
+        id: 5,
+        file: '/soundboard/cornemuse.ogg',
+        name: 'cornemuse'
+      },
+      {
+        id: 6,
+        file: '/soundboard/harmonica.ogg',
+        name: 'harmonica'
+      },
+      {
+        id: 6,
+        file: '/soundboard/mouche-obese.ogg',
+        name: 'mouche obèse'
+      },
+      {
+        id: 7,
+        file: '/soundboard/rire-demoniaque.ogg',
+        name: 'rire démoniaque'
+      },
+      {
+        id: 7,
+        file: '/soundboard/sortez-de-chez-moi.ogg',
+        name: 'sortez de chez moi'
+      },
+      {
+        id: 8,
+        file: '/soundboard/sortez-vous-les-doigt-du-cul.ogg',
+        name: 'sortez vous les doigt du cul'
       }
     ]
   }),
