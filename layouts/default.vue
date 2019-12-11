@@ -113,6 +113,7 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .flex-between {
@@ -237,6 +238,10 @@ button,
   padding-left: 10px;
 }
 
+.pll {
+  padding-left: 20px;
+}
+
 .prs {
   padding-right: 10px;
 }
@@ -251,8 +256,8 @@ button,
   padding-left: 20px;
 }
 
-.pll {
-  padding-left: 20px;
+.pas {
+  padding: 10px;
 }
 
 .no-list-style {
