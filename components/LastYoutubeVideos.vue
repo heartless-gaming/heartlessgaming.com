@@ -17,21 +17,21 @@ export default {
       {
         title: 'Les conneries du peuple Heartless',
         url: 'https://youtu.be/OYXCsTerTv4',
-        duration: '13:51'
+        duration: '13:51',
       },
       {
         title: 'Une semaine dans la vie de Guiltyspark',
         url: 'https://youtu.be/ozb98rBbRi4',
-        duration: '9:34'
+        duration: '9:34',
       },
       {
         title: 'Timelapse course de bateau sur glace (Minecraft)',
         url: 'https://youtu.be/qNIH7V0BsWU',
-        duration: '2:21'
-      }
+        duration: '2:21',
+      },
     ],
-    error: null
-  })
+    error: null,
+  }),
 }
 </script>
 

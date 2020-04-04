@@ -23,8 +23,8 @@ import SvgDiscord from '~/assets/discord.svg'
 export default {
   components: {
     SvgMumble,
-    SvgDiscord
-  }
+    SvgDiscord,
+  },
 }
 </script>
 

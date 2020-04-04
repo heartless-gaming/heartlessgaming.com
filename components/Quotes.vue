@@ -35,8 +35,8 @@ export default {
       `Si on l'avait pas trouvé on l'aurait pas inventé - Killdaddy`,
       `Pedo bear euh bear euh bear traverse tout les continent, a la recherche d'enfaaaaannt - chants traditionel`,
       `Tu parles Espagnole ? Oui je fais des éfforts. Je ne savais pas que tu savais en faire, je ne parle pas de l'éspagnole.`,
-      `Je ne suis pas une personne de haine, mais parfois tu arrives dans ma vie et je pense à l'holocauste - Skullmasher à Markus`
-    ]
+      `Je ne suis pas une personne de haine, mais parfois tu arrives dans ma vie et je pense à l'holocauste - Skullmasher à Markus`,
+    ],
   }),
   mounted() {
     this.getRandomQuote() // Set a random quote onload
@@ -50,8 +50,8 @@ export default {
       return setInterval(() => {
         this.getRandomQuote()
       }, this.interval)
-    }
-  }
+    },
+  },
 }
 </script>
 
