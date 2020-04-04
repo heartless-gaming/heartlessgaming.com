@@ -54,8 +54,8 @@ import SvgCsgo from '~/assets/csgo.svg'
 export default {
   components: {
     SvgMinecraft,
-    SvgCsgo
-  }
+    SvgCsgo,
+  },
 }
 </script>
 

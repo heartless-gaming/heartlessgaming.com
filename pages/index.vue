@@ -62,8 +62,8 @@ export default {
     Credits,
     Quotes,
     Mentra,
-    SvgArrow
-  }
+    SvgArrow,
+  },
 }
 </script>
 

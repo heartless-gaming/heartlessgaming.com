@@ -22,8 +22,8 @@ import SvgTwitchLogo from '~/assets/twitch.svg'
 export default {
   components: {
     SvgYoutubeLogo,
-    SvgTwitchLogo
-  }
+    SvgTwitchLogo,
+  },
 }
 </script>
 

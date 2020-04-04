@@ -11,8 +11,8 @@ import SvgCloud from '~/assets/cloud.svg'
 
 export default {
   components: {
-    SvgCloud
-  }
+    SvgCloud,
+  },
 }
 </script>
 

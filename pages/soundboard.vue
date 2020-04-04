@@ -47,7 +47,7 @@ export default {
     Logo,
     Credits,
     Quotes,
-    Mentra
+    Mentra,
   },
   data: () => ({
     title: 'Soundboard',
@@ -55,93 +55,95 @@ export default {
       {
         id: 1,
         file: '/soundboard/lodr-c-skul.ogg',
-        name: 'lodr c skull'
+        name: 'lodr c skull',
       },
       {
         id: 2,
         file: '/soundboard/learn-to-play-bitcheu.ogg',
-        name: 'learn to play bitcheu'
+        name: 'learn to play bitcheu',
       },
       {
         id: 3,
         file: '/soundboard/baserape.ogg',
-        name: 'baserape'
+        name: 'baserape',
       },
       {
         id: 4,
         file: '/soundboard/ceci-est-impossible.ogg',
-        name: 'ceci est impossible'
+        name: 'ceci est impossible',
       },
       {
         id: 5,
         file: '/soundboard/cornemuse.ogg',
-        name: 'cornemuse'
+        name: 'cornemuse',
       },
       {
         id: 6,
         file: '/soundboard/harmonica.ogg',
-        name: 'harmonica'
+        name: 'harmonica',
       },
       {
         id: 6,
         file: '/soundboard/mouche-obese.ogg',
-        name: 'mouche obèse'
+        name: 'mouche obèse',
       },
       {
         id: 7,
         file: '/soundboard/rire-demoniaque.ogg',
-        name: 'rire démoniaque'
+        name: 'rire démoniaque',
       },
       {
         id: 7,
         file: '/soundboard/sortez-de-chez-moi.ogg',
-        name: 'sortez de chez moi'
+        name: 'sortez de chez moi',
       },
       {
         id: 8,
         file: '/soundboard/sortez-vous-les-doigt-du-cul.ogg',
-        name: 'sortez vous les doigt du cul'
-      }
-    ]
+        name: 'sortez vous les doigt du cul',
+      },
+    ],
   }),
   methods: {
     playAudio(event) {
       event.target.nextElementSibling.play()
+    },
+  },
+  head() {
+    return {
+      title: 'Soundboard',
+      titleTemplate: '%s - Heartless Gaming',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'.",
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://heartlessgaming.com/soundboard',
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `Soundboard - Heartless Gaming`,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content:
+            "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'.",
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://heartlessgaming.com/icon.png',
+        },
+      ],
     }
   },
-  head: {
-    title: 'Soundboard',
-    titleTemplate: '%s - Heartless Gaming',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'."
-      },
-      {
-        hid: 'og:url',
-        name: 'og:url',
-        content: 'https://heartlessgaming.com/soundboard'
-      },
-      {
-        hid: 'og:title',
-        name: 'og:title',
-        content: `Soundboard - Heartless Gaming`
-      },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content:
-          "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'."
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://heartlessgaming.com/icon.png'
-      }
-    ]
-  }
 }
 </script>
 

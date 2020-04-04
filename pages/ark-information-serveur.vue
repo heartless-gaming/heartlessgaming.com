@@ -104,10 +104,10 @@ export default {
     Logo,
     Credits,
     Quotes,
-    Mentra
+    Mentra,
   },
   data: () => ({
-    title: 'Information serveur ARK'
+    title: 'Information serveur ARK',
   }),
   head() {
     return {
@@ -118,32 +118,32 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'Objectifs, informations et variables de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
+            'Objectifs, informations et variables de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.',
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'https://heartlessgaming.com/ark-information-serveur'
+          content: 'https://heartlessgaming.com/ark-information-serveur',
         },
         {
           hid: 'og:title',
           name: 'og:title',
-          content: `${this.title} - Heartless Gaming`
+          content: `${this.title} - Heartless Gaming`,
         },
         {
           hid: 'og:description',
           name: 'og:description',
           content:
-            'Objectifs, informations et variables de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.'
+            'Objectifs, informations et variables de configuration du serveur de jeu ARK: Survival Evolved Heartless Gaming.',
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: 'https://heartlessgaming.com/icon.png'
-        }
-      ]
+          content: 'https://heartlessgaming.com/icon.png',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

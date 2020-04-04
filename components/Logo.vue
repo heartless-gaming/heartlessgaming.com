@@ -7,8 +7,8 @@ import SvgHeartlessLogo from '~/assets/heartlessgaming-logo-white.svg'
 
 export default {
   components: {
-    SvgHeartlessLogo
-  }
+    SvgHeartlessLogo,
+  },
 }
 </script>
 
