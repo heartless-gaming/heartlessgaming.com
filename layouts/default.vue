@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt />
+    <Nuxt />
   </div>
 </template>
 
@@ -8,7 +8,8 @@
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 62.5%; // equiv "10px", which is adapted to rem unit
+  font-size: 16px;
+  word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -17,9 +18,10 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -320,5 +322,15 @@ button,
   animation-duration: 0.5s;
   animation-delay: 0s;
   animation-iteration-count: 1;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+}
+
+.appear {
+  animation: 1s appear;
 }
 </style>

@@ -1,10 +1,8 @@
 # heartlessgaming.com
 
-> The code behind [heartlessgaming.com](https://www.heartlessgaming.com).
-
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 
@@ -20,5 +18,3 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
-*Play more, care less, be a Heartless. :broken_heart:*

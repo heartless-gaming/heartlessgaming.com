@@ -1,7 +1,5 @@
-module.exports = {
-  /*
-   ** Headers of the page
-   */
+export default {
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Heartless Gaming',
     titleTemplate: '%s - Heartless Gaming',
@@ -30,54 +28,40 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  /*
-   ** Customize the progress-bar color
-   */
+  // Customize the progress-bar color
   loading: { color: '#e52f00' },
-  /*
-   ** Global CSS
-   */
+  // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
-  /*
-   ** Plugins to load before mounting the App
-   */
+
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
-  /*
-   ** Nuxt.js dev-modules
-   */
+
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/stylelint
+    '@nuxtjs/stylelint-module',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
   ],
-  /*
-   ** Nuxt.js modules
-   */
+
+  // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/pwa',
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content',
   ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {
-      const svgRule = config.module.rules.find((rule) => rule.test.test('.svg'))
 
-      svgRule.test = /\.(png|jpe?g|gif|webp)$/
+  // Content module configuration (https://go.nuxtjs.dev/config-content)
+  content: {},
 
-      config.module.rules.push({
-        test: /\.svg$/,
-        loader: 'vue-svg-loader'
-      })
-    }
-  }
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  build: {},
 }
