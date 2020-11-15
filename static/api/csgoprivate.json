@@ -1,0 +1,61 @@
+{
+  "name": "Heartless Gaming  | PRIVATE",
+  "map": "workshop/2019482002/de_dust2_mirror",
+  "password": true,
+  "raw": {
+    "protocol": 17,
+    "folder": "csgo",
+    "game": "Counter-Strike: Global Offensive",
+    "steamappid": 730,
+    "numplayers": 7,
+    "numbots": 0,
+    "listentype": "d",
+    "environment": "l",
+    "secure": 1,
+    "version": "1.37.7.0",
+    "tags": "128,1v1,am,deathmatch,dm,secure",
+    "gameid": "730",
+    "rules": {}
+  },
+  "maxplayers": 16,
+  "players": [
+    {
+      "name": "Døn",
+      "score": 35,
+      "time": 2020.3974609375
+    },
+    {
+      "name": "Küs",
+      "score": 30,
+      "time": 2014.99072265625
+    },
+    {
+      "name": "hG | GuiltysparK",
+      "score": 37,
+      "time": 1787.2886962890625
+    },
+    {
+      "name": "HG_Mugetsu",
+      "score": 25,
+      "time": 1758.4998779296875
+    },
+    {
+      "name": "ZeniX",
+      "score": 18,
+      "time": 1380.82763671875
+    },
+    {
+      "name": "Puzzle",
+      "score": 26,
+      "time": 502.1169128417969
+    },
+    {
+      "name": "Jenkins",
+      "score": 9,
+      "time": 409.9996032714844
+    }
+  ],
+  "bots": [],
+  "connect": "5.39.85.45:27016",
+  "ping": 6
+}
