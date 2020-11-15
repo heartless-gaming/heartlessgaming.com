@@ -12,6 +12,7 @@
     </header>
     <main class="flex-center mtl">
       <div class="mtl mbl">
+        <server-info />
         <div class="flex-center mbl">
           <div class="card pyl">
             <h2 class="mt0">Le soundboard est (presque) arrivé !</h2>

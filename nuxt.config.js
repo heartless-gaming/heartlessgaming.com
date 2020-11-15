@@ -28,6 +28,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
   // Customize the progress-bar color
   loading: { color: '#e52f00' },
   // Global CSS (https://go.nuxtjs.dev/config-css)
