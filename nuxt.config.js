@@ -10,7 +10,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          "Heartless Gaming la communauté qui propose multiples serveurs de jeux publics et privés en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+          "Heartless Gaming la communauté qui propose multiples serveurs de jeux publics et privés en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch.",
       },
       { hid: 'og:url', name: 'og:url', content: 'https://heartlessgaming.com' },
       { hid: 'og:title', name: 'og:title', content: 'Heartless Gaming' },
@@ -18,19 +18,19 @@ export default {
         hid: 'og:description',
         name: 'og:description',
         content:
-          "Heartless Gaming la communauté qui propose multiples serveurs de jeux publics et privés en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch."
+          "Heartless Gaming la communauté qui propose multiples serveurs de jeux publics et privés en fonction de l'humeur des joueurs. Retrouvez, nos aventures sur Youtube et twitch.",
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://heartlessgaming.com/icon.png'
-      }
+        content: 'https://heartlessgaming.com/icon.png',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
   // Customize the progress-bar color
   loading: { color: '#e52f00' },
@@ -51,8 +51,6 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    // https://github.com/nuxt-community/svg-module
-    '@nuxtjs/svg',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -61,6 +59,8 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
