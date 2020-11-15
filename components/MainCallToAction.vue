@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import SvgYoutubeLogo from '~/assets/youtube.svg'
-import SvgTwitchLogo from '~/assets/twitch.svg'
+import SvgYoutubeLogo from '~/assets/youtube.svg?inline'
+import SvgTwitchLogo from '~/assets/twitch.svg?inline'
 
 export default {
   components: {
@@ -29,6 +29,24 @@ export default {
 
 <style lang="scss">
 .btn {
+  &--youtube {
+    border-color: #d42627;
+    background-color: #d42627;
+
+    > svg {
+      height: 25px;
+    }
+  }
+
+  &--twitch {
+    border-color: #663398;
+    background-color: #663398;
+
+    > svg {
+      height: 26px;
+    }
+  }
+
   &--youtube,
   &--twitch {
     border-width: 3px;
@@ -52,24 +70,6 @@ export default {
 
     &:hover {
       background-color: transparent;
-    }
-  }
-
-  &--youtube {
-    border-color: #d42627;
-    background-color: #d42627;
-
-    > svg {
-      height: 25px;
-    }
-  }
-
-  &--twitch {
-    border-color: #663398;
-    background-color: #663398;
-
-    > svg {
-      height: 26px;
     }
   }
 }

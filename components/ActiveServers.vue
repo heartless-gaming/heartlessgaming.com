@@ -48,8 +48,8 @@
 </template>
 
 <script>
-import SvgMinecraft from '~/assets/minecraft.svg'
-import SvgCsgo from '~/assets/csgo.svg'
+import SvgMinecraft from '~/assets/minecraft.svg?inline'
+import SvgCsgo from '~/assets/csgo.svg?inline'
 
 export default {
   components: {

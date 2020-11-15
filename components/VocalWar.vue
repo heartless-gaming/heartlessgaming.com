@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import SvgMumble from '~/assets/mumble.svg'
-import SvgDiscord from '~/assets/discord.svg'
+import SvgMumble from '~/assets/mumble.svg?inline'
+import SvgDiscord from '~/assets/discord.svg?inline'
 
 export default {
   components: {

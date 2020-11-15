@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import SvgCloud from '~/assets/cloud.svg'
+import SvgCloud from '~/assets/cloud.svg?inline'
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
   position: absolute;
   top: 15px;
   right: 15px;
-  filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
 
   > svg {
     width: 60px;
