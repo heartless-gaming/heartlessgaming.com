@@ -1,15 +1,9 @@
 <template>
-  <div>
-    <div>
-      <p v-if="$fetchState.pending">Loading....</p>
-      <p v-else-if="$fetchState.error">Error while fetching game server</p>
-      <div v-else>
-        <p v-for="(server, index) in servers" :key="index">
-          {{ server.name }} {{ server.raw.numplayers }}/{{ server.maxplayers }}
-        </p>
-        <button @click="$fetch">Refresh</button>
-      </div>
-    </div>
+  <div v-if="servers.length > 0">
+    <p v-for="(server, index) in servers" :key="index">
+      {{ server.name }} {{ server.raw.numplayers }}/{{ server.maxplayers }}
+    </p>
+    <button @click="$fetch">Refresh</button>
   </div>
 </template>
 <script>
