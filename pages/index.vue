@@ -1,21 +1,23 @@
 <template>
-  <div class="main-grid">
-    <header class="page-head page-head--masthead flex-center">
+  <div class="main-grid bg-gray-900">
+    <header
+      class="pt-16 sm:pt-12 pb-12 pr-2 pl-2 gray-gradient border-b-3 border-solid border-hlsred header-box-shadow"
+    >
       <main-nav />
-      <div class="mtl">
-        <div class="wrapper mtl">
-          <logo />
+      <div class="text-center">
+        <div class="">
+          <logo class="mb-10" />
           <main-title />
         </div>
         <main-call-to-action />
       </div>
     </header>
-    <main class="flex-center mtl">
+    <main class="pt-10 flex-center mtl">
       <div class="mtl mbl">
         <server-info />
         <div class="flex-center mbl">
           <div class="card pyl">
-            <h2 class="mt0">Le soundboard est (presque) arrivé !</h2>
+            <h2 class="">Le soundboard est (presque) arrivé !</h2>
             <nuxt-link to="soundboard" class="btn">
               <strong>Accéder au Soundboard</strong><svg-arrow class="pls" />
             </nuxt-link>
@@ -68,12 +70,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+
+.gray-gradient {
+  background-image: radial-gradient(
+    circle farthest-corner at 0% -40%,
+    rgba(90, 92, 106, 1) 0%,
+    rgba(32, 45, 65, 1) 75%
+  );
+}
+
+.header-box-shadow {
+  box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
+}
 
 /*
 .container {

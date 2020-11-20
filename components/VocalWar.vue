@@ -1,15 +1,15 @@
 <template>
   <div class="wrapper wrapper--small">
     <h2 class="mbm">Choisis ton camp !</h2>
-    <div class="flex-around">
+    <div class="flex justify-around">
       <p>
         <a href="mumble://www.heartlessgaming.com/">
-          <svg-mumble class="voip-icons" />
+          <svg-mumble class="w-24 voip-icons" />
         </a>
       </p>
       <p>
         <a href="https://discord.gg/rWDzacA">
-          <svg-discord class="voip-icons" />
+          <svg-discord class="w-24 voip-icons" />
         </a>
       </p>
     </div>
