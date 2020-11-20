@@ -5,7 +5,7 @@
     </div>
     <div class="wrapper grid-2 grid-gap-medium">
       <div class="pys">
-        <h3 class="mbl"><svg-minecraft class="game-logo" />MINECRAFT</h3>
+        <h3 class="mbl"><svg-minecraft class="h-12" />MINECRAFT</h3>
         <p>
           Contacter un membre de la communauté pour rejoindre le serveur et
           faire
@@ -16,7 +16,7 @@
         </p>
       </div>
       <div class="pys">
-        <h3 class="mbl"><svg-csgo class="game-logo" />CS:GO</h3>
+        <h3 class="mbl"><svg-csgo class="h-12" />CS:GO</h3>
         <p>
           Serveur 1v1 128 tick pour régler des comptes et prouver qui est le
           plus gros pigeon avec son couteau hors de prix.
@@ -24,7 +24,7 @@
       </div>
       <div class="pys">
         <h3 class="mbl">
-          <img class="game-logo" src="~/assets/kf2.png" /> KILLING FLOOR&nbsp;2
+          <img class="h-12" src="~/assets/kf2.png" /> KILLING FLOOR&nbsp;2
         </h3>
         <p>
           3 serveurs disponibles en hard, suicidal et endless. Choisis ta
@@ -33,7 +33,7 @@
       </div>
       <div class="pys">
         <h3 class="mbl">
-          <img class="game-logo" src="~/assets/ark.png" /> ARK: Survival Evolved
+          <img class="h-12" src="~/assets/ark.png" /> ARK: Survival Evolved
         </h3>
         <p>
           Le meilleur simulateur de caca du monde. Serveur privé
