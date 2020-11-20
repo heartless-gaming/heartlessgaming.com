@@ -104,11 +104,6 @@ export default {
       },
     ],
   }),
-  methods: {
-    playAudio(event) {
-      event.target.nextElementSibling.play()
-    },
-  },
   head() {
     return {
       title: 'Soundboard',
@@ -143,6 +138,11 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    playAudio(event) {
+      event.target.nextElementSibling.play()
+    },
   },
 }
 </script>

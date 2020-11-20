@@ -1,7 +1,10 @@
 <template>
   <nav>
-    <a class="cloud-access" href="https://www.heartlessgaming.com/cloud">
-      <svg-cloud />
+    <a
+      class="absolute top-0 right-0 p-2 cloud-drop-shadow"
+      href="https://www.heartlessgaming.com/cloud"
+    >
+      <svg-cloud class="w-16" />
     </a>
   </nav>
 </template>
@@ -17,19 +20,22 @@ export default {
 </script>
 
 <style lang="scss">
-.cloud-access {
-  display: none;
-  position: absolute;
-  top: 15px;
-  right: 15px;
+.cloud-drop-shadow {
   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
-
-  > svg {
-    width: 60px;
-  }
-
-  @media (min-width: 576px) {
-    display: block;
-  }
 }
+// .cloud-access {
+//   display: none;
+//   position: absolute;
+//   top: 15px;
+//   right: 15px;
+//   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+
+//   > svg {
+//     width: 60px;
+//   }
+
+//   @media (min-width: 576px) {
+//     display: block;
+//   }
+// }
 </style>

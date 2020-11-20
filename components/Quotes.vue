@@ -57,10 +57,10 @@ export default {
 </script>
 
 <style lang="scss">
-.quote {
-  margin-right: 0;
-  text-align: right;
-  color: #8a8a8a;
-  font-style: italic;
-}
+// .quote {
+//   margin-right: 0;
+//   text-align: right;
+//   color: #8a8a8a;
+//   font-style: italic;
+// }
 </style>
