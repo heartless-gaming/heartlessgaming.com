@@ -28,8 +28,8 @@ export default {
 }
 </script>
 
-<style>
-.voip-icons {
-  width: 80px;
-}
+<style lang="scss">
+// .voip-icons {
+//   width: 80px;
+// }
 </style>

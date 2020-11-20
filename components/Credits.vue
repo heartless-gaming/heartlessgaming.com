@@ -14,9 +14,3 @@
     </p>
   </section>
 </template>
-
-<style>
-.voip-icons {
-  width: 80px;
-}
-</style>
