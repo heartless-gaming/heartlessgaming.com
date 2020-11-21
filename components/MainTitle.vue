@@ -1,5 +1,5 @@
 <template>
-  <h1 class="max-w-lg mx-auto mb-10 text-gray-100 text-3xl zoomIn">
+  <h1 class="max-w-lg mx-auto mb-10 text-gray-200 text-3xl zoomIn">
     Une communauté de gamers pour l'amour de l'entertainment&nbsp;!
   </h1>
 </template>

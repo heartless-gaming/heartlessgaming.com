@@ -1,4 +1,18 @@
-# heartlessgaming.com
+# The code that powers heartlessgaming.com
+## The 2020 major update
+Work left TODO (Skullmasher please don't give up you can do it)
+
+It's not a race do it consistently every day.
+
+#### Server
+  - Get the latest youtube video from the actual website.
+  - Generate a json with gamedig containing all the game server info every 2 minute or something
+
+#### Client
+  - Finish migrating to tailwind
+  - Cache the shit out of it ! nuxt-ssr-cache in redis mode
+  - Include prettier font with nuxt google-fonts and download them locally
+  - Descent design please with animation that goes *woosh*
 
 ## Build Setup
 

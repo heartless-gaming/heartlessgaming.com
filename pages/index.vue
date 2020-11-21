@@ -12,21 +12,23 @@
         <main-call-to-action />
       </div>
     </header>
-    <main class="pt-10 flex-center mtl">
-      <div class="mtl mbl">
-        <server-info />
-        <div class="flex-center mbl">
-          <div class="card pyl">
-            <h2 class="">Le soundboard est (presque) arrivé !</h2>
-            <nuxt-link to="soundboard" class="btn">
+    <main class="pt-10">
+      <server-info />
+      <div class="pl-2 pr-2">
+        <section class="mb-10 max-w-2xl">
+          <div class="mb-10 text-gray-200">
+            <h2 class="mb-3 text-xl">Soundboard Heartless Gaming</h2>
+            <p class="mb-2">
+              Retrouver les plus grand tube comme baserape et learn to play
+              bitch.
+            </p>
+            <nuxt-link to="soundboard" class="btn underline">
               <strong>Accéder au Soundboard</strong><svg-arrow class="pls" />
             </nuxt-link>
           </div>
-        </div>
-        <div class="autogrid wrapper mbl">
-          <last-youtube-videos />
-          <vocal-war />
-        </div>
+        </section>
+        <vocal-war />
+        <last-youtube-videos />
         <active-servers />
       </div>
     </main>
