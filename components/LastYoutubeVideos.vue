@@ -1,6 +1,6 @@
 <template>
-  <section class="mb-10 text-white">
-    <h2 class="mb-3 text-xl">Les dernières vidéos Youtube</h2>
+  <section class="max-w-lg mx-auto mb-10 text-gray-200">
+    <h2 class="mb-3 text-2xl">Les dernières vidéos Youtube</h2>
     <div class="">
       <p v-for="(video, index) in videos" :key="index">
         <a :href="video.url">{{ video.title }}</a>

@@ -1,16 +1,17 @@
 <template>
-  <section>
-    <p>
-      <a href="https://steamcommunity.com/id/heartless-gaming">Steam</a> -
-      <a href="https://www.reddit.com/r/heartlessgaming">Reddit</a> -
-      <a href="https://twitter.com/hlsgaming">Twitter</a> -
-      <a href="https://www.facebook.com/heartlessgamingfr">Facebook</a>
-    </p>
+  <section class="text-right text-gray-200">
     <p>Logo par Markus</p>
     <p>
-      <a href="https://github.com/heartless-gaming/heartlessgaming.com">
+      <a
+        class="underline"
+        href="https://github.com/heartless-gaming/heartlessgaming.com"
+      >
         Code source
       </a>
+    </p>
+    <p>
+      Sponsorisé par <a href="https://skullmasher">skullmasher.io</a> et brico
+      e-sport la Seyne-sur-mer
     </p>
   </section>
 </template>

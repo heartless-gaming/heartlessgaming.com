@@ -13,6 +13,7 @@ It's not a race do it consistently every day.
   - Cache the shit out of it ! nuxt-ssr-cache in redis mode
   - Include prettier font with nuxt google-fonts and download them locally
   - Descent design please with animation that goes *woosh*
+    - Make the quotes modules better
 
 ## Build Setup
 
