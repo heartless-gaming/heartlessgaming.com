@@ -20,5 +20,5 @@ module.exports = {
       transitionProperty: ['motion-reduce'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

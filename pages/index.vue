@@ -12,27 +12,25 @@
         <main-call-to-action />
       </div>
     </header>
-    <main class="pt-10">
+    <main class="pt-10 pl-2 pr-2">
       <server-info />
-      <div class="pl-2 pr-2">
-        <section class="mb-10 max-w-2xl">
-          <div class="mb-10 text-gray-200">
-            <h2 class="mb-3 text-xl">Soundboard Heartless Gaming</h2>
-            <p class="mb-2">
-              Retrouver les plus grand tube comme baserape et learn to play
-              bitch.
-            </p>
-            <nuxt-link to="soundboard" class="btn underline">
-              <strong>Accéder au Soundboard</strong><svg-arrow class="pls" />
-            </nuxt-link>
-          </div>
-        </section>
-        <vocal-war />
-        <last-youtube-videos />
-        <active-servers />
-      </div>
+      <last-youtube-videos />
+      <vocal-war />
+      <section class="text-gray-200">
+        <h2 class="mb-3 text-xl">Soundboard Heartless Gaming</h2>
+        <p class="mb-5">
+          Retrouver les plus grand tube comme baserape et learn to play bitch.
+        </p>
+        <nuxt-link
+          to="soundboard"
+          class="px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+        >
+          <strong>Accéder au Soundboard</strong>
+          <svg-arrow class="pl-0 w-4 inline" />
+        </nuxt-link>
+      </section>
     </main>
-    <footer class="page-footer">
+    <footer class="bg-gray-800">
       <div class="footer-grid wrapper">
         <credits />
         <quotes />
@@ -49,11 +47,10 @@ import MainTitle from '~/components/MainTitle.vue'
 import MainCallToAction from '~/components/MainCallToAction.vue'
 import LastYoutubeVideos from '~/components/LastYoutubeVideos.vue'
 import VocalWar from '~/components/VocalWar.vue'
-import ActiveServers from '~/components/ActiveServers.vue'
 import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
 import Mentra from '~/components/Mentra.vue'
-import SvgArrow from '~/assets/arrow.svg'
+import SvgArrow from '~/assets/arrow.svg?inline'
 
 export default {
   components: {
@@ -63,7 +60,6 @@ export default {
     MainCallToAction,
     LastYoutubeVideos,
     VocalWar,
-    ActiveServers,
     Credits,
     Quotes,
     Mentra,
