@@ -23,19 +23,4 @@ export default {
 .cloud-drop-shadow {
   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
 }
-// .cloud-access {
-//   display: none;
-//   position: absolute;
-//   top: 15px;
-//   right: 15px;
-//   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
-
-//   > svg {
-//     width: 60px;
-//   }
-
-//   @media (min-width: 576px) {
-//     display: block;
-//   }
-// }
 </style>

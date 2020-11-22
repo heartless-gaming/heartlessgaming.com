@@ -59,9 +59,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-// .voip-icons {
-//   width: 80px;
-// }
-</style>
