@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-2">
+  <section>
     <div
       v-if="servers.length > 0"
       class="max-w-lg mx-auto mb-10 border-3 border-solid border-hlsred bg-gray-200 rounded shadow-server-info"
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
