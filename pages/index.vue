@@ -19,7 +19,8 @@
       <section class="max-w-2xl mx-auto mb-10 text-gray-200">
         <h2 class="mb-3 text-2xl">Soundboard Heartless Gaming</h2>
         <p class="mb-5">
-          Retrouver les plus grand tube comme baserape et learn to play bitch.
+          Retrouver les plus grands tubes comme <em>baserape</em> et
+          <em>learn to play bitch</em>.
         </p>
         <nuxt-link
           to="soundboard"
@@ -31,6 +32,7 @@
       </section>
     </main>
     <footer class="bg-gray-800 flow-root">
+      <social-networks />
       <div class="max-w-2xl mx-auto mb-10 flex">
         <quotes />
         <credits />
@@ -47,6 +49,7 @@ import MainTitle from '~/components/MainTitle.vue'
 import MainCallToAction from '~/components/MainCallToAction.vue'
 import LastYoutubeVideos from '~/components/LastYoutubeVideos.vue'
 import VocalWar from '~/components/VocalWar.vue'
+import SocialNetworks from '~/components/SocialNetworks.vue'
 import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
 import Mentra from '~/components/Mentra.vue'
@@ -60,6 +63,7 @@ export default {
     MainCallToAction,
     LastYoutubeVideos,
     VocalWar,
+    SocialNetworks,
     Credits,
     Quotes,
     Mentra,
