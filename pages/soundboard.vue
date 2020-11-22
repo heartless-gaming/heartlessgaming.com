@@ -146,11 +146,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-.btn--soundboard {
-  &:hover {
-    background-color: #126c99;
-  }
-}
-</style>

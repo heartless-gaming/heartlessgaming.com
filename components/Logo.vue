@@ -18,9 +18,4 @@ export default {
 .logo-drop-shadow {
   filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.7));
 }
-
-// .logo {
-//   max-width: 420px;
-//   filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.7));
-// }
 </style>

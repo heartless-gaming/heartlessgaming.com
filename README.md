@@ -14,6 +14,7 @@ It's not a race do it consistently every day.
   - Include prettier font with nuxt google-fonts and download them locally
   - Descent design please with animation that goes *woosh*
     - Make the quotes modules better
+  - Refactor default layouts to contain footer
 
 ## Build Setup
 

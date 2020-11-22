@@ -58,11 +58,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-// .game-logo {
-//   max-height: 40px;
-//   vertical-align: middle;
-//   padding-right: 10px;
-// }
-</style>
