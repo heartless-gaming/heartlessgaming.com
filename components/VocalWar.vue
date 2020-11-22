@@ -2,7 +2,8 @@
   <section class="max-w-2xl mx-auto mb-10 text-gray-200">
     <h2 class="mb-3 text-2xl">Discution vocal</h2>
     <p class="mb-5">
-      Il y a dans cette communauté une fracture. Choisis ton camp.
+      Il y a dans cette communauté une fracture.
+      <strong class="uppercase">Choisis ton camp</strong>
     </p>
     <div class="flex mb-8">
       <a class="mr-5" href="mumble://www.heartlessgaming.com/">

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="text-gray-200">
     <blockquote class="quote">{{ quote }}</blockquote>
   </section>
 </template>
@@ -7,12 +7,12 @@
 <script>
 export default {
   data: () => ({
-    interval: 60000, // Curently 1minute, 1000*60*5 That's 5minutes !
+    interval: 60000, // 1000*60*5 That's 5minutes, YAY for math
     quote: 'We will find a way',
     quotes: [
       `Bon c'est une bonne addition à mon dossier "grossisant" ! - GuiltysparK`,
       `Oh ah pourquoi ya du sang partout ? ah bah il est mort le vendeur de suschi. - Eljam`,
-      `Quest-ce qu'on est sérée , au fond de ce markus ! - Don`,
+      `Quest-ce qu'on est sérée, au fond de ce markus ! - Don`,
       `T'a cas coller 1 milliard de fromton sous ta baraque tu vera si l'odeur remonte pas !! - Don`,
       `Pour la peine j'ai coller mon coude dans ton mamie nova - Don`,
       `Ils ont un camouflage naturel, comme les noirs la nuit - GuiltysparK`,
@@ -37,6 +37,7 @@ export default {
       `Tu parles Espagnole ? Oui je fais des éfforts. Je ne savais pas que tu savais en faire, je ne parle pas de l'éspagnole.`,
       `Je ne suis pas une personne de haine, mais parfois tu arrives dans ma vie et je pense à l'holocauste - Skullmasher à Markus`,
       `kinder bueno dans tes nachos a toi aussi mon jeune ami semi-ibérique ! - Guiltyspark`,
+      `We will find a way - Skullmasher`,
     ],
   }),
   mounted() {

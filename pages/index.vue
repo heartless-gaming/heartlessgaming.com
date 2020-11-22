@@ -16,8 +16,8 @@
       <server-info />
       <last-youtube-videos />
       <vocal-war />
-      <section class="text-gray-200">
-        <h2 class="mb-3 text-xl">Soundboard Heartless Gaming</h2>
+      <section class="max-w-2xl mx-auto mb-10 text-gray-200">
+        <h2 class="mb-3 text-2xl">Soundboard Heartless Gaming</h2>
         <p class="mb-5">
           Retrouver les plus grand tube comme baserape et learn to play bitch.
         </p>
@@ -30,10 +30,10 @@
         </nuxt-link>
       </section>
     </main>
-    <footer class="bg-gray-800">
-      <div class="footer-grid wrapper">
-        <credits />
+    <footer class="bg-gray-800 flow-root">
+      <div class="max-w-2xl mx-auto mb-10 flex">
         <quotes />
+        <credits />
       </div>
       <mentra />
     </footer>
