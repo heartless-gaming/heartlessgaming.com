@@ -69,6 +69,7 @@ export default {
     Mentra,
     ChevronRight,
   },
+  middleware: 'lasthlsytvid',
 }
 </script>
 
