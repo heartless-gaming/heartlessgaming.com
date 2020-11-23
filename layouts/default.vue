@@ -5,6 +5,9 @@
 </template>
 
 <style lang="scss">
+.fill-white {
+  fill: white;
+}
 // Animations
 @keyframes bounceInDown {
   from,
