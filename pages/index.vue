@@ -27,13 +27,13 @@
           class="px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
         >
           <strong>Accéder au Soundboard</strong>
-          <svg-arrow class="pl-0 w-4 inline" />
+          <chevron-right class="w-2 inline align-middle fill-white" />
         </nuxt-link>
       </section>
     </main>
     <footer class="bg-gray-800 flow-root">
       <social-networks />
-      <div class="max-w-2xl mx-auto mb-10 flex">
+      <div class="max-w-2xl mx-auto px-2 mb-10 sm:flex">
         <quotes />
         <credits />
       </div>
@@ -53,7 +53,7 @@ import SocialNetworks from '~/components/SocialNetworks.vue'
 import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
 import Mentra from '~/components/Mentra.vue'
-import SvgArrow from '~/assets/arrow.svg?inline'
+import ChevronRight from '~/assets/chevron-right.svg?inline'
 
 export default {
   components: {
@@ -67,7 +67,7 @@ export default {
     Credits,
     Quotes,
     Mentra,
-    SvgArrow,
+    ChevronRight,
   },
 }
 </script>

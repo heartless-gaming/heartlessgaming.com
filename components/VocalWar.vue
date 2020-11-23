@@ -21,7 +21,7 @@
             href="mumble://www.heartlessgaming.com/"
           >
             <strong>Rejoindre le mumble</strong>
-            <svg-arrow class="ml-1 w-5 inline" />
+            <chevron-right class="w-2 inline align-middle fill-white" />
           </a>
         </div>
       </div>
@@ -40,7 +40,7 @@
             href="mumble://www.heartlessgaming.com/"
           >
             <strong>Rejoindre le discord</strong>
-            <svg-arrow class="ml-1 w-5 inline" />
+            <chevron-right class="w-2 inline align-middle fill-white" />
           </a>
         </div>
       </div>
@@ -51,13 +51,13 @@
 <script>
 import SvgMumble from '~/assets/mumble.svg?inline'
 import SvgDiscord from '~/assets/discord.svg?inline'
-import SvgArrow from '~/assets/arrow.svg?inline'
+import ChevronRight from '~/assets/chevron-right.svg?inline'
 
 export default {
   components: {
     SvgMumble,
     SvgDiscord,
-    SvgArrow,
+    ChevronRight,
   },
 }
 </script>

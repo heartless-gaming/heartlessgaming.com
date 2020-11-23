@@ -1,5 +1,5 @@
 <template>
-  <section class="text-gray-200">
+  <section class="sm:w-2/3 mb-5 sm:mb-0 text-gray-200">
     <blockquote class="quote">{{ quote }}</blockquote>
   </section>
 </template>
