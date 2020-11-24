@@ -1,33 +1,38 @@
 <template>
-  <div class="main-grid">
-    <header class="page-head flex-center">
+  <div class="bg-gray-900">
+    <header
+      class="mb-12 pt-16 sm:pt-12 pb-12 pr-2 pl-2 gray-gradient border-b-3 border-solid border-hlsred header-box-shadow"
+    >
       <main-nav />
-      <div class="wrapper mtl">
+      <div class="">
         <nuxt-link to="/">
           <logo />
         </nuxt-link>
+        <h1
+          class="mt-12 text-center text-4xl text-gray-200 zoomIn main-title-text-shadow soundboard-letter-spacing uppercase"
+        >
+          {{ title }}
+        </h1>
       </div>
     </header>
-    <main class="flex-center">
-      <div class="wrapper">
-        <h1 class="txtcenter">{{ title }}</h1>
-        <p>
-          (Içi il devrait y avoir un moyen de filtrer les sons par catégorie)
-        </p>
-        <div class="flex-around">
-          <div v-for="audio in audios" :key="audio.id" class="pas">
-            <button class="btn--soundboard" @click="playAudio($event)">
-              {{ audio.name }}
-            </button>
-            <audio :src="audio.file"></audio>
-          </div>
+    <main>
+      <div class="mb-12 flex justify-around flex-wrap max-w-lg mx-auto">
+        <div v-for="audio in audios" :key="audio.id" class="p-4 inline-block">
+          <button
+            class="px-4 py-2 rounded-full text-gray-200 bg-hlsred hover:bg-hlsres-dark transition-all duration-200"
+            @click="playAudio($event)"
+          >
+            {{ audio.name }}
+          </button>
+          <audio :src="audio.file"></audio>
         </div>
       </div>
     </main>
-    <footer class="page-footer">
-      <div class="footer-grid wrapper">
-        <credits />
+    <footer class="bg-gray-800 flow-root">
+      <social-networks />
+      <div class="max-w-2xl mx-auto px-2 mb-10 sm:flex">
         <quotes />
+        <credits />
       </div>
       <mentra />
     </footer>
@@ -146,3 +151,21 @@ export default {
   },
 }
 </script>
+
+<style>
+.gray-gradient {
+  background-image: radial-gradient(
+    circle farthest-corner at 0% -40%,
+    rgba(90, 92, 106, 1) 0%,
+    rgba(32, 45, 65, 1) 75%
+  );
+}
+
+.header-box-shadow {
+  box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
+}
+
+.soundboard-letter-spacing {
+  letter-spacing: 0.5rem;
+}
+</style>
