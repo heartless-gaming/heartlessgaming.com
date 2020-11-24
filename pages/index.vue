@@ -1,5 +1,5 @@
 <template>
-  <div class="main-grid bg-gray-900">
+  <div class="bg-gray-900">
     <header
       class="pt-16 sm:pt-12 pb-12 pr-2 pl-2 gray-gradient border-b-3 border-solid border-hlsred header-box-shadow"
     >
