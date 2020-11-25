@@ -26,7 +26,7 @@
           to="soundboard"
           class="px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
         >
-          <strong>Accéder au Soundboard</strong>
+          <strong>Découvrir l'enfer du Soundboard</strong>
           <chevron-right class="w-2 inline align-middle fill-white" />
         </nuxt-link>
       </section>
@@ -69,7 +69,6 @@ export default {
     Mentra,
     ChevronRight,
   },
-  middleware: 'lasthlsytvid',
 }
 </script>
 
