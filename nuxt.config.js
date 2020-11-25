@@ -28,17 +28,15 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env
-  env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-  },
+
   // Customize the progress-bar color
   loading: { color: '#e52f00' },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [{ src: '~/plugins/magicgrid.js' }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -67,5 +65,28 @@ export default {
   content: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    transpile: ['vue-magic-grid'],
+  },
+
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-server
+  server: {
+    timing: {
+      total: true, // tracks the whole time spent on server-side rendering
+    },
+  },
+
+  // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+  },
+  privateRuntimeConfig: {
+    ytApiKey: process.env.YT_API_KEY,
+  },
+
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware
+  serverMiddleware: [
+    // Will register file from project api directory to handle /api/* requires
+    { path: '/api', handler: '~/api/index.js' },
+  ],
 }
