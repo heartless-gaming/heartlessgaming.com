@@ -3,28 +3,26 @@
     <h2 class="max-w-5xl mx-auto mb-3 text-2xl text-gray-200">
       Les dernières vidéos Youtube
     </h2>
-    <div class="max-w-6xl mx-auto">
-      <magic-grid :max-col-width="320">
-        <a
-          v-for="(video, index) in videos"
-          :key="index"
-          class="p-2 bg-white shadow-lg rounded-xl block"
-          :href="video.url"
-        >
-          <img
-            class="rounded-xl"
-            :src="video.thumbnail.url"
-            :width="video.thumbnail.width"
-            :height="video.thumbnail.height"
-            loading="lazy"
-          />
-          <p class="text-lg text-gray-900">
-            <strong>{{ video.title }}</strong>
-          </p>
-          <p class="text-sm text-gray-500">{{ video.duration }}</p>
-        </a>
-      </magic-grid>
-    </div>
+    <magic-grid wrapper="max-w-6xl mx-auto" :maxCols="3" :max-col-width="320">
+      <a
+        v-for="(video, index) in videos"
+        :key="index"
+        class="p-2 bg-white shadow-lg rounded-xl block transform hover:scale-110 transition-youtubecard"
+        :href="video.url"
+      >
+        <img
+          class="rounded-xl"
+          :src="video.thumbnail.url"
+          :width="video.thumbnail.width"
+          :height="video.thumbnail.height"
+          loading="lazy"
+        />
+        <p class="text-lg text-gray-900">
+          <strong>{{ video.title }}</strong>
+        </p>
+        <p class="text-sm text-gray-700">{{ video.duration }}</p>
+      </a>
+    </magic-grid>
   </section>
 </template>
 
@@ -53,3 +51,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.transition-youtubecard {
+  transition: all 0.2s ease !important;
+}
+</style>

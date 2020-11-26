@@ -49,7 +49,7 @@ app.get('/getlastYTvid', async (req, res) => {
       url: `https://www.youtube.com/watch?v=${vid.id}`,
       title: vid.snippet.title,
       thumbnail: vid.snippet.thumbnails.medium,
-      ...duration,
+      duration,
     })
   })
 
