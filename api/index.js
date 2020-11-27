@@ -1,9 +1,9 @@
 import express from 'express'
 import fetch from 'node-fetch'
-const Redis = require('ioredis')
-const redis = new Redis()
+import Redis from 'ioredis'
 
 const app = express()
+const redis = new Redis()
 
 const getYT = async (req, res) => {
   const apiKey = process.env.YT_API_KEY
