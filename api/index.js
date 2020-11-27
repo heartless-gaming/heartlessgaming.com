@@ -1,9 +1,11 @@
 import express from 'express'
 import fetch from 'node-fetch'
+const Redis = require('ioredis')
+const redis = new Redis()
 
 const app = express()
 
-app.get('/getlastYTvid', async (req, res) => {
+const getYT = async (req, res) => {
   const apiKey = process.env.YT_API_KEY
   const playlistId = 'UUvItaPYGwf5bI7HelUiu14w' // heartless upload playlist id
   const maxResults = 6
@@ -53,8 +55,24 @@ app.get('/getlastYTvid', async (req, res) => {
     })
   })
 
+  // Send the data to redis with an expiration value of 6 hours
+  redis.setex('ytheartless', 21600, JSON.stringify(response))
+
   // Return last uploaded videos information
   res.json(response)
-})
+}
+
+// Cache middleware for redis key 'ytheartless'
+const ytCache = async (req, res, next) => {
+  const ytheartless = await redis.get('ytheartless')
+
+  if (ytheartless === null) {
+    next()
+  } else {
+    res.json(JSON.parse(ytheartless))
+  }
+}
+
+app.get('/getYT', ytCache, getYT)
 
 module.exports = app
