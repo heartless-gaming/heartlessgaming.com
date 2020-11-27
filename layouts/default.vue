@@ -9,6 +9,16 @@
   fill: white;
 }
 // Animations
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+}
+
+.appear {
+  animation: 1s appear;
+}
+
 @keyframes bounceInDown {
   from,
   60%,
@@ -66,13 +76,40 @@
   animation-iteration-count: 1;
 }
 
-@keyframes appear {
-  0% {
+@keyframes fadeInDown {
+  from {
     opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
-.appear {
-  animation: 1s appear;
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
 }
 </style>

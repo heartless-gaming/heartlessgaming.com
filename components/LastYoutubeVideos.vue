@@ -1,13 +1,13 @@
 <template>
   <section v-if="videos.length > 0" class="mb-10">
-    <h2 class="max-w-5xl mx-auto mb-3 text-2xl text-gray-200">
+    <h2 class="max-w-5xl mx-auto mb-5 text-2xl text-gray-200 fadeInDown">
       Les dernières vidéos Youtube
     </h2>
-    <magic-grid wrapper="max-w-6xl mx-auto" :maxCols="3" :max-col-width="320">
+    <magic-grid wrapper="max-w-6xl mx-auto" :max-cols="3" :max-col-width="320">
       <a
         v-for="(video, index) in videos"
         :key="index"
-        class="p-2 bg-white shadow-lg rounded-xl block transform hover:scale-110 transition-youtubecard"
+        class="p-2 bg-white shadow-lg inline-block rounded-xl transform hover:scale-105 transition-youtubecard backface-hidden"
         :href="video.url"
       >
         <img
@@ -17,9 +17,9 @@
           :height="video.thumbnail.height"
           loading="lazy"
         />
-        <p class="text-lg text-gray-900">
+        <h3 class="w-min text-lg text-gray-900">
           <strong>{{ video.title }}</strong>
-        </p>
+        </h3>
         <p class="text-sm text-gray-700">{{ video.duration }}</p>
       </a>
     </magic-grid>
@@ -46,7 +46,7 @@ export default {
   },
   async fetch() {
     const baseURL = this.$nuxt.context.$config.baseURL
-    const fetchYTvidURL = `${baseURL}/api/getlastYTvid`
+    const fetchYTvidURL = `${baseURL}/api/getYT`
     this.videos = await fetch(fetchYTvidURL).then((res) => res.json())
   },
 }
@@ -54,6 +54,10 @@ export default {
 
 <style>
 .transition-youtubecard {
-  transition: all 0.2s ease !important;
+  transition: all 0.15s ease !important;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
 }
 </style>
