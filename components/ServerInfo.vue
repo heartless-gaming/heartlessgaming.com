@@ -2,7 +2,7 @@
   <section>
     <div
       v-if="servers.length > 0"
-      class="max-w-lg mx-auto mb-10 border-3 border-solid border-hlsred bg-gray-200 rounded shadow-server-info"
+      class="max-w-2xl mx-auto mb-10 border-3 border-solid border-hlsred bg-gray-200 rounded shadow-server-info"
     >
       <div class="flex bg-hlsred mb-1 pt-1 pb-2 text-gray-200">
         <h3 class="flex-1 pl-3 text-xl">Les serveurs de jeux</h3>
@@ -21,7 +21,7 @@
         >
           <p class="flex-1 sm:text-lg">{{ server.name }}</p>
           <p class="pl-3 font-bold text-gray-700">
-            {{ server.raw.numplayers }}/{{ server.maxplayers }}
+            {{ server.players }}/{{ server.maxplayers }}
           </p>
           <p class="hidden sm:block">
             <a
@@ -45,9 +45,9 @@ export default {
     }
   },
   async fetch() {
-    this.servers = await fetch(
-      'http://localhost:3000/api/csgo1v1.json'
-    ).then((res) => res.json())
+    const baseURL = this.$nuxt.context.$config.baseURL
+    const fetchGSinfoURL = `${baseURL}/api/getGS`
+    this.servers = await fetch(fetchGSinfoURL).then((res) => res.json())
   },
 }
 </script>
