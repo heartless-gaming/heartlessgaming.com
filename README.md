@@ -6,7 +6,7 @@ It's not a race do it consistently every day.
 
 #### Server
   - ~~Get the latest youtube video from youtubeAPI.~~
-  - Generate a json with gamedig containing all the game server info every 2 minute or something
+  - ~~Generate a json with gamedig containing all the game server info every 2 minute or something~~
 
 #### Client
   - ~~Finish migrating to tailwind~~
