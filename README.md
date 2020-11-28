@@ -34,3 +34,8 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+###Credits
+
+Thanks for these people/ressources that have helped me along the way. I cannot stand how much it is awesome to have such a massive community of people sharing their knowledge on how to make the web and keeping free and accesible.
+  - James Sinclair - [How to run async JavaScript functions in sequence or parallel](https://jrsinclair.com/articles/2019/how-to-run-async-js-in-parallel-or-sequential/)
