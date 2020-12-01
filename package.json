@@ -59,6 +59,6 @@
     "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
-    "webdriverio": "^6.10.0"
+    "webdriverio": "^6.10.5"
   }
 }
