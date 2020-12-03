@@ -11,13 +11,13 @@
           <svg-mumble class="w-24 voip-icons" />
         </a>
         <div>
-          <p class="mb-5">
+          <p class="mb-3">
             <strong>L'expérience original Heartless</strong> ce trouve sur
             Mumble&nbsp;! On dors dans le channel AFK et on discute même quand
             on a pas envie de jouer.
           </p>
           <a
-            class="px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+            class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
             href="mumble://www.heartlessgaming.com/"
           >
             <strong>Rejoindre le mumble</strong>
@@ -30,13 +30,13 @@
           <svg-discord class="w-24 voip-icons" />
         </a>
         <div>
-          <p class="mb-5">
+          <p class="mb-3">
             <strong>Ici c'est la modernité !</strong> Alerte et information
             serveur automatique. Les joueurs ici sont sonvent un peu plus
             compétitif (CSGO, LOL).
           </p>
           <a
-            class="px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+            class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
             href="mumble://www.heartlessgaming.com/"
           >
             <strong>Rejoindre le discord</strong>

@@ -18,15 +18,42 @@
       <vocal-war />
       <section class="max-w-2xl mx-auto mb-10 text-gray-200">
         <h2 class="mb-3 text-2xl">Soundboard Heartless Gaming</h2>
-        <p class="mb-5">
+        <p class="mb-3">
           Retrouver les plus grands tubes comme <em>baserape</em> et
           <em>learn to play bitch</em>.
         </p>
         <nuxt-link
           to="soundboard"
-          class="px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
         >
           <strong>Découvrir l'enfer du Soundboard</strong>
+          <chevron-right class="w-2 inline align-middle fill-white" />
+        </nuxt-link>
+      </section>
+      <section class="max-w-2xl mx-auto mb-10 text-gray-200">
+        <h2 class="mb-3 text-2xl">L'argent des abonnés</h2>
+        <p class="mb-5">
+          Les frais de fonctionement (47.99 € par mois) sont pris en charge par
+          <a class="underline" href="https://skullmasher.io">
+            Florian "Skullmasher" Ledru
+          </a>
+          ainsi que par le reste des membres de la communauté. Un choix
+          comfortable qui nous permet de garder notre indépendance
+          <strong>depuis plus de 10 ans</strong> et de ne pas avoir recours à
+          des sponsors comme
+          <strong class="uppercase">Raid Diarrhe Legends</strong> (
+          <a class="underline" href="https://youtu.be/5aCzYb_cVWc">Big Up JB</a>
+          ).
+        </p>
+        <p class="mb-3">
+          Une donation nous permet de faire plus d'events, de réaliser plus de
+          vidéos et d'avoir plus de serveurs de jeux.
+        </p>
+        <nuxt-link
+          to="donation"
+          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+        >
+          <strong>Faire une donation</strong>
           <chevron-right class="w-2 inline align-middle fill-white" />
         </nuxt-link>
       </section>
