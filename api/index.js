@@ -117,7 +117,9 @@ const getGS = async (req, res) => {
   // Send the data to redis with an expiration value of 1 minutes
   redis.set('heartlessgs', JSON.stringify(response))
 
-  res.json(response)
+  if (res) {
+    res.json(response)
+  }
 }
 
 // Game server info cache middleware with redis key 'heartlessgs'
