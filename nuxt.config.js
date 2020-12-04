@@ -59,6 +59,13 @@ export default {
     '@nuxt/content',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
+    // github.com/WilliamDASILVA/nuxt-stripe-module
+    [
+      'nuxt-stripe-module',
+      {
+        publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+      },
+    ],
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -87,6 +94,8 @@ export default {
   // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware
   serverMiddleware: [
     // Will register file from project api directory to handle /api/* requires
-    { path: '/api', handler: '~/api/index.js' },
+    { path: '/api', handler: '~/api/getYT.js' },
+    { path: '/api', handler: '~/api/getGS.js' },
+    { path: '/api', handler: '~/api/stripe.js' },
   ],
 }

@@ -30,6 +30,7 @@
     "gamedig": "^2.0.23",
     "ioredis": "^4.19.2",
     "nuxt": "^2.14.9",
+    "nuxt-stripe-module": "^3.0.1",
     "vue-magic-grid": "^0.0.4"
   },
   "devDependencies": {
