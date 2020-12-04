@@ -1,7 +1,6 @@
 import express from 'express'
 import fetch from 'node-fetch'
 import Redis from 'ioredis'
-import gamedig from 'gamedig'
 
 const app = express()
 const redis = new Redis()
@@ -14,14 +13,15 @@ const getYT = async (req, res) => {
   const ytAPIbaseURL = 'https://youtube.googleapis.com/youtube/v3'
   const ytPlaylistURL = `${ytAPIbaseURL}/playlistItems`
   const ytVideosURL = `${ytAPIbaseURL}/videos`
-
   const getVideosIdsURL = `${ytPlaylistURL}?part=contentDetails&maxResults=${maxResults}&playlistId=${playlistId}&key=${apiKey}`
 
   // Get the videos ids from the upload playlist
   const fetchVideoIds = await fetch(getVideosIdsURL)
   const jsonVideosIds = await fetchVideoIds.json()
   const videoIds = jsonVideosIds.items.map((vid) => vid.contentDetails.videoId)
-  let videoIdsStr = '' // Build the video query &id= part
+
+  // Build the video query &id= part
+  let videoIdsStr = ''
   videoIds.forEach((id) => {
     videoIdsStr = `${videoIdsStr}&id=${id}`
   })
@@ -75,74 +75,10 @@ const ytCache = async (req, res, next) => {
   }
 }
 
-// Get our game servers (gs) info
-// CSGO query issue : https://github.com/gamedig/node-gamedig/issues/176
-const getGS = async (req, res) => {
-  const ip = process.env.FETCH_GAME_SERVER_IP || '127.0.0.1'
-  const gameServers = [
-    { type: 'csgo', host: ip, port: 27015 },
-    { type: 'csgo', host: ip, port: 27016 },
-    { type: 'minecraft', host: ip, port: 25565 },
-    { type: 'killingfloor2', host: ip, port: 27017 },
-    { type: 'killingfloor2', host: ip, port: 27020 },
-    { type: 'insurgencysandstorm', host: ip, port: 27132 },
-  ]
-
-  // Query a single game server with gamedig
-  const gamedigQuery = (gs, index) => {
-    return gamedig
-      .query({ type: gs.type, host: gs.host, port: gs.port })
-      .then((res) => res)
-      .catch((err) => Promise.reject(new Error(`${index} - ${gs.type} ${err}`)))
-  }
-
-  // Run ALL queries at the same time and returns whatever the outcome
-  const gsData = await Promise.allSettled(gameServers.map(await gamedigQuery))
-
-  const response = gsData.map((gs, index) => {
-    if (gs.status === 'fulfilled') {
-      return {
-        name: gs.value.name,
-        private: gs.value.password,
-        players: gs.value.players.length,
-        maxplayers: gs.value.maxplayers,
-      }
-    } else {
-      return {
-        error: gs.reason,
-      }
-    }
-  })
-
-  // Send the data to redis with an expiration value of 1 minutes
-  redis.set('heartlessgs', JSON.stringify(response))
-
-  if (res) {
-    res.json(response)
-  }
-}
-
-// Game server info cache middleware with redis key 'heartlessgs'
-const gsCache = async (req, res, next) => {
-  const heartlessgs = await redis.get('heartlessgs')
-
-  if (heartlessgs === null) {
-    next()
-  } else {
-    res.json(JSON.parse(heartlessgs))
-  }
-}
-
-// refresh game server data every minute with this poor man cron task
-setInterval(() => {
-  getGS()
-}, 60 * 1000)
-
 /**
  * Routes of the api prefixed with /api in nuxt.config.js
  * Get data from redis cache if available otherwise fetch the data and cache it
  */
 app.get('/getYT', ytCache, getYT)
-app.get('/getGS', gsCache, getGS)
 
 module.exports = app
