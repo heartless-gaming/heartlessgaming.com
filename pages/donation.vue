@@ -17,8 +17,26 @@
     </header>
     <main>
       <div class="mb-12 max-w-2xl mx-auto">
-        <form id="payment-form">
-          <input id="email" type="text" placeholder="Email address" />
+        <form id="payment-form" class="rounded p-3 sm:p-10">
+          <div class="flex items-center mb-3">
+            <div class="flex flex-wrap flex-1 justify-between">
+              <button class="amount-pill">5 €</button>
+              <button class="amount-pill">10 €</button>
+              <button class="amount-pill">15 €</button>
+              <button class="amount-pill">20 €</button>
+              <button class="amount-pill">50 €</button>
+            </div>
+            <div class="relative">
+              <input type="text" :value="amount" class="amount-custom" />
+              <p class="absolute text-3xl text-gray-200 right-0 top-0">€</p>
+            </div>
+          </div>
+          <input
+            id="email"
+            type="text"
+            placeholder="Adresse email"
+            class="mb-5"
+          />
           <div id="card-element"></div>
           <button id="submit" class="" :disabled="isSubmitDisable">
             <div id="spinner" class="spinner hidden"></div>
@@ -62,6 +80,7 @@ export default {
   data: () => ({
     title: 'Donation',
     isSubmitDisable: true,
+    amount: 5,
     cardErrorMsg: '',
   }),
   head() {
@@ -100,13 +119,12 @@ export default {
   mounted() {
     // const elements = this.$stripe.elements()
     // Disable the button until we have Stripe set up on the page
-    // this.isSubmitDisable = false
+    this.isSubmitDisable = false
     const baseURL = this.$nuxt.context.$config.baseURL
     fetch(`${baseURL}/api/create-payment-intent`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.amount),
     })
       .then((result) => {
         return result.json()
@@ -211,18 +229,29 @@ export default {
 }
 </script>
 
-<style scoped>
-form {
-  width: 30vw;
-  min-width: 500px;
-  align-self: center;
-  border-radius: 7px;
-  padding: 40px;
+<style lang="scss">
+.amount-pill {
+  @apply inline-block mr-3 px-6 py-2 rounded-full bg-hlsred text-gray-200 text-lg font-bold transition-all duration-200;
+
+  &:hover {
+    @apply bg-hlsred-dark;
+  }
 }
 
-input {
+.amount-custom {
+  @apply w-24 pr-5 text-center bg-transparent border-b-2 border-solid border-hlsred text-3xl text-gray-200;
+}
+
+// #payment-form {
+//   width: 30vw;
+//   min-width: 500px;
+//   align-self: center;
+//   border-radius: 7px;
+//   padding: 40px;
+// }
+
+#email {
   border-radius: 6px;
-  margin-bottom: 6px;
   padding: 12px;
   border: 1px solid rgba(50, 50, 93, 0.1);
   height: 44px;
@@ -268,7 +297,7 @@ input {
 }
 
 /* Buttons and links */
-button {
+#submit {
   background: #cc1b00;
   color: #fff;
   font-family: Arial, sans-serif;
@@ -284,10 +313,11 @@ button {
   width: 100%;
 }
 
-button:hover {
-  filter: contrast(115%);
+#submit:hover {
+  filter: contrast(140%);
 }
-button:disabled {
+
+#submit:disabled {
   opacity: 0.5;
   cursor: default;
 }
@@ -364,12 +394,6 @@ button:disabled {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  form {
-    width: 80vw;
   }
 }
 
