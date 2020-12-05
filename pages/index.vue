@@ -33,12 +33,12 @@
       <section class="max-w-2xl mx-auto mb-10 text-gray-200">
         <h2 class="mb-3 text-2xl">L'argent des abonnés</h2>
         <p class="mb-5">
-          Les frais de fonctionement (47.99 € par mois) sont pris en charge par
+          Les frais de fonctionnement (47.99 € par mois) sont pris en charge par
           <a class="underline" href="https://skullmasher.io">
             Florian "Skullmasher" Ledru
           </a>
           ainsi que par le reste des membres de la communauté. Un choix
-          comfortable qui nous permet de garder notre indépendance
+          confortable qui nous permet de garder notre indépendance
           <strong>depuis plus de 10 ans</strong> et de ne pas avoir recours à
           des sponsors comme
           <strong class="uppercase">Raid Diarrhe Legends</strong> (
