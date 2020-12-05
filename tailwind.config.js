@@ -19,6 +19,11 @@ module.exports = {
       },
       transitionProperty: ['motion-reduce'],
     },
+    variants: {
+      extend: {
+        opacity: ['disabled'],
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 }

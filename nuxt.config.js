@@ -89,6 +89,7 @@ export default {
   },
   privateRuntimeConfig: {
     ytApiKey: process.env.YT_API_KEY,
+    stripeSecretKey: process.env.STRIPE_SECRET_KEY,
   },
 
   // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware
