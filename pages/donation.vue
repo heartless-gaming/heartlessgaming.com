@@ -18,35 +18,51 @@
     <main>
       <div class="mb-12 max-w-2xl mx-auto">
         <form id="payment-form" class="rounded p-3 sm:p-10">
-          <div class="flex items-center mb-3">
-            <div class="flex flex-wrap flex-1 justify-between">
-              <button class="amount-pill">5 €</button>
-              <button class="amount-pill">10 €</button>
-              <button class="amount-pill">15 €</button>
-              <button class="amount-pill">20 €</button>
-              <button class="amount-pill">50 €</button>
+          <div class="flex items-center sm:items-start mb-2 sm:mb-5">
+            <div class="flex flex-wrap flex-1 sm:justify-between">
+              <button class="amount-pill amount-pill--selected hover:ring-4">
+                5 €
+              </button>
+              <button class="amount-pill hover:ring-2">10 €</button>
+              <button class="amount-pill hover:ring-2">15 €</button>
+              <button class="amount-pill hover:ring-2">20 €</button>
+              <button class="amount-pill hover:ring-2">50 €</button>
             </div>
-            <div class="relative">
-              <input type="text" :value="amount" class="amount-custom" />
-              <p class="absolute text-3xl text-gray-200 right-0 top-0">€</p>
+            <div>
+              <div class="relative">
+                <input type="text" :value="amount" class="amount-custom" />
+                <p class="absolute text-3xl text-gray-200 right-0 top-0.5">€</p>
+              </div>
+              <p class="text-gray-500">Minimum: 3€</p>
             </div>
           </div>
-          <input
-            id="email"
-            type="text"
-            placeholder="Adresse email"
-            class="mb-5"
-          />
-          <div id="card-element"></div>
-          <button id="submit" class="" :disabled="isSubmitDisable">
+          <div class="relative">
+            <input
+              id="email"
+              type="text"
+              placeholder="Adresse email"
+              class="mb-5 py-3 pl-11 pr-3 rounded w-full text-gray-900 placeholder-black"
+            />
+            <svg-mail
+              class="w-5 absolute top-4 left-3 fill-current text-gray-400"
+            />
+          </div>
+          <div id="card-element" class="rounded-t bg-white p-3"></div>
+          <button
+            id="submit"
+            class="w-full bg-hlsred rounded-b p-3 text-white font-bold shadow-lg hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
+            :disabled="isSubmitDisable"
+          >
             <div id="spinner" class="spinner hidden"></div>
-            <span id="button-text">Donner</span>
+            <span id="button-text">Donner {{ amount }}€</span>
           </button>
           <p id="card-error" role="alert">{{ cardErrorMsg }}</p>
-          <p class="result-message hidden">
+          <p class="js-resultMessage hidden text-white">
             Payment succeeded, see the result in your
-            <a href="" target="_blank">Stripe dashboard.</a>Refresh the page to
-            pay again.
+            <a class="text-white font-bold underline" href="" target="_blank">
+              Stripe dashboard.</a
+            >
+            Refresh the page to pay again.
           </p>
         </form>
       </div>
@@ -63,11 +79,13 @@
 </template>
 
 <script>
+import { loadStripe } from '@stripe/stripe-js/pure'
 import MainNav from '~/components/MainNav.vue'
 import Logo from '~/components/Logo.vue'
 import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
 import Mentra from '~/components/Mentra.vue'
+import SvgMail from '~/assets/mail.svg?inline'
 
 export default {
   components: {
@@ -76,6 +94,7 @@ export default {
     Credits,
     Quotes,
     Mentra,
+    SvgMail,
   },
   data: () => ({
     title: 'Donation',
@@ -116,12 +135,12 @@ export default {
       ],
     }
   },
-  mounted() {
-    // const elements = this.$stripe.elements()
-    // Disable the button until we have Stripe set up on the page
-    this.isSubmitDisable = false
-    const baseURL = this.$nuxt.context.$config.baseURL
-    fetch(`${baseURL}/api/create-payment-intent`, {
+  async mounted() {
+    // mtlynch.io/stripe-recording-its-customers
+    loadStripe.setLoadParameters({ advancedFraudSignals: false })
+    const stripe = await loadStripe(this.$nuxt.context.$config.publishableKey)
+
+    fetch(`${this.$nuxt.context.$config.baseURL}/api/create-payment-intent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.amount),
@@ -130,15 +149,15 @@ export default {
         return result.json()
       })
       .then((data) => {
-        const elements = this.$stripe.elements()
+        const elements = stripe.elements()
         const style = {
           base: {
-            color: '#32325d',
+            color: '#1a202c',
             fontFamily: 'Arial, sans-serif',
             fontSmoothing: 'antialiased',
             fontSize: '16px',
             '::placeholder': {
-              color: '#32325d',
+              color: '#1a202c',
             },
           },
           invalid: {
@@ -162,7 +181,7 @@ export default {
         form.addEventListener('submit', (event) => {
           event.preventDefault()
           // Complete payment when the submit button is clicked
-          payWithCard(this.$stripe, card, data.clientSecret)
+          payWithCard(stripe, card, data.clientSecret)
         })
       })
 
@@ -193,12 +212,12 @@ export default {
     const orderComplete = (paymentIntentId) => {
       loading(false)
       document
-        .querySelector('.result-message a')
+        .querySelector('.js-resultMessage a')
         .setAttribute(
           'href',
           `https://dashboard.stripe.com/test/payments/${paymentIntentId}`
         )
-      document.querySelector('.result-message').classList.remove('hidden')
+      document.querySelector('.js-resultMessage').classList.remove('hidden')
       this.isSubmitDisable = true
     }
 
@@ -231,49 +250,27 @@ export default {
 
 <style lang="scss">
 .amount-pill {
-  @apply inline-block mr-3 px-6 py-2 rounded-full bg-hlsred text-gray-200 text-lg font-bold transition-all duration-200;
+  @apply inline-block mr-3 mb-3 px-5 sm:mb-0 sm:px-6 py-2 rounded-full bg-hlsred text-gray-200 font-bold shadow hover:bg-hlsred-dark ring-hlsred-dark ring-offset-0 ring-offset-hlsred-dark transition-all duration-200;
 
-  &:hover {
-    @apply bg-hlsred-dark;
+  &--selected {
+    @apply ring-4 ring-hlsred-light ring-offset-4 ring-offset-gray-900;
   }
 }
 
 .amount-custom {
-  @apply w-24 pr-5 text-center bg-transparent border-b-2 border-solid border-hlsred text-3xl text-gray-200;
+  @apply w-24 pr-5 pb-1 text-center bg-transparent border-b-2 border-solid border-hlsred text-3xl text-gray-200;
 }
 
-// #payment-form {
-//   width: 30vw;
-//   min-width: 500px;
-//   align-self: center;
-//   border-radius: 7px;
-//   padding: 40px;
-// }
-
-#email {
-  border-radius: 6px;
-  padding: 12px;
-  border: 1px solid rgba(50, 50, 93, 0.1);
-  height: 44px;
-  font-size: 16px;
-  width: 100%;
-  background: white;
-}
-
-.result-message {
+/*.result-message {
   line-height: 22px;
   font-size: 16px;
-}
+}*/
 
-.result-message a {
+/*.result-message a {
   color: rgb(89, 111, 214);
   font-weight: 600;
   text-decoration: none;
-}
-
-.hidden {
-  display: none;
-}
+}*/
 
 #card-error {
   color: rgb(105, 115, 134);
@@ -283,43 +280,8 @@ export default {
   margin-top: 12px;
 }
 
-#card-element {
-  border-radius: 4px 4px 0 0;
-  padding: 12px;
-  border: 1px solid rgba(50, 50, 93, 0.1);
-  height: 44px;
-  width: 100%;
-  background: white;
-}
-
 #payment-request-button {
   margin-bottom: 32px;
-}
-
-/* Buttons and links */
-#submit {
-  background: #cc1b00;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  border-radius: 0 0 4px 4px;
-  border: 0;
-  padding: 12px 16px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  display: block;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 5.5px 0 rgba(0, 0, 0, 0.07);
-  width: 100%;
-}
-
-#submit:hover {
-  filter: contrast(140%);
-}
-
-#submit:disabled {
-  opacity: 0.5;
-  cursor: default;
 }
 
 /* spinner/processing state, errors */

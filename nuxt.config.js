@@ -59,13 +59,6 @@ export default {
     '@nuxt/content',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
-    // github.com/WilliamDASILVA/nuxt-stripe-module
-    [
-      'nuxt-stripe-module',
-      {
-        publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
-      },
-    ],
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -86,6 +79,7 @@ export default {
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
+    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
   },
   privateRuntimeConfig: {
     ytApiKey: process.env.YT_API_KEY,
