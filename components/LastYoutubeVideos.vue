@@ -1,28 +1,36 @@
 <template>
-  <section v-if="videos.length > 0" class="mb-10">
-    <h2 class="max-w-5xl mx-auto mb-5 text-2xl text-gray-200 fadeInDown">
-      Les dernières vidéos Youtube
-    </h2>
-    <magic-grid wrapper="max-w-6xl mx-auto" :max-cols="3" :max-col-width="320">
-      <a
-        v-for="(video, index) in videos"
-        :key="index"
-        class="p-2 bg-white shadow-lg inline-block rounded-xl transform hover:scale-105 transition-youtubecard backface-hidden"
-        :href="video.url"
+  <section v-if="videos.length > 0" class="relative mb-10 -skewed">
+    <div class="px-2">
+      <h2
+        class="relative max-w-5xl mx-auto mb-5 text-2xl text-gray-200 fadeInDown kek-text-shadow"
       >
-        <img
-          class="rounded-xl"
-          :src="video.thumbnail.url"
-          :width="video.thumbnail.width"
-          :height="video.thumbnail.height"
-          loading="lazy"
-        />
-        <h3 class="w-min text-lg text-gray-900">
-          <strong>{{ video.title }}</strong>
-        </h3>
-        <p class="text-sm text-gray-700">{{ video.duration }}</p>
-      </a>
-    </magic-grid>
+        Les dernières vidéos Youtube
+      </h2>
+      <magic-grid
+        wrapper="max-w-6xl mx-auto"
+        :max-cols="3"
+        :max-col-width="320"
+      >
+        <a
+          v-for="(video, index) in videos"
+          :key="index"
+          class="p-2 bg-white shadow-lg inline-block rounded-xl transform hover:scale-105 transition-youtubecard backface-hidden"
+          :href="video.url"
+        >
+          <img
+            class="rounded-xl"
+            :src="video.thumbnail.url"
+            :width="video.thumbnail.width"
+            :height="video.thumbnail.height"
+            loading="lazy"
+          />
+          <h3 class="text-lg text-gray-900">
+            <strong>{{ video.title }}</strong>
+          </h3>
+          <p class="text-sm text-gray-700">{{ video.duration }}</p>
+        </a>
+      </magic-grid>
+    </div>
   </section>
 </template>
 
@@ -53,6 +61,19 @@ export default {
 </script>
 
 <style>
+.kek-text-shadow {
+  text-shadow: #000 0 0 3px, #000 0 0 2px, #000 0 0 2px;
+}
+
+.-skewed::before {
+  content: '';
+  position: absolute;
+  background: theme('colors.gray.800');
+  width: 100%;
+  height: 90%;
+  transform: skewY(-8deg);
+}
+
 .transition-youtubecard {
   transition: all 0.15s ease !important;
 }
