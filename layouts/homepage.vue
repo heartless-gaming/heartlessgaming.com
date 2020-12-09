@@ -1,26 +1,18 @@
 <template>
   <div>
-    <Header />
+    <HeaderHomepage />
     <Nuxt />
     <Footer />
   </div>
 </template>
 
 <style lang="scss">
-.halo-azul {
+.gray-gradient {
   background-image: radial-gradient(
     ellipse farthest-side at 50% 30%,
     #263e5e 0px,
     transparent 100%
   );
-}
-
-.word-03 {
-  word-spacing: 0.3rem;
-}
-
-.letter-05 {
-  letter-spacing: 0.5rem;
 }
 
 .fill-white {

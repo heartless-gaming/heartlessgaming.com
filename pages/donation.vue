@@ -1,99 +1,64 @@
 <template>
-  <div class="bg-gray-900">
-    <header
-      class="mb-12 pt-16 sm:pt-12 pb-12 pr-2 pl-2 gray-gradient border-b-3 border-solid border-hlsred header-box-shadow"
-    >
-      <main-nav />
-      <div class="">
-        <nuxt-link to="/">
-          <logo />
-        </nuxt-link>
-        <h1
-          class="mt-12 text-center text-4xl text-gray-200 zoomIn main-title-text-shadow soundboard-letter-spacing uppercase"
+  <main class="bg-gray-900 flow-root">
+    <div class="mb-12 max-w-2xl mx-auto">
+      <form id="payment-form" class="rounded p-3 sm:p-10">
+        <div class="flex items-center sm:items-start mb-2 sm:mb-5">
+          <div class="flex flex-wrap flex-1 sm:mt-1 sm:justify-between">
+            <button class="amount-pill amount-pill--selected hover:ring-4">
+              5 €
+            </button>
+            <button class="amount-pill hover:ring-2">10 €</button>
+            <button class="amount-pill hover:ring-2">15 €</button>
+            <button class="amount-pill hover:ring-2">20 €</button>
+            <button class="amount-pill hover:ring-2">50 €</button>
+          </div>
+          <div>
+            <div class="relative">
+              <input type="text" :value="amount" class="amount-custom" />
+              <p class="absolute text-3xl text-gray-200 right-0 top-0.5">€</p>
+            </div>
+            <p class="text-gray-300">Minimum: 3€</p>
+          </div>
+        </div>
+        <div class="relative">
+          <input
+            id="email"
+            type="text"
+            placeholder="Adresse email"
+            class="mb-5 py-3 pl-11 pr-3 rounded w-full text-gray-900 placeholder-black shadow-lg"
+          />
+          <svg-mail
+            class="w-5 absolute top-4 left-3 fill-current text-gray-300"
+          />
+        </div>
+        <div id="card-element" class="rounded-t bg-white p-3"></div>
+        <button
+          id="submit"
+          class="w-full bg-hlsred rounded-b p-3 text-white font-bold shadow-lg hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
+          :disabled="isSubmitDisable"
         >
-          {{ title }}
-        </h1>
-      </div>
-    </header>
-    <main>
-      <div class="mb-12 max-w-2xl mx-auto">
-        <form id="payment-form" class="rounded p-3 sm:p-10">
-          <div class="flex items-center sm:items-start mb-2 sm:mb-5">
-            <div class="flex flex-wrap flex-1 sm:justify-between">
-              <button class="amount-pill amount-pill--selected hover:ring-4">
-                5 €
-              </button>
-              <button class="amount-pill hover:ring-2">10 €</button>
-              <button class="amount-pill hover:ring-2">15 €</button>
-              <button class="amount-pill hover:ring-2">20 €</button>
-              <button class="amount-pill hover:ring-2">50 €</button>
-            </div>
-            <div>
-              <div class="relative">
-                <input type="text" :value="amount" class="amount-custom" />
-                <p class="absolute text-3xl text-gray-200 right-0 top-0.5">€</p>
-              </div>
-              <p class="text-gray-500">Minimum: 3€</p>
-            </div>
-          </div>
-          <div class="relative">
-            <input
-              id="email"
-              type="text"
-              placeholder="Adresse email"
-              class="mb-5 py-3 pl-11 pr-3 rounded w-full text-gray-900 placeholder-black"
-            />
-            <svg-mail
-              class="w-5 absolute top-4 left-3 fill-current text-gray-400"
-            />
-          </div>
-          <div id="card-element" class="rounded-t bg-white p-3"></div>
-          <button
-            id="submit"
-            class="w-full bg-hlsred rounded-b p-3 text-white font-bold shadow-lg hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
-            :disabled="isSubmitDisable"
+          <div id="spinner" class="spinner hidden"></div>
+          <span id="button-text">Donner {{ amount }}€</span>
+        </button>
+        <p id="card-error" role="alert">{{ cardErrorMsg }}</p>
+        <p class="js-resultMessage hidden text-white">
+          Payment succeeded, see the result in your
+          <a class="text-white font-bold underline" href="" target="_blank">
+            Stripe dashboard.</a
           >
-            <div id="spinner" class="spinner hidden"></div>
-            <span id="button-text">Donner {{ amount }}€</span>
-          </button>
-          <p id="card-error" role="alert">{{ cardErrorMsg }}</p>
-          <p class="js-resultMessage hidden text-white">
-            Payment succeeded, see the result in your
-            <a class="text-white font-bold underline" href="" target="_blank">
-              Stripe dashboard.</a
-            >
-            Refresh the page to pay again.
-          </p>
-        </form>
-      </div>
-    </main>
-    <footer class="bg-gray-800 flow-root">
-      <social-networks />
-      <div class="max-w-2xl mx-auto px-2 mb-10 sm:flex">
-        <quotes />
-        <credits />
-      </div>
-      <mentra />
-    </footer>
-  </div>
+          Refresh the page to pay again.
+        </p>
+      </form>
+    </div>
+  </main>
 </template>
 
 <script>
 import { loadStripe } from '@stripe/stripe-js/pure'
-import MainNav from '~/components/MainNav.vue'
-import Logo from '~/components/Logo.vue'
-import Credits from '~/components/Credits.vue'
-import Quotes from '~/components/Quotes.vue'
-import Mentra from '~/components/Mentra.vue'
 import SvgMail from '~/assets/mail.svg?inline'
 
 export default {
   components: {
-    MainNav,
-    Logo,
-    Credits,
-    Quotes,
-    Mentra,
     SvgMail,
   },
   data: () => ({
@@ -250,7 +215,7 @@ export default {
 
 <style lang="scss">
 .amount-pill {
-  @apply inline-block mr-3 mb-3 px-5 sm:mb-0 sm:px-6 py-2 rounded-full bg-hlsred text-gray-200 font-bold shadow hover:bg-hlsred-dark ring-hlsred-dark ring-offset-0 ring-offset-hlsred-dark transition-all duration-200;
+  @apply inline-block mr-3 mb-3 px-5 sm:mb-0 sm:px-6 py-2 rounded-full bg-hlsred text-gray-200 font-bold shadow-lg hover:bg-hlsred-dark ring-hlsred-dark ring-offset-0 ring-offset-hlsred-dark transition-all duration-200;
 
   &--selected {
     @apply ring-4 ring-hlsred-light ring-offset-4 ring-offset-gray-900;
@@ -357,21 +322,5 @@ export default {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-
-.gray-gradient {
-  background-image: radial-gradient(
-    circle farthest-corner at 0% -40%,
-    rgba(90, 92, 106, 1) 0%,
-    rgba(32, 45, 65, 1) 75%
-  );
-}
-
-.header-box-shadow {
-  box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
-}
-
-.soundboard-letter-spacing {
-  letter-spacing: 0.5rem;
 }
 </style>
