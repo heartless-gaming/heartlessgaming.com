@@ -1,61 +1,23 @@
 <template>
-  <div class="bg-gray-900">
-    <header
-      class="mb-20 pt-16 sm:pt-12 pb-12 pr-2 pl-2 gray-gradient border-b-3 border-solid border-hlsred header-box-shadow"
+  <main class="bg-gray-900 flow-root">
+    <div
+      class="relative md:mt-6 mb-12 md:mb-20 flex justify-between flex-wrap max-w-2xl mx-auto"
     >
-      <main-nav />
-      <div class="">
-        <nuxt-link to="/">
-          <logo />
-        </nuxt-link>
-        <h1
-          class="mt-12 text-center text-4xl text-gray-200 zoomIn main-title-text-shadow soundboard-letter-spacing uppercase"
+      <div v-for="audio in audios" :key="audio.id" class="p-4 inline-block">
+        <button
+          class="px-4 py-3 rounded-full text-gray-200 font-bold bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+          @click="playAudio($event)"
         >
-          {{ title }}
-        </h1>
+          {{ audio.name }}
+        </button>
+        <audio :src="audio.file"></audio>
       </div>
-    </header>
-    <main>
-      <div
-        class="relative mb-12 md:mb-20 flex justify-between flex-wrap max-w-2xl mx-auto"
-      >
-        <div v-for="audio in audios" :key="audio.id" class="p-4 inline-block">
-          <button
-            class="px-4 py-3 rounded-full text-gray-200 font-bold bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
-            @click="playAudio($event)"
-          >
-            {{ audio.name }}
-          </button>
-          <audio :src="audio.file"></audio>
-        </div>
-      </div>
-    </main>
-    <footer class="bg-gray-800 flow-root">
-      <social-networks />
-      <div class="max-w-2xl mx-auto px-2 mb-10 sm:flex">
-        <quotes />
-        <credits />
-      </div>
-      <mentra />
-    </footer>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script>
-import MainNav from '~/components/MainNav.vue'
-import Logo from '~/components/Logo.vue'
-import Credits from '~/components/Credits.vue'
-import Quotes from '~/components/Quotes.vue'
-import Mentra from '~/components/Mentra.vue'
-
 export default {
-  components: {
-    MainNav,
-    Logo,
-    Credits,
-    Quotes,
-    Mentra,
-  },
   data: () => ({
     title: 'Soundboard',
     audios: [
@@ -120,7 +82,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'.",
+            "Collections des tubes populaires Heartless Gaming comme : 'learn to play bitcheu' ou 'baserape'.",
         },
         {
           hid: 'og:url',
@@ -136,7 +98,7 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           content:
-            "Collections des tubes populaires Heartless Gaming, comme 'lodr c skul', 'learn to play bitcheu' ou 'baserape'.",
+            "Collections des tubes populaires Heartless Gaming comme : 'learn to play bitcheu' ou 'baserape'.",
         },
         {
           hid: 'og:image',
@@ -153,47 +115,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.gray-gradient {
-  background-image: radial-gradient(
-    circle farthest-corner at 0% -40%,
-    rgba(90, 92, 106, 1) 0%,
-    rgba(32, 45, 65, 1) 75%
-  );
-}
-
-.header-box-shadow {
-  box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
-}
-
-.lady-trumpet-alt::before {
-  @screen sm {
-    content: '';
-    position: absolute;
-    width: 110px;
-    height: 150%;
-    left: 0;
-    top: 0;
-    transform: scaleX(-1);
-    background-position: 100%;
-    background-image: url('~@/assets/lady-trumpet.svg');
-    background-repeat: no-repeat;
-    animation: ladytrumpet 3s ease infinite;
-  }
-}
-
-@-webkit-keyframes ladytrumpet {
-  0%,
-  100% {
-    transform: scale(1), rotate(-2deg);
-  }
-  50% {
-    transform: scale(1.2), rotate(1deg);
-  }
-}
-
-.soundboard-letter-spacing {
-  letter-spacing: 0.5rem;
-}
-</style>
