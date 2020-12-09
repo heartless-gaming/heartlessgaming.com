@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-900">
     <header
-      class="mb-12 pt-16 sm:pt-12 pb-12 pr-2 pl-2 gray-gradient border-b-3 border-solid border-hlsred header-box-shadow"
+      class="mb-20 pt-16 sm:pt-12 pb-12 pr-2 pl-2 gray-gradient border-b-3 border-solid border-hlsred header-box-shadow"
     >
       <main-nav />
       <div class="">
@@ -16,10 +16,12 @@
       </div>
     </header>
     <main>
-      <div class="mb-12 flex justify-around flex-wrap max-w-lg mx-auto">
+      <div
+        class="relative mb-12 md:mb-20 flex justify-around flex-wrap max-w-2xl mx-auto"
+      >
         <div v-for="audio in audios" :key="audio.id" class="p-4 inline-block">
           <button
-            class="px-4 py-2 rounded-full text-gray-200 bg-hlsred hover:bg-hlsres-dark transition-all duration-200"
+            class="px-4 py-3 rounded-full text-gray-200 font-bold bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
             @click="playAudio($event)"
           >
             {{ audio.name }}
@@ -163,6 +165,32 @@ export default {
 
 .header-box-shadow {
   box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
+}
+
+.lady-trumpet-alt::before {
+  @screen sm {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 150%;
+    left: 0;
+    top: 0;
+    transform: scaleX(-1);
+    background-position: 100%;
+    background-image: url('~@/assets/lady-trumpet.svg');
+    background-repeat: no-repeat;
+    animation: ladytrumpet 3s ease infinite;
+  }
+}
+
+@-webkit-keyframes ladytrumpet {
+  0%,
+  100% {
+    transform: scale(1), rotate(-2deg);
+  }
+  50% {
+    transform: scale(1.2), rotate(1deg);
+  }
 }
 
 .soundboard-letter-spacing {
