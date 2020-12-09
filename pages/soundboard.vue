@@ -17,7 +17,7 @@
     </header>
     <main>
       <div
-        class="relative mb-12 md:mb-20 flex justify-around flex-wrap max-w-2xl mx-auto"
+        class="relative mb-12 md:mb-20 flex justify-between flex-wrap max-w-2xl mx-auto"
       >
         <div v-for="audio in audios" :key="audio.id" class="p-4 inline-block">
           <button
