@@ -1,8 +1,6 @@
 <template>
   <div class="bg-gray-900">
-    <header
-      class="pt-16 sm:pt-12 pb-12 pr-2 pl-2 gray-gradient header-box-shadowkek"
-    >
+    <header class="pt-16 sm:pt-12 pb-12 pr-2 pl-2 gray-gradient">
       <main-nav />
       <div class="text-center">
         <div class="">
@@ -16,10 +14,12 @@
       <server-info />
       <last-youtube-videos />
       <vocal-war />
-      <section class="max-w-2xl mx-auto mb-10 text-gray-200">
+      <section
+        class="relative max-w-2xl mx-auto mb-10 text-gray-200 lady-trumpet"
+      >
         <div class="px-2">
           <h2 class="mb-3 text-2xl">Soundboard Heartless Gaming</h2>
-          <p class="mb-3">
+          <p class="max-w-sm mb-5">
             Retrouver les plus grands tubes comme <em>baserape</em> et
             <em>learn to play bitch</em>.
           </p>
@@ -28,7 +28,7 @@
             class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
           >
             <strong>Découvrir l'enfer du Soundboard</strong>
-            <chevron-right class="w-2 inline align-middle fill-white" />
+            <svg-trumpet class="w-10 inline align-middle fill-white" />
           </nuxt-link>
         </div>
       </section>
@@ -64,7 +64,9 @@
         </div>
       </section>
     </main>
-    <footer class="bg-gray-800 flow-root border-t-0 border-solid border-hlsred">
+    <footer
+      class="bg-gray-800 flow-root border-t-3 border-solid border-hlsred footer-box-shadow"
+    >
       <social-networks />
       <div class="max-w-2xl mx-auto px-2 mb-10 sm:flex">
         <quotes />
@@ -87,6 +89,8 @@ import Credits from '~/components/Credits.vue'
 import Quotes from '~/components/Quotes.vue'
 import Mentra from '~/components/Mentra.vue'
 import ChevronRight from '~/assets/chevron-right.svg?inline'
+import SvgTrumpet from '~/assets/trumpet.svg?inline'
+// import SvgLadyTrumpet from '~/assets/lady-trumpet.svg?inline'
 
 export default {
   components: {
@@ -101,6 +105,8 @@ export default {
     Quotes,
     Mentra,
     ChevronRight,
+    SvgTrumpet,
+    // SvgLadyTrumpet,
   },
 }
 </script>
@@ -111,6 +117,30 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+.lady-trumpet::after {
+  @screen sm {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 150%;
+    left: 50%;
+    top: -20%;
+    background-position: 100%;
+    background-image: url('~@/assets/lady-trumpet.svg');
+    background-repeat: no-repeat;
+    animation: ladytrumpet 3s ease infinite;
+  }
+}
+
+@-webkit-keyframes ladytrumpet {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
 
 .gray-gradient {
   background-image: radial-gradient(
@@ -121,7 +151,7 @@ export default {
   // linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
 }
 
-.header-box-shadow {
-  box-shadow: 0 17px 15px -8px rgba(0, 0, 0, 0.4);
+.footer-box-shadow {
+  box-shadow: inset 0 17px 15px -8px rgba(0, 0, 0, 0.65);
 }
 </style>

@@ -1,18 +1,18 @@
 <template>
-  <section class="relative max-w-4xl mx-auto mb-10 text-gray-200">
-    <div class="px-2">
+  <section class="relative max-w-4xl mx-auto mb-20 text-gray-200">
+    <div class="px-2 md:px-6">
       <h2 class="mb-3 text-2xl kek-text-shadow">Discution vocal</h2>
       <p class="mb-5">
         Il y a dans cette communauté une fracture.
         <strong class="uppercase">Choisis ton camp</strong>
       </p>
-      <div class="md:flex">
-        <div class="flex mb-8">
-          <a class="mr-5" href="mumble://www.heartlessgaming.com/">
-            <svg-mumble class="w-24 voip-icons" />
+      <div class="md:grid gap-4 grid-cols-2">
+        <div class="flex mb-8 md:mb-0">
+          <a class="mr-2 lg:mr-5" href="mumble://www.heartlessgaming.com/">
+            <svg-mumble class="w-20 lg:w-22 voip-icons" />
           </a>
           <div>
-            <p class="mb-3">
+            <p class="mb-5">
               <strong>L'expérience original Heartless</strong> ce trouve sur
               Mumble&nbsp;! On dors dans le channel AFK et on discute même quand
               on a pas envie de jouer.
@@ -27,11 +27,11 @@
           </div>
         </div>
         <div class="flex">
-          <a class="mr-5" href="https://discord.gg/rWDzacA">
-            <svg-discord class="w-24 voip-icons" />
+          <a class="mr-2 lg:mr-5" href="https://discord.gg/rWDzacA">
+            <svg-discord class="w-20 lg:w-22 voip-icons" />
           </a>
           <div>
-            <p class="mb-3">
+            <p class="mb-5">
               <strong>Ici c'est la modernité !</strong> Alerte et information
               serveur automatique. Les joueurs ici sont sonvent un peu plus
               compétitif (CSGO, LOL).
