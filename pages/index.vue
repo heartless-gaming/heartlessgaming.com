@@ -144,9 +144,9 @@ export default {
 
 .gray-gradient {
   background-image: radial-gradient(
-    ellipse closest-side at 50% 27%,
+    ellipse farthest-side at 50% 30%,
     #263e5e 0px,
-    transparent 140%
+    transparent 100%
   );
   // linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
 }

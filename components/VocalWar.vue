@@ -1,7 +1,7 @@
 <template>
   <section class="relative max-w-4xl mx-auto mb-20 text-gray-200">
     <div class="px-2 md:px-6">
-      <h2 class="mb-3 text-2xl kek-text-shadow">Discution vocal</h2>
+      <h2 class="mb-3 text-2xl">Discution vocal</h2>
       <p class="mb-5">
         Il y a dans cette communauté une fracture.
         <strong class="uppercase">Choisis ton camp</strong>
