@@ -5,7 +5,7 @@
   - Include prettier font with nuxt google-fonts and download them locally
   - Descent design please with animation that goes *woosh*
     - Make the quotes modules better
-  - Refactor default layouts to contain footer
+  - ~~Refactor default layouts to contain header & footer~~
   - 404 & 500 error page
 
 ## Build Setup
