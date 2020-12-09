@@ -1,6 +1,6 @@
 <template>
-  <section v-if="videos.length > 0" class="relative mb-10 -skewed">
-    <div class="px-2">
+  <section v-if="videos.length > 0" class="relative mb-20 -skewed">
+    <div class="px-2 md:px-6">
       <h2
         class="relative max-w-5xl mx-auto mb-5 text-2xl text-gray-200 fadeInDown kek-text-shadow"
       >
