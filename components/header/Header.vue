@@ -13,15 +13,3 @@
     </h1>
   </header>
 </template>
-
-<script>
-import HeaderNav from '~/components/header/HeaderNav.vue'
-import Logo from '~/components/header/Logo.vue'
-
-export default {
-  components: {
-    HeaderNav,
-    Logo,
-  },
-}
-</script>

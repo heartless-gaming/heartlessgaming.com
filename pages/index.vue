@@ -4,10 +4,12 @@
     <last-youtube-videos />
     <vocal-war />
     <section
-      class="relative max-w-2xl mx-auto mb-10 text-gray-200 lady-trumpet"
+      class="relative max-w-2xl mx-auto mb-10 mb-20 text-gray-200 lady-trumpet"
     >
       <div class="px-2">
-        <h2 class="mb-3 text-2xl">Soundboard Heartless Gaming</h2>
+        <h2 class="mb-3 text-2xl font-grandstander">
+          Soundboard Heartless Gaming
+        </h2>
         <p class="max-w-sm mb-5">
           Retrouver les plus grands tubes comme <em>baserape</em> et
           <em>learn to play bitch</em>.
@@ -23,7 +25,7 @@
     </section>
     <section class="max-w-2xl mx-auto mb-10 text-gray-200">
       <div class="px-2">
-        <h2 class="mb-3 text-2xl">L'argent des abonnés</h2>
+        <h2 class="mb-3 text-2xl font-grandstander">L'argent des abonnés</h2>
         <p class="mb-5">
           Les frais de fonctionnement (47.99 € par mois) sont pris en charge par
           <a class="underline" href="https://skullmasher.io">

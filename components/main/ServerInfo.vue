@@ -3,7 +3,7 @@
     <div class="px-2">
       <div
         v-if="servers.length > 0"
-        class="max-w-2xl mx-auto relative z-10 mb-10 border-3 border-solid border-hlsred bg-gray-200 rounded shadow-server-info"
+        class="max-w-2xl mx-auto relative z-10 mb-20 border-3 border-solid border-hlsred bg-gray-200 rounded shadow-server-info"
       >
         <div class="flex bg-hlsred mb-1 pt-1 pb-2 text-gray-200">
           <h3 class="flex-1 pl-3 text-xl">Les serveurs de jeux</h3>
@@ -60,7 +60,7 @@ export default {
   position: absolute;
   background: theme('colors.gray.800');
   width: 100%;
-  height: 110%;
+  height: 115%;
   top: 25px;
   transform: skewY(-8deg);
 }
