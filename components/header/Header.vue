@@ -5,7 +5,7 @@
       <logo />
     </nuxt-link>
     <h1
-      class="mt-12 text-center text-4xl text-gray-200 zoomIn main-title-text-shadow letter-05 uppercase font-grandstander page-title-text-shadow"
+      class="mt-12 text-center text-5xl text-gray-200 zoomIn main-title-text-shadow letter-05 uppercase font-grandstander page-title-text-shadow"
     >
       {{ $route.name }}
     </h1>

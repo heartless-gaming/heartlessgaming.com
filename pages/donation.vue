@@ -7,10 +7,10 @@
             <button class="amount-pill amount-pill--selected hover:ring-4">
               5 €
             </button>
-            <button class="amount-pill hover:ring-2">10 €</button>
-            <button class="amount-pill hover:ring-2">15 €</button>
-            <button class="amount-pill hover:ring-2">20 €</button>
-            <button class="amount-pill hover:ring-2">50 €</button>
+            <button class="amount-pill md-shadow hover:ring-2">10 €</button>
+            <button class="amount-pill md-shadow hover:ring-2">15 €</button>
+            <button class="amount-pill md-shadow hover:ring-2">20 €</button>
+            <button class="amount-pill md-shadow hover:ring-2">50 €</button>
           </div>
           <div>
             <div class="relative">
@@ -25,7 +25,7 @@
             id="email"
             type="text"
             placeholder="Adresse email"
-            class="mb-5 py-3 pl-11 pr-3 rounded w-full text-gray-900 placeholder-black shadow-lg"
+            class="mb-5 py-3 pl-11 pr-3 rounded w-full text-gray-900 placeholder-black thicc-shadow"
           />
           <svg-mail
             class="w-5 absolute top-4 left-3 fill-current text-gray-300"
@@ -34,7 +34,7 @@
         <div id="card-element" class="rounded-t bg-white p-3"></div>
         <button
           id="submit"
-          class="w-full bg-hlsred rounded-b p-3 text-white font-bold shadow-lg hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
+          class="w-full bg-hlsred rounded-b p-3 text-white font-bold thicc-shadow hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
           :disabled="isSubmitDisable"
         >
           <div id="spinner" class="spinner hidden"></div>
@@ -220,7 +220,7 @@ export default {
 
 <style lang="scss">
 .amount-pill {
-  @apply inline-block mr-3 mb-3 px-5 sm:mb-0 sm:px-6 py-2 rounded-full bg-hlsred text-gray-200 font-bold shadow-lg hover:bg-hlsred-dark ring-hlsred-dark ring-offset-0 ring-offset-hlsred-dark transition-all duration-200;
+  @apply inline-block mr-3 mb-3 px-5 sm:mb-0 sm:px-6 py-2 rounded-full bg-hlsred text-gray-200 font-bold hover:bg-hlsred-dark ring-hlsred-dark ring-offset-0 ring-offset-hlsred-dark transition-all duration-200;
 
   &--selected {
     @apply ring-4 ring-hlsred-light ring-offset-4 ring-offset-gray-900;

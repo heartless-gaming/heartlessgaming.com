@@ -4,11 +4,13 @@
     <last-youtube-videos />
     <vocal-war />
     <section
-      class="relative max-w-2xl mx-auto mb-10 mb-20 text-gray-200 lady-trumpet"
+      class="relative max-w-2xl mx-auto mb-24 md:mb-48 text-gray-200 lady-trumpet"
     >
       <div class="px-2">
-        <h2 class="mb-3 text-2xl font-grandstander">
-          Soundboard Heartless Gaming
+        <h2
+          class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow"
+        >
+          Soundboard
         </h2>
         <p class="max-w-sm mb-5">
           Retrouver les plus grands tubes comme <em>baserape</em> et
@@ -16,16 +18,20 @@
         </p>
         <nuxt-link
           to="soundboard"
-          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
         >
           <strong>Découvrir l'enfer du Soundboard</strong>
           <svg-trumpet class="w-10 inline align-middle fill-white" />
         </nuxt-link>
       </div>
     </section>
-    <section class="max-w-2xl mx-auto mb-10 text-gray-200">
+    <section class="max-w-2xl mx-auto mb-24 text-gray-200">
       <div class="px-2">
-        <h2 class="mb-3 text-2xl font-grandstander">L'argent des abonnés</h2>
+        <h2
+          class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow"
+        >
+          L'argent des abonnés
+        </h2>
         <p class="mb-5">
           Les frais de fonctionnement (47.99 € par mois) sont pris en charge par
           <a class="underline" href="https://skullmasher.io">
@@ -45,7 +51,7 @@
         </p>
         <nuxt-link
           to="donation"
-          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
         >
           <strong>Faire une donation</strong>
           <chevron-right class="w-2 inline align-middle fill-white" />
@@ -75,7 +81,7 @@ export default {
     position: absolute;
     width: 110px;
     height: 150%;
-    left: 50%;
+    left: 55%;
     top: -20%;
     background-position: 100%;
     background-image: url('~@/assets/lady-trumpet.svg');

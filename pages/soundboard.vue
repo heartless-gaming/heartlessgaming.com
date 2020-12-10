@@ -5,7 +5,7 @@
     >
       <div v-for="audio in audios" :key="audio.id" class="p-4 inline-block">
         <button
-          class="px-4 py-3 rounded-full text-gray-200 font-bold bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+          class="px-4 py-3 rounded-full text-gray-200 font-bold bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
           @click="playAudio($event)"
         >
           {{ audio.name }}
