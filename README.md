@@ -1,11 +1,11 @@
 # The code that powers heartlessgaming.com
 ## The 2020 major update
 #### TODO (almost there skullmasher keep it up)
-  - Fix stripe donation
-  - Include prettier font with nuxt google-fonts and download them locally
+  - ~~Fix stripe donation~~
+  - ~~Include prettier font with nuxt google-fonts and download them locally~~
   - Descent design please with animation that goes *woosh*
     - Make the quotes modules better
-  - 404 & 500 error page
+  - ~~404 & 500 error page~~
 
 ## Build Setup
 

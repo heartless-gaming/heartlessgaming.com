@@ -3,7 +3,7 @@
     <div class="mb-12 max-w-2xl mx-auto">
       <form id="payment-form" class="rounded p-3 sm:p-10">
         <div class="flex items-center sm:items-start mb-2 sm:mb-5">
-          <div class="flex flex-wrap flex-1 sm:mt-1 sm:justify-between">
+          <div class="flex flex-wrap flex-1 sm:justify-between">
             <button class="amount-pill amount-pill--selected hover:ring-4">
               5 €
             </button>
@@ -60,6 +60,11 @@ import SvgMail from '~/assets/mail.svg?inline'
 export default {
   components: {
     SvgMail,
+  },
+  beforeRouteLeave(to) {
+    // Force an HTTP request instead of a JavaScript route change because we need
+    // a new page load that does *not* import Stripe.
+    window.location.replace(to.path)
   },
   data: () => ({
     title: 'Donation',

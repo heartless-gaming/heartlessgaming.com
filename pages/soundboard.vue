@@ -52,22 +52,22 @@ export default {
         name: 'harmonica',
       },
       {
-        id: 6,
+        id: 7,
         file: '/soundboard/mouche-obese.ogg',
         name: 'mouche obèse',
       },
       {
-        id: 7,
+        id: 8,
         file: '/soundboard/rire-demoniaque.ogg',
         name: 'rire démoniaque',
       },
       {
-        id: 7,
+        id: 9,
         file: '/soundboard/sortez-de-chez-moi.ogg',
         name: 'sortez de chez moi',
       },
       {
-        id: 8,
+        id: 10,
         file: '/soundboard/sortez-vous-les-doigt-du-cul.ogg',
         name: 'sortez vous les doigt du cul',
       },

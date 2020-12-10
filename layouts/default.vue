@@ -7,13 +7,9 @@
 </template>
 
 <style lang="scss">
-// .font-grandstander {
-//   font-family: 'Grandstander';
-// }
-
-// .font-rubik {
-//   font-family: 'Rubik';
-// }
+.page-title-text-shadow {
+  text-shadow: #000 0 0 5px, #000 0 0 2px;
+}
 
 .halo-azul {
   background-image: radial-gradient(

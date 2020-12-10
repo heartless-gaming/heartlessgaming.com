@@ -1,6 +1,6 @@
 <template>
   <header class="pt-16 sm:pt-12 pb-12 pr-2 pl-2 bg-gray-900 halo-azul">
-    <main-nav />
+    <header-nav />
     <div class="text-center">
       <div class="">
         <logo class="mb-10" />
