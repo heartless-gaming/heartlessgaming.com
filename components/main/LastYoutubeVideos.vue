@@ -2,7 +2,7 @@
   <section v-if="videos.length > 0" class="relative mb-20 -skewed">
     <div class="px-2 md:px-6">
       <h2
-        class="relative max-w-5xl mx-auto mb-5 text-2xl text-gray-200 fadeInDown kek-text-shadow"
+        class="relative max-w-2xl lg:max-w-5xl mx-auto mb-5 text-2xl text-gray-200 fadeInDown font-grandstander"
       >
         Les dernières vidéos Youtube
       </h2>
@@ -61,10 +61,6 @@ export default {
 </script>
 
 <style>
-.kek-text-shadow {
-  text-shadow: #000 0 0 3px, #000 0 0 2px, #000 0 0 2px;
-}
-
 .-skewed::before {
   content: '';
   position: absolute;

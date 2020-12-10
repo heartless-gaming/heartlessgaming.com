@@ -49,6 +49,18 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // github.com/nuxt-community/google-fonts-module
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          Grandstander: { wght: [400, 700] },
+          Rubik: { wght: [400, 700] },
+        },
+        display: 'optional',
+        download: true,
+      },
+    ],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)

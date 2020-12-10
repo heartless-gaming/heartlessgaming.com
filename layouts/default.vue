@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-rubik">
     <Header />
     <Nuxt />
     <Footer />
@@ -7,6 +7,14 @@
 </template>
 
 <style lang="scss">
+// .font-grandstander {
+//   font-family: 'Grandstander';
+// }
+
+// .font-rubik {
+//   font-family: 'Rubik';
+// }
+
 .halo-azul {
   background-image: radial-gradient(
     ellipse farthest-side at 50% 30%,
