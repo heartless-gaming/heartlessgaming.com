@@ -1,8 +1,8 @@
 <template>
-  <section v-if="videos.length > 0" class="relative mb-20 -skewed">
+  <section v-if="videos.length > 0" class="relative mb-24 md:mb-28 -skewed">
     <div class="px-2 md:px-6">
       <h2
-        class="relative max-w-2xl lg:max-w-5xl mx-auto mb-5 text-2xl text-gray-200 fadeInDown font-grandstander"
+        class="relative max-w-2xl lg:max-w-5xl mx-auto mb-5 text-2xl md:text-5xl text-gray-200 fadeInDown font-grandstander page-title-text-shadow"
       >
         Les dernières vidéos Youtube
       </h2>
@@ -14,7 +14,7 @@
         <a
           v-for="(video, index) in videos"
           :key="index"
-          class="p-2 bg-white shadow-lg inline-block rounded-xl transform hover:scale-105 transition-youtubecard backface-hidden"
+          class="p-2 bg-white shadow-lg inline-block rounded-xl transform hover:scale-105 transition-youtubecard backface-hidden thicc-shadow"
           :href="video.url"
         >
           <img

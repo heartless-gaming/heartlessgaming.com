@@ -1,7 +1,11 @@
 <template>
-  <section class="relative max-w-4xl mx-auto mb-20 text-gray-200">
+  <section class="relative max-w-4xl mx-auto mb-24 md:mb-48 text-gray-200">
     <div class="px-2 md:px-6">
-      <h2 class="mb-3 text-2xl font-grandstander">Discution vocal</h2>
+      <h2
+        class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow"
+      >
+        Discution vocal
+      </h2>
       <p class="mb-5">
         Il y a dans cette communauté une fracture.
         <strong class="uppercase">Choisis ton camp</strong>
@@ -18,7 +22,7 @@
               on a pas envie de jouer.
             </p>
             <a
-              class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+              class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
               href="mumble://www.heartlessgaming.com/"
             >
               <strong>Rejoindre le mumble</strong>
@@ -37,7 +41,7 @@
               compétitif (CSGO, LOL).
             </p>
             <a
-              class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200"
+              class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
               href="mumble://www.heartlessgaming.com/"
             >
               <strong>Rejoindre le discord</strong>
