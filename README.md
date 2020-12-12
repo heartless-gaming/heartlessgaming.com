@@ -1,12 +1,13 @@
 # The code that powers heartlessgaming.com
 ## The 2020 major update
 #### TODO (almost there skullmasher keep it up)
-  - *woosh* animation with Intersection Observer
+  - Make donation page reactive
+  - ~~*woosh* animation with Intersection Observer~~
   - Responsive menu with cloud, donation, minecraft map, soundboard
   - Server info find icon for each game
   - Create minecraft map on homepage
   - Find icon for donation
-  - Instalation instruction for soundboard
+  - ~~Instalation instruction for soundboard~~
   - Privacy on donation page
 
   Optional

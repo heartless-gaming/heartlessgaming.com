@@ -1,5 +1,7 @@
 <template>
-  <p class="text-hlsred text-center mb-10 tracking-wide mentra-letter-spacing">
+  <p
+    class="px-2 text-hlsred-dark text-center mb-10 tracking-wide mentra-letter-spacing page-title-text-shadow js-animateEntrence"
+  >
     <strong>Play more, care less, be Heartless</strong>
   </p>
 </template>
