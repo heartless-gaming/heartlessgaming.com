@@ -1,7 +1,7 @@
 <template>
   <main class="bg-gray-900 flow-root">
-    <div class="mb-12 max-w-2xl mx-auto">
-      <form id="payment-form" class="rounded p-3 sm:p-10">
+    <section class="mb-24 max-w-2xl mx-auto mt-3">
+      <form id="payment-form" class="rounded px-3 sm:p-10">
         <div class="flex items-center sm:items-start mb-2 sm:mb-5">
           <div class="flex flex-wrap flex-1 sm:justify-between">
             <button class="amount-pill amount-pill--selected hover:ring-4">
@@ -49,7 +49,69 @@
           Refresh the page to pay again.
         </p>
       </form>
-    </div>
+    </section>
+    <section class="mb-24 max-w-2xl mx-auto px-3 text-gray-200">
+      <h2 class="mb-3 text-3xl js-animateEntrence">Données & Vie privée</h2>
+      <p class="mb-3">
+        Cette page et uniquement cette page utilise <strong>2 cookies</strong>
+        nécessaires pour le fonctionnement de
+        <a class="underline hover:text-gray-300" href="https://stripe.com/fr/">
+          Stripe.
+        </a>
+      </p>
+      <p class="mb-3">
+        <a
+          class="underline hover:text-gray-300"
+          href="https://stripe.com/fr/privacy#translation"
+        >
+          Politique de confidentialité de Stripe
+        </a>
+      </p>
+      <p class="mb-3">
+        Heartless Gaming vous recommande d'utiliser
+        <a
+          class="underline hover:text-gray-300"
+          href="https://addons.mozilla.org/fr/firefox/addon/ublock-origin/"
+        >
+          Ublock Origin
+        </a>
+        &
+        <a
+          class="underline hover:text-gray-300"
+          href="https://addons.mozilla.org/fr/firefox/addon/privacy-badger17/"
+        >
+          Privacy Badger
+        </a>
+        sur cette page (ainsi que sur le reste de votre navigation web), pour
+        garder le contrôle sur le code chargé par la librairie Stripe sur cette
+        page.
+      </p>
+      <p class="mb-3">
+        Quand vous quittez cette page, un rechargement complet est effectué pour
+        décharger tous les codes et cookies Stripe précédemment injecté dans
+        cette page.
+      </p>
+      <p class="mb-3">
+        Nous avons choisi Stripe pour ne pas gérer les codes carte bleu (date
+        d'expiration, code CVC...) sur notre serveur.
+      </p>
+      <p class="mb-3">
+        <a
+          class="underline hover:text-gray-300"
+          href="https://github.com/heartless-gaming/heartlessgaming.com/blob/master/pages/donation.vue"
+        >
+          Voir le code de cette page
+        </a>
+      </p>
+      <p>
+        <a
+          class="underline hover:text-gray-300"
+          href="https://github.com/heartless-gaming/heartlessgaming.com/blob/master/api/stripe.js"
+        >
+          Voir le code d'intention de paiement créer par serveur
+        </a>
+      </p>
+    </section>
   </main>
 </template>
 
