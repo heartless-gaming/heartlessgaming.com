@@ -1,22 +1,15 @@
 <template>
   <main class="bg-gray-900 flow-root">
-    <div class="max-w-lg mx-auto my-24 sm:my-48 text-center text-gray-200">
-      <h2 v-if="statusCode === 404" class="text-6xl font-bold mb-5">404</h2>
-      <p v-else class="text-6xl font-bold mb-5">500</p>
+    <div class="max-w-lg mx-auto my-24 sm:my-32 text-center text-gray-200">
+      <h3 class="text-5xl uppercase mb-3">Érreur</h3>
+      <h2 v-if="statusCode === 404" class="text-6xl font-bold mb-10">404</h2>
+      <h2 v-else class="text-6xl font-bold mb-10">500 (SPAM F5!!!)</h2>
       <NuxtLink
-        v-if="statusCode === 404"
         to="/"
         class="inline-block bg-hlsred py-3 px-6 rounded hover:bg-hlsred-dark transition-all duration-200 uppercase shadow-lg"
       >
         Retour à la page d'accueil
       </NuxtLink>
-      <button
-        v-else
-        :click="window.location.reload(true)"
-        class="inline-block bg-hlsred py-3 px-6 rounded hover:bg-hlsred-dark transition-all duration-200 uppercase shadow-lg"
-      >
-        Recharger la page (spam F5!!!)
-      </button>
     </div>
   </main>
 </template>
