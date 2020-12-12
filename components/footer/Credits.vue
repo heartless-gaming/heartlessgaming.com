@@ -6,7 +6,7 @@
         class="underline hover:text-gray-400 transition-colors duration-200"
         href="https://github.com/heartless-gaming/heartlessgaming.com"
       >
-        Voir le code source
+        code source
       </a>
     </p>
     <p>Sponsorisé par</p>
