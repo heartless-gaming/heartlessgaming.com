@@ -1,11 +1,16 @@
 # The code that powers heartlessgaming.com
 ## The 2020 major update
 #### TODO (almost there skullmasher keep it up)
-  - ~~Fix stripe donation~~
-  - ~~Include prettier font with nuxt google-fonts and download them locally~~
-  - Descent design please with animation that goes *woosh*
-    - Make the quotes modules better
-  - ~~404 & 500 error page~~
+  - *woosh* animation with Intersection Observer
+  - Responsive menu with cloud, donation, minecraft map, soundboard
+  - Server info find icon for each game
+  - Create minecraft map on homepage
+  - Find icon for donation
+  - Instalation instruction for soundboard
+  - Privacy on donation page
+
+  Optional
+  - Make the quotes modules better
 
 ## Build Setup
 

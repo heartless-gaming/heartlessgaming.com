@@ -7,6 +7,10 @@
 </template>
 
 <style lang="scss">
+.animate-entrence {
+  animation: fadeInUp 0.7s ease-out;
+}
+
 .gray-gradient {
   background-image: radial-gradient(
     ellipse farthest-side at 50% 30%,

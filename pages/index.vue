@@ -8,17 +8,17 @@
     >
       <div class="px-2">
         <h2
-          class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow"
+          class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow js-animateEntrence"
         >
           Soundboard
         </h2>
-        <p class="max-w-sm mb-5">
+        <p class="max-w-sm mb-5 js-animateEntrence">
           Retrouver les plus grands tubes comme <em>baserape</em> et
           <em>learn to play bitch</em>.
         </p>
         <nuxt-link
           to="soundboard"
-          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
+          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow js-animateEntrence"
         >
           <strong>Découvrir l'enfer du Soundboard</strong>
           <svg-trumpet class="w-10 inline align-middle fill-white" />
@@ -28,11 +28,11 @@
     <section class="max-w-2xl mx-auto mb-24 text-gray-200">
       <div class="px-2">
         <h2
-          class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow"
+          class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow js-animateEntrence"
         >
           L'argent des abonnés
         </h2>
-        <p class="mb-5">
+        <p class="mb-5 js-animateEntrence">
           Les frais de fonctionnement (47.99 € par mois) sont pris en charge par
           <a class="underline" href="https://skullmasher.io">
             Florian "Skullmasher" Ledru
@@ -45,13 +45,13 @@
           <a class="underline" href="https://youtu.be/5aCzYb_cVWc">Big Up JB</a>
           ).
         </p>
-        <p class="mb-3">
+        <p class="mb-3 js-animateEntrence">
           Une donation nous permet de faire plus d'events, de réaliser plus de
           vidéos et d'avoir plus de serveurs de jeux.
         </p>
         <nuxt-link
           to="donation"
-          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
+          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow js-animateEntrence"
         >
           <strong>Faire une donation</strong>
           <chevron-right class="w-2 inline align-middle fill-white" />
@@ -71,6 +71,22 @@ export default {
     SvgTrumpet,
   },
   layout: 'homepage',
+  mounted() {
+    const elems = document.querySelectorAll('.js-animateEntrence')
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add('animate-entrence')
+          observer.unobserve(entry.target)
+        }
+      })
+    })
+
+    elems.forEach((elem) => {
+      observer.observe(elem)
+    })
+  },
 }
 </script>
 
