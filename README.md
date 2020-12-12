@@ -8,7 +8,7 @@
   - Create minecraft map on homepage
   - Find icon for donation
   - ~~Instalation instruction for soundboard~~
-  - Privacy on donation page
+  - ~~Privacy on donation page~~
 
   Optional
   - Make the quotes modules better
