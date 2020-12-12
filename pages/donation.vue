@@ -4,13 +4,15 @@
       <form id="payment-form" class="rounded px-3 sm:p-10">
         <div class="flex items-center sm:items-start mb-2 sm:mb-5">
           <div class="flex flex-wrap flex-1 sm:justify-between">
-            <button class="amount-pill amount-pill--selected hover:ring-4">
-              5 €
+            <button
+              v-for="(btn, index) in amountButtons"
+              :key="index"
+              :class="{ 'amount-pill--selected': index == amountBtnIndex }"
+              class="amount-pill hover:ring-4"
+              @click.prevent="setAmount(index, btn.amount)"
+            >
+              {{ btn.amount }} €
             </button>
-            <button class="amount-pill md-shadow hover:ring-2">10 €</button>
-            <button class="amount-pill md-shadow hover:ring-2">15 €</button>
-            <button class="amount-pill md-shadow hover:ring-2">20 €</button>
-            <button class="amount-pill md-shadow hover:ring-2">50 €</button>
           </div>
           <div>
             <div class="relative">
@@ -23,8 +25,9 @@
         <div class="relative">
           <input
             id="email"
-            type="text"
-            placeholder="Adresse email"
+            type="email"
+            maxlength="42"
+            placeholder="Adresse email si vous souhaitez un reçu"
             class="mb-5 py-3 pl-11 pr-3 rounded w-full text-gray-900 placeholder-black thicc-shadow"
           />
           <svg-mail
@@ -34,13 +37,15 @@
         <div id="card-element" class="rounded-t bg-white p-3"></div>
         <button
           id="submit"
-          class="w-full bg-hlsred rounded-b p-3 text-white font-bold thicc-shadow hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
+          class="w-full mb-3 p-3 bg-hlsred rounded-b text-white font-bold thicc-shadow hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
           :disabled="isSubmitDisable"
         >
           <div id="spinner" class="spinner hidden"></div>
           <span id="button-text">Donner {{ amount }}€</span>
         </button>
-        <p id="card-error" role="alert">{{ cardErrorMsg }}</p>
+        <p id="card-error" class="text-gray-200" role="alert">
+          {{ cardErrorMsg }}
+        </p>
         <p class="js-resultMessage hidden text-white">
           Payment succeeded, see the result in your
           <a class="text-white font-bold underline" href="" target="_blank">
@@ -50,7 +55,7 @@
         </p>
       </form>
     </section>
-    <section class="mb-24 max-w-2xl mx-auto px-3 text-gray-200">
+    <section class="mb-24 max-w-2xl mx-auto px-3 sm:px-10 text-gray-200">
       <h2 class="mb-3 text-3xl js-animateEntrence">Données & Vie privée</h2>
       <p class="mb-3">
         Cette page et uniquement cette page utilise <strong>2 cookies</strong>
@@ -96,6 +101,10 @@
         d'expiration, code CVC...) sur notre serveur.
       </p>
       <p class="mb-3">
+        L'email est envoyé à Stripe pour vous transmettre un reçu. Il n'est pas
+        utilisé par Heartless Gaming.
+      </p>
+      <p class="mb-3">
         <a
           class="underline hover:text-gray-300"
           href="https://github.com/heartless-gaming/heartlessgaming.com/blob/master/pages/donation.vue"
@@ -133,6 +142,14 @@ export default {
     isSubmitDisable: true,
     amount: 5,
     cardErrorMsg: '',
+    amountBtnIndex: 0,
+    amountButtons: [
+      { amount: 5 },
+      { amount: 10 },
+      { amount: 15 },
+      { amount: 20 },
+      { amount: 50 },
+    ],
   }),
   head() {
     return {
@@ -175,7 +192,7 @@ export default {
     fetch(`${this.$nuxt.context.$config.baseURL}/api/create-payment-intent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(this.amount),
+      body: JSON.stringify({ amount: this.amount }),
     })
       .then((result) => {
         return result.json()
@@ -185,7 +202,7 @@ export default {
         const style = {
           base: {
             color: '#1a202c',
-            fontFamily: 'Arial, sans-serif',
+            fontFamily: 'Rubik, sans-serif',
             fontSmoothing: 'antialiased',
             fontSize: '16px',
             '::placeholder': {
@@ -193,7 +210,7 @@ export default {
             },
           },
           invalid: {
-            fontFamily: 'Arial, sans-serif',
+            fontFamily: 'Rubik, sans-serif',
             color: '#fa755a',
             iconColor: '#fa755a',
           },
@@ -238,8 +255,6 @@ export default {
         })
     }
 
-    /* ------- UI helpers ------- */
-
     // Shows a success message when the payment is complete
     const orderComplete = (paymentIntentId) => {
       loading(false)
@@ -277,12 +292,18 @@ export default {
       }
     }
   },
+  methods: {
+    setAmount(index, amount) {
+      this.amountBtnIndex = index
+      this.amount = amount
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .amount-pill {
-  @apply inline-block mr-3 mb-3 px-5 sm:mb-0 sm:px-6 py-2 rounded-full bg-hlsred text-gray-200 font-bold hover:bg-hlsred-dark ring-hlsred-dark ring-offset-0 ring-offset-hlsred-dark transition-all duration-200;
+  @apply inline-block mr-3 mb-5 sm:mb-0 px-4 sm:px-6 py-2 rounded-full bg-hlsred text-gray-200 font-bold hover:bg-hlsred-dark ring-hlsred-dark ring-offset-0 ring-offset-hlsred-dark transition-all duration-200;
 
   &--selected {
     @apply ring-4 ring-hlsred-light ring-offset-4 ring-offset-gray-900;
@@ -291,25 +312,6 @@ export default {
 
 .amount-custom {
   @apply w-24 pr-5 pb-1 text-center bg-transparent border-b-2 border-solid border-hlsred text-3xl text-gray-200;
-}
-
-/*.result-message {
-  line-height: 22px;
-  font-size: 16px;
-}*/
-
-/*.result-message a {
-  color: rgb(89, 111, 214);
-  font-weight: 600;
-  text-decoration: none;
-}*/
-
-#card-error {
-  color: rgb(105, 115, 134);
-  text-align: left;
-  font-size: 13px;
-  line-height: 17px;
-  margin-top: 12px;
 }
 
 #payment-request-button {
