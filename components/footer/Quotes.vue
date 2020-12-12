@@ -1,17 +1,17 @@
 <template>
   <section class="sm:w-2/3 mb-5 sm:mb-0 text-gray-200">
-    <blockquote class="quote">{{ quote }}</blockquote>
+    <blockquote class="quote js-animateEntrence">{{ quote }}</blockquote>
   </section>
 </template>
 
 <script>
 export default {
   data: () => ({
-    interval: 60000, // 1000*60*5 That's 5minutes, YAY for math
+    interval: 60000, // 1000*60*1 That's 1minutes, YAY for math
     quote: 'We will find a way',
     quotes: [
       `Bon c'est une bonne addition à mon dossier "grossisant" ! - GuiltysparK`,
-      `Oh ah pourquoi ya du sang partout ? ah bah il est mort le vendeur de suschi. - Eljam`,
+      `Oh ah pourquoi ya du sang partout ? ah bah il est mort le vendeur de sushi. - Eljam`,
       `Quest-ce qu'on est sérée, au fond de ce markus ! - Don`,
       `T'a cas coller 1 milliard de fromton sous ta baraque tu vera si l'odeur remonte pas !! - Don`,
       `Pour la peine j'ai coller mon coude dans ton mamie nova - Don`,

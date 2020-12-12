@@ -1,9 +1,13 @@
 <template>
   <main class="bg-gray-900 flow-root">
-    <div
-      class="relative md:mt-6 mb-12 md:mb-20 flex justify-between flex-wrap max-w-2xl mx-auto"
+    <section
+      class="relative md:mt-6 mb-24 md:mb-28 flex justify-between flex-wrap max-w-2xl mx-auto"
     >
-      <div v-for="audio in audios" :key="audio.id" class="p-4 inline-block">
+      <div
+        v-for="audio in audios"
+        :key="audio.id"
+        class="px-2 py-4 md:px-0 inline-block"
+      >
         <button
           class="px-4 py-3 rounded-full text-gray-200 font-bold bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
           @click="playAudio($event)"
@@ -12,7 +16,32 @@
         </button>
         <audio :src="audio.file"></audio>
       </div>
-    </div>
+    </section>
+    <section
+      class="relative max-w-2xl mx-auto mb-24 md:mb-48 px-2 text-gray-200 lady-trumpet-soundboard"
+    >
+      <h2
+        class="mb-3 text-3xl sm:text-4xl md:text-5xl font-grandstander page-title-text-shadow js-animateEntrence"
+      >
+        Installer l'application
+      </h2>
+      <div class="max-w-lg">
+        <p class="mb-3 js-animateEntrence">
+          Cliquer sur le menu de votre navigateur et choisissez l'option
+          "ajouter à l'écran d'accueil".
+        </p>
+        <p class="mb-3 js-animateEntrence">
+          Félicitations ! Le site Heartless est installé sur votre écran
+          d'accueil et disponible sur votre smartphone
+          <strong>même en mode hors ligne</strong>.
+        </p>
+        <p class="js-animateEntrence">
+          Un grand pouvoir implique de grande responsabilité utilisez le
+          soundboard avec modération
+          <small class="text-gray-400">(ou pas)</small>.
+        </p>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -108,6 +137,22 @@ export default {
       ],
     }
   },
+  mounted() {
+    const elems = document.querySelectorAll('.js-animateEntrence')
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add('animate-entrence')
+          observer.unobserve(entry.target)
+        }
+      })
+    })
+
+    elems.forEach((elem) => {
+      observer.observe(elem)
+    })
+  },
   methods: {
     playAudio(event) {
       event.target.nextElementSibling.play()
@@ -115,3 +160,37 @@ export default {
   },
 }
 </script>
+
+<style>
+.lady-trumpet-soundboard::after {
+  @screen sm {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 150%;
+    right: 2%;
+    top: -20%;
+    background-position: 100%;
+    background-image: url('~@/assets/lady-trumpet.svg');
+    background-repeat: no-repeat;
+    animation: ladytrumpet 3s ease infinite;
+  }
+}
+
+@keyframes ladytrumpet {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+.lady-trumpet::after {
+  @screen sm {
+    left: initial;
+    right: 3%;
+  }
+}
+</style>

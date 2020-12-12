@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-xl mx-auto mt-5 mb-5">
+  <section class="max-w-xl mx-auto mt-5 mb-5 js-animateEntrence">
     <p class="flex justify-around text-center text-gray-200 text-lg">
       <a
         class="underline hover:text-gray-400 transition-colors duration-200"

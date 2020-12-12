@@ -1,5 +1,5 @@
 <template>
-  <div class="font-rubik">
+  <div>
     <Header />
     <Nuxt />
     <Footer />

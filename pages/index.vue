@@ -4,7 +4,7 @@
     <last-youtube-videos />
     <vocal-war />
     <section
-      class="relative max-w-2xl mx-auto mb-24 md:mb-48 text-gray-200 lady-trumpet"
+      class="relative max-w-2xl mx-auto mb-24 md:mb-48 text-gray-200 lady-trumpet-homepage"
     >
       <div class="px-2">
         <h2
@@ -90,8 +90,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.lady-trumpet::after {
+<style>
+.lady-trumpet-homepage::after {
   @screen sm {
     content: '';
     position: absolute;
