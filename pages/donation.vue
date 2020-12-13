@@ -8,7 +8,7 @@
               v-for="(btn, index) in amountButtons"
               :key="index"
               :class="{ 'amount-pill--selected': index == amountBtnIndex }"
-              class="amount-pill hover:ring-4"
+              class="amount-pill hover:ring-4 focus:ring-4 focus:outline-none"
               @click.prevent="setAmount(index, btn.amount)"
             >
               {{ btn.amount }} €
@@ -40,8 +40,14 @@
           class="w-full mb-3 p-3 bg-hlsred rounded-b text-white font-bold thicc-shadow hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
           :disabled="isSubmitDisable"
         >
-          <div id="spinner" class="spinner hidden"></div>
-          <span id="button-text">Donner {{ amount }}€</span>
+          <div
+            id="spinner"
+            :class="{ hidden: !isSpinnerVisible }"
+            class="spinner"
+          ></div>
+          <span id="button-text" :class="{ hidden: isSpinnerVisible }">
+            Donner {{ amount }}€
+          </span>
         </button>
         <p id="card-error" class="text-gray-200" role="alert">
           {{ cardErrorMsg }}
@@ -49,8 +55,8 @@
         <p class="js-resultMessage hidden text-white">
           Payment succeeded, see the result in your
           <a class="text-white font-bold underline" href="" target="_blank">
-            Stripe dashboard.</a
-          >
+            Stripe dashboard.
+          </a>
           Refresh the page to pay again.
         </p>
       </form>
@@ -58,8 +64,8 @@
     <section class="mb-24 max-w-2xl mx-auto px-3 sm:px-10 text-gray-200">
       <h2 class="mb-3 text-3xl js-animateEntrence">Données & Vie privée</h2>
       <p class="mb-3">
-        Cette page et uniquement cette page utilise <strong>2 cookies</strong>
-        nécessaires pour le fonctionnement de
+        Cette page et uniquement cette page utilise de
+        <strong>2 à 5 cookies</strong> nécessaires pour le fonctionnement de
         <a class="underline hover:text-gray-300" href="https://stripe.com/fr/">
           Stripe.
         </a>
@@ -140,8 +146,10 @@ export default {
   data: () => ({
     title: 'Donation',
     isSubmitDisable: true,
+    isSpinnerVisible: false,
     amount: 5,
     cardErrorMsg: '',
+    errorMsgText: '',
     amountBtnIndex: 0,
     amountButtons: [
       { amount: 5 },
@@ -230,15 +238,20 @@ export default {
         form.addEventListener('submit', (event) => {
           event.preventDefault()
           // Complete payment when the submit button is clicked
-          payWithCard(stripe, card, data.clientSecret)
+          this.payWithCard(stripe, card, data.clientSecret)
         })
       })
-
+  },
+  methods: {
+    setAmount(index, amount) {
+      this.amountBtnIndex = index
+      this.amount = amount
+    },
     // Calls stripe.confirmCardPayment
     // If the card requires authentication Stripe shows a pop-up modal to
     // prompt the user to enter authentication details without leaving your page
-    const payWithCard = (stripe, card, clientSecret) => {
-      loading(true)
+    payWithCard(stripe, card, clientSecret) {
+      this.loading(true)
       stripe
         .confirmCardPayment(clientSecret, {
           receipt_email: document.getElementById('email').value,
@@ -247,17 +260,16 @@ export default {
         .then((result) => {
           if (result.error) {
             // Show error to your customer
-            showError(result.error.message)
+            this.showError(result.error.message)
           } else {
             // The payment succeeded!
-            orderComplete(result.paymentIntent.id)
+            this.orderComplete(result.paymentIntent.id)
           }
         })
-    }
-
+    },
     // Shows a success message when the payment is complete
-    const orderComplete = (paymentIntentId) => {
-      loading(false)
+    orderComplete(paymentIntentId) {
+      this.loading(false)
       document
         .querySelector('.js-resultMessage a')
         .setAttribute(
@@ -265,37 +277,28 @@ export default {
           `https://dashboard.stripe.com/test/payments/${paymentIntentId}`
         )
       document.querySelector('.js-resultMessage').classList.remove('hidden')
+      // Disable other payments if this one successful
       this.isSubmitDisable = true
-    }
-
-    // Show the customer the error from Stripe if their card fails to charge
-    const showError = (errorMsgText) => {
-      loading(false)
-      const errorMsg = document.querySelector('#card-error')
-      errorMsg.textContent = errorMsgText
-      setTimeout(() => {
-        errorMsg.textContent = ''
-      }, 4000)
-    }
-
+    },
     // Show a spinner on payment submission
-    const loading = (isLoading) => {
+    loading(isLoading) {
       if (isLoading) {
         // Disable the button and show a spinner
         this.isSubmitDisable = true
-        document.querySelector('#spinner').classList.remove('hidden')
-        document.querySelector('#button-text').classList.add('hidden')
+        this.isSpinnerVisible = true
       } else {
         this.isSubmitDisable = false
-        document.querySelector('#spinner').classList.add('hidden')
-        document.querySelector('#button-text').classList.remove('hidden')
+        this.isSpinnerVisible = false
       }
-    }
-  },
-  methods: {
-    setAmount(index, amount) {
-      this.amountBtnIndex = index
-      this.amount = amount
+    },
+    // Show the customer the error from Stripe if their card fails to charge
+    showError(errorMsgText) {
+      this.loading(false)
+      this.errorMsgText = errorMsgText
+      // Reset the message after 4 seconds
+      setTimeout(() => {
+        this.errorMsgText = ''
+      }, 4000)
     },
   },
 }
@@ -318,7 +321,7 @@ export default {
   margin-bottom: 32px;
 }
 
-/* spinner/processing state, errors */
+// spinner/processing state, errors
 .spinner,
 .spinner::before,
 .spinner::after {
@@ -333,9 +336,7 @@ export default {
   position: relative;
   width: 20px;
   height: 20px;
-  box-shadow: inset 0 0 0 2px;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
+  box-shadow: inset 0 0 0 3px;
   transform: translateZ(0);
 }
 
