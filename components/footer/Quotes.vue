@@ -37,6 +37,7 @@ export default {
       `Tu parles Espagnole ? Oui je fais des éfforts. Je ne savais pas que tu savais en faire, je ne parle pas de l'éspagnole.`,
       `Je ne suis pas une personne de haine, mais parfois tu arrives dans ma vie et je pense à l'holocauste - Skullmasher à Markus`,
       `kinder bueno dans tes nachos a toi aussi mon jeune ami semi-ibérique ! - Guiltyspark`,
+      `J'ai entendu de la lumière, je suis rentré - Skullmasher`,
       `We will find a way - Skullmasher`,
     ],
   }),
