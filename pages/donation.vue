@@ -34,7 +34,7 @@
             class="w-5 absolute top-4 left-3 fill-current text-gray-300"
           />
         </div>
-        <div id="card-element" class="rounded-t bg-white p-3"></div>
+        <div id="card-element" class="rounded-t bg-white p-3 h-11"></div>
         <button
           id="submit"
           class="w-full mb-3 p-3 bg-hlsred rounded-b text-white font-bold thicc-shadow hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
@@ -146,7 +146,7 @@ export default {
   data: () => ({
     title: 'Donation',
     isSubmitDisable: true,
-    isSpinnerVisible: false,
+    isSpinnerVisible: true,
     amount: 5,
     cardErrorMsg: '',
     errorMsgText: '',
@@ -212,12 +212,12 @@ export default {
     const elements = stripe.elements()
     const style = {
       base: {
-        color: '#1a202c',
+        color: '#6b7280',
         fontFamily: 'Rubik, sans-serif',
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
-          color: '#1a202c',
+          color: '#6b7280',
         },
       },
       invalid: {
@@ -230,6 +230,7 @@ export default {
     const card = elements.create('card', { style })
     // Stripe injects an iframe into the DOM
     card.mount('#card-element')
+    this.isSpinnerVisible = false
 
     card.on('change', (event) => {
       // Disable the Pay button if there are no card details in the Element
