@@ -1,7 +1,11 @@
 <template>
   <main class="bg-gray-900 flow-root">
     <section class="mb-24 max-w-2xl mx-auto mt-3">
-      <form id="payment-form" class="rounded px-3 sm:p-10">
+      <form
+        id="payment-form"
+        class="rounded px-3 sm:p-10"
+        @submit.prevent="donate()"
+      >
         <div class="flex items-center sm:items-start mb-2 sm:mb-5">
           <div class="flex flex-wrap flex-1 sm:justify-between">
             <button
@@ -158,6 +162,8 @@ export default {
       { amount: 20 },
       { amount: 50 },
     ],
+    stripe: undefined,
+    card: undefined,
   }),
   head() {
     return {
@@ -195,22 +201,10 @@ export default {
   async mounted() {
     // mtlynch.io/stripe-recording-its-customers
     loadStripe.setLoadParameters({ advancedFraudSignals: false })
-    const stripe = await loadStripe(this.$nuxt.context.$config.publishableKey)
-    const baseURL = this.$nuxt.context.$config.baseURL
-    const paymentIntentEndpoint = `${baseURL}/api/create-payment-intent`
-    const paymentIntentOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount: this.amount }),
-    }
-    const fetchPaymentIntent = await fetch(
-      paymentIntentEndpoint,
-      paymentIntentOptions
-    )
-    const jsonPaymentIntent = await fetchPaymentIntent.json()
+    this.stripe = await loadStripe(this.$nuxt.context.$config.publishableKey)
 
-    const elements = stripe.elements()
-    const style = {
+    const elements = this.stripe.elements()
+    const cardInputStyle = {
       base: {
         color: '#6b7280',
         fontFamily: 'Rubik, sans-serif',
@@ -227,28 +221,41 @@ export default {
       },
     }
 
-    const card = elements.create('card', { style })
     // Stripe injects an iframe into the DOM
-    card.mount('#card-element')
+    this.card = elements.create('card', { style: cardInputStyle })
+    this.card.mount('#card-element')
     this.isSpinnerVisible = false
 
-    card.on('change', (event) => {
+    this.card.on('change', (event) => {
       // Disable the Pay button if there are no card details in the Element
       this.isSubmitDisable = event.empty
       this.cardErrorMsg = event.error ? event.error.message : ''
     })
 
-    const form = document.getElementById('payment-form')
-    form.addEventListener('submit', (event) => {
-      event.preventDefault()
-      // Complete payment when the submit button is clicked
-      this.payWithCard(stripe, card, jsonPaymentIntent.clientSecret)
-    })
+    // const form = document.getElementById('payment-form')
+    // form.addEventListener('submit', (event) => {
+    //   event.preventDefault()
+    //   console.log('keksform')
+    //   this.payWithCard(stripe, card, jsonPaymentIntent.clientSecret)
+    // })
   },
   methods: {
-    setAmount(index, amount) {
-      this.amountBtnIndex = index
-      this.amount = amount
+    // Ask the server to create a payment intent & complete the payment
+    async donate() {
+      const baseURL = this.$nuxt.context.$config.baseURL
+      const paymentIntentEndpoint = `${baseURL}/api/create-payment-intent`
+      const paymentIntentOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: this.amount }),
+      }
+      const fetchPaymentIntent = await fetch(
+        paymentIntentEndpoint,
+        paymentIntentOptions
+      )
+      const jsonPaymentIntent = await fetchPaymentIntent.json()
+
+      this.payWithCard(this.stripe, this.card, jsonPaymentIntent.clientSecret)
     },
     // Calls stripe.confirmCardPayment
     // If the card requires authentication Stripe shows a pop-up modal to
@@ -298,10 +305,15 @@ export default {
     showError(errorMsgText) {
       this.loading(false)
       this.errorMsgText = errorMsgText
-      // Reset the message after 4 seconds
+      // Reset/hide the message after 4 seconds
       setTimeout(() => {
         this.errorMsgText = ''
       }, 4000)
+    },
+    // Set amount when button is clicked or manually entered
+    setAmount(index, amount) {
+      this.amountBtnIndex = index
+      this.amount = amount
     },
   },
 }
