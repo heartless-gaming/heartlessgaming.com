@@ -196,51 +196,53 @@ export default {
     // mtlynch.io/stripe-recording-its-customers
     loadStripe.setLoadParameters({ advancedFraudSignals: false })
     const stripe = await loadStripe(this.$nuxt.context.$config.publishableKey)
-
-    fetch(`${this.$nuxt.context.$config.baseURL}/api/create-payment-intent`, {
+    const baseURL = this.$nuxt.context.$config.baseURL
+    const paymentIntentEndpoint = `${baseURL}/api/create-payment-intent`
+    const paymentIntentOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount: this.amount }),
+    }
+    const fetchPaymentIntent = await fetch(
+      paymentIntentEndpoint,
+      paymentIntentOptions
+    )
+    const jsonPaymentIntent = await fetchPaymentIntent.json()
+
+    const elements = stripe.elements()
+    const style = {
+      base: {
+        color: '#1a202c',
+        fontFamily: 'Rubik, sans-serif',
+        fontSmoothing: 'antialiased',
+        fontSize: '16px',
+        '::placeholder': {
+          color: '#1a202c',
+        },
+      },
+      invalid: {
+        fontFamily: 'Rubik, sans-serif',
+        color: '#fa755a',
+        iconColor: '#fa755a',
+      },
+    }
+
+    const card = elements.create('card', { style })
+    // Stripe injects an iframe into the DOM
+    card.mount('#card-element')
+
+    card.on('change', (event) => {
+      // Disable the Pay button if there are no card details in the Element
+      this.isSubmitDisable = event.empty
+      this.cardErrorMsg = event.error ? event.error.message : ''
     })
-      .then((result) => {
-        return result.json()
-      })
-      .then((data) => {
-        const elements = stripe.elements()
-        const style = {
-          base: {
-            color: '#1a202c',
-            fontFamily: 'Rubik, sans-serif',
-            fontSmoothing: 'antialiased',
-            fontSize: '16px',
-            '::placeholder': {
-              color: '#1a202c',
-            },
-          },
-          invalid: {
-            fontFamily: 'Rubik, sans-serif',
-            color: '#fa755a',
-            iconColor: '#fa755a',
-          },
-        }
 
-        const card = elements.create('card', { style })
-        // Stripe injects an iframe into the DOM
-        card.mount('#card-element')
-
-        card.on('change', (event) => {
-          // Disable the Pay button if there are no card details in the Element
-          this.isSubmitDisable = event.empty
-          this.cardErrorMsg = event.error ? event.error.message : ''
-        })
-
-        const form = document.getElementById('payment-form')
-        form.addEventListener('submit', (event) => {
-          event.preventDefault()
-          // Complete payment when the submit button is clicked
-          this.payWithCard(stripe, card, data.clientSecret)
-        })
-      })
+    const form = document.getElementById('payment-form')
+    form.addEventListener('submit', (event) => {
+      event.preventDefault()
+      // Complete payment when the submit button is clicked
+      this.payWithCard(stripe, card, jsonPaymentIntent.clientSecret)
+    })
   },
   methods: {
     setAmount(index, amount) {
