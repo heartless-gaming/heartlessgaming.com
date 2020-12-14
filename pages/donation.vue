@@ -27,8 +27,8 @@
       </div>
       <div class="relative">
         <input
-          v-model="email"
           id="email"
+          v-model="email"
           type="email"
           maxlength="42"
           placeholder="Adresse email si vous souhaitez un reçu"

@@ -39,6 +39,7 @@ export default {
       `kinder bueno dans tes nachos a toi aussi mon jeune ami semi-ibérique ! - Guiltyspark`,
       `J'ai entendu de la lumière, je suis rentré - Skullmasher`,
       `We will find a way - Skullmasher`,
+      // Eljam :"c'est la force centripete" Don : "Comme le human"Eljam & Don : "le human centripete !"
     ],
   }),
   mounted() {
