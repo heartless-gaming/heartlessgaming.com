@@ -29,20 +29,18 @@ const getGS = async (req, res) => {
   // Run ALL queries at the same time and returns whatever the outcome
   const gsData = await Promise.allSettled(gameServers.map(await gamedigQuery))
 
-  const response = gsData.map((gs, index) => {
+  const response = gsData.reduce((acc, gs) => {
     if (gs.status === 'fulfilled') {
-      return {
+      acc.push({
         name: gs.value.name,
         private: gs.value.password,
         players: gs.value.players.length,
         maxplayers: gs.value.maxplayers,
-      }
-    } else {
-      return {
-        error: gs.reason,
-      }
+      })
     }
-  })
+
+    return acc
+  }, [])
 
   // Send the data to redis with an expiration value of 1 minutes
   redis.set('heartlessgs', JSON.stringify(response))
