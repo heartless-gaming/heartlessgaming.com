@@ -30,7 +30,7 @@
     "body-parser": "^1.19.0",
     "core-js": "^3.8.0",
     "gamedig": "^2.0.23",
-    "ioredis": "^4.19.2",
+    "ioredis": "^4.19.4",
     "nuxt": "^2.14.9",
     "stripe": "^8.127.0",
     "vue-currency-input": "^1.22.4",
