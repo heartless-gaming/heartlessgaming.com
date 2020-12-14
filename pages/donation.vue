@@ -1,75 +1,71 @@
 <template>
   <main class="bg-gray-900 flow-root">
-    <section class="mb-24 max-w-2xl mx-auto mt-3">
-      <form
-        id="payment-form"
-        class="rounded px-3 sm:p-10"
-        @submit.prevent="donate()"
+    <section class="mb-24 max-w-2xl mx-auto mt-3 px-3 sm:p-10">
+      <div class="flex items-center sm:items-start mb-2 sm:mb-5">
+        <div class="flex flex-wrap flex-1 sm:justify-between">
+          <button
+            v-for="(btn, index) in amountButtons"
+            :key="index"
+            :class="{ 'amount-pill--selected': index == amountBtnIndex }"
+            class="amount-pill hover:ring-4 focus:ring-4 focus:outline-none"
+            @click.prevent="setAmount(index, btn.amount)"
+          >
+            {{ btn.amount }} €
+          </button>
+        </div>
+        <div>
+          <div class="relative">
+            <currency-input v-model="amount" class="pt-2 amount-custom" />
+            <p class="absolute text-xl text-gray-200 right-0 top-2">€</p>
+          </div>
+          <p class="text-gray-300">Minimum: 3€</p>
+        </div>
+      </div>
+      <div class="relative">
+        <input
+          v-model="email"
+          id="email"
+          type="email"
+          maxlength="42"
+          placeholder="Adresse email si vous souhaitez un reçu"
+          class="mb-5 py-3 pl-11 pr-3 rounded w-full text-gray-900 placeholder-black thicc-shadow"
+        />
+        <svg-mail
+          class="w-5 absolute top-4 left-3 fill-current text-gray-300"
+        />
+      </div>
+      <div id="card-element" class="rounded-t bg-white p-3 h-11"></div>
+      <button
+        id="submit"
+        class="w-full mb-3 p-3 bg-hlsred rounded-b text-white font-bold thicc-shadow hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
+        :disabled="isSubmitDisable"
+        @click="donate()"
       >
-        <div class="flex items-center sm:items-start mb-2 sm:mb-5">
-          <div class="flex flex-wrap flex-1 sm:justify-between">
-            <button
-              v-for="(btn, index) in amountButtons"
-              :key="index"
-              :class="{ 'amount-pill--selected': index == amountBtnIndex }"
-              class="amount-pill hover:ring-4 focus:ring-4 focus:outline-none"
-              @click.prevent="setAmount(index, btn.amount)"
-            >
-              {{ btn.amount }} €
-            </button>
-          </div>
-          <div>
-            <div class="relative">
-              <input type="text" :value="amount" class="amount-custom" />
-              <p class="absolute text-3xl text-gray-200 right-0 top-0.5">€</p>
-            </div>
-            <p class="text-gray-300">Minimum: 3€</p>
-          </div>
-        </div>
-        <div class="relative">
-          <input
-            id="email"
-            type="email"
-            maxlength="42"
-            placeholder="Adresse email si vous souhaitez un reçu"
-            class="mb-5 py-3 pl-11 pr-3 rounded w-full text-gray-900 placeholder-black thicc-shadow"
-          />
-          <svg-mail
-            class="w-5 absolute top-4 left-3 fill-current text-gray-300"
-          />
-        </div>
-        <div id="card-element" class="rounded-t bg-white p-3 h-11"></div>
-        <button
-          id="submit"
-          class="w-full mb-3 p-3 bg-hlsred rounded-b text-white font-bold thicc-shadow hover:bg-hlsred-dark disabled:opacity-50 transition-all duration-200"
-          :disabled="isSubmitDisable"
-        >
-          <div
-            id="spinner"
-            :class="{ hidden: !isSpinnerVisible }"
-            class="spinner"
-          ></div>
-          <span id="button-text" :class="{ hidden: isSpinnerVisible }">
-            Donner {{ amount }}€
-          </span>
-        </button>
-        <p id="card-error" class="text-gray-200" role="alert">
-          {{ cardErrorMsg }}
+        <div
+          id="spinner"
+          :class="{ hidden: !isSpinnerVisible }"
+          class="spinner"
+        ></div>
+        <p id="button-text" :class="{ hidden: isSpinnerVisible }">
+          Donner {{ amount }}€
         </p>
-        <p class="js-resultMessage hidden text-white">
-          Payment succeeded, see the result in your
-          <a class="text-white font-bold underline" href="" target="_blank">
-            Stripe dashboard.
-          </a>
-          Refresh the page to pay again.
-        </p>
-      </form>
+      </button>
+      <p id="card-error" class="text-gray-200" role="alert">
+        {{ cardErrorMsg }}
+      </p>
+      <p class="js-resultMessage hidden text-white">
+        Payment succeeded, see the result in your
+        <a class="text-white font-bold underline" href="" target="_blank">
+          Stripe dashboard.
+        </a>
+        Refresh the page to pay again.
+      </p>
     </section>
     <section class="mb-24 max-w-2xl mx-auto px-3 sm:px-10 text-gray-200">
       <h2 class="mb-3 text-3xl js-animateEntrence">Données & Vie privée</h2>
       <p class="mb-3">
         Cette page et uniquement cette page utilise de
-        <strong>2 à 5 cookies</strong> nécessaires pour le fonctionnement de
+        <strong>2 à 5 cookies</strong> "nécessaires" pour le fonctionnement de
         <a class="underline hover:text-gray-300" href="https://stripe.com/fr/">
           Stripe.
         </a>
@@ -81,6 +77,11 @@
         >
           Politique de confidentialité de Stripe
         </a>
+      </p>
+      <p class="mb-3">
+        Les informations de votre carte de paiement (date d'expiration, code
+        CVC...) sont envoyés à Stripe et ne sont jamais envoyé au serveur
+        Heartless Gaming attaché à ce site web.
       </p>
       <p class="mb-3">
         Heartless Gaming vous recommande d'utiliser
@@ -105,10 +106,6 @@
         Quand vous quittez cette page, un rechargement complet est effectué pour
         décharger tous les codes et cookies Stripe précédemment injecté dans
         cette page.
-      </p>
-      <p class="mb-3">
-        Nous avons choisi Stripe pour ne pas gérer les codes carte bleu (date
-        d'expiration, code CVC...) sur notre serveur.
       </p>
       <p class="mb-3">
         L'email est envoyé à Stripe pour vous transmettre un reçu. Il n'est pas
@@ -152,6 +149,8 @@ export default {
     isSubmitDisable: true,
     isSpinnerVisible: true,
     amount: 5,
+    amountTxt: '5.00',
+    email: '',
     cardErrorMsg: '',
     errorMsgText: '',
     amountBtnIndex: 0,
@@ -231,13 +230,6 @@ export default {
       this.isSubmitDisable = event.empty
       this.cardErrorMsg = event.error ? event.error.message : ''
     })
-
-    // const form = document.getElementById('payment-form')
-    // form.addEventListener('submit', (event) => {
-    //   event.preventDefault()
-    //   console.log('keksform')
-    //   this.payWithCard(stripe, card, jsonPaymentIntent.clientSecret)
-    // })
   },
   methods: {
     // Ask the server to create a payment intent & complete the payment
@@ -264,7 +256,7 @@ export default {
       this.loading(true)
       stripe
         .confirmCardPayment(clientSecret, {
-          receipt_email: document.getElementById('email').value,
+          receipt_email: this.email,
           payment_method: { card },
         })
         .then((result) => {
@@ -314,6 +306,7 @@ export default {
     setAmount(index, amount) {
       this.amountBtnIndex = index
       this.amount = amount
+      this.amountTxt = `${amount}.00`
     },
   },
 }
@@ -329,7 +322,7 @@ export default {
 }
 
 .amount-custom {
-  @apply w-24 pr-5 pb-1 text-center bg-transparent border-b-2 border-solid border-hlsred text-3xl text-gray-200;
+  @apply w-24 pr-4 pb-1 text-center bg-transparent border-b-2 border-solid border-hlsred text-xl text-gray-200;
 }
 
 #payment-request-button {

@@ -61,6 +61,21 @@ export default {
         download: true,
       },
     ],
+    [
+      'vue-currency-input/nuxt',
+      {
+        globalOptions: {
+          currency: null,
+          locale: 'fr-FR',
+          precision: 2,
+          valueRange: {
+            min: 0,
+            max: 1000000,
+          },
+          allowNegative: false,
+        },
+      },
+    ],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
