@@ -15,7 +15,11 @@
         </div>
         <div>
           <div class="relative">
-            <currency-input v-model="amount" class="pt-2 amount-custom" />
+            <currency-input
+              v-model="amount"
+              class="pt-2 amount-custom"
+              @focus="amountBtnIndex = -1"
+            />
             <p class="absolute text-xl text-gray-200 right-0 top-2">€</p>
           </div>
           <p class="text-gray-300">Minimum: 3€</p>
