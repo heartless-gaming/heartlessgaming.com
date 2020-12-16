@@ -58,11 +58,8 @@
         {{ cardErrorMsg }}
       </p>
       <p class="js-resultMessage hidden text-white">
-        Payment succeeded, see the result in your
-        <a class="text-white font-bold underline" href="" target="_blank">
-          Stripe dashboard.
-        </a>
-        Refresh the page to pay again.
+        Paiement éffectué mon capitaine ! Recharger la page pour éffectuer une
+        nouvelle donation.
       </p>
     </section>
     <div class="h-24 my-8 relative overflow-hidden money-man-donation"></div>
