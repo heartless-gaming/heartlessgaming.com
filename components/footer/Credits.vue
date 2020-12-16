@@ -1,6 +1,6 @@
 <template>
   <section class="sm:w-1/3 sm:text-right text-gray-200">
-    <p class="mb-2 js-animateEntrence">Logo par Markus</p>
+    <p class="mb-2 js-animateEntrence">Logo & icônes par Markus</p>
     <p class="mb-2 js-animateEntrence">
       <a
         class="underline hover:text-gray-400 transition-colors duration-200"

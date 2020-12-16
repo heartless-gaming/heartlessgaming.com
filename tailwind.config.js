@@ -3,7 +3,7 @@ module.exports = {
     extend: {
       colors: {
         hlsred: {
-          light: '#fa4000',
+          light: '#f53b00',
           DEFAULT: '#cc1b00',
           dark: '#be0e00',
         },

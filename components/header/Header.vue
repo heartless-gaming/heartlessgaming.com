@@ -1,5 +1,5 @@
 <template>
-  <header class="pt-16 pb-12 pr-2 pl-2 bg-gray-900 halo-azul">
+  <header class="pt-3 pb-12 pr-2 pl-2 bg-gray-900 halo-azul">
     <header-nav />
     <nuxt-link to="/">
       <logo />
