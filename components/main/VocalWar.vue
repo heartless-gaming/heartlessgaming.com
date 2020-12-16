@@ -4,7 +4,7 @@
       <h2
         class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow js-animateEntrence"
       >
-        Discution vocal
+        Discussion vocal
       </h2>
       <p class="mb-5 js-animateEntrence">
         Il y a dans cette communauté une fracture.
