@@ -6,7 +6,7 @@
     <section
       class="relative max-w-2xl mx-auto mb-24 md:mb-48 text-gray-200 lady-trumpet-homepage"
     >
-      <div class="px-2">
+      <div class="relative z-10 px-2">
         <h2
           class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow js-animateEntrence"
         >
@@ -27,8 +27,10 @@
         </nuxt-link>
       </div>
     </section>
-    <section class="max-w-2xl mx-auto mb-24 text-gray-200">
-      <div class="px-2">
+    <section
+      class="relative max-w-2xl mx-auto mb-24 text-gray-200 money-man-homepage"
+    >
+      <div class="relative z-10 px-2">
         <h2
           class="mb-3 text-3xl md:text-5xl font-grandstander page-title-text-shadow js-animateEntrence"
         >
@@ -75,7 +77,9 @@ export default {
   layout: 'homepage',
   mounted() {
     const elems = document.querySelectorAll('.js-animateEntrence')
-
+    const observerOptions = {
+      // rootMargin: "0px 0px -100px 0px"
+    }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
@@ -83,7 +87,7 @@ export default {
           observer.unobserve(entry.target)
         }
       })
-    })
+    }, observerOptions)
 
     elems.forEach((elem) => {
       observer.observe(elem)
@@ -94,21 +98,71 @@ export default {
 
 <style>
 .lady-trumpet-homepage::after {
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 150%;
+  left: 55%;
+  top: -20%;
+  opacity: 0.2;
+  background-position: 100%;
+  background-image: url('~@/assets/lady-trumpet.svg');
+  background-repeat: no-repeat;
+  animation: ladytrumpet 3s ease infinite;
+
   @screen sm {
-    content: '';
-    position: absolute;
+    opacity: 1;
     width: 110px;
-    height: 150%;
     left: 55%;
     top: -20%;
-    background-position: 100%;
-    background-image: url('~@/assets/lady-trumpet.svg');
-    background-repeat: no-repeat;
-    animation: ladytrumpet 3s ease infinite;
   }
 }
 
 @keyframes ladytrumpet {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+.money-man-homepage::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  left: 50%;
+  top: 20%;
+  opacity: 0.04;
+  background-image: url('~@/assets/donation.svg');
+  background-repeat: no-repeat;
+  animation: moneyman 1s ease infinite;
+
+  @screen md {
+    opacity: 1;
+    width: 100px;
+    left: -15%;
+    top: 30%;
+  }
+
+  @screen lg {
+    opacity: 1;
+    width: 150px;
+    left: -25%;
+    top: 15%;
+  }
+
+  @screen xl {
+    opacity: 1;
+    width: 200px;
+    left: -35%;
+    top: 5%;
+  }
+}
+
+@keyframes moneyman {
   0%,
   100% {
     transform: rotate(-2deg);

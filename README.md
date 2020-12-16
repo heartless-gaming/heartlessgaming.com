@@ -1,18 +1,16 @@
 # The code that powers heartlessgaming.com
-## The 2020 major update
-#### TODO (almost there skullmasher keep it up)
+## The 2020 major update 10 year anniversary
+#### ~~TODO~~ SKULLMASHER MAD MAN YOU DID IT ! :shipit:
   - ~~Make donation page reactive~~
   - ~~Create a Responsive menu that links to : cloud, donation, minecraft map, soundboard~~
   - ~~Server info find icon for each game~~
   - ~~Find icon for donation~~
-  - Place donation icon
-  - Adjust Intersection Observer
-
-  Later
-  - Refactor animations into tailwind config file
-  - Make the quotes modules better
+  - ~~Place donation icon~~
+  - ~~Adjust Intersection Observer~~
 
 ## Build Setup
+
+You need a **redis** server started on the default port in order to run this project.
 
 ```bash
 # install dependencies
@@ -36,3 +34,5 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 Thanks for these people/ressources that have helped me along the way. I cannot stand how awesome it is to have such a massive community of people sharing their knowledge on how to make the web.
   - James Sinclair - [How to run async JavaScript functions in sequence or parallel](https://jrsinclair.com/articles/2019/how-to-run-async-js-in-parallel-or-sequential/)
   - Cher - [Cher Is Listening, A Spotify Now Playing App](https://github.com/cherscarlett/cherislistening)
+  - [publicdomainvectors.org](https://publicdomainvectors.org/)
+  - [Motherfucking MDN !](https://developer.mozilla.org/en-US/)

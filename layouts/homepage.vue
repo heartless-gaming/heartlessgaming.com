@@ -8,7 +8,7 @@
 
 <style lang="scss">
 .animate-entrence {
-  animation: fadeInUp 0.7s ease-out;
+  animation: fadeInUp 1s ease-out;
 }
 
 .gray-gradient {
