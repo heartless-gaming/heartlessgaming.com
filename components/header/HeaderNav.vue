@@ -7,12 +7,12 @@
       href="https://www.heartlessgaming.com/cloud"
     >
       <svg-cloud
-        class="w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-200"
+        class="w-12 sm:w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-150"
       />
     </a>
     <NuxtLink to="/donation" class="block p-2 cloud-drop-shadow">
       <svg-donation
-        class="w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-200"
+        class="w-12 sm:w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-150"
       />
     </NuxtLink>
     <a
@@ -20,12 +20,12 @@
       href="https://heartlessgaming.com/mcmap/#/-162/64/-602/-4/LookAround1005%20-%20overworld/LookAround1005day"
     >
       <svg-minecraft
-        class="w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-200"
+        class="w-12 sm:w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-150"
       />
     </a>
     <NuxtLink to="/soundboard" class="block p-2 cloud-drop-shadow">
       <svg-trumpet
-        class="w-16 transform -rotate-45 fill-current text-hlsred-light hover:text-hlsred transition-all duration-200"
+        class="w-12 sm:w-16 transform -rotate-45 fill-current text-hlsred-light hover:text-hlsred transition-all duration-150"
       />
     </NuxtLink>
   </nav>

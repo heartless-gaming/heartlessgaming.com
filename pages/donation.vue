@@ -1,7 +1,7 @@
 <template>
-  <main class="bg-gray-900 flow-root">
-    <section class="mb-24 max-w-2xl mx-auto mt-3 px-3 sm:p-10">
-      <div class="flex items-center sm:items-start mb-2 sm:mb-5">
+  <main class="bg-gray-900 flow-root overflow-hidden">
+    <section class="relative max-w-2xl mx-auto mt-3 px-3 sm:px-10 sm:pt-10">
+      <div class="realtive z-10 flex items-center sm:items-start mb-2 sm:mb-5">
         <div class="flex flex-wrap flex-1 sm:justify-between">
           <button
             v-for="(btn, index) in amountButtons"
@@ -65,6 +65,7 @@
         Refresh the page to pay again.
       </p>
     </section>
+    <div class="h-24 my-8 relative overflow-hidden money-man-donation"></div>
     <section class="mb-24 max-w-2xl mx-auto px-3 sm:px-10 text-gray-200">
       <h2 class="mb-3 text-3xl js-animateEntrence">Données & Vie privée</h2>
       <p class="mb-3">
@@ -317,6 +318,21 @@ export default {
 </script>
 
 <style lang="scss">
+.money-man-donation {
+  background-image: url('~@/assets/donation.svg');
+  background-repeat: no-repeat;
+  animation: moneymandonation 14s ease infinite;
+}
+
+@keyframes moneymandonation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
 .amount-pill {
   @apply inline-block mr-3 mb-5 sm:mb-0 px-4 sm:px-6 py-2 rounded-full bg-hlsred text-gray-200 font-bold hover:bg-hlsred-dark ring-hlsred-dark ring-offset-0 ring-offset-hlsred-dark transition-all duration-200;
 
@@ -384,24 +400,11 @@ export default {
   animation: loading 2s infinite ease;
 }
 
-@-webkit-keyframes loading {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes loading {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
