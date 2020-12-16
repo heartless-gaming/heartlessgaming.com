@@ -13,7 +13,7 @@
     <p class="js-animateEntrence">
       <a
         class="underline hover:text-gray-400 transition-colors duration-200"
-        href="https://skullmasher"
+        href="https://skullmasher.io"
       >
         Skullmasher.io
       </a>
