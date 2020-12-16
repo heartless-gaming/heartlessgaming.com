@@ -23,7 +23,7 @@
         class="underline hover:text-gray-400 transition-colors duration-200"
         href="https://www.bricomarche.com/magasin/la-seyne-sur-mer/01214"
       >
-        Brico e-sport
+        Brico esport
       </a>
     </p>
   </section>

@@ -28,15 +28,24 @@ const getGS = async (req, res) => {
 
   // Run ALL queries at the same time and returns whatever the outcome
   const gsData = await Promise.allSettled(gameServers.map(await gamedigQuery))
-
+  // Format data for consumption
   const response = gsData.reduce((acc, gs) => {
     if (gs.status === 'fulfilled') {
-      acc.push({
+      const obj = {
+        game: gs.value.raw.folder || 'mc',
         name: gs.value.name,
         private: gs.value.password,
         players: gs.value.players.length,
         maxplayers: gs.value.maxplayers,
-      })
+        connect: `steam://connect/${gs.value.connect}`,
+      }
+      // Minecraft is special
+      if (gs.value.raw.folder === undefined) {
+        obj.game = 'mc'
+        obj.private = true
+      }
+
+      acc.push(obj)
     }
 
     return acc
@@ -49,7 +58,6 @@ const getGS = async (req, res) => {
     res.json(response)
   }
 }
-
 // Game server info cache middleware with redis key 'heartlessgs'
 const gsCache = async (req, res, next) => {
   const heartlessgs = await redis.get('heartlessgs')
@@ -60,16 +68,15 @@ const gsCache = async (req, res, next) => {
     res.json(JSON.parse(heartlessgs))
   }
 }
-
 // refresh game server data every minute with this poor man cron task
 setInterval(() => {
   getGS()
 }, 60 * 1000)
-
 /**
  * Routes of the api prefixed with /api in nuxt.config.js
  * Get data from redis cache if available otherwise fetch the data and cache it
  */
 app.get('/getGS', gsCache, getGS)
+// app.get('/getGS', getGS)
 
 module.exports = app
