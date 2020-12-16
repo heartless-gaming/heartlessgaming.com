@@ -24,7 +24,7 @@
               class="block w-8 pr-2 fill-current text-gray-800"
             />
             <p class="flex-1 sm:text-lg leading-5">{{ server.name }}</p>
-            <p v-if="!server.private" class="hidden sm:block">
+            <p v-if="server.connect" class="hidden sm:block">
               <a
                 class="ml-2 py-1.5 px-3 rounded bg-hlsred hover:bg-red transition-all duration-200 text-gray-200 uppercase"
                 :href="server.connect"
@@ -72,6 +72,7 @@ export default {
             break
           case 'mc':
             gs.gamelogo = SvgMc
+            gs.connect = false
             break
           case 'kf2':
             gs.gamelogo = SvgKf2
