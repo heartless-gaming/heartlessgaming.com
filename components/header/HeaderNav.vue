@@ -4,7 +4,7 @@
   >
     <a
       class="block p-2 cloud-drop-shadow"
-      href="https://www.heartlessgaming.com/cloud"
+      href="https://heartlessgaming.com/cloud"
     >
       <svg-cloud
         class="w-12 sm:w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-150"
