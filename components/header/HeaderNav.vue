@@ -1,20 +1,48 @@
 <template>
-  <nav>
+  <nav
+    class="max-w-xs sm:max-w-lg mb-3 mx-auto flex justify-between items-center bounceInDown"
+  >
     <a
-      class="absolute top-0 right-0 p-2 cloud-drop-shadow"
+      class="block p-2 cloud-drop-shadow"
       href="https://www.heartlessgaming.com/cloud"
     >
-      <svg-cloud class="w-16" />
+      <svg-cloud
+        class="w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-200"
+      />
     </a>
+    <NuxtLink to="/donation" class="block p-2 cloud-drop-shadow">
+      <svg-donation
+        class="w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-200"
+      />
+    </NuxtLink>
+    <a
+      class="block p-2 cloud-drop-shadow"
+      href="https://heartlessgaming.com/mcmap/#/-162/64/-602/-4/LookAround1005%20-%20overworld/LookAround1005day"
+    >
+      <svg-minecraft
+        class="w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-200"
+      />
+    </a>
+    <NuxtLink to="/soundboard" class="block p-2 cloud-drop-shadow">
+      <svg-trumpet
+        class="w-16 transform -rotate-45 fill-current text-hlsred-light hover:text-hlsred transition-all duration-200"
+      />
+    </NuxtLink>
   </nav>
 </template>
 
 <script>
 import SvgCloud from '~/assets/cloud.svg?inline'
+import SvgDonation from '~/assets/donation.svg?inline'
+import SvgMinecraft from '~/assets/mc.svg?inline'
+import SvgTrumpet from '~/assets/trumpet.svg?inline'
 
 export default {
   components: {
     SvgCloud,
+    SvgDonation,
+    SvgMinecraft,
+    SvgTrumpet,
   },
 }
 </script>

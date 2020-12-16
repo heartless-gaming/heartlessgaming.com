@@ -2,11 +2,14 @@
 ## The 2020 major update
 #### TODO (almost there skullmasher keep it up)
   - ~~Make donation page reactive~~
-  - Create a Responsive menu that links to : cloud, donation, minecraft map, soundboard
-  - Server info find icon for each game
-  - Find icon for donation
+  - ~~Create a Responsive menu that links to : cloud, donation, minecraft map, soundboard~~
+  - ~~Server info find icon for each game~~
+  - ~~Find icon for donation~~
+  - Place donation icon
+  - Adjust Intersection Observer
 
-  Optional
+  Later
+  - Refactor animations into tailwind config file
   - Make the quotes modules better
 
 ## Build Setup
