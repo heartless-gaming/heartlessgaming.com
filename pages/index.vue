@@ -21,7 +21,9 @@
           class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow js-animateEntrence"
         >
           <strong>Découvrir l'enfer du Soundboard</strong>
-          <svg-trumpet class="w-10 inline align-middle fill-white" />
+          <svg-trumpet
+            class="w-10 relative -top-0.5 inline align-middle fill-white"
+          />
         </nuxt-link>
       </div>
     </section>
