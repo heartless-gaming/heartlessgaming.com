@@ -1,12 +1,18 @@
 <template>
   <section class="-skewed-110 relative">
-    <div class="px-2">
+    <div class="px-2" :class="{ 'animate-pulse': loading }">
       <div
         v-if="servers.length > 0"
         class="max-w-2xl mx-auto relative z-10 mb-20 border-3 border-solid border-hlsred bg-gray-200 rounded thicc-shadow"
       >
         <div class="flex bg-hlsred mb-1 pt-1 pb-2 text-gray-200">
           <h3 class="flex-1 pl-3 text-xl">Les serveurs de jeux</h3>
+          <button
+            class="uppercase border-2 border-gray-200 rounded px-2 py-0.5 mr-2 text-xs font-bold"
+            @click="refresh"
+          >
+            Rafraîchir
+          </button>
         </div>
         <div class="mb-1 text-gray-800">
           <div
@@ -54,6 +60,7 @@ export default {
   data() {
     return {
       servers: [],
+      loading: true,
     }
   },
   async fetch() {
@@ -61,6 +68,7 @@ export default {
     const fetchGSinfoURL = `${baseURL}/api/getGS`
     this.servers = await fetch(fetchGSinfoURL).then((res) => res.json())
     this.assignGameIcon()
+    this.loading = false
   },
   methods: {
     assignGameIcon() {
@@ -84,6 +92,11 @@ export default {
 
         return gs
       })
+    },
+    refresh() {
+      this.loading = true
+      this.$nuxt.refresh()
+      this.loading = false
     },
   },
 }
