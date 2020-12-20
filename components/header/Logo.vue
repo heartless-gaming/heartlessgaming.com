@@ -1,7 +1,5 @@
 <template>
-  <svg-heartless-logo
-    class="max-w-xs sm:max-w-lg mx-auto logo-drop-shadow bounceInDown"
-  />
+  <svg-heartless-logo class="logo-drop-shadow bounceInDown" />
 </template>
 
 <script>
