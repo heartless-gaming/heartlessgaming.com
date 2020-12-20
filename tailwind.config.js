@@ -23,6 +23,16 @@ module.exports = {
         4: '1rem',
       },
       transitionProperty: ['motion-reduce'],
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.200'),
+            h2: theme('colors.gray.200'),
+            strong: theme('colors.gray.200'),
+            a: theme('colors.gray.200'),
+          },
+        },
+      }),
     },
     fontFamily: {
       sans: [

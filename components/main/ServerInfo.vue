@@ -29,7 +29,7 @@
               v-if="server.private"
               class="block w-8 pr-2 fill-current text-gray-800"
             />
-            <p class="flex-1 sm:text-lg leading-5">{{ server.name }}</p>
+            <p class="flex-1 sm:text-lg truncate">{{ server.name }}</p>
             <p v-if="server.connect" class="hidden sm:block">
               <a
                 class="ml-2 py-1.5 px-3 rounded bg-hlsred hover:bg-red transition-all duration-200 text-gray-200 uppercase"
