@@ -3,7 +3,7 @@
     <header-nav />
     <div class="text-center">
       <div class="">
-        <logo class="mb-10" />
+        <logo class="max-w-xs sm:max-w-lg mx-auto block mb-10" />
         <header-homepage-title />
       </div>
       <header-homepage-call-to-action />
