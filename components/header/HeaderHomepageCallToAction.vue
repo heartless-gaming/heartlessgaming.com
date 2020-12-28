@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import SvgYoutubeLogo from '~/assets/youtube.svg?inline'
-import SvgTwitchLogo from '~/assets/twitch.svg?inline'
+import SvgYoutubeLogo from '~/assets/svg/youtube.svg?inline'
+import SvgTwitchLogo from '~/assets/svg/twitch.svg?inline'
 
 export default {
   components: {

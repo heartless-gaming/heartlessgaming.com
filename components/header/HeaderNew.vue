@@ -1,15 +1,25 @@
 <template>
-  <section class="max-w-lg mx-auto mt-10 appear delay-500">
-    <div
-      class="flex mx-3 px-8 py-4 rounded bg-gray-200 text-gray-900 thicc-shadow items-center"
+  <section class="max-w-lg mx-auto mt-10 px-3 appear delay-500">
+    <nuxt-link
+      to="blog/putain-10-ans-major-update-2020-12"
+      class="thicc-shadow overflow-hidden"
     >
-      <p class="flex-1"><strong>Nouveau !</strong></p>
-      <nuxt-link
-        to="blog"
-        class="inline-block px-4 py-2 rounded text-gray-200 uppercase font-bold tracking-wider border-3 border-hlsred bg-hlsred hover:bg-transparent hover:text-gray-900 transition-all duration-200 shadow-md"
+      <img
+        class="rounded-t-lg"
+        src="/img/articles/minecraft-pixelart-heartless-gaming-10-year.jpg"
+        alt="Rendu du logo Heartless Gaming dans Minecraft"
+      />
+      <div
+        class="flex px-3 sm:px-8 py-4 rounded-b-lg bg-gray-200 text-gray-900 items-center"
       >
-        Voir le blog
-      </nuxt-link>
-    </div>
+        <p class="flex-1 mr-2"><strong>Putain 10 ans !</strong></p>
+        <nuxt-link
+          to="blog/putain-10-ans-major-update-2020-12"
+          class="inline-block px-2 sm:px-4 py-2 rounded text-gray-200 uppercase font-bold tracking-wider border-3 border-hlsred bg-hlsred hover:bg-transparent hover:text-gray-900 transition-all duration-200 shadow"
+        >
+          Voir sur le blog
+        </nuxt-link>
+      </div>
+    </nuxt-link>
   </section>
 </template>

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import ChevronRight from '~/assets/chevron-right.svg?inline'
+import ChevronRight from '~/assets/svg/chevron-right.svg?inline'
 
 export default {
   components: {

@@ -135,7 +135,7 @@
 
 <script>
 import { loadStripe } from '@stripe/stripe-js/pure'
-import SvgMail from '~/assets/mail.svg?inline'
+import SvgMail from '~/assets/svg/mail.svg?inline'
 
 export default {
   components: {
@@ -316,7 +316,7 @@ export default {
 
 <style lang="scss">
 .money-man-donation {
-  background-image: url('~@/assets/donation.svg');
+  background-image: url('~@/assets/svg/donation-man.svg');
   background-repeat: no-repeat;
   animation: moneymandonation 14s ease infinite;
 }

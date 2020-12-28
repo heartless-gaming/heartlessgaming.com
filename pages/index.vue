@@ -66,8 +66,8 @@
 </template>
 
 <script>
-import ChevronRight from '~/assets/chevron-right.svg?inline'
-import SvgTrumpet from '~/assets/trumpet.svg?inline'
+import ChevronRight from '~/assets/svg/chevron-right.svg?inline'
+import SvgTrumpet from '~/assets/svg/trumpet.svg?inline'
 
 export default {
   components: {
@@ -106,7 +106,7 @@ export default {
   top: -20%;
   opacity: 0.2;
   background-position: 100%;
-  background-image: url('~@/assets/lady-trumpet.svg');
+  background-image: url('~@/assets/svg/lady-trumpet.svg');
   background-repeat: no-repeat;
   animation: ladytrumpet 3s ease infinite;
 
@@ -136,7 +136,7 @@ export default {
   left: 50%;
   top: 20%;
   opacity: 0.04;
-  background-image: url('~@/assets/donation.svg');
+  background-image: url('~@/assets/svg/donation-man.svg');
   background-repeat: no-repeat;
   animation: moneyman 1s ease infinite;
 

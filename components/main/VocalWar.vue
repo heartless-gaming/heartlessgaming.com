@@ -55,9 +55,9 @@
 </template>
 
 <script>
-import SvgMumble from '~/assets/mumble.svg?inline'
-import SvgDiscord from '~/assets/discord.svg?inline'
-import ChevronRight from '~/assets/chevron-right.svg?inline'
+import SvgMumble from '~/assets/svg/mumble.svg?inline'
+import SvgDiscord from '~/assets/svg/discord.svg?inline'
+import ChevronRight from '~/assets/svg/chevron-right.svg?inline'
 
 export default {
   components: {
