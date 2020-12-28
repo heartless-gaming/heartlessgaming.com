@@ -86,6 +86,8 @@ export default {
     '@nuxt/content',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
+    // https://github.com/nuxt-community/sitemap-module
+    '@nuxtjs/sitemap',
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
