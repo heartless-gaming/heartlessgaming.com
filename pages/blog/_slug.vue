@@ -18,13 +18,6 @@
           {{ article.readTime }}
         </small>
       </p>
-      <nav class="border-3 border-gray-200 px-10 max-w-xs hidden">
-        <p v-for="link of article.toc" :key="link.id">
-          <NuxtLink :to="`#${link.id}`" class="underline">
-            {{ link.text }}
-          </NuxtLink>
-        </p>
-      </nav>
       <article>
         <nuxt-content :document="article" />
       </article>
