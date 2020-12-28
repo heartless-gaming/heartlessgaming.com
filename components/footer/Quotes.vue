@@ -40,7 +40,12 @@ export default {
       `J'ai entendu de la lumière, je suis rentré - Skullmasher`,
       `Le mec il overclock son proco pour jouer à rocket league - Eljam à Zenix`,
       `We will find a way - Skullmasher`,
-      // Eljam :"c'est la force centripete" Don : "Comme le human"Eljam & Don : "le human centripete !"
+      `Il me faudrai un mugay pour gratter mon nez, il est long et fin. - Don`,
+      `Guilstyspark c'est un guilty overclokable parce il a un K - Don`,
+      `Dans le prochain rpg, j'appelle mon perso judanus - Eljam`,
+      `Si ta pas d'attestation tu respecte pas le pare-feu (couvre-feu) Eljam - Zenix`,
+      `Pourquoi ma y a une pizza 4 fromages sur ma cg ? - Eljam`,
+      // `Eljam :"c'est la force centripete" Don : "Comme le human" Eljam & Don : "le human centripete !"`,
     ],
   }),
   mounted() {
