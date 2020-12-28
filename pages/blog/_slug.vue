@@ -6,6 +6,11 @@
       <h1 class="font-grandstander text-center page-title-text-shadow appear">
         {{ article.title }}
       </h1>
+      <img
+        :src="require(`~/static/img/articles/${article.img}`)"
+        :alt="article.alt"
+        class="rounded-lg thicc-shadow"
+      />
       <p class="mb-2">
         <small class="flex items-center">
           {{ formatDate(article.createdAt) }}
