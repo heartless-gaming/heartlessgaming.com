@@ -6,8 +6,7 @@ readTime: 3 min
 
 Pour inaugurer ce nouveau blog Heartless Gaming voici un résumé du travail dantesque qui a commencé par la réparation du cloud, puis par la stabilité des serveurs de jeux et enfin par l'arrivée du nouveau site web. Après 10ans, la communauté avait bien besoin de recréer une base solide pour se réunir plus facilement et assurer notre prospérité AMEN.
 
-Nous vous invitons à nous retrouver pour le montage annuel ainsi que le best of des 10ans durant le mois de janvier et février.
-
+Nous vous invitons à nous retrouver pour [le montage annuel ainsi](https://www.youtube.com/watch?v=qj2YiW6FLyw&list=PLE0FIN2k0bUDE4CZymF2rebWNK415NUCN&index=6) que le best of des 10ans prévue pour le mois de janvier et février.
 
 ## Serveur de jeux
   - Redémarrage automatique en cas d'update du jeu au bout de 30 minutes max
@@ -21,17 +20,19 @@ Nous vous invitons à nous retrouver pour le montage annuel ainsi que le best of
   - Mise à jour Overviewer (dynmap)
   - Mise à jour datapack serveur (merci Guiltyspark)
 
-### Insurgency
+### Insurgency: Sandstorm
   - Nouvelle map de nuit (merci Guiltyspark)
   - Nouvelle map modé (merci Guiltyspark)
     - Opération Metro (Battlefield 3)
     - Noshar Canal (Battlefield 3)
 
 ### CSGO
-  - Privé
-    - Ajout des maps mirroir (merci Markus)
-  - CSGO 1v1
-    - Fix de la mapcycle
+
+#### Privé
+  - Ajout des maps mirroir (merci Markus)
+
+#### 1v1
+  - Fix de la mapcycle
 
 ### ARK
   - Wipe complet, retour sur la map par défaut The Island
