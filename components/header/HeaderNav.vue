@@ -32,10 +32,10 @@
 </template>
 
 <script>
-import SvgCloud from '~/assets/cloud.svg?inline'
-import SvgDonation from '~/assets/donation.svg?inline'
-import SvgMinecraft from '~/assets/mc.svg?inline'
-import SvgTrumpet from '~/assets/trumpet.svg?inline'
+import SvgCloud from '~/assets/svg/cloud.svg?inline'
+import SvgDonation from '~/assets/svg/donation.svg?inline'
+import SvgMinecraft from '~/assets/svg/mc.svg?inline'
+import SvgTrumpet from '~/assets/svg/trumpet.svg?inline'
 
 export default {
   components: {

@@ -49,11 +49,12 @@
 </template>
 
 <script>
-import SvgCsgo from '~/assets/csgo.svg?raw'
-import SvgMc from '~/assets/mc.svg?raw'
-import SvgKf2 from '~/assets/kf2.svg?raw'
-import SvgSandstorm from '~/assets/sandstorm.svg?raw'
-import SvgLock from '~/assets/lock.svg?inline'
+import SvgCsgo from '~/assets/svg/csgo.svg?raw'
+import SvgMc from '~/assets/svg/mc.svg?raw'
+import SvgKf2 from '~/assets/svg/kf2.svg?raw'
+import SvgSandstorm from '~/assets/svg/sandstorm.svg?raw'
+import SvgArk from '~/assets/svg/ark.svg?raw'
+import SvgLock from '~/assets/svg/lock.svg?inline'
 
 export default {
   components: { SvgLock },
@@ -73,7 +74,6 @@ export default {
   methods: {
     assignGameIcon() {
       this.servers.map((gs, index) => {
-        // console.log(gs.game)
         switch (gs.game) {
           case 'csgo':
             gs.gamelogo = SvgCsgo
@@ -87,6 +87,9 @@ export default {
             break
           case 'sandstorm':
             gs.gamelogo = SvgSandstorm
+            break
+          case 'ark_survival_evolved':
+            gs.gamelogo = SvgArk
             break
         }
 

@@ -171,7 +171,7 @@ export default {
     right: 2%;
     top: -20%;
     background-position: 100%;
-    background-image: url('~@/assets/lady-trumpet.svg');
+    background-image: url('~@/assets/svg/lady-trumpet.svg');
     background-repeat: no-repeat;
     animation: ladytrumpet 3s ease infinite;
   }

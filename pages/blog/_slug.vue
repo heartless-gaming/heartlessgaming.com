@@ -25,7 +25,7 @@
   </div>
 </template>
 <script>
-import SvgStopwatch from '~/assets/stopwatch.svg?inline'
+import SvgStopwatch from '~/assets/svg/stopwatch.svg?inline'
 
 export default {
   components: {

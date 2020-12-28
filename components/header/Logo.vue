@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import SvgHeartlessLogo from '~/assets/heartlessgaming-logo-white.svg?inline'
+import SvgHeartlessLogo from '~/assets/svg/heartlessgaming-logo-white.svg?inline'
 
 export default {
   components: {
