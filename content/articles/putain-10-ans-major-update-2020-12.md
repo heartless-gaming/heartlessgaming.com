@@ -1,30 +1,42 @@
 ---
 title: Putain 10 ans !
-description: Mise à jour majeur Heartless Gaming décembre 2020.
+description: Mise à jour majeur Heartless Gaming décembre 2020 en l'honneur de notre 10ème anniversaire.
+readTime: 3 min
 ---
 
-Pour inaugurer ce nouveau blog Heartless Gaming voici un résumé du travail dantesque qui a commencé par la réparation du cloud, puis par la stabilité des serveurs de jeux et enfin par l'arrivé du nouveau site web. Après 10ans, la communauté avait bien besoin de recréer une base solide pour ce réunir plus facilement et assurer notre propérité AMEN.
+Pour inaugurer ce nouveau blog Heartless Gaming voici un résumé du travail dantesque qui a commencé par la réparation du cloud, puis par la stabilité des serveurs de jeux et enfin par l'arrivée du nouveau site web. Après 10ans, la communauté avait bien besoin de recréer une base solide pour se réunir plus facilement et assurer notre prospérité AMEN.
+
+Nous vous invitons à nous retrouver pour le montage annuel ainsi que le best of des 10ans durant le mois de janvier et février.
+
 
 ## Serveur de jeux
   - Redémarrage automatique en cas d'update du jeu au bout de 30 minutes max
   - Redémarrage automatique en cas de crash au bout de 5 minutes maximum
-  - Minecraft
-    - Mise à jour 1.16.4 (merci Don et Guiltyspark)
-    - Mise à jour Overviewer (dynmap)
-    - Mise à jour datapack serveur (merci Guiltyspark)
 
-  - Insurgency
-    - Nouvelle map de nuit (merci Guiltyspark)
-    - Nouvelle map modé (merci Guiltyspark)
-      - Opération Metro (Battlefield 3)
-      - Noshar Canal (Battlefield 3)
-  - CSGO
-    - Privé
-      - Ajout des maps mirroir (merci Markus)
-    - CSGO 1v1
-      - Fix de la mapcycle
-  - ARK
-    - Wipe complet, retour sur la map par défaut The Island
+
+<div class="ml-6 md:ml-10">
+
+### Minecraft
+  - Mise à jour 1.16.4 (merci Don et Guiltyspark)
+  - Mise à jour Overviewer (dynmap)
+  - Mise à jour datapack serveur (merci Guiltyspark)
+
+### Insurgency
+  - Nouvelle map de nuit (merci Guiltyspark)
+  - Nouvelle map modé (merci Guiltyspark)
+    - Opération Metro (Battlefield 3)
+    - Noshar Canal (Battlefield 3)
+
+### CSGO
+  - Privé
+    - Ajout des maps mirroir (merci Markus)
+  - CSGO 1v1
+    - Fix de la mapcycle
+
+### ARK
+  - Wipe complet, retour sur la map par défaut The Island
+
+</div>
 
 ## Modération
 - Nouveau channel "Adresse Serveur" sur le steam chat du groupe (merci Don)

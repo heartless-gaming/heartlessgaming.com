@@ -27,6 +27,7 @@ export default {
   components: {
     ChevronRight,
   },
+  layout: 'blog',
   async asyncData({ $content, params }) {
     const articles = await $content('articles', params.slug)
       .only(['title', 'description', 'slug'])

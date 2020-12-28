@@ -3,9 +3,14 @@
     <div
       class="max-w-prose mx-auto mb-20 px-2 sm:px-6 prose prose-lg md:prose-xl"
     >
-      <p>
+      <h1 class="font-grandstander text-center page-title-text-shadow appear">
+        {{ article.title }}
+      </h1>
+      <p class="mb-2">
         <small>
-          Dernière mise à jour : {{ formatDate(article.updatedAt) }}
+          {{ formatDate(article.createdAt) }}
+          <svg-stopwatch class="w-6 inline" />
+          {{ article.readTime }}
         </small>
       </p>
       <nav class="border-3 border-gray-200 px-10 max-w-xs hidden">
@@ -22,7 +27,13 @@
   </div>
 </template>
 <script>
+import SvgStopwatch from '~/assets/stopwatch.svg?inline'
+
 export default {
+  components: {
+    SvgStopwatch,
+  },
+  layout: 'blog',
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
 
