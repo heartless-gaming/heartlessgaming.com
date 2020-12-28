@@ -38,6 +38,7 @@ export default {
       `Je ne suis pas une personne de haine, mais parfois tu arrives dans ma vie et je pense à l'holocauste - Skullmasher à Markus`,
       `kinder bueno dans tes nachos a toi aussi mon jeune ami semi-ibérique ! - Guiltyspark`,
       `J'ai entendu de la lumière, je suis rentré - Skullmasher`,
+      `Le mec il overclock son proco pour jouer à rocket league - Eljam à Zenix`,
       `We will find a way - Skullmasher`,
       // Eljam :"c'est la force centripete" Don : "Comme le human"Eljam & Don : "le human centripete !"
     ],
