@@ -2,10 +2,11 @@
 title: Putain 10 ans !
 description: Mise à jour majeur Heartless Gaming décembre 2020 en l'honneur de notre 10ème anniversaire.
 readTime: 3 min
+img: luna-carton-life.jpg
+alt: Rendu du logo Heartless Gaming dans Minecraft
 ---
 
-Pour inaugurer ce nouveau blog Heartless Gaming voici un résumé du travail dantesque qui a commencé par la réparation du cloud, puis par la stabilité des serveurs de jeux et enfin par l'arrivée du nouveau site web. Après 10ans, la communauté avait bien besoin de recréer une base solide pour se réunir plus facilement et assurer <nuxt-link to="/donation">notre prospérité</nuxt-link> AMEN.
-
+Pour inaugurer ce nouveau blog Heartless Gaming voici un résumé du travail dantesque qui a commencé par la réparation du cloud, puis par la stabilité des serveurs de jeux et enfin par l'arrivée du nouveau site web. Après 10ans, la communauté avait bien besoin de recréer une base solide pour se réunir plus facilement et assurer [notre prospérité](/donation) AMEN.
 
 Nous vous invitons à nous retrouver pour [le montage annuel](https://www.youtube.com/watch?v=qj2YiW6FLyw&list=PLE0FIN2k0bUDE4CZymF2rebWNK415NUCN&index=6) ainsi que le best of des 10ans prévue pour le mois de janvier et février.
 
