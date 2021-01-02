@@ -3216,7 +3216,7 @@ bl@^4.0.3:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-bluebird@^3.1.1, bluebird@^3.5.1, bluebird@^3.5.5:
+bluebird@^3.1.1, bluebird@^3.4.0, bluebird@^3.5.1, bluebird@^3.5.5:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -9077,6 +9077,14 @@ os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
+
+ovh@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/ovh/-/ovh-2.0.3.tgz#e3a709360bd3bfd2275caf65b7648368afe76fc6"
+  integrity sha512-K2XpfSYza7PHVDqAP6BNk92X3f+BvaNd6eSgMqguLTaUz/DYzOyHsbGFu7lyHTkIUUb9qamvJ9FC6OTzk7tj3Q==
+  dependencies:
+    async "0.9.x"
+    bluebird "^3.4.0"
 
 p-cancelable@^2.0.0:
   version "2.0.0"
