@@ -121,5 +121,6 @@ export default {
     { path: '/api', handler: '~/api/getYT.js' },
     { path: '/api', handler: '~/api/getGS.js' },
     { path: '/api', handler: '~/api/stripe.js' },
+    { path: '/api', handler: '~/api/ovh.js' },
   ],
 }

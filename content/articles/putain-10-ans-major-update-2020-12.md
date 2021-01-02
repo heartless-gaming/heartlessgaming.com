@@ -52,7 +52,7 @@ Nous vous invitons à nous retrouver pour [le montage annuel](https://www.youtub
 - Mot de passe irrécupérable par l'administrateur pour raison administrative et vie privé
 - 5Go de donnée pour le moment
 - Encryption activé par défaut avec option end to end disponible à partir d'un dossier vide (merci Guiltyspark)
-- [Synchro automatique à la Dropbox](https://nextcloud.com/clients/) disponible pour Linux, Windows, Mac, Android et Ios
+- [Synchro automatique comme Dropbox](https://nextcloud.com/clients/) disponible pour Linux, Windows, Mac, Android et Ios
 
 ## Site Web
 - Nouveau site web offline first
