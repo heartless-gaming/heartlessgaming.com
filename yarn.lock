@@ -1820,6 +1820,11 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/fibers@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@types/fibers/-/fibers-3.1.0.tgz#3afa6d302587f52e63631cf2bc1acca6c0c3f65e"
+  integrity sha512-1o3I9xtk2PZFxwaLCC6gTaBfBZ5rvw/DSZZPK89fwuwO6LNrzSbC6rEs1xI0bQ3fCRWmO+uNJQQeD2J56oTMDg==
+
 "@types/file-loader@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@types/file-loader/-/file-loader-4.2.0.tgz#ec8e793e275b7f90cdec3ff286518c6bf7bb8fc3"
@@ -2537,11 +2542,12 @@
     easy-table "^1.1.1"
     pretty-ms "^7.0.0"
 
-"@wdio/sync@^6.10.11":
-  version "6.10.11"
-  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-6.10.11.tgz#7ee0018fdef0b8df4ea3fc5111fd0151dc5bbf65"
-  integrity sha512-sCP7FMOz+8u7QPF2L7VF++n7mpwDrdxaU6sJ8M8bEjjgA6HBu3kzaUyOc5yWdwuDFUZaZ9QU+D7BNGR8J9GVYw==
+"@wdio/sync@^6.11.0":
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/@wdio/sync/-/sync-6.11.0.tgz#fbf869a4888369d2fd269484808d10f971301ecb"
+  integrity sha512-ORdY40PNP1c0VKJV+dIh1tYmMXwsRHPhB66p1Y6TRm6LvIpPVX8peoB/Qx9zBsO40hAS1cFt9pdsGxu7VCHnfg==
   dependencies:
+    "@types/fibers" "^3.1.0"
     "@types/puppeteer" "^5.4.0"
     "@wdio/logger" "6.10.10"
     fibers "^4.0.1"
