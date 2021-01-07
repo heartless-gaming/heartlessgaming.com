@@ -79,6 +79,7 @@ module.exports = {
       opacity: ['disabled'],
       ringWidth: ['hover'],
       ringColor: ['hover'],
+      visibility: ['group-hover'],
     },
   },
   plugins: [require('@tailwindcss/typography')],
