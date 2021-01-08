@@ -4,12 +4,12 @@ import ovhLib from 'ovh'
 
 const app = express()
 const redis = new Redis()
-// const ovh = ovhLib({
-//   endpoint: 'ovh-eu',
-//   appKey: process.env.OVH_APP_KEY,
-//   appSecret: process.env.OVH_APP_SECRET,
-//   consumerKey: process.env.OVH_CONSUMER_KEY,
-// })
+const ovh = ovhLib({
+  endpoint: 'ovh-eu',
+  appKey: process.env.OVH_APP_KEY,
+  appSecret: process.env.OVH_APP_SECRET,
+  consumerKey: process.env.OVH_CONSUMER_KEY,
+})
 
 const sys = ovhLib({
   endpoint: 'soyoustart-eu',
@@ -35,20 +35,40 @@ const sys = ovhLib({
   return credential
 } */
 
-/* const OVHbills = async () => {
+const OVHbills = async (req, res) => {
   const billsIDs = await ovh.requestPromised('GET', `/me/bill`)
-  // console.log(`Number of bills : ${billsIDs.length}`)
-  const TotalBillValue = billsIDs.reduce(async (acc, billID) => {
+  const response = await billsIDs.reduce(async (accumulator, billID) => {
     const bill = await ovh.requestPromised('GET', `/me/bill/${billID}`)
-    acc = await acc + bill.priceWithTax.value
+    // Provides more bills information (worth to keep IMO)
+    // const billDetailID = await ovh.requestPromised('GET', `/me/bill/${billID}/details`)
+    // const billDetail = await ovh.requestPromised('GET', `/me/bill/${billID}/details/${billDetailID[0]}`)
+    const obj = {
+      date: bill.date,
+      description: 'OVH domaine',
+      amount: bill.priceWithTax.value,
+    }
+    // It needs to wait await the accumulator but I don't know exactly why...
+    const acc = await accumulator
+    acc.push(obj)
 
     return acc
-  }, 0)
+  }, [])
 
-  console.log(`Total OVH Heartless Gaming Bill Number : ${(await TotalBillValue).toFixed(2)}`)
-  // res.json(credential)
-  return TotalBillValue
-} */
+  // Send the data to redis with an expiration value of 6 hours
+  redis.setex('heartlessbillsovh', 21600, JSON.stringify(response))
+  res.json(response)
+}
+
+// OVH Bills cache middleware with redis key 'heartlessbillsovh'
+const OVHBillsCache = async (req, res, next) => {
+  const heartlessbillsovh = await redis.get('heartlessbillsovh')
+
+  if (heartlessbillsovh === null) {
+    next()
+  } else {
+    res.json(JSON.parse(heartlessbillsovh))
+  }
+}
 
 const SYSbills = async (req, res) => {
   const billsIDs = await sys.requestPromised('GET', `/me/bill`)
@@ -70,7 +90,7 @@ const SYSbills = async (req, res) => {
   }, [])
 
   // Send the data to redis with an expiration value of 6 hours
-  redis.setex('heartlessyt', 21600, JSON.stringify(response))
+  redis.setex('heartlessbillssys', 21600, JSON.stringify(response))
   res.json(response)
 }
 
@@ -85,8 +105,8 @@ const SYSBillsCache = async (req, res, next) => {
   }
 }
 
-// app.get('/getOVH', gsCache, getCK)
-app.get('/getBills', SYSBillsCache, SYSbills)
+app.get('/getOVHBills', OVHBillsCache, OVHbills)
+app.get('/getSYSBills', SYSBillsCache, SYSbills)
 // app.get('/getCK', getCK)
 
 module.exports = app
