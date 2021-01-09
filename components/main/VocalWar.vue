@@ -23,7 +23,7 @@
             </p>
             <a
               class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow js-animateEntrence"
-              href="mumble://www.heartlessgaming.com/"
+              href="mumble://heartlessgaming.com"
             >
               <strong>Rejoindre le mumble</strong>
               <chevron-right class="w-2 inline align-middle fill-white" />
@@ -42,7 +42,7 @@
             </p>
             <a
               class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow js-animateEntrence"
-              href="mumble://www.heartlessgaming.com/"
+              href="https://discord.gg/rWDzacA"
             >
               <strong>Rejoindre le discord</strong>
               <chevron-right class="w-2 inline align-middle fill-white" />
