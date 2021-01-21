@@ -48,7 +48,7 @@
     "@nuxtjs/svg": "^0.1.12",
     "@nuxtjs/tailwindcss": "^3.4.2",
     "@wdio/cli": "^6.10.11",
-    "@wdio/local-runner": "^6.10.13",
+    "@wdio/local-runner": "^6.12.1",
     "@wdio/mocha-framework": "^6.10.11",
     "@wdio/spec-reporter": "^6.10.6",
     "@wdio/sync": "^6.10.11",
