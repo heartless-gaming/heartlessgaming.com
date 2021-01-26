@@ -58,20 +58,20 @@ const getYT = async (req, res) => {
   })
 
   // Send the data to redis with an expiration value of 6 hours
-  redis.setex('heartlessyt', 21600, JSON.stringify(response))
+  redis.setex('hg:yt', 21600, JSON.stringify(response))
 
   // Send away the gathered Youtube videos information
   res.json(response)
 }
 
-// YouTube cache middleware with redis key 'heartlessyt'
+// YouTube cache middleware with redis key 'hg:yt'
 const ytCache = async (req, res, next) => {
-  const heartlessyt = await redis.get('heartlessyt')
+  const redisYT = await redis.get('hg:yt')
 
-  if (heartlessyt === null) {
+  if (redisYT === null) {
     next()
   } else {
-    res.json(JSON.parse(heartlessyt))
+    res.json(JSON.parse(redisYT))
   }
 }
 

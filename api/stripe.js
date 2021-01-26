@@ -9,19 +9,25 @@ const redis = new Redis()
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
-const calculateOrderAmount = (amount) => {
-  // Replace this constant with a calculation of the order's amount
-  // Calculate the order total on the server to prevent
-  // people from directly manipulating the amount on the client
-  return amount * 100
+// Return date has year/month/day eg: 1970/12/24 or
+const formatDate = (date, isEpoch) => {
+  // * 1000 cuz dates needs epoch in miliseconds to be parsed ¯\_(ツ)_/¯
+  date = new Date(date * 1000)
+
+  if (isEpoch) {
+    return date.valueOf()
+  }
+
+  return date.toJSON().substr(0, 10).replaceAll('-', '/')
 }
 
 const createPaymentIntent = async (req, res) => {
   const amount = req.body.amount
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: calculateOrderAmount(amount),
+    amount: amount * 100,
     currency: 'eur',
+    description: 'Donation',
   })
 
   res.send({
@@ -29,41 +35,59 @@ const createPaymentIntent = async (req, res) => {
   })
 }
 
-const stripePayouts = async (req, res) => {
-  const payouts = await stripe.payouts.list({
-    // limit: 3,
+const donation = async (req, res) => {
+  const paymentIntents = await stripe.paymentIntents.list({
+    limit: 100, // It's the max ! One day we'll have to implement pagination...
   })
 
-  const response = payouts.data.reduce((acc, payout) => {
-    const obj = {
-      date: payout.created,
-      description: 'Donation',
-      amount: payout.amount,
+  const response = paymentIntents.data.reduce((acc, paymentIntent, index) => {
+    if (index === 0) {
+      acc.total = 0
+      acc.data = []
     }
 
-    acc.push(obj)
+    if (paymentIntent.status === 'succeeded') {
+      acc.total += paymentIntent.amount
+
+      // Donation data
+      acc.data.push({
+        type: 'donation',
+        rawdate: formatDate(paymentIntent.created, true),
+        date: formatDate(paymentIntent.created),
+        description: 'Donation !',
+        amount: paymentIntent.amount / 100,
+      })
+    }
 
     return acc
-  }, [])
+  }, {})
 
   // Send the data to redis with an expiration value of 6 hours
-  redis.setex('heartlesspayoutstripe', 21600, JSON.stringify(response))
+  redis.setex('hg:donation:total', 21600, JSON.stringify(response.total))
+  redis.setex('hg:donation', 21600, JSON.stringify(response.data))
 
-  res.json(response)
-}
-
-// Stripe payout cache middleware with redis key 'heartlesspayoutstripe'
-const stripePayoutsCache = async (req, res, next) => {
-  const heartlesspayoutstripe = await redis.get('heartlesspayoutstripe')
-
-  if (heartlesspayoutstripe === null) {
-    next()
+  if (req.path === '/donations/total') {
+    res.json(response.total)
   } else {
-    res.json(JSON.parse(heartlesspayoutstripe))
+    res.json(response.data)
   }
 }
 
+// Donations cache middlewares
+const donationCache = async (req, res, next) => {
+  const redisDonation = await redis.get('hg:donation')
+  redisDonation ? res.json(JSON.parse(redisDonation)) : next()
+}
+
+const donationTotalCache = async (req, res, next) => {
+  const redisDonationTotal = await redis.get('hg:donation:total')
+  redisDonationTotal ? res.json(JSON.parse(redisDonationTotal)) : next()
+}
+
 app.post('/create-payment-intent', createPaymentIntent)
-app.get('/stripePayouts', stripePayoutsCache, stripePayouts)
+app.get('/donations', donationCache, donation)
+app.get('/donations/total', donationTotalCache, donation)
+// app.get('/donations/total', donation)
+// app.get('/donations', donation)
 
 module.exports = app

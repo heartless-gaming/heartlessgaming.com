@@ -1,6 +1,9 @@
 <template>
   <main class="bg-gray-900 flow-root overflow-hidden">
-    <section class="relative max-w-2xl mx-auto mt-3 px-3 sm:px-10 sm:pt-10">
+    <section
+      id="donation"
+      class="relative max-w-2xl mx-auto mt-3 mb-16 px-3 sm:px-10 sm:pt-10"
+    >
       <div class="realtive z-10 flex items-center sm:items-start mb-2 sm:mb-5">
         <div class="flex flex-wrap flex-1 sm:justify-between">
           <button
@@ -62,7 +65,48 @@
         nouvelle donation.
       </p>
     </section>
-    <div class="h-24 my-8 relative overflow-hidden money-man-donation"></div>
+    <section
+      v-if="totalDonation"
+      id="donation-total"
+      class="max-w-2xl mx-auto mb-16 px-3 sm:px-10 text-gray-200 flex"
+    >
+      <svg-money-man
+        class="hidden sm:block w-1/3 mr-5 fill-current"
+        :class="{
+          'text-hlsred': totalDonation < 0,
+          'animate-pulse': totalDonation < 0,
+          'text-green-500': totalDonation > 0,
+          'animate-bounce': totalDonation >= 42 && totalDonation < 150,
+          'animate-ping': totalDonation > 150 && totalDonation < 300,
+          'animate-spin': totalDonation > 300,
+        }"
+      />
+      <div class="sm:w-2/3">
+        <h3 class="text-3xl mb-3">Combien dans la banque&nbsp;?</h3>
+        <p
+          v-if="totalDonation"
+          class="mb-3 text-6xl text-center"
+          :class="{
+            'text-hlsred': totalDonation < 0,
+            'text-green-500': totalDonation > 0,
+          }"
+        >
+          {{ totalDonation }}&nbsp;€
+        </p>
+        <p>
+          La "banque" est calculé en fonction des dépenses et des donations
+          depuis le 16 novembre 2020.
+        </p>
+        <p class="mb-3">1 mois de serveur coute 48€.</p>
+        <nuxt-link
+          class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
+          to="comptabilite"
+        >
+          <strong>Voir toute la comptabilité</strong>
+          <chevron-right class="w-2 inline align-middle fill-white" />
+        </nuxt-link>
+      </div>
+    </section>
     <section class="mb-24 max-w-2xl mx-auto px-3 sm:px-10 text-gray-200">
       <h2 class="mb-3 text-3xl js-animateEntrence">Données & Vie privée</h2>
       <p class="mb-3">
@@ -150,11 +194,13 @@
 <script>
 import { loadStripe } from '@stripe/stripe-js/pure'
 import SvgMail from '~/assets/svg/mail.svg?inline'
+import SvgMoneyMan from '~/assets/svg/donation-man.svg?inline'
 import ChevronRight from '~/assets/svg/chevron-right.svg?inline'
 
 export default {
   components: {
     SvgMail,
+    SvgMoneyMan,
     ChevronRight,
   },
   beforeRouteLeave(to) {
@@ -181,7 +227,29 @@ export default {
     ],
     stripe: undefined,
     card: undefined,
+    totalDonation: false,
   }),
+  async fetch() {
+    const baseURL = `${this.$nuxt.context.$config.baseURL}/api`
+    const URLs = [`${baseURL}/bills/total`, `${baseURL}/donations/total`]
+
+    // Run ALL queries at the same time and returns whatever the outcome
+    const fetchData = await Promise.allSettled(
+      URLs.map(async (url) => {
+        return await fetch(url).then((res) => res.json())
+      })
+    )
+
+    // Format, reduce and sort the data from the API
+    const response = fetchData.reduce((acc, total) => {
+      if (total.status === 'fulfilled') {
+        acc = total.value - acc
+      }
+      return acc
+    }, 0)
+
+    this.totalDonation = response / 100
+  },
   head() {
     return {
       title: 'Donation',

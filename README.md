@@ -8,9 +8,13 @@
   - ~~Place donation icon~~
   - ~~Adjust Intersection Observer~~
 
-## Build Setup
+## Requirements
+At least [Node 15](https://nodejs.org).
+A Redis server started on the default port.
 
-You need a **redis** server started on the default port in order to run this project.
+For windows dev install WSL and clone your repo inside your WSL user. `$ explorer .` allows you to open the explorer inside WSL.
+
+## Build Setup
 
 ```bash
 # install dependencies
