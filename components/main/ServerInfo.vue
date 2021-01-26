@@ -80,7 +80,6 @@ export default {
             break
           case 'mc':
             gs.gamelogo = SvgMc
-            gs.connect = false
             break
           case 'kf2':
             gs.gamelogo = SvgKf2
@@ -91,6 +90,9 @@ export default {
           case 'ark_survival_evolved':
             gs.gamelogo = SvgArk
             break
+          default:
+            gs.gamelogo =
+              '<p class="text-xs"><small>Au boulot Markus!<small></p>'
         }
 
         return gs

@@ -10,6 +10,7 @@ const redis = new Redis()
 const getGS = async (req, res) => {
   const ip = process.env.GAME_SERVER_IP || '127.0.0.1'
   const gameServers = [
+    { type: 'mumbleping', host: ip, port: 64738 },
     { type: 'csgo', host: ip, port: 27015 },
     { type: 'csgo', host: ip, port: 27016 },
     { type: 'minecraft', host: ip, port: 25565 },
@@ -29,11 +30,12 @@ const getGS = async (req, res) => {
 
   // Run ALL queries at the same time and returns whatever the outcome
   const gsData = await Promise.allSettled(gameServers.map(await gamedigQuery))
+
   // Format data for consumption
   const response = gsData.reduce((acc, gs) => {
     if (gs.status === 'fulfilled') {
       const obj = {
-        game: gs.value.raw.folder || 'mc',
+        game: gs.value.raw.folder,
         name: gs.value.name,
         private: gs.value.password,
         players: gs.value.players.length,
@@ -41,9 +43,20 @@ const getGS = async (req, res) => {
         connect: `steam://connect/${gs.value.connect}`,
       }
       // Minecraft is special
-      if (gs.value.raw.folder === undefined) {
+      if ('vanilla' in gs.value.raw) {
         obj.game = 'mc'
         obj.private = true
+        obj.connect = false
+      }
+      // Mumble
+      if (gs.value.connect === '5.39.85.45:64738') {
+        obj.game = 'Mumble'
+        obj.name = 'Mumble'
+        obj.connect = 'mumble://heartlessgaming.com'
+      }
+      // ARK
+      if (gs.value.connect === '5.39.85.45:7800') {
+        obj.connect = 'steam://connect/5.39.85.45:7810'
       }
 
       acc.push(obj)
@@ -52,21 +65,21 @@ const getGS = async (req, res) => {
     return acc
   }, [])
 
-  // Send the data to redis with an expiration value of 1 minutes
-  redis.set('heartlessgs', JSON.stringify(response))
+  // Send the data to redis
+  redis.set('hg:gs', JSON.stringify(response))
 
   if (res) {
     res.json(response)
   }
 }
-// Game server info cache middleware with redis key 'heartlessgs'
+// Game server info cache middleware with redis key 'hg:gs'
 const gsCache = async (req, res, next) => {
-  const heartlessgs = await redis.get('heartlessgs')
+  const redisGS = await redis.get('hg:gs')
 
-  if (heartlessgs === null) {
+  if (redisGS === null) {
     next()
   } else {
-    res.json(JSON.parse(heartlessgs))
+    res.json(JSON.parse(redisGS))
   }
 }
 // refresh game server data every minute with this poor man cron task
