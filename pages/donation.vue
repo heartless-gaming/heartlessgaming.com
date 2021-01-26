@@ -174,20 +174,6 @@
         </a>
       </p>
     </section>
-    <section class="mb-24 max-w-2xl mx-auto px-3 sm:px-10 text-gray-200">
-      <h2 class="mb-3 text-3xl">Comptabilité</h2>
-      <p class="mb-3">
-        Pour assurer une transparence sur les achats et dépenses de la
-        communauté nous avons mis en place une page "compta".
-      </p>
-      <nuxt-link
-        class="inline-block px-4 py-2 rounded-full bg-hlsred hover:bg-hlsred-dark transition-all duration-200 md-shadow"
-        to="comptabilite"
-      >
-        <strong>Consulter les comptes</strong>
-        <chevron-right class="w-2 inline align-middle fill-white" />
-      </nuxt-link>
-    </section>
   </main>
 </template>
 
