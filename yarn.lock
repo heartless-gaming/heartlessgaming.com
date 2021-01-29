@@ -12679,10 +12679,10 @@ vue-client-only@^2.0.0:
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
   integrity sha512-arhk1wtWAfLsJyxGMoEYhoBowM87/i6HLSG2LH/03Yog6i2d9JEN1peMP0Ceis+/n9DxdenGYZZTxbPPJyHciA==
 
-vue-currency-input@^1.22.4:
-  version "1.22.4"
-  resolved "https://registry.yarnpkg.com/vue-currency-input/-/vue-currency-input-1.22.4.tgz#f0474ab6f069f857df5d6c8879e5e4ce3bde735b"
-  integrity sha512-7HSMBhMnQTE9Ict16OHv7hlafh4TC9Vtf8A/u1hFIA6hLKB80s94RREDqMjaurdikgTCfJ/yGoMBRu4JWefAbw==
+vue-currency-input@^1.22.5:
+  version "1.22.5"
+  resolved "https://registry.yarnpkg.com/vue-currency-input/-/vue-currency-input-1.22.5.tgz#0d5cc1e08d0e79b6bd028bc857f5111687160bf8"
+  integrity sha512-CWR5zmtlbQ6lqXxlGP+lnv3Ctlqm/DTJ8B73gbyjOdSzf0XWfxcyZPKZXstv8lfbUN6MEWe7VSogkAauye137g==
 
 vue-eslint-parser@^7.1.1, vue-eslint-parser@^7.4.1:
   version "7.4.1"
