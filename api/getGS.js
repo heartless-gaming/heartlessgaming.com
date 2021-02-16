@@ -18,7 +18,7 @@ const getGS = async (req, res) => {
     { type: 'killingfloor2', host: ip, port: 27020 },
     { type: 'insurgencysandstorm', host: ip, port: 27132 },
     { type: 'arkse', host: ip, port: 7810 },
-    { type: 'rust', host: ip, port: 28030 },
+    { type: 'protocol-valve', host: ip, port: 2457 },
   ]
 
   // Query a single game server with gamedig
@@ -62,6 +62,11 @@ const getGS = async (req, res) => {
       // Killing Floor 2
       if (gs.value.raw.game === 'Killing Floor 2') {
         obj.players = gs.value.rules.BotPlayers
+      }
+
+      // Valheim
+      if (gs.value.connect === '5.39.85.45:2456') {
+        obj.connect = 'steam://connect/5.39.85.45:2457'
       }
 
       acc.push(obj)
