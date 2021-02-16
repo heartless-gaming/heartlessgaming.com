@@ -59,6 +59,10 @@ const getGS = async (req, res) => {
       if (gs.value.connect === '5.39.85.45:7800') {
         obj.connect = 'steam://connect/5.39.85.45:7810'
       }
+      // Killing Floor 2
+      if (gs.value.raw.game === 'Killing Floor 2') {
+        obj.players = gs.value.rules.BotPlayers
+      }
 
       acc.push(obj)
     }

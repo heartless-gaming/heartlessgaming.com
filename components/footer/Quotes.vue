@@ -43,9 +43,10 @@ export default {
       `Guilstyspark c'est un guilty overclokable parce il a un K - Don`,
       `Dans le prochain rpg, j'appelle mon perso judanus - Eljam`,
       `Si ta pas d'attestation tu respecte pas le pare-feu (couvre-feu) Eljam - Zenix`,
-      `Pourquoi ma y a une pizza 4 fromages sur ma cg ? - Eljam`,
+      `Pourquoi y a une pizza 4 fromages sur ma cg ? - Eljam`,
       `We will find a way - Skullmasher`,
       // `Eljam :"c'est la force centripete" Don : "Comme le human" Eljam & Don : "le human centripete !"`,
+      // `Quand c'est une merde que tu es obligé d'utiliser, c'est toujours mieu si elle est un peu poli - Eljam`
     ],
   }),
   mounted() {
