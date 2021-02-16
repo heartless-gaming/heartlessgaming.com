@@ -61,7 +61,7 @@ const getGS = async (req, res) => {
       }
       // Killing Floor 2
       if (gs.value.raw.game === 'Killing Floor 2') {
-        obj.players = gs.value.rules.BotPlayers
+        obj.players = gs.value.raw.rules.BotPlayers
       }
 
       // Valheim
