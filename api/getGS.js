@@ -12,12 +12,12 @@ const getGS = async (req, res) => {
   const gameServers = [
     { type: 'mumbleping', host: ip, port: 64738 },
     { type: 'csgo', host: ip, port: 27015 },
-    { type: 'csgo', host: ip, port: 27016 },
+    // { type: 'csgo', host: ip, port: 27016 },
     { type: 'minecraft', host: ip, port: 25565 },
     { type: 'killingfloor2', host: ip, port: 27017 },
     { type: 'killingfloor2', host: ip, port: 27020 },
     { type: 'insurgencysandstorm', host: ip, port: 27132 },
-    { type: 'arkse', host: ip, port: 7810 },
+    // { type: 'arkse', host: ip, port: 7810 },
     { type: 'protocol-valve', host: ip, port: 2457 },
   ]
 
