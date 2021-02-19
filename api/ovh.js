@@ -57,7 +57,6 @@ const OVHbills = async (req, res) => {
       'GET',
       `/me/bill/${billID}/details/${billDetailID[0]}`
     )
-
     const obj = {
       type: 'bill',
       rawdate: formatDate(bill.date, true),
