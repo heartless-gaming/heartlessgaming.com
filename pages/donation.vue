@@ -61,8 +61,7 @@
         {{ cardErrorMsg }}
       </p>
       <p class="js-resultMessage hidden text-white">
-        Paiement éffectué mon capitaine ! Recharger la page pour éffectuer une
-        nouvelle donation.
+        Paiement reçu mon capitaine ! Merci beaucoup.
       </p>
     </section>
     <section
