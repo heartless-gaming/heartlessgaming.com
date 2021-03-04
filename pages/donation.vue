@@ -243,7 +243,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Aider les Heartless en faisant une donation pontuel.',
+          content: 'Aider les Heartless en faisant une donation ponctuel.',
         },
         {
           hid: 'og:url',
@@ -258,7 +258,7 @@ export default {
         {
           hid: 'og:description',
           name: 'og:description',
-          content: 'Aider les Heartless en faisant une donation pontuel.',
+          content: 'Aider les Heartless en faisant une donation ponctuel.',
         },
         {
           hid: 'og:image',

@@ -30,7 +30,7 @@ const sys = ovhLib({
     ],
   }
 
-  const credential = await sys.requestPromised('POST', URL, options)
+  const credential = await ovh.requestPromised('POST', URL, options)
   res.json(credential)
   return credential
 } */
