@@ -1,13 +1,4 @@
 # The code that powers heartlessgaming.com
-## The 2020 major update 10 year anniversary
-#### ~~TODO~~ SKULLMASHER MAD MAN YOU DID IT ! :shipit:
-  - ~~Make donation page reactive~~
-  - ~~Create a Responsive menu that links to : cloud, donation, minecraft map, soundboard~~
-  - ~~Server info find icon for each game~~
-  - ~~Find icon for donation~~
-  - ~~Place donation icon~~
-  - ~~Adjust Intersection Observer~~
-
 ## Requirements
 At least [Node 15](https://nodejs.org).
 A Redis server started on the default port.
