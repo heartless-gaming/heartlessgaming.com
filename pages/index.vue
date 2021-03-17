@@ -1,8 +1,8 @@
 <template>
   <main class="flow-root pt-10 bg-gray-900">
-    <server-info />
-    <last-youtube-videos />
-    <vocal-war />
+    <main-server-info />
+    <main-last-youtube-videos />
+    <main-vocal-war />
     <section
       class="relative max-w-2xl mx-auto mb-24 md:mb-48 text-gray-200 lady-trumpet-homepage"
     >

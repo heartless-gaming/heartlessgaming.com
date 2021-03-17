@@ -2,12 +2,12 @@
   <footer
     class="bg-gray-800 flow-root border-t-3 border-solid border-hlsred footer-box-shadow"
   >
-    <social-networks />
+    <footer-social-networks />
     <div class="max-w-2xl mx-auto px-2 mb-10 sm:flex">
-      <quotes />
-      <credits />
+      <footer-quotes />
+      <footer-credits />
     </div>
-    <mentra />
+    <footer-mentra />
   </footer>
 </template>
 
