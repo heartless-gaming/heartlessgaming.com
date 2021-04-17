@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .logo-drop-shadow {
   filter: drop-shadow(0 16px 10px rgba(0, 0, 0, 0.8));
 }

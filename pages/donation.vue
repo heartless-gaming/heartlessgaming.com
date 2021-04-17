@@ -383,7 +383,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 .money-man-donation {
   background-image: url('~@/assets/svg/donation-man.svg');
   background-repeat: no-repeat;
@@ -401,10 +401,10 @@ export default {
 
 .amount-pill {
   @apply inline-block mr-3 mb-5 sm:mb-0 px-4 sm:px-6 py-2 rounded-full bg-hlsred text-gray-200 font-bold hover:bg-hlsred-dark ring-hlsred-dark ring-offset-0 ring-offset-hlsred-dark transition-all duration-200;
+}
 
-  &--selected {
-    @apply ring-4 ring-hlsred-light ring-offset-4 ring-offset-gray-900;
-  }
+.amount-pill--selected {
+  @apply ring-4 ring-hlsred-light ring-offset-4 ring-offset-gray-900;
 }
 
 .amount-custom {
