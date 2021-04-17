@@ -49,10 +49,11 @@
         @click="donate()"
       >
         <div
-          id="spinner"
           :class="{ hidden: !isSpinnerVisible }"
-          class="spinner"
-        ></div>
+          class="flex justify-center"
+        >
+          <spinner />
+        </div>
         <p id="button-text" :class="{ hidden: isSpinnerVisible }">
           Donner {{ amount }}€
         </p>
@@ -409,69 +410,5 @@ export default {
 
 .amount-custom {
   @apply w-24 pr-4 pb-1 text-center bg-transparent border-b-2 border-solid border-hlsred text-xl text-gray-200;
-}
-
-#payment-request-button {
-  margin-bottom: 32px;
-}
-
-// spinner/processing state, errors
-.spinner,
-.spinner::before,
-.spinner::after {
-  border-radius: 50%;
-}
-
-.spinner {
-  color: #fff;
-  font-size: 22px;
-  text-indent: -99999px;
-  margin: 0 auto;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  box-shadow: inset 0 0 0 3px;
-  transform: translateZ(0);
-}
-
-.spinner::before,
-.spinner::after {
-  position: absolute;
-  content: '';
-}
-
-.spinner::before {
-  width: 10.4px;
-  height: 20.4px;
-  background: #cc1b00;
-  border-radius: 20.4px 0 0 20.4px;
-  top: -0.2px;
-  left: -0.2px;
-  -webkit-transform-origin: 10.4px 10.2px;
-  transform-origin: 10.4px 10.2px;
-  -webkit-animation: loading 2s infinite ease 1.5s;
-  animation: loading 2s infinite ease 1.5s;
-}
-
-.spinner::after {
-  width: 10.4px;
-  height: 10.2px;
-  background: #cc1b00;
-  border-radius: 0 10.2px 10.2px 0;
-  top: -0.1px;
-  left: 10.2px;
-  -webkit-transform-origin: 0 10.2px;
-  transform-origin: 0 10.2px;
-  -webkit-animation: loading 2s infinite ease;
-  animation: loading 2s infinite ease;
-}
-
-@keyframes loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 </style>
