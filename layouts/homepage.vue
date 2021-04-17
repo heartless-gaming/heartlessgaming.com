@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style>
 .animate-entrence {
   animation: fadeInUp 1s ease-out;
 }
@@ -23,7 +23,7 @@
   fill: white;
 }
 
-// Animations
+/* Animations */
 @keyframes appear {
   0% {
     opacity: 0;

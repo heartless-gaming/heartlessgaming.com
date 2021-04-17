@@ -5,7 +5,7 @@
     <strong>Play more, care less, be Heartless</strong>
   </p>
 </template>
-<style lang="scss">
+<style>
 .mentra-letter-spacing {
   letter-spacing: 0.1rem;
 }

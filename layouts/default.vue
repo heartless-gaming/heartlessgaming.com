@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style>
 .thicc-shadow {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
     0 4px 6px -2px rgba(0, 0, 0, 0.8);
@@ -40,7 +40,7 @@
   fill: white;
 }
 
-// Animations
+/* Animations */
 @keyframes appear {
   0% {
     opacity: 0;
