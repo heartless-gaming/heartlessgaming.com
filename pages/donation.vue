@@ -61,7 +61,10 @@
       <p id="card-error" class="text-gray-200" role="alert">
         {{ cardErrorMsg }}
       </p>
-      <p class="js-resultMessage hidden text-white">
+      <p
+        :class="{ hidden: !isPaymentSuccessful }"
+        class="js-resultMessage text-white"
+      >
         Paiement reçu mon capitaine ! Merci beaucoup.
       </p>
     </section>
@@ -198,6 +201,7 @@ export default {
     title: 'Donation',
     isSubmitDisable: true,
     isSpinnerVisible: true,
+    isPaymentSuccessful: false,
     amount: 5,
     amountTxt: '5.00',
     email: '',
@@ -344,13 +348,8 @@ export default {
     // Shows a success message when the payment is complete
     orderComplete(paymentIntentId) {
       this.loading(false)
-      document
-        .querySelector('.js-resultMessage a')
-        .setAttribute(
-          'href',
-          `https://dashboard.stripe.com/test/payments/${paymentIntentId}`
-        )
-      document.querySelector('.js-resultMessage').classList.remove('hidden')
+      this.isPaymentSuccessful = true
+      // `https://dashboard.stripe.com/test/payments/${paymentIntentId}`
       // Disable other payments if this one successful
       this.isSubmitDisable = true
     },
