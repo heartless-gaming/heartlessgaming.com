@@ -63,7 +63,7 @@
       </p>
       <p
         :class="{ hidden: !isPaymentSuccessful }"
-        class="js-resultMessage text-white"
+        class="text-white"
       >
         Paiement reçu mon capitaine ! Merci beaucoup.
       </p>
