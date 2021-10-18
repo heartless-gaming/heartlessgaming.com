@@ -35,7 +35,7 @@
     "ioredis": "^4.26.0",
     "nuxt": "^2.15.4",
     "ovh": "^2.0.3",
-    "stripe": "^8.144.0",
+    "stripe": "^8.183.0",
     "vue-currency-input": "^1.22.6",
     "vue-magic-grid": "^0.0.4"
   },
