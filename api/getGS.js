@@ -40,7 +40,7 @@ const getGS = async (req, res) => {
         game: gs.value.raw.folder,
         name: gs.value.name,
         private: gs.value.password,
-        players: gs.value.players.length,
+        players: gs.value.players.length || 0,
         maxplayers: gs.value.maxplayers,
         connect: `steam://connect/${gs.value.connect}`,
       }
@@ -102,7 +102,7 @@ setInterval(() => {
  * Routes of the api prefixed with /api in nuxt.config.js
  * Get data from redis cache if available otherwise fetch the data and cache it
  */
-app.get('/getGS', gsCache, getGS)
-// app.get('/getGS', getGS)
+// app.get('/getGS', gsCache, getGS)
+app.get('/getGS', getGS)
 
 module.exports = app
