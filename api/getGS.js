@@ -31,6 +31,7 @@ const getGS = async (req, res) => {
 
   // Run ALL queries at the same time and returns whatever the outcome
   const gsData = await Promise.allSettled(gameServers.map(await gamedigQuery))
+  console.log(gsData)
 
   // Format data for consumption
   const response = gsData.reduce((acc, gs) => {
@@ -53,6 +54,7 @@ const getGS = async (req, res) => {
       if (gs.value.connect === '5.39.85.45:64738') {
         obj.game = 'Mumble'
         obj.name = 'Mumble'
+        obj.players = gs.value.players
         obj.connect = 'mumble://heartlessgaming.com'
       }
       // ARK
@@ -61,7 +63,7 @@ const getGS = async (req, res) => {
       }
       // Killing Floor 2
       if (gs.value.raw.game === 'Killing Floor 2') {
-        obj.players = gs.value.raw.rules.BotPlayers
+        // obj.players = gs.value.raw.rules.BotPlayers
       }
 
       // Valheim
