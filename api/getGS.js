@@ -17,6 +17,7 @@ const getGS = async (req, res) => {
     { type: 'killingfloor2', host: ip, port: 27017 },
     { type: 'killingfloor2', host: ip, port: 27020 },
     { type: 'killingfloor2', host: ip, port: 27021 },
+    { type: 'killingfloor2', host: ip, port: 27022 },
     { type: 'insurgencysandstorm', host: ip, port: 27132 },
     // { type: 'arkse', host: ip, port: 7810 },
     { type: 'valheim', host: ip, port: 2457 },
