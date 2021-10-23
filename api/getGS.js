@@ -16,6 +16,7 @@ const getGS = async (req, res) => {
     { type: 'minecraft', host: ip, port: 25565 },
     { type: 'killingfloor2', host: ip, port: 27017 },
     { type: 'killingfloor2', host: ip, port: 27020 },
+    { type: 'killingfloor2', host: ip, port: 27021 },
     { type: 'insurgencysandstorm', host: ip, port: 27132 },
     // { type: 'arkse', host: ip, port: 7810 },
     { type: 'valheim', host: ip, port: 2457 },
@@ -31,7 +32,6 @@ const getGS = async (req, res) => {
 
   // Run ALL queries at the same time and returns whatever the outcome
   const gsData = await Promise.allSettled(gameServers.map(await gamedigQuery))
-  console.log(gsData)
 
   // Format data for consumption
   const response = gsData.reduce((acc, gs) => {
@@ -63,7 +63,7 @@ const getGS = async (req, res) => {
       }
       // Killing Floor 2
       if (gs.value.raw.game === 'Killing Floor 2') {
-        // obj.players = gs.value.raw.rules.BotPlayers
+        obj.players = gs.value.raw.numplayers
       }
 
       // Valheim
@@ -102,7 +102,7 @@ setInterval(() => {
  * Routes of the api prefixed with /api in nuxt.config.js
  * Get data from redis cache if available otherwise fetch the data and cache it
  */
-// app.get('/getGS', gsCache, getGS)
-app.get('/getGS', getGS)
+app.get('/getGS', gsCache, getGS)
+// app.get('/getGS', getGS)
 
 module.exports = app
