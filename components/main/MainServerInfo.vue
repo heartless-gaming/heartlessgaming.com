@@ -1,5 +1,5 @@
 <template>
-  <section class="-skewed-110 relative">
+  <section class="skewed-110 relative">
     <div class="px-2" :class="{ 'animate-pulse': loading }">
       <div
         v-if="servers.length > 0"
@@ -108,10 +108,10 @@ export default {
 </script>
 
 <style>
-.-skewed-110::before {
-  content: '';
+.skewed-110::before {
+  content: "";
   position: absolute;
-  background: theme('colors.gray.800');
+  background: theme("colors.gray.800");
   width: 100%;
   height: 130%;
   top: 10px;

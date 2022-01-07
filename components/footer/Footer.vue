@@ -13,6 +13,6 @@
 
 <style>
 .footer-box-shadow {
-  box-shadow: inset 0 17px 15px -8px rgba(0, 0, 0, 0.65);
+  box-shadow: inset 0 17px 15px -8px rgb(0 0 0 / 65%);
 }
 </style>

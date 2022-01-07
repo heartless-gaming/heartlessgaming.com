@@ -6,6 +6,7 @@ module.exports = {
     requireConfigFile: false
   },
   extends: [
+    // '@nuxtjs/eslint-config-typescript'
     '@nuxtjs'
   ]
 }

@@ -77,5 +77,8 @@
   },
   "resolutions": {
     "postcss": "^8"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.0"
   }
 }

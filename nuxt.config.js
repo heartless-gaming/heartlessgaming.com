@@ -115,13 +115,4 @@ export default {
     { path: '/api', handler: '~/api/stripe.js' },
     { path: '/api', handler: '~/api/ovh.js' },
   ],
-  stylelint: {
-    extends: [
-      'stylelint-config-standard',
-      'stylelint-config-prettier',
-      'stylelint-config-recommended-vue'
-    ],
-    customSyntax: 'postcss-html',
-    fix: true,
-  }
 }

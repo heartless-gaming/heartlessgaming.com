@@ -76,32 +76,36 @@ export default {
 }
 
 .bg-counter::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 250%;
   height: 250%;
   top: -75%;
   left: -75%;
   z-index: -1;
-  /*transform-origin: bottom left;*/
-  background: linear-gradient(
-    142deg,
-    theme('colors.emerald.600'),
-    theme('colors.pink.500'),
-    theme('colors.purple.600'),
-    theme('colors.yellow.600') 97%
-  );
+
+  /* transform-origin: bottom left; */
+  background:
+    linear-gradient(
+      142deg,
+      theme("colors.emerald.600"),
+      theme("colors.pink.500"),
+      theme("colors.purple.600"),
+      theme("colors.yellow.600") 97%
+    );
   background-size: 400% 400%;
   animation: bgcounter 10s ease-in-out alternate infinite;
 }
 
 .counter-shadow {
-  box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 75%);
 }
 
 .counter-text-shadow {
-  text-shadow: rgba(0, 0, 0, 0.6) 0 0 50px, rgba(0, 0, 0, 0.5) 0 0 15px,
-    rgba(0, 0, 0, 0.6) 0 0 5px;
+  text-shadow:
+    rgb(0 0 0 / 60%) 0 0 50px,
+    rgb(0 0 0 / 50%) 0 0 15px,
+    rgb(0 0 0 / 60%) 0 0 5px;
 }
 
 @keyframes bgcounter {
@@ -109,9 +113,11 @@ export default {
     transform: rotate(0deg);
     background-position: 10% 0%;
   }
+
   50% {
     background-position: 91% 100%;
   }
+
   100% {
     transform: rotate(360deg);
     background-position: 10% 0%;

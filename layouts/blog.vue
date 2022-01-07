@@ -16,18 +16,19 @@
 }
 
 .nuxt-content a::before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   top: 0;
   transform: translateY(calc(100% - 2px));
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(
-    60deg,
-    theme('colors.hlsred.light') 0%,
-    theme('colors.hlsred.dark') 100%
-  );
+  background-image:
+    linear-gradient(
+      60deg,
+      theme("colors.hlsred.light") 0%,
+      theme("colors.hlsred.dark") 100%
+    );
   transition: transform 0.15s ease;
 }
 

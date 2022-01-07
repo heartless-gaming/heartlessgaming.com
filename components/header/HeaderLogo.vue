@@ -14,6 +14,6 @@ export default {
 
 <style>
 .logo-drop-shadow {
-  filter: drop-shadow(0 16px 10px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(0 16px 10px rgb(0 0 0 / 80%));
 }
 </style>
