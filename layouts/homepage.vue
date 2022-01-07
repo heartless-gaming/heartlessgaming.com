@@ -8,15 +8,16 @@
 
 <style>
 .animate-entrence {
-  animation: fadeInUp 1s ease-out;
+  animation: fade-in-up 1s ease-out;
 }
 
 .gray-gradient {
-  background-image: radial-gradient(
-    ellipse farthest-side at 50% 30%,
-    #263e5e 0px,
-    transparent 100%
-  );
+  background-image:
+    radial-gradient(
+      ellipse farthest-side at 50% 30%,
+      #263e5e 0,
+      transparent 100%
+    );
 }
 
 .fill-white {
@@ -34,7 +35,7 @@
   animation: 1s appear;
 }
 
-@keyframes bounceInDown {
+@keyframes bounce-in-down {
   from,
   60%,
   75%,
@@ -66,14 +67,14 @@
   }
 }
 
-.bounceInDown {
-  animation-name: bounceInDown;
+.bounce-in-down {
+  animation-name: bounce-in-down;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-iteration-count: 1;
 }
 
-@keyframes zoomIn {
+@keyframes zoom-in {
   from {
     opacity: 0;
     transform: scale3d(0.3, 0.3, 0.3);
@@ -84,14 +85,14 @@
   }
 }
 
-.zoomIn {
-  animation-name: zoomIn;
+.zoom-in {
+  animation-name: zoom-in;
   animation-duration: 0.5s;
   animation-delay: 0s;
   animation-iteration-count: 1;
 }
 
-@keyframes fadeInDown {
+@keyframes fade-in-down {
   from {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
@@ -103,14 +104,14 @@
   }
 }
 
-.fadeInDown {
-  animation-name: fadeInDown;
+.fade-in-down {
+  animation-name: fade-in-down;
   animation-duration: 0.5s;
   animation-delay: 0s;
   animation-iteration-count: 1;
 }
 
-@keyframes fadeInUp {
+@keyframes fade-in-up {
   from {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
@@ -122,8 +123,8 @@
   }
 }
 
-.fadeInUp {
-  animation-name: fadeInUp;
+.fade-in-up {
+  animation-name: fade-in-up;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
 }

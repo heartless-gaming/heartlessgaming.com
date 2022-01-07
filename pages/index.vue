@@ -98,7 +98,7 @@ export default {
 
 <style>
 .lady-trumpet-homepage::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 110px;
   height: 150%;
@@ -106,7 +106,7 @@ export default {
   top: -20%;
   opacity: 0.2;
   background-position: 100%;
-  background-image: url('~@/assets/svg/lady-trumpet.svg');
+  background-image: url("~@/assets/svg/lady-trumpet.svg");
   background-repeat: no-repeat;
   animation: ladytrumpet 3s ease infinite;
 
@@ -123,20 +123,21 @@ export default {
   100% {
     transform: rotate(-2deg);
   }
+
   50% {
     transform: rotate(1deg);
   }
 }
 
 .money-man-homepage::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 150px;
   height: 100%;
   left: 50%;
   top: 20%;
   opacity: 0.04;
-  background-image: url('~@/assets/svg/donation-man.svg');
+  background-image: url("~@/assets/svg/donation-man.svg");
   background-repeat: no-repeat;
   animation: moneyman 1s ease infinite;
 
@@ -167,6 +168,7 @@ export default {
   100% {
     transform: rotate(-2deg);
   }
+
   50% {
     transform: rotate(1deg);
   }

@@ -164,14 +164,14 @@ export default {
 <style>
 .lady-trumpet-soundboard::after {
   @screen sm {
-    content: '';
+    content: "";
     position: absolute;
     width: 110px;
     height: 150%;
     right: 2%;
     top: -20%;
     background-position: 100%;
-    background-image: url('~@/assets/svg/lady-trumpet.svg');
+    background-image: url("~@/assets/svg/lady-trumpet.svg");
     background-repeat: no-repeat;
     animation: ladytrumpet 3s ease infinite;
   }
@@ -182,6 +182,7 @@ export default {
   100% {
     transform: rotate(-2deg);
   }
+
   50% {
     transform: rotate(1deg);
   }

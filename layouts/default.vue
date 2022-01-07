@@ -8,12 +8,13 @@
 
 <style>
 .thicc-shadow {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
-    0 4px 6px -2px rgba(0, 0, 0, 0.8);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 50%),
+    0 4px 6px -2px rgb(0 0 0 / 80%);
 }
 
 .md-shadow {
-  box-shadow: 0 8px 5px -4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 5px -4px rgb(0 0 0 / 40%);
 }
 
 .page-title-text-shadow {
@@ -21,11 +22,12 @@
 }
 
 .halo-azul {
-  background-image: radial-gradient(
-    ellipse farthest-side at 50% 30%,
-    #263e5e 0px,
-    transparent 100%
-  );
+  background-image:
+    radial-gradient(
+      ellipse farthest-side at 50% 30%,
+      #263e5e 0,
+      transparent 100%
+    );
 }
 
 .word-03 {
@@ -51,7 +53,7 @@
   animation: 1s appear;
 }
 
-@keyframes bounceInDown {
+@keyframes bounce-in-down {
   from,
   60%,
   75%,
@@ -83,14 +85,14 @@
   }
 }
 
-.bounceInDown {
-  animation-name: bounceInDown;
+.bounce-in-down {
+  animation-name: bounce-in-down;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-iteration-count: 1;
 }
 
-@keyframes zoomIn {
+@keyframes zoom-in {
   from {
     opacity: 0;
     transform: scale3d(0.3, 0.3, 0.3);
@@ -101,14 +103,14 @@
   }
 }
 
-.zoomIn {
-  animation-name: zoomIn;
+.zoom-in {
+  animation-name: zoom-in;
   animation-duration: 0.5s;
   animation-delay: 0s;
   animation-iteration-count: 1;
 }
 
-@keyframes fadeInDown {
+@keyframes fade-in-down {
   from {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
@@ -120,14 +122,14 @@
   }
 }
 
-.fadeInDown {
-  animation-name: fadeInDown;
+.fade-in-down {
+  animation-name: fade-in-down;
   animation-duration: 0.5s;
   animation-delay: 0s;
   animation-iteration-count: 1;
 }
 
-@keyframes fadeInUp {
+@keyframes fade-in-up {
   from {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
@@ -139,8 +141,8 @@
   }
 }
 
-.fadeInUp {
-  animation-name: fadeInUp;
+.fade-in-up {
+  animation-name: fade-in-up;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
 }
