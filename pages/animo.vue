@@ -86,7 +86,7 @@ export default {
   /*transform-origin: bottom left;*/
   background: linear-gradient(
     142deg,
-    theme('colors.green.600'),
+    theme('colors.emerald.600'),
     theme('colors.pink.500'),
     theme('colors.purple.600'),
     theme('colors.yellow.600') 97%

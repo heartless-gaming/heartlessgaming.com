@@ -25,7 +25,7 @@
     </a>
     <NuxtLink to="/soundboard" class="block p-2 cloud-drop-shadow">
       <svg-trumpet
-        class="w-12 sm:w-16 transform -rotate-45 fill-current text-hlsred-light hover:text-hlsred transition-all duration-150"
+        class="w-12 sm:w-16 -rotate-45 fill-current text-hlsred-light hover:text-hlsred transition-all duration-150"
       />
     </NuxtLink>
   </nav>

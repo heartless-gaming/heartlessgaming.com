@@ -14,7 +14,7 @@
         <a
           v-for="(video, index) in videos"
           :key="index"
-          class="p-2 bg-white shadow-lg inline-block rounded-xl transform-gpu hover:scale-105 transition-youtubecard backface-hidden thicc-shadow"
+          class="p-2 bg-white shadow-lg inline-block rounded-xl hover:scale-105 transition-youtubecard backface-hidden thicc-shadow"
           :href="video.url"
         >
           <img

@@ -33,7 +33,9 @@ export default {
   loading: { color: '#e52f00' },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: [
+    '@/assets/css/main.css',
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [{ src: '~/plugins/magicgrid.js' }],
@@ -43,12 +45,11 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    '@nuxt/postcss8',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
     // github.com/nuxt-community/google-fonts-module
     [
       '@nuxtjs/google-fonts',
@@ -59,21 +60,6 @@ export default {
         },
         display: 'optional',
         download: true,
-      },
-    ],
-    [
-      'vue-currency-input/nuxt',
-      {
-        globalOptions: {
-          currency: null,
-          locale: 'fr-FR',
-          precision: 2,
-          valueRange: {
-            min: 0,
-            max: 1000000,
-          },
-          allowNegative: false,
-        },
       },
     ],
   ],
@@ -96,6 +82,12 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: ['vue-magic-grid'],
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
   },
 
   // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-server
@@ -123,7 +115,13 @@ export default {
     { path: '/api', handler: '~/api/stripe.js' },
     { path: '/api', handler: '~/api/ovh.js' },
   ],
-  tailwindcss: {
-    jit: true
-  },
+  stylelint: {
+    extends: [
+      'stylelint-config-standard',
+      'stylelint-config-prettier',
+      'stylelint-config-recommended-vue'
+    ],
+    customSyntax: 'postcss-html',
+    fix: true,
+  }
 }
