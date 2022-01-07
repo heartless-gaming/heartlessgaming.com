@@ -192,6 +192,7 @@
 
 <script>
 import { loadStripe } from '@stripe/stripe-js/pure'
+import CurrencyInput from '../components/main/CurrencyInput'
 import SvgMail from '~/assets/svg/mail.svg?inline'
 import SvgMoneyMan from '~/assets/svg/donation-man.svg?inline'
 import ChevronRight from '~/assets/svg/chevron-right.svg?inline'
@@ -203,7 +204,7 @@ export default {
     ChevronRight,
     CurrencyInput
   },
-  beforeRouteLeave(to) {
+  beforeRouteLeave (to) {
     // Force an HTTP request instead of a JavaScript route change because we need
     // a new page load that does *not* import Stripe.
     window.location.replace(to.path)
@@ -224,20 +225,20 @@ export default {
       { amount: 10 },
       { amount: 15 },
       { amount: 20 },
-      { amount: 50 },
+      { amount: 50 }
     ],
     stripe: undefined,
     card: undefined,
-    totalDonation: false,
+    totalDonation: false
   }),
-  async fetch() {
+  async fetch () {
     const baseURL = `${this.$nuxt.context.$config.baseURL}/api`
     const URLs = [`${baseURL}/bills/total`, `${baseURL}/donations/total`]
 
     // Run ALL queries at the same time and returns whatever the outcome
     const fetchData = await Promise.allSettled(
       URLs.map(async (url) => {
-        return await fetch(url).then((res) => res.json())
+        return await fetch(url).then(res => res.json())
       })
     )
 
@@ -251,7 +252,7 @@ export default {
 
     this.totalDonation = response / 100
   },
-  head() {
+  head () {
     return {
       title: 'Donation',
       titleTemplate: '%s - Heartless Gaming',

@@ -115,4 +115,7 @@ export default {
     { path: '/api', handler: '~/api/stripe.js' },
     { path: '/api', handler: '~/api/ovh.js' },
   ],
+  eslint: {
+    fix: true
+  }
 }
