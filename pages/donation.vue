@@ -22,6 +22,16 @@
               v-model="amount"
               class="pt-2 amount-custom"
               @focus="amountBtnIndex = -1"
+              :options = "{
+                currency: EUR,
+                locale: 'fr-FR',
+                precision: 2,
+                valueRange: {
+                  min: 0,
+                  max: 1000000,
+                },
+                allowNegative: false,
+              }"
             />
             <p class="absolute text-xl text-gray-200 right-0 top-2">€</p>
           </div>
@@ -78,7 +88,7 @@
         :class="{
           'text-hlsred': totalDonation < 0,
           'animate-pulse': totalDonation < 0,
-          'text-green-500': totalDonation > 0,
+          'text-emerald-500': totalDonation > 0,
           'animate-bounce': totalDonation >= 42 && totalDonation < 150,
           'animate-ping': totalDonation > 150 && totalDonation < 300,
           'animate-spin': totalDonation > 300,
@@ -91,7 +101,7 @@
           class="mb-3 text-6xl text-center"
           :class="{
             'text-hlsred': totalDonation < 0,
-            'text-green-500': totalDonation > 0,
+            'text-emerald-500': totalDonation > 0,
           }"
         >
           {{ totalDonation }}&nbsp;€
@@ -191,6 +201,7 @@ export default {
     SvgMail,
     SvgMoneyMan,
     ChevronRight,
+    CurrencyInput
   },
   beforeRouteLeave(to) {
     // Force an HTTP request instead of a JavaScript route change because we need
@@ -407,7 +418,4 @@ export default {
   @apply ring-4 ring-hlsred-light ring-offset-4 ring-offset-gray-900;
 }
 
-.amount-custom {
-  @apply w-24 pr-4 pb-1 text-center bg-transparent border-b-2 border-solid border-hlsred text-xl text-gray-200;
-}
 </style>

@@ -18,7 +18,7 @@
           <p
             :class="{
               'text-hlsred': bill.type === 'bill',
-              'text-green-500': bill.type === 'donation',
+              'text-emerald-500': bill.type === 'donation',
             }"
           >
             {{ bill.amount }}&nbsp;€

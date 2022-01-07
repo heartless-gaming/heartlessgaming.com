@@ -101,7 +101,7 @@ export default {
   background: linear-gradient(
     142deg,
     theme('colors.purple.600'),
-    theme('colors.green.600'),
+    theme('colors.emerald.600'),
     theme('colors.indigo.600'),
     theme('colors.yellow.600') 97%
   );

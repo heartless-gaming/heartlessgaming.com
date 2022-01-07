@@ -74,26 +74,17 @@ module.exports = {
       ],
     },
   },
-  variants: {
-    extend: {
-      opacity: ['disabled'],
-      ringWidth: ['hover'],
-      ringColor: ['hover'],
-      visibility: ['group-hover'],
-    },
-  },
-  plugins: [require('@tailwindcss/typography')],
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'plugins/**/*.js',
-      'nuxt.config.js',
-      // TypeScript
-      'plugins/**/*.ts',
-      'nuxt.config.ts',
-    ],
-  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+  content: [
+    'components/**/*.vue',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.js',
+    'nuxt.config.js',
+    // TypeScript
+    'plugins/**/*.ts',
+    'nuxt.config.ts',
+  ],
 }

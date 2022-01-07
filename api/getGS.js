@@ -6,7 +6,6 @@ const app = express()
 const redis = new Redis()
 
 // Get our game servers (gs) info
-// CSGO query issue : https://github.com/gamedig/node-gamedig/issues/176
 const getGS = async (req, res) => {
   const ip = process.env.GAME_SERVER_IP || '127.0.0.1'
   const gameServers = [
@@ -18,9 +17,9 @@ const getGS = async (req, res) => {
     { type: 'killingfloor2', host: ip, port: 27020 },
     { type: 'killingfloor2', host: ip, port: 27021 },
     { type: 'killingfloor2', host: ip, port: 27022 },
-    { type: 'insurgencysandstorm', host: ip, port: 27132 },
+    // { type: 'insurgencysandstorm', host: ip, port: 27132 },
     // { type: 'arkse', host: ip, port: 7810 },
-    { type: 'valheim', host: ip, port: 2457 },
+    // { type: 'valheim', host: ip, port: 2457 },
   ]
 
   // Query a single game server with gamedig
@@ -55,7 +54,7 @@ const getGS = async (req, res) => {
       if (gs.value.connect === '5.39.85.45:64738') {
         obj.game = 'Mumble'
         obj.name = 'Mumble'
-        obj.players = gs.value.players
+        obj.players = gs.value.players.length
         obj.connect = 'mumble://heartlessgaming.com'
       }
       // ARK
@@ -80,11 +79,11 @@ const getGS = async (req, res) => {
 
   // Send the data to redis
   redis.set('hg:gs', JSON.stringify(response))
-
   if (res) {
     res.json(response)
   }
 }
+
 // Game server info cache middleware with redis key 'hg:gs'
 const gsCache = async (req, res, next) => {
   const redisGS = await redis.get('hg:gs')
@@ -95,10 +94,12 @@ const gsCache = async (req, res, next) => {
     res.json(JSON.parse(redisGS))
   }
 }
+
 // refresh game server data every minute with this poor man cron task
 setInterval(() => {
   getGS()
 }, 60 * 1000)
+
 /**
  * Routes of the api prefixed with /api in nuxt.config.js
  * Get data from redis cache if available otherwise fetch the data and cache it
