@@ -17,7 +17,7 @@
     </NuxtLink>
     <a
       class="block p-2 cloud-drop-shadow"
-      href="https://heartlessgaming.com/mcmap/#/-162/64/-602/-4/LookAround1005%20-%20overworld/LookAround1005day"
+      href="https://heartlessgaming.com/minecraft-map/#/-96/64/-112/-4/world%20-%20overworld/day"
     >
       <svg-minecraft-map
         class="w-12 sm:w-16 fill-current text-hlsred-light hover:text-hlsred transition-all duration-150"
