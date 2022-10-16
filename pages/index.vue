@@ -1,6 +1,6 @@
 <template>
   <div>
     <p>kek !</p>
-    <p class="font-bold">Grandstander</p>
+    <p class="font-grandstander">Grandstander</p>
   </div>
 </template>
