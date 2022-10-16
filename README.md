@@ -1,33 +1,42 @@
-# The code that powers heartlessgaming.com
-## Requirements
-At least [Node 15](https://nodejs.org).
-A Redis server started on the default port.
+# Nuxt 3 Minimal Starter
 
-For windows dev install WSL and clone your repo inside your WSL user. `$ explorer .` allows you to open the explorer inside WSL.
+Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
-## Build Setup
+## Setup
+
+Make sure to install the dependencies:
 
 ```bash
-# install dependencies
-$ yarn install
+# yarn
+yarn install
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+# npm
+npm install
 
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+# pnpm
+pnpm install --shamefully-hoist
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Development Server
 
-### Credits
+Start the development server on http://localhost:3000
 
-Thanks for these people/ressources that have helped me along the way. I cannot stand how awesome it is to have such a massive community of people sharing their knowledge on how to make the web.
-  - James Sinclair - [How to run async JavaScript functions in sequence or parallel](https://jrsinclair.com/articles/2019/how-to-run-async-js-in-parallel-or-sequential/)
-  - Cher - [Cher Is Listening, A Spotify Now Playing App](https://github.com/cherscarlett/cherislistening)
-  - [publicdomainvectors.org](https://publicdomainvectors.org/)
-  - [Motherfucking MDN !](https://developer.mozilla.org/en-US/)
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.

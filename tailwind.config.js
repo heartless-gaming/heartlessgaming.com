@@ -23,7 +23,7 @@ module.exports = {
         4: '1rem',
       },
       transitionProperty: ['motion-reduce'],
-      typography: (theme) => ({
+      typography: theme => ({
         DEFAULT: {
           css: {
             color: theme('colors.gray.200'),
@@ -40,60 +40,19 @@ module.exports = {
       }),
     },
     fontFamily: {
-      sans: [
-        'Rubik',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
-      grandstander: [
-        'Grandstander',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
-    },
-  },
-  variants: {
-    extend: {
-      opacity: ['disabled'],
-      ringWidth: ['hover'],
-      ringColor: ['hover'],
-      visibility: ['group-hover'],
+      sans: ['Rubik', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+      grandstander: ['Grandstander', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
     },
   },
   plugins: [require('@tailwindcss/typography')],
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'plugins/**/*.js',
-      'nuxt.config.js',
-      // TypeScript
-      'plugins/**/*.ts',
-      'nuxt.config.ts',
-    ],
-  },
+  content: [
+    'components/**/*.vue',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.js',
+    'nuxt.config.js',
+    // TypeScript
+    'plugins/**/*.ts',
+    'nuxt.config.ts',
+  ],
 }
