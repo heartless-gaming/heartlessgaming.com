@@ -46,6 +46,7 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/typography')],
   content: [
+    'assets/**/*.svg',
     'components/**/*.vue',
     'layouts/**/*.vue',
     'pages/**/*.vue',

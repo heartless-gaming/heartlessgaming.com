@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-red-200">
+  <div>
     <div>Accueil</div>
     <div>Donation</div>
     <div>Soundboard</div>
