@@ -14,7 +14,7 @@
     "@types/node": "^18.17.3",
     "@unocss/nuxt": "^0.55.2",
     "eslint": "^8.49.0",
-    "nuxt": "^3.7.1"
+    "nuxt": "^3.7.3"
   },
   "dependencies": {
     "@unocss/reset": "^0.55.2"
