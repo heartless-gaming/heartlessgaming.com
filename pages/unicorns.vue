@@ -12,8 +12,8 @@
     <div class="absolute text-5xl animation4">
       🦄
     </div>
-    <div class="absolute text-5xl animation5">
-      🦄
+    <div class="absolute text-5xl animation5 text-7xl">
+      <span>🦄</span>
     </div>
     <div class="absolute text-5xl animation6">
       🦄
@@ -64,7 +64,7 @@
   }
 
   .animation5 {
-    animation: 3s linear infinite animation5;
+    animation: 5s linear infinite animation5;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
@@ -75,6 +75,10 @@
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+  }
+
+  .flip-horizontally {
+    transform: scaleX(-1);
   }
 
 @keyframes animation1 {
@@ -118,22 +122,28 @@
     transform: translate(110vw, 30vh) rotate(0deg) scale(8);
   }
   50% {
-    transform: translate(50vw, 10vh) rotate(300deg) scale(4);
+    transform: translate(50vw, 10vh) rotate(300deg) scale(6);
   }
   100% {
-    transform: translate(-10vw, -60vh) rotate(500deg) scale(2.6);
+    transform: translate(-10vw, -60vh) rotate(500deg) scale(5);
   }
 }
 
 @keyframes animation5 {
   0% {
-    transform: translate(-1vw, -40vh) rotate(0deg) scale(0.4);
+    transform: translate(-10vw, -10vh) rotate(-3deg) scaleX(-1);
+  }
+  25% {
+    transform: translate(25vw, -15vh) rotate(-2deg) scaleX(-1);
   }
   50% {
-    transform: translate(40vw, 20vh) rotate(600deg) scale(4);
+    transform: translate(50vw, -18vh) rotate(0deg) scaleX(-1);
+  }
+  75% {
+    transform: translate(75vw, -15vh) rotate(2deg) scaleX(-1);
   }
   100% {
-    transform: translate(101vw, 60vh) rotate(1200deg) scale(2.6);
+    transform: translate(111vw, -10vh) rotate(3deg) scaleX(-1);
   }
 }
 
