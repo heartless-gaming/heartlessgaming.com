@@ -22,7 +22,7 @@
     </main>
     <footer class="text-center">
       <p>
-        <TempLink url="https://github.com/heartless-gaming/heartlessgaming.com">code sauce</TempLink>
+        <TempLink url="https://github.com/heartless-gaming/heartlessgaming.com">code source</TempLink>
       </p>
       <p>Play more, care less, be Heartless</p>
     </footer>
