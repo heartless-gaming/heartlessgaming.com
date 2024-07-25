@@ -5,12 +5,12 @@
 /* This should be refactor one day. Stole it from a CSS tricks */
 .pretty-link {
     background:
-        linear-gradient(to right,rgb(61, 75, 197),rgb(100, 123, 200)),
-        linear-gradient(to right,rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+    linear-gradient(to right,rgb(61, 75, 197),rgb(100, 123, 200)),
+    linear-gradient(to right,rgb(255, 94, 0), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
     background-size: 100% 3px, 0 3px;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
-    transition: background-size 400ms;
+    transition: background-size 150ms;
 }
 
 .pretty-link:hover {
