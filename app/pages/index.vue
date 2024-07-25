@@ -1,3 +1,7 @@
+<script setup lang="ts">
+// Test auto deploy
+</script>
+
 <template>
     <header class="text-center group mb-16">
         <div class="max-w-lg mx-auto px-2">
