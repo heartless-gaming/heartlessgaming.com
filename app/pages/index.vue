@@ -13,7 +13,7 @@
         </div>
     </header>
     <main>
-        <div class="mb-16 max-w-screen-lg mx-4 lg:mx-auto bg-base-300 rounded-3xl py-8 px-16 ring-1 ring-transparent hover:ring-4 ring-offset-0 hover:ring-offset-4 ring-offset-base-100 hover:ring-accent transition group">
+        <div class="mb-16 max-w-screen-lg mx-4 lg:mx-auto bg-base-300 rounded-3xl py-8 px-4 sm:px-16 ring-1 ring-transparent hover:ring-4 ring-offset-0 hover:ring-offset-4 ring-offset-base-100 hover:ring-accent transition group">
             <h2 class="text-3xl mb-3">Faire une donation !</h2>
             <div class="sm:grid grid-cols-3">
                 <div class="flex items-center justify-center sm:justify-normal">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </main>
-    <footer class="bg-base-200 py-12">
+    <footer class="bg-base-200 py-12 px-2">
         <div class="max-w-lg mx-auto">
             <div class="mb-8 grid grid-cols-3 sm:grid-cols-5 gap-y-6 gap-x-2">
                 <div class="tooltip" data-tip="Youtube">
