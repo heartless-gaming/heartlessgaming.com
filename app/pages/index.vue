@@ -13,6 +13,7 @@
         </div>
     </header>
     <main>
+        <Shirt />
         <Donation />
     </main>
     <footer class="bg-base-200 py-12 px-2">
@@ -21,7 +22,7 @@
             <div class="grid gap-y-2">
                 <p>Play more, care less, be Heartless</p>
                 <p>Pas de cookie 🍪 sur ce site car il fait un régime kéto 🥑</p>
-                <p><a class="pretty-link" href="https://github.com/heartless-gaming/heartlessgaming.com">code sauce</a></p>
+                <p><NuxtLink class="pretty-link" to="https://github.com/heartless-gaming/heartlessgaming.com">code sauce</NuxtLink></p>
                 <RandomQuote />
             </div>
         </div>
