@@ -1,29 +1,74 @@
 <template>
-    <div class="mb-8 grid grid-cols-3 sm:grid-cols-5 gap-y-6 gap-x-2">
-                <div class="tooltip" data-tip="Youtube">
-                    <NuxtLink to="https://www.youtube.com/@heartless.gaming/videos" class="btn btn-ghost">
-                        <Icon name="logos:youtube-icon" class="text-4xl" />
-                    </NuxtLink>
-                </div>
-                <div class="tooltip" data-tip="Twitch">
-                    <NuxtLink to="https://www.twitch.tv/heartlessgaming_live" class="btn btn-ghost">
-                        <Icon name="logos:twitch" class="text-4xl"/>
-                    </NuxtLink>
-                </div>
-                <div class="tooltip" data-tip="Mumble">
-                    <NuxtLink to="mumble://heartlessgaming.com" class="btn btn-ghost">
-                        <Icon name="simple-icons:mumble" class="text-4xl"/>
-                    </NuxtLink>
-                </div>
-                <div class="tooltip" data-tip="Discord">
-                    <NuxtLink to="https://discord.gg/rWDzacA" class="btn btn-ghost">
-                        <Icon name="logos:discord-icon" class="text-4xl"/>
-                    </NuxtLink>
-                </div>
-                <div class="tooltip" data-tip="Github">
-                    <NuxtLink to="https://github.com/heartless-gaming/heartlessgaming.com" class="btn btn-ghost">
-                        <Icon name="mdi:github" class="text-4xl"/>
-                    </NuxtLink>
-                </div>
-            </div>
+  <div class="mb-8 grid grid-cols-3 sm:grid-cols-5 gap-y-6 gap-x-2">
+    <div
+      class="tooltip"
+      data-tip="Youtube"
+    >
+      <NuxtLink
+        to="https://www.youtube.com/@heartless.gaming/videos"
+        class="btn btn-ghost"
+      >
+        <Icon
+          name="logos:youtube-icon"
+          class="text-4xl"
+        />
+      </NuxtLink>
+    </div>
+    <div
+      class="tooltip"
+      data-tip="Twitch"
+    >
+      <NuxtLink
+        to="https://www.twitch.tv/heartlessgaming_live"
+        class="btn btn-ghost"
+      >
+        <Icon
+          name="logos:twitch"
+          class="text-4xl"
+        />
+      </NuxtLink>
+    </div>
+    <div
+      class="tooltip"
+      data-tip="Mumble"
+    >
+      <NuxtLink
+        to="mumble://heartlessgaming.com"
+        class="btn btn-ghost"
+      >
+        <Icon
+          name="simple-icons:mumble"
+          class="text-4xl"
+        />
+      </NuxtLink>
+    </div>
+    <div
+      class="tooltip"
+      data-tip="Discord"
+    >
+      <NuxtLink
+        to="https://discord.gg/rWDzacA"
+        class="btn btn-ghost"
+      >
+        <Icon
+          name="logos:discord-icon"
+          class="text-4xl"
+        />
+      </NuxtLink>
+    </div>
+    <div
+      class="tooltip"
+      data-tip="Github"
+    >
+      <NuxtLink
+        to="https://github.com/heartless-gaming/heartlessgaming.com"
+        class="btn btn-ghost"
+      >
+        <Icon
+          name="mdi:github"
+          class="text-4xl"
+        />
+      </NuxtLink>
+    </div>
+  </div>
 </template>
