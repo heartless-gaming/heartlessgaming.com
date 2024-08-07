@@ -11,6 +11,9 @@ importers:
       '@iconify-json/game-icons':
         specifier: ^1.1.9
         version: 1.1.9
+      '@iconify-json/ic':
+        specifier: ^1.1.18
+        version: 1.1.18
       '@iconify-json/logos':
         specifier: ^1.1.43
         version: 1.1.43
@@ -733,6 +736,9 @@ packages:
 
   '@iconify-json/game-icons@1.1.9':
     resolution: {integrity: sha512-DipxbRFPK+KgDekVGx5if3mlxzKvTNM74yF5y9LIU8FPNShND9JnaDGCz5cfyaGVQxj7BITztO5v042hRFsahg==}
+
+  '@iconify-json/ic@1.1.18':
+    resolution: {integrity: sha512-RcfnSFVmQP6aEKQJM3Iczg9e5TXWlN0slIjiyH9l378YkhDPAhXdQ8xP8+tBwfz7B9jysqsV+vs9Iu8DMHvE6Q==}
 
   '@iconify-json/logos@1.1.43':
     resolution: {integrity: sha512-UtvL1yDHUr9dl1Tqihh6K9m5dmbYKOYyLf3i9aKhymSW76QjOCGjpgQc0PQ4GJCAdU1cAMu+WO61TgPxdonrlg==}
@@ -5057,6 +5063,10 @@ snapshots:
   '@humanwhocodes/object-schema@2.0.3': {}
 
   '@iconify-json/game-icons@1.1.9':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/ic@1.1.18':
     dependencies:
       '@iconify/types': 2.0.0
 
