@@ -8,12 +8,19 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  modules: ["@nuxtjs/tailwindcss", "nuxt-svgo", "@nuxt/icon"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "nuxt-svgo",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/eslint"
+  ],
 
   svgo: {
     autoImportPath: './assets/svg/',
     componentPrefix: 'svg'
   },
+
   icon: {
     clientBundle: {
       icons: [
@@ -25,5 +32,11 @@ export default defineNuxtConfig({
         'mdi:github',
       ],
     },
+  },
+
+  eslint: {
+    config: {
+      stylistic: true
+    }
   },
 })
