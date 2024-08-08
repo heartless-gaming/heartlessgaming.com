@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const interval = 60000 // It's in ms so 1000*60*1 that's 1minutes YAY for math
 
-const quote = ref('We will find a way')
+const quote: Ref< string > = ref('We will find a way')
 
 const quotes = [
     `Bon c'est une bonne addition à mon dossier "grossisant" ! - GuiltysparK`,
