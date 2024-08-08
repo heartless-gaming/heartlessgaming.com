@@ -3,8 +3,8 @@ const sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL']
 
 const colors = [
   { name: 'French Navy', hex: '#112537' },
-  { name: 'Dark Heater Grey', hex: '#2b2928' },
-  { name: 'Burgandy', hex: '#801f24' },
+  { name: 'Dark Heather Grey', hex: '#2b2928' },
+  { name: 'Burgundy', hex: '#801f24' },
   { name: 'Anthracite', hex: '#3e383e' },
   { name: 'Red', hex: '#ed0739' },
   { name: 'Stargazer', hex: '#3d737d' },
@@ -19,7 +19,7 @@ const colors = [
 ]
 
 const activeColor = ref(2)
-const activeSize = ref(null)
+const activeSize: Ref<null | number> = ref(null)
 </script>
 
 <template>
@@ -27,15 +27,28 @@ const activeSize = ref(null)
     <h2 class="text-3xl mb-6 font-bold">
       T-shirt Heartless Gaming logo brodé 100% coton
     </h2>
+    <div class="mb-6">
+      <div class="flex justify-center">
+        <NuxtLink
+          :to="`/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors[activeColor].name)}.jpg`"
+          external
+        >
+          <NuxtPicture
+            sizes="360px sm:500px"
+            :src="`/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors[activeColor].name)}.jpg`"
+            :img-attrs="{ class: 'rounded-lg' }"
+          />
+        </NuxtLink>
+      </div>
+    </div>
     <h3 class="text-2xl font-bold mb-6">
-      Couleurs
+      Sélectionner une Couleur
     </h3>
     <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-2 gap-y-4 place-content-between mb-6">
       <button
         v-for="(color, index) in colors"
         :key="index"
-        :data-tip="color.name"
-        class="group tooltip flex flex-col justify-center items-center gap-y-2"
+        class="group flex flex-col justify-center items-center gap-y-2"
         @click="activeColor = index"
       >
         <div
@@ -48,7 +61,7 @@ const activeSize = ref(null)
     </div>
     <div class="flex items-baseline gap-x-2">
       <h3 class="text-2xl font-bold mb-6">
-        Tailles
+        Sélectionner une Taille
       </h3>
       <span>
         <NuxtLink
@@ -59,7 +72,7 @@ const activeSize = ref(null)
         </NuxtLink>
       </span>
     </div>
-    <div class="grid grid-flow-col gap-x-4 mb-6">
+    <div class="flex flex-wrap md:grid grid-flow-col gap-4 mb-6">
       <button
         v-for="(size, index) in sizes"
         :key="index"

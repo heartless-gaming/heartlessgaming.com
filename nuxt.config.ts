@@ -1,4 +1,4 @@
-import daisyui from "daisyui"
+import daisyui from 'daisyui'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -9,16 +9,22 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    "@nuxtjs/tailwindcss",
-    "nuxt-svgo",
-    "@nuxt/icon",
-    "@nuxt/image",
-    "@nuxt/eslint"
+    '@vueuse/nuxt',
+    '@nuxtjs/tailwindcss',
+    'nuxt-svgo',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/eslint',
   ],
+
+  image: {
+    quality: 80,
+    format: ['avif', 'webp'],
+  },
 
   svgo: {
     autoImportPath: './assets/svg/',
-    componentPrefix: 'svg'
+    componentPrefix: 'svg',
   },
 
   icon: {
@@ -37,6 +43,6 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       standalone: false,
-    }
-  }
+    },
+  },
 })
