@@ -24,7 +24,7 @@ const activeSize: Ref<null | number> = ref(null)
 
 <template>
   <section class="mb-16 max-w-screen-lg mx-4 lg:mx-auto tracking-wide">
-    <h2 class="text-3xl mb-6 font-bold">
+    <h2 class="text-3xl mb-6 font-bold text-center">
       T-shirt Heartless Gaming logo brodé 100% coton
     </h2>
     <div class="mb-6">
@@ -87,6 +87,17 @@ const activeSize: Ref<null | number> = ref(null)
       <span class="tracking-wide">27</span>
       <Icon name="ic:baseline-euro" />
     </h3>
+    <div class="mb-6">
+      <p v-show="!activeSize" class="text-warning">
+        Veuilez choisir une taille pour acheter
+      </p>
+      <button
+        class="btn btn-accent uppercase btn-lg"
+        :disabled="!activeSize"
+      >
+        Acheter
+      </button>
+    </div>
     <div class="leading-relaxed">
       <p class="font-bold">
         Information suplémentaires :
