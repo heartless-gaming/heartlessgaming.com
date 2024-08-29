@@ -15,7 +15,15 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/eslint',
+    '@nuxt/scripts',
   ],
+
+  runtimeConfig: {
+    stripeSecretKey: '',
+    public: {
+      stripePublicKey: '',
+    },
+  },
 
   image: {
     quality: 80,

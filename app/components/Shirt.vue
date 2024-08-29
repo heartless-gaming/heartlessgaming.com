@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { public: publicKeys } = useRuntimeConfig()
+
 const sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL']
 
 const colors = [
@@ -20,6 +22,22 @@ const colors = [
 
 const activeColor = ref(2)
 const activeSize: Ref<null | number> = ref(null)
+
+const paymentEl = ref(null)
+const { onLoaded } = useScriptStripe()
+onMounted(() => {
+  onLoaded(({ Stripe }) => {
+    const stripe = Stripe(publicKeys.stripePublicKey)
+    const elements = stripe.elements()
+    const paymentElement = elements.create('payment', { /* pass keys */})
+    paymentElement.mount(paymentEl.value)
+  })
+})
+
+async function buy() {
+  const data = await $fetch('/api/create-payment-intent')
+  console.log(data)
+}
 </script>
 
 <template>
@@ -88,16 +106,21 @@ const activeSize: Ref<null | number> = ref(null)
       <Icon name="ic:baseline-euro" />
     </h3>
     <div class="mb-6">
-      <p v-show="!activeSize" class="text-warning">
+      <p v-show="!Number.isFinite(activeSize)" class="text-warning">
         Veuilez choisir une taille pour acheter
       </p>
       <button
         class="btn btn-accent uppercase btn-lg"
-        :disabled="!activeSize"
+        :disabled="!Number.isFinite(activeSize)"
+        @click="buy"
       >
         Acheter
       </button>
     </div>
+    <button class="btn btn-secondary" @click="buy">
+      BUY !!
+    </button>
+    <div ref="paymentEl" />
     <div class="leading-relaxed">
       <p class="font-bold">
         Information suplémentaires :
