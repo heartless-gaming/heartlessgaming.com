@@ -16,7 +16,6 @@
       </div>
     </header>
     <main>
-      <Shirt />
       <Donation />
     </main>
     <footer class="bg-base-200 py-12 px-2">
