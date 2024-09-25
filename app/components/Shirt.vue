@@ -23,20 +23,25 @@ const colors = [
 const activeColor = ref(2)
 const activeSize: Ref<null | number> = ref(null)
 
+const activeImagePath = computed(() => `/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors[activeColor.value].name)}.jpg`)
+
 const paymentEl = ref(null)
-const { onLoaded } = useScriptStripe()
-onMounted(() => {
-  onLoaded(({ Stripe }) => {
-    const stripe = Stripe(publicKeys.stripePublicKey)
-    const elements = stripe.elements()
-    const paymentElement = elements.create('payment', { /* pass keys */})
-    paymentElement.mount(paymentEl.value)
-  })
+const { onLoaded } = useScriptStripe({
+  // advancedFraudSignals: false,
 })
 
 async function buy() {
-  const data = await $fetch('/api/create-payment-intent')
-  console.log(data)
+  const { clientSecret } = await $fetch('/api/create-payment-intent')
+
+  onLoaded(({ Stripe }) => {
+    console.log(clientSecret)
+    const stripe = Stripe(publicKeys.stripePublicKey)
+    const elements = stripe.elements({ clientSecret })
+    const paymentElement = elements.create('payment', clientSecret)
+    console.log(paymentElement)
+
+    paymentElement.mount(paymentEl.value)
+  })
 }
 </script>
 
@@ -48,12 +53,15 @@ async function buy() {
     <div class="mb-6">
       <div class="flex justify-center">
         <NuxtLink
-          :to="`/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors[activeColor].name)}.jpg`"
+          :to="activeImagePath"
           external
+          class="skeleton"
         >
           <NuxtPicture
             sizes="360px sm:500px"
-            :src="`/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors[activeColor].name)}.jpg`"
+            width="500"
+            height="500"
+            :src="activeImagePath"
             :img-attrs="{ class: 'rounded-lg' }"
           />
         </NuxtLink>
