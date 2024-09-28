@@ -5,6 +5,7 @@
 <template>
   <div>
     <Navbar />
+    <ThemeDropdown />
     <header class="text-center group mb-16">
       <div class="max-w-xl mx-auto px-2">
         <SvgLogoHeartlessgamingDark2020

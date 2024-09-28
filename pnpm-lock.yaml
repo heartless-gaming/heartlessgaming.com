@@ -23,6 +23,9 @@ importers:
       '@iconify-json/simple-icons':
         specifier: ^1.2.4
         version: 1.2.4
+      '@vueuse/components':
+        specifier: ^11.1.0
+        version: 11.1.0(vue@3.5.8(typescript@5.6.2))
       '@vueuse/core':
         specifier: ^11.1.0
         version: 11.1.0(vue@3.5.8(typescript@5.6.2))
@@ -1601,6 +1604,9 @@ packages:
 
   '@vue/shared@3.5.8':
     resolution: {integrity: sha512-mJleSWbAGySd2RJdX1RBtcrUBX6snyOc0qHpgk3lGi4l9/P/3ny3ELqFWqYdkXIwwNN/kdm8nD9ky8o6l/Lx2A==}
+
+  '@vueuse/components@11.1.0':
+    resolution: {integrity: sha512-8CTbvH1rHfAlqsMdMg6G2OiIvHiHn8HRx0yyJ+Ri/C8J6cLylXAd7VESawoCAkRdAXT4ucPnj/uYHZqEb0JbBQ==}
 
   '@vueuse/core@11.1.0':
     resolution: {integrity: sha512-P6dk79QYA6sKQnghrUz/1tHi0n9mrb/iO1WTMk/ElLmTyNqgDeSZ3wcDf6fRBGzRJbeG1dxzEOvLENMjr+E3fg==}
@@ -7218,6 +7224,15 @@ snapshots:
       vue: 3.5.8(typescript@5.6.2)
 
   '@vue/shared@3.5.8': {}
+
+  '@vueuse/components@11.1.0(vue@3.5.8(typescript@5.6.2))':
+    dependencies:
+      '@vueuse/core': 11.1.0(vue@3.5.8(typescript@5.6.2))
+      '@vueuse/shared': 11.1.0(vue@3.5.8(typescript@5.6.2))
+      vue-demi: 0.14.10(vue@3.5.8(typescript@5.6.2))
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
 
   '@vueuse/core@11.1.0(vue@3.5.8(typescript@5.6.2))':
     dependencies:
