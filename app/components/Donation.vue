@@ -1,5 +1,5 @@
 <template>
-  <section class="mb-16 max-w-screen-lg mx-4 lg:mx-auto bg-base-300 rounded-3xl py-8 px-4 sm:px-16 ring-1 ring-transparent hover:ring-4 ring-offset-0 hover:ring-offset-4 ring-offset-base-100 hover:ring-accent transition group">
+  <section class="mb-16 max-w-screen-lg mx-4 lg:mx-auto bg-base-200 shadow-xl rounded-3xl py-8 px-4 sm:px-16 ring-1 ring-transparent hover:ring-4 ring-offset-0 hover:ring-offset-4 ring-offset-base-100 hover:ring-accent transition group">
     <h2 class="text-3xl mb-3">
       Faire une donation !
     </h2>
@@ -18,7 +18,7 @@
         <ul class="mb-6 list-disc pl-8">
           <li>On paye un serveur pour jouer et communiquer <em>(~30€ par mois)</em>.</li>
           <li>On paye un nom de domaine parce qu'on retient jamais l'ip du serveur.</li>
-          <li>On ne paye <strong>PAS</strong> Markus pour le super logo qu'il a crée.</li>
+          <li>Rémunérer Markus pour le super logo qu'il nous a crée.</li>
           <li>
             Enrichir <NuxtLink
               class="pretty-link"

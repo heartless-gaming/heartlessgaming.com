@@ -62,7 +62,7 @@ async function buy() {
             width="500"
             height="500"
             :src="activeImagePath"
-            :img-attrs="{ class: 'rounded-lg' }"
+            :img-attrs="{ class: 'rounded-box' }"
           />
         </NuxtLink>
       </div>
