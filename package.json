@@ -17,6 +17,7 @@
     "@iconify-json/logos": "^1.2.0",
     "@iconify-json/mdi": "^1.2.0",
     "@iconify-json/simple-icons": "^1.2.4",
+    "@vueuse/components": "^11.1.0",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
     "stripe": "^16.12.0",
