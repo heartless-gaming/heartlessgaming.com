@@ -7,6 +7,9 @@ export default <Partial<Config>>{
       dropShadow: {
         logo: '0 10px 10px rgba(0, 0, 0, 1)',
       },
+      ringWidth: {
+        6: '6px',
+      },
     },
   },
   plugins: [
