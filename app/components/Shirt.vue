@@ -30,6 +30,10 @@ const { onLoaded } = useScriptStripe({
   // advancedFraudSignals: false,
 })
 
+const ringClasses = computed(() => [
+
+])
+
 async function buy() {
   const { clientSecret } = await $fetch('/api/create-payment-intent')
 
@@ -78,11 +82,11 @@ async function buy() {
         @click="activeColor = index"
       >
         <div
-          class="size-10 rounded-full ring-2 ring-base-content group-hover:ring-4 transition-all ring-offset-0 group-hover:ring-offset-4 ring-offset-base-100"
-          :class="{ 'ring-success': activeColor === index, 'ring-8': activeColor === index }"
+          class="size-10 rounded-full group-hover:ring-4 transition-all ring-offset-0 group-hover:ring-offset-4 ring-offset-base-100"
+          :class="[activeColor === index ? 'ring-success ring-6' : 'ring-base-content ring-2']"
           :style="`background-color: ${color.hex}`"
         />
-        <span>{{ color.name }}</span>
+        <span class="font-bold tracking-normal" :class="{ 'text-success': activeColor === index }">{{ color.name }}</span>
       </button>
     </div>
     <div class="flex items-baseline gap-x-2">
@@ -114,6 +118,7 @@ async function buy() {
       <Icon name="ic:baseline-euro" />
     </h3>
     <div class="mb-6">
+      <pre>topkek: {{ activeSize }}</pre>
       <p v-show="!Number.isFinite(activeSize)" class="text-warning">
         Veuilez choisir une taille pour acheter
       </p>
