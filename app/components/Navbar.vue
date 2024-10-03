@@ -1,13 +1,3 @@
-<script setup lang="ts">
-import { vOnClickOutside } from '@vueuse/components'
-
-const [isThemesOpen, toggleThemes] = useToggle()
-const openThemes = () => isThemesOpen.value = true
-const closeThemes = () => isThemesOpen.value = false
-
-console.log(isThemesOpen.value)
-</script>
-
 <template>
   <div class="roundded-box sticky top-4 flex justify-center my-4 z-10">
     <ul class="backdrop-blur-xl menu menu-horizontal bg-neutral/30 rounded-box gap-2 shadow-lg">
@@ -25,17 +15,11 @@ console.log(isThemesOpen.value)
             name="mdi:tshirt-crew"
             class="text-xl"
           />
-          T-shirt
+          <span>T-shirt</span>
         </NuxtLink>
       </li>
       <li>
-        <button @click="openThemes()">
-          <Icon
-            name="mdi:palette-swatch-variant"
-            class="text-xl"
-          />
-          <span>Themes</span>
-        </button>
+        <ThemeDropdown />
       </li>
     </ul>
   </div>
