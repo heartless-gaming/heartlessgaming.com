@@ -138,25 +138,40 @@ async function buy() {
       <div
         class="collapse-content bg-base-200"
       >
-        <ul class="list-inside pl-4 list-disc">
+        <ul class="list-inside pl-4 list-disc leading-relaxed">
           <li>
-            Broderie sur un <NuxtLink
+            Broderie sur un
+            <NuxtLink
               class="pretty-link"
               to="https://stanleystella.com/fr-fr/creator-2-0-sttu169"
+              external
             >
               T-shirt Stanley/Stella 100% coton biologique vegan
             </NuxtLink>
           </li>
           <li>
-            Imprimé à la demande (dropshiping) par <NuxtLink
+            Imprimé à la demande (dropshiping) par
+            <NuxtLink
               to="https://www.printful.com"
               class="pretty-link"
+              external
             >
               Printful
             </NuxtLink>
           </li>
-          <li>Cout de fabrication du tee shirt 13,95€, 19,15€ pour les tailles à partie de 3XL</li>
-          <li>Prix d'expédition entre 3.99€ & 10.59€, 5€ vers la France</li>
+          <li>
+            Gestion des paiment par
+            <NuxtLink
+              to="https://dashboard.stripe.com/"
+              class="pretty-link"
+              external
+            >
+              Stripe
+            </NuxtLink>
+          </li>
+          <li>Cout de fabrication du tee shirt 13,95€ & 19,15€ pour les tailles à partir de 3XL</li>
+          <li>Prix d'expédition entre 3.99€ & 10.59€, ~5€ vers la France depuis la warehouse Printful de Barcelone</li>
+          <li>1.5% + 0.25€ prélevé par Stripe sur chaque transaction</li>
           <li>Marge maximal sur chaque vente: 6€</li>
           <li>L'email saisi servira à assurer le suivi de la commande uniquement</li>
         </ul>
