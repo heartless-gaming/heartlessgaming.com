@@ -30,9 +30,8 @@ const { onLoaded } = useScriptStripe({
   // advancedFraudSignals: false,
 })
 
-const ringClasses = computed(() => [
-
-])
+const buyModal = ref(null)
+const showModal = () => buyModal.value.showModal()
 
 async function buy() {
   const { clientSecret } = await $fetch('/api/create-payment-intent')
@@ -51,17 +50,20 @@ async function buy() {
 
 <template>
   <section class="mb-16 max-w-screen-lg mx-4 lg:mx-auto tracking-wide">
-    <h2 class="text-3xl mb-6 font-bold text-center">
+    <h1 class="text-3xl mb-6 font-bold text-center">
       T-shirt Heartless Gaming logo brodé 100% coton
-    </h2>
+    </h1>
     <div class="mb-6">
       <div class="flex justify-center">
         <NuxtLink
-          :to="activeImagePath"
+          v-for="(color, index) in colors"
+          :key="index"
+          :to="`/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(color.name)}.jpg`"
           external
-          class="skeleton"
+          class="skeleton hover:ring-4 ring-primary ring-offset-4 ring-offset-base-100 transition"
         >
           <NuxtPicture
+            v-if="activeColor === index"
             sizes="360px sm:500px"
             width="500"
             height="500"
@@ -71,9 +73,9 @@ async function buy() {
         </NuxtLink>
       </div>
     </div>
-    <h3 class="text-2xl font-bold mb-6">
+    <p class="text-2xl font-bold mb-6">
       Sélectionner une Couleur
-    </h3>
+    </p>
     <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-2 gap-y-4 place-content-between mb-6">
       <button
         v-for="(color, index) in colors"
@@ -82,7 +84,7 @@ async function buy() {
         @click="activeColor = index"
       >
         <div
-          class="size-10 rounded-full group-hover:ring-4 transition-all ring-offset-0 group-hover:ring-offset-4 ring-offset-base-100"
+          class="size-10 rounded-full group-hover:ring-4 transition ring-offset-0 group-hover:ring-offset-4 ring-offset-base-100"
           :class="[activeColor === index ? 'ring-success ring-6' : 'ring-base-content ring-2']"
           :style="`background-color: ${color.hex}`"
         />
@@ -90,9 +92,9 @@ async function buy() {
       </button>
     </div>
     <div class="flex items-baseline gap-x-2">
-      <h3 class="text-2xl font-bold mb-6">
+      <p class="text-2xl font-bold mb-6">
         Sélectionner une Taille
-      </h3>
+      </p>
       <span>
         <NuxtLink
           class="pretty-link"
@@ -113,16 +115,16 @@ async function buy() {
         {{ size }}
       </button>
     </div>
-    <h3 class="text-9xl font-bold flex items-end gap-x-2">
-      <span class="tracking-wide">27 €</span>
-    </h3>
-    <p class="text-xl mb-6">
-      TTC & frais de livraison inclut
+    <p class="text-9xl font-bold tracking-widest">
+      27 €
+    </p>
+    <p class="text-xl mb-8">
+      TTC et frais de livraison inclut
     </p>
     <div class="mb-16">
       <button
         class="btn btn-accent uppercase btn-lg"
-        @click="buy"
+        @click="showModal()"
       >
         Acheter
       </button>
@@ -178,4 +180,58 @@ async function buy() {
       </div>
     </div>
   </section>
+  <dialog ref="buyModal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+          ✕
+        </button>
+      </form>
+      <p class="text-lg font-bold mb-4">
+        Résumé de votre commande
+      </p>
+      <div class="flex justify-center mb-2">
+        <NuxtPicture
+          sizes="200px"
+          width="200"
+          height="200"
+          :src="activeImagePath"
+          :img-attrs="{ class: 'rounded-btn sm:rounded-box' }"
+        />
+      </div>
+      <div>
+        <p class="font-bold">
+          T-shirt Heartless Gaming logo brodé 100% coton
+        </p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Couleur</td>
+              <td>
+                <div class="grid grid-cols-[auto_1fr] items-center gap-x-2">
+                  <span class="font-bold">{{ colors[activeColor].name }}</span>
+                  <span class="inline-block size-6 rounded-full" :style="`background-color: ${colors[activeColor].hex}`" />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Taille</td>
+              <td><span class="font-bold">{{ sizes[activeSize] }}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn btn-primary">
+            Payer
+          </button>
+        </form>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
 </template>
