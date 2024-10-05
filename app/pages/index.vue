@@ -1,7 +1,3 @@
-<script setup lang="ts">
-// Test auto deploy
-</script>
-
 <template>
   <div>
     <Navbar />
@@ -12,7 +8,7 @@
           :font-controlled="false"
         />
         <h1 class="text-3xl uppercase font-bold">
-          Communauté <abbr title="Groupe de joueur partageant plusieurs jeux en ligne.">multigaming</abbr>
+          Communauté <abbr title="Groupe de joueur partageant plusieurs jeux en ligne.">Multigaming</abbr>
         </h1>
       </div>
     </header>
