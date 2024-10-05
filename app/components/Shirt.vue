@@ -158,6 +158,7 @@ async function buy() {
           <li>Cout de fabrication du tee shirt 13,95€, 19,15€ pour les tailles à partie de 3XL</li>
           <li>Prix d'expédition entre 3.99€ & 10.59€, 5€ vers la France</li>
           <li>Marge maximal sur chaque vente: 6€</li>
+          <li>L'email saisi servira à assurer le suivi de la commande uniquement</li>
         </ul>
       </div>
     </div>
