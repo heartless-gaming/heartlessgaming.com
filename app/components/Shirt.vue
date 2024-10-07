@@ -55,22 +55,19 @@ async function buy() {
     </h1>
     <div class="mb-6">
       <div class="flex justify-center">
-        <NuxtLink
-          v-for="(color, index) in colors"
-          :key="index"
-          :to="`/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(color.name)}.jpg`"
-          external
+        <a
+          :href="activeImagePath"
           class="skeleton hover:ring-4 ring-primary ring-offset-4 ring-offset-base-100 transition"
         >
-          <NuxtPicture
-            v-if="activeColor === index"
+          <NuxtImg
+            format="avif"
             sizes="360px sm:500px"
             width="500"
             height="500"
             :src="activeImagePath"
-            :img-attrs="{ class: 'rounded-box' }"
+            class="rounded-box"
           />
-        </NuxtLink>
+        </a>
       </div>
     </div>
     <p class="text-2xl font-bold mb-6">
@@ -191,12 +188,14 @@ async function buy() {
         Résumé de votre commande
       </p>
       <div class="flex justify-center mb-2">
-        <NuxtPicture
+        <NuxtImg
+          format="avif"
+          loading="lazy"
           sizes="200px"
           width="200"
           height="200"
           :src="activeImagePath"
-          :img-attrs="{ class: 'rounded-btn sm:rounded-box' }"
+          class="rounded-btn sm:rounded-box"
         />
       </div>
       <div>
