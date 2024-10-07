@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss'
 import daisyui from 'daisyui'
 
 export default <Partial<Config>>{
+  safelist: ['duration-10000'],
   theme: {
     extend: {
       dropShadow: {
@@ -9,6 +10,9 @@ export default <Partial<Config>>{
       },
       ringWidth: {
         6: '6px',
+      },
+      transitionDuration: {
+        10000: '10000ms',
       },
     },
   },
