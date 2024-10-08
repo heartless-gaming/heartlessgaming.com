@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { public: publicKeys } = useRuntimeConfig()
-
 const sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL']
 
 const colors = [
@@ -25,34 +23,16 @@ const activeSize: Ref<null | number> = ref(2)
 
 const activeImagePath = computed(() => `/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors[activeColor.value].name)}.jpg`)
 
-const paymentEl = ref(null)
-const { onLoaded } = useScriptStripe({
-  // advancedFraudSignals: false,
-})
-
-const buyModal = ref(null)
-const showModal = () => buyModal.value.showModal()
-
-async function buy() {
-  const { clientSecret } = await $fetch('/api/create-payment-intent')
-
-  onLoaded(({ Stripe }) => {
-    console.log(clientSecret)
-    const stripe = Stripe(publicKeys.stripePublicKey)
-    const elements = stripe.elements({ clientSecret })
-    const paymentElement = elements.create('payment', clientSecret)
-    console.log(paymentElement)
-
-    paymentElement.mount(paymentEl.value)
-  })
+async function topkek() {
+  const kek = await $fetch('/api/topkek')
 }
 </script>
 
 <template>
   <section class="mb-16 max-w-screen-lg mx-4 lg:mx-auto tracking-wide">
-    <h1 class="text-3xl mb-6 font-bold text-center">
-      T-shirt Heartless Gaming logo brodé 100% coton
-    </h1>
+    <button class="btn" @click="topkek">
+      cache shirt call in redis
+    </button>
     <div class="mb-6">
       <div class="flex justify-center">
         <a
@@ -119,14 +99,13 @@ async function buy() {
       TTC et frais de livraison inclut
     </p>
     <div class="mb-16">
-      <button
+      <NuxtLink
         class="btn btn-accent uppercase btn-lg"
-        @click="showModal()"
+        to="/checkout"
       >
         Acheter
-      </button>
+      </NuxtLink>
     </div>
-    <div ref="paymentEl" />
     <div class="bg-base-200 collapse collapse-arrow">
       <input type="checkbox" checked="true" class="peer">
       <div
@@ -177,60 +156,4 @@ async function buy() {
       </div>
     </div>
   </section>
-  <dialog ref="buyModal" class="modal modal-bottom sm:modal-middle">
-    <div class="modal-box">
-      <form method="dialog">
-        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-          ✕
-        </button>
-      </form>
-      <p class="text-lg font-bold mb-4">
-        Résumé de votre commande
-      </p>
-      <div class="flex justify-center mb-2">
-        <NuxtImg
-          format="avif"
-          loading="lazy"
-          sizes="200px"
-          width="200"
-          height="200"
-          :src="activeImagePath"
-          class="rounded-btn sm:rounded-box"
-        />
-      </div>
-      <div>
-        <p class="font-bold">
-          T-shirt Heartless Gaming logo brodé 100% coton
-        </p>
-        <table class="table">
-          <tbody>
-            <tr>
-              <td>Couleur</td>
-              <td>
-                <div class="grid grid-cols-[auto_1fr] items-center gap-x-2">
-                  <span class="font-bold">{{ colors[activeColor].name }}</span>
-                  <span class="inline-block size-6 rounded-full" :style="`background-color: ${colors[activeColor].hex}`" />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Taille</td>
-              <td><span class="font-bold">{{ sizes[activeSize] }}</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-action">
-        <form method="dialog">
-          <!-- if there is a button in form, it will close the modal -->
-          <button class="btn btn-primary">
-            Payer
-          </button>
-        </form>
-      </div>
-    </div>
-    <form method="dialog" class="modal-backdrop">
-      <button>close</button>
-    </form>
-  </dialog>
 </template>
