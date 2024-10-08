@@ -3,13 +3,15 @@ const path: Ref = ref(null)
 let interval: NodeJS.Timeout
 
 const max = 110
-const numberOfPoints = 16
+const points = 16
 const duration = 10000
 const rand = () => Math.floor(Math.random() * max)
 
+// Generate a random clip path for the effect
 function clipPath() {
-  const points = Array.from({ length: numberOfPoints }, () => (`${rand()}% ${rand()}%`))
-  path.value.style['clip-path'] = `polygon(${points.join(', ')})`
+  // Create an array of points with x and y coordinates in percent
+  const p = Array.from({ length: points }, () => (`${rand()}% ${rand()}%`))
+  path.value.style['clip-path'] = `polygon(${p.join(', ')})`
 }
 
 onMounted(() => {

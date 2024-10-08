@@ -1,4 +1,5 @@
 import daisyui from 'daisyui'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -19,7 +20,10 @@ export default defineNuxtConfig({
   ],
 
   runtimeConfig: {
+    redisHost: '',
+    redisPort: 0,
     stripeSecretKey: '',
+    printfulToken: '',
     public: {
       stripePublicKey: '',
     },
@@ -44,6 +48,8 @@ export default defineNuxtConfig({
         'simple-icons:mumble',
         'logos:discord-icon',
         'mdi:github',
+        'mdi:tshirt-crew',
+        'mdi:palette-swatch-variants',
       ],
     },
   },
