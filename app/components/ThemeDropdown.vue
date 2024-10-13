@@ -12,7 +12,7 @@ const currentTheme = useLocalStorage('theme', '')
 
 <template>
   <div class="dropdown dropdown-end dropdown-bottom contents">
-    <button tabindex="0" role="button" class="btn py-2 h-auto min-h-fit font-normal btn-ghost border-none">
+    <button tabindex="0" role="button" class="btn btn-ghost h-auto min-h-fit border-none py-2 font-normal">
       <Icon
         name="mdi:palette-swatch-variant"
         class="text-xl"
@@ -21,14 +21,14 @@ const currentTheme = useLocalStorage('theme', '')
     </button>
     <ul
       tabindex="0"
-      class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl max-h-96 overflow-y-auto mt-4"
+      class="dropdown-content z-[1] mt-4 max-h-96 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl"
     >
       <li v-for="(theme, index) in themes" :key="index">
         <input
           v-model="currentTheme"
           type="radio"
           name="theme-dropdown"
-          class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+          class="theme-controller btn btn-ghost btn-sm btn-block justify-start"
           :aria-label="capitalizeFirstLetter(theme)"
           :value="theme"
         >

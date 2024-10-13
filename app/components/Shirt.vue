@@ -49,12 +49,12 @@ function changeSize(index: number) {
 </script>
 
 <template>
-  <section class="mb-16 max-w-screen-lg mx-4 lg:mx-auto tracking-wide">
+  <section class="mx-4 mb-16 max-w-screen-lg tracking-wide lg:mx-auto">
     <div class="mb-6">
       <div class="flex justify-center">
         <a
           :href="activeImagePath"
-          class="skeleton hover:ring-4 ring-primary ring-offset-4 ring-offset-base-100 transition"
+          class="skeleton ring-primary ring-offset-4 ring-offset-base-100 transition hover:ring-4"
         >
           <NuxtImg
             format="avif"
@@ -67,27 +67,27 @@ function changeSize(index: number) {
         </a>
       </div>
     </div>
-    <p class="text-2xl font-bold mb-6">
+    <p class="mb-6 text-2xl font-bold">
       Sélectionner une Couleur
     </p>
-    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-2 gap-y-4 place-content-between mb-6">
+    <div class="mb-6 grid grid-cols-2 place-content-between gap-x-2 gap-y-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7">
       <button
         v-for="(color, index) in colors"
         :key="index"
-        class="group flex flex-col justify-center items-center gap-y-2"
+        class="group flex flex-col items-center justify-center gap-y-2"
         @click="changeColor(index)"
       >
         <div
-          class="size-10 rounded-full group-hover:ring-4 transition ring-offset-0 ring-offset-base-100 group-hover:ring-offset-4"
+          class="size-10 rounded-full ring-offset-0 ring-offset-base-100 transition group-hover:ring-4 group-hover:ring-offset-4"
           :class="[
-            activeColor === index ? 'ring-success ring-6' : 'ring-base-content ring-2',
+            activeColor === index ? 'ring-6 ring-success' : 'ring-2 ring-base-content',
           ]"
           :style="`background-color: ${color.hex}`"
         />
         <span class="font-bold tracking-normal" :class="{ 'text-success': activeColor === index }">{{ color.name }}</span>
       </button>
     </div>
-    <div class="sm:flex items-baseline gap-x-2 mb-6">
+    <div class="mb-6 items-baseline gap-x-2 sm:flex">
       <p class="text-2xl font-bold">
         Sélectionner une Taille
       </p>
@@ -100,7 +100,7 @@ function changeSize(index: number) {
         </NuxtLink>
       </span>
     </div>
-    <div class="flex flex-wrap gap-4 mb-6">
+    <div class="mb-6 flex flex-wrap gap-4">
       <button
         v-for="(size, index) in sizes"
         :key="index"
@@ -111,18 +111,18 @@ function changeSize(index: number) {
         {{ size }}
       </button>
     </div>
-    <p class="text-7xl font-bold tracking-wide mb-8">
-      {{ formatCurrency(price) }}
+    <p class="mb-8 text-7xl font-bold tracking-wide">
+      {{ toCurrency(price) }}
     </p>
     <div class="mb-16">
       <NuxtLink
-        class="btn btn-accent uppercase btn-lg"
+        class="btn btn-accent btn-lg uppercase"
         :to="`/checkout/${activeSKU}`"
       >
         Acheter
       </NuxtLink>
     </div>
-    <div class="bg-base-200 collapse collapse-arrow">
+    <div class="collapse collapse-arrow bg-base-200">
       <input type="checkbox" checked="true" class="peer">
       <div
         class="collapse-title bg-base-200"
@@ -132,7 +132,7 @@ function changeSize(index: number) {
       <div
         class="collapse-content bg-base-200"
       >
-        <ul class="list-inside pl-4 list-disc leading-relaxed">
+        <ul class="list-inside list-disc pl-4 leading-relaxed">
           <li>
             Broderie sur un
             <NuxtLink
