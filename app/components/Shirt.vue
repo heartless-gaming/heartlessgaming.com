@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const route = useRoute()
 const { data: shirts } = await useFetch('/api/getShirt')
 
 const colors = computed(() => shirts.value.reduce((acc, shirt) => {
@@ -11,10 +12,10 @@ const colors = computed(() => shirts.value.reduce((acc, shirt) => {
 }, []))
 
 const activeColor: Ref<number> = ref(2)
-
 const activeSize: Ref<number> = ref(2)
+const activeSKU: Ref<string> = ref('669C1FAF72C24_Burgundy-L')
+
 const price = ref(23.95)
-const formattedPrice = computed(() => `${price.value.toString().replace('.', ',')} €`)
 const activeImagePath = computed(() => `/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors.value[activeColor.value].name)}.jpg`)
 
 const sizes = computed(() => shirts.value.reduce((acc, shirt) => {
@@ -25,22 +26,25 @@ const sizes = computed(() => shirts.value.reduce((acc, shirt) => {
   return acc
 }, []))
 
-function changePrice() {
-  price.value = shirts.value.find(shirt => shirt.color === colors.value[activeColor.value].name && shirt.size === sizes.value[activeSize.value]).price
-}
+const activeShirt = computed(() => shirts.value.find(shirt => shirt.color === colors.value[activeColor.value].name && shirt.size === sizes.value[activeSize.value]))
 
-function changeColor(index) {
+const updatePrice = () => price.value = activeShirt.value.price
+const updateSKU = () => activeSKU.value = activeShirt.value.sku
+
+function changeColor(index: number) {
   activeColor.value = index
   // if the size is not avalable in this color defaults to L
   if (activeSize.value >= sizes.value.length) {
     activeSize.value = 2
   }
-  changePrice()
+  updatePrice()
+  updateSKU()
 }
 
-function changeSize(index) {
+function changeSize(index: number) {
   activeSize.value = index
-  changePrice()
+  updatePrice()
+  updateSKU()
 }
 </script>
 
@@ -108,12 +112,12 @@ function changeSize(index) {
       </button>
     </div>
     <p class="text-7xl font-bold tracking-wide mb-8">
-      {{ formattedPrice }}
+      {{ formatCurrency(price) }}
     </p>
     <div class="mb-16">
       <NuxtLink
         class="btn btn-accent uppercase btn-lg"
-        to="/checkout"
+        :to="`/checkout/${activeSKU}`"
       >
         Acheter
       </NuxtLink>

@@ -1,4 +1,15 @@
 <script setup lang="ts">
+const route = useRoute()
+const { data: shirts } = await useFetch('/api/getShirt')
+const shirt = shirts.value.find(shirt => shirt.sku === route.params.sku)
+
+console.log(formatCurrency(shirt.price))
+
+// Redirect to shirt page if sku is not correct
+if (!shirt) {
+  navigateTo('/t-shirt-logo-brode-coton')
+}
+
 const { public: publicKeys } = useRuntimeConfig()
 const paymentEl = ref(null)
 const { onLoaded } = useScriptStripe({
@@ -22,7 +33,7 @@ async function buy() {
 
 <template>
   <div class=" container px-2 mx-auto">
-    <header>
+    <header class="mb-6">
       <NuxtLink to="/" class="group">
         <SvgLogoHeartlessgamingSkull2020
           class="size-12 group-hover:-rotate-12 transition-transform p-6 box-content"
@@ -31,10 +42,9 @@ async function buy() {
       </NuxtLink>
     </header>
     <main>
-      <div>
-        <h1>Passer commande</h1>
-        <p>Product name - prix</p>
-      </div>
+      <h1 class="text-3xl font-bold mb-6 text-center">
+        Passer commande
+      </h1>
       <div class="bg-base-200 collapse collapse-arrow">
         <input type="checkbox" checked="true" class="peer">
         <div
