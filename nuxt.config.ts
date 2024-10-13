@@ -19,6 +19,10 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
   ],
 
+  routeRules: {
+    '/api/getShirt': { cache: { maxAge: 5, base: 'redis' } },
+  },
+
   runtimeConfig: {
     redisHost: '',
     redisPort: 0,
