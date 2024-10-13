@@ -26,7 +26,6 @@ export default defineEventHandler(async (event) => {
 
   const shirts = fetchShirt.result.sync_variants.map((variant) => {
     const { availability_status, name, size, retail_price: price, color, sku } = variant
-    console.log(variant)
 
     return {
       available: availability_status === 'active',

@@ -3,7 +3,7 @@
 
 <template>
   <section class="hero mb-16">
-    <div class="hero-content flex-col md:flex-row-reverse max-w-screen-lg lg:p-0">
+    <div class="hero-content max-w-screen-lg flex-col md:flex-row-reverse lg:p-0">
       <div class="text-center lg:text-left">
         <h2 class="text-5xl font-bold">
           Nouveau T-shirt disponible&nbsp;!
@@ -14,7 +14,7 @@
       </div>
       <NuxtLink
         to="t-shirt-logo-brode-coton"
-        class="card shadow-xl bg-base-200 w-full max-w-sm shrink-0 ring-1 ring-transparent hover:ring-4 ring-offset-0 hover:ring-offset-4 ring-offset-base-100 hover:ring-accent transition"
+        class="card w-full max-w-sm shrink-0 bg-base-200 shadow-xl ring-1 ring-transparent ring-offset-0 ring-offset-base-100 transition hover:ring-4 hover:ring-accent hover:ring-offset-4"
       >
         <figure class="skeleton rounded-b-none">
           <NuxtPicture

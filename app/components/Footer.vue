@@ -1,8 +1,8 @@
 <template>
-  <footer class="bg-base-300 py-12 px-2">
-    <div class="max-w-lg mx-auto">
+  <footer class="bg-base-300 px-2 py-12">
+    <div class="mx-auto max-w-lg">
       <FooterIconLinks />
-      <p class="font-bold uppercase text-2xl text-center mb-6 tracking-wide">
+      <p class="mb-6 text-center text-2xl font-bold uppercase tracking-wide">
         Play more, care less, be Heartless
       </p>
       <div class="mb-6 leading-loose">
