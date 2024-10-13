@@ -1,38 +1,51 @@
 <script setup lang="ts">
-const sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL']
+const { data: shirts } = await useFetch('/api/getShirt')
 
-const colors = [
-  { name: 'French Navy', hex: '#112537' },
-  { name: 'Dark Heather Grey', hex: '#2b2928' },
-  { name: 'Burgundy', hex: '#801f24' },
-  { name: 'Anthracite', hex: '#3e383e' },
-  { name: 'Red', hex: '#ed0739' },
-  { name: 'Stargazer', hex: '#3d737d' },
-  { name: 'Khaki', hex: '#6e6b4d' },
-  { name: 'Dark Heather Blue', hex: '#7a8ca8' },
-  { name: 'Heather Grey', hex: '#cfcbc8' },
-  { name: 'Desert Dust', hex: '#dcccb4' },
-  { name: 'Fraiche Peche', hex: '#ffd2be' },
-  { name: 'Cotton Pink', hex: '#ffe9eb' },
-  { name: 'Lavender', hex: '#f7ecff' },
-  { name: 'White', hex: '#ffffff' },
-]
+const colors = computed(() => shirts.value.reduce((acc, shirt) => {
+  if (!acc.find(color => color.name === shirt.color)) {
+    const { color, hex } = shirt
+    acc.push({ name: color, hex })
+  }
 
-const activeColor = ref(2)
-const activeSize: Ref<null | number> = ref(2)
+  return acc
+}, []))
 
-const activeImagePath = computed(() => `/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors[activeColor.value].name)}.jpg`)
+const activeColor: Ref<number> = ref(2)
 
-async function topkek() {
-  const kek = await $fetch('/api/topkek')
+const activeSize: Ref<number> = ref(2)
+const price = ref(23.95)
+const formattedPrice = computed(() => `${price.value.toString().replace('.', ',')} €`)
+const activeImagePath = computed(() => `/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors.value[activeColor.value].name)}.jpg`)
+
+const sizes = computed(() => shirts.value.reduce((acc, shirt) => {
+  if (shirt.color === colors.value[activeColor.value].name && !acc.includes(shirt.size)) {
+    acc.push(shirt.size)
+  }
+
+  return acc
+}, []))
+
+function changePrice() {
+  price.value = shirts.value.find(shirt => shirt.color === colors.value[activeColor.value].name && shirt.size === sizes.value[activeSize.value]).price
+}
+
+function changeColor(index) {
+  activeColor.value = index
+  // if the size is not avalable in this color defaults to L
+  if (activeSize.value >= sizes.value.length) {
+    activeSize.value = 2
+  }
+  changePrice()
+}
+
+function changeSize(index) {
+  activeSize.value = index
+  changePrice()
 }
 </script>
 
 <template>
   <section class="mb-16 max-w-screen-lg mx-4 lg:mx-auto tracking-wide">
-    <button class="btn" @click="topkek">
-      cache shirt call in redis
-    </button>
     <div class="mb-6">
       <div class="flex justify-center">
         <a
@@ -58,18 +71,20 @@ async function topkek() {
         v-for="(color, index) in colors"
         :key="index"
         class="group flex flex-col justify-center items-center gap-y-2"
-        @click="activeColor = index"
+        @click="changeColor(index)"
       >
         <div
-          class="size-10 rounded-full group-hover:ring-4 transition ring-offset-0 group-hover:ring-offset-4 ring-offset-base-100"
-          :class="[activeColor === index ? 'ring-success ring-6' : 'ring-base-content ring-2']"
+          class="size-10 rounded-full group-hover:ring-4 transition ring-offset-0 ring-offset-base-100 group-hover:ring-offset-4"
+          :class="[
+            activeColor === index ? 'ring-success ring-6' : 'ring-base-content ring-2',
+          ]"
           :style="`background-color: ${color.hex}`"
         />
         <span class="font-bold tracking-normal" :class="{ 'text-success': activeColor === index }">{{ color.name }}</span>
       </button>
     </div>
-    <div class="flex items-baseline gap-x-2">
-      <p class="text-2xl font-bold mb-6">
+    <div class="sm:flex items-baseline gap-x-2 mb-6">
+      <p class="text-2xl font-bold">
         Sélectionner une Taille
       </p>
       <span>
@@ -81,22 +96,19 @@ async function topkek() {
         </NuxtLink>
       </span>
     </div>
-    <div class="flex flex-wrap md:grid grid-flow-col gap-4 mb-6">
+    <div class="flex flex-wrap gap-4 mb-6">
       <button
         v-for="(size, index) in sizes"
         :key="index"
-        class="btn text-2xl"
+        class="btn w-28 text-2xl"
         :class="{ 'btn-success': activeSize === index, 'btn-outline': activeSize !== index }"
-        @click="activeSize = index"
+        @click="changeSize(index)"
       >
         {{ size }}
       </button>
     </div>
-    <p class="text-9xl font-bold tracking-widest">
-      27 €
-    </p>
-    <p class="text-xl mb-8">
-      TTC et frais de livraison inclut
+    <p class="text-7xl font-bold tracking-wide mb-8">
+      {{ formattedPrice }}
     </p>
     <div class="mb-16">
       <NuxtLink
