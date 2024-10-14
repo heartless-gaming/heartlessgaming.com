@@ -40,6 +40,10 @@ function nextStep() {
   // }
   stepper.value++
 }
+
+async function topkek() {
+  const kek = await $fetch('/api/place-order')
+}
 </script>
 
 <template>
@@ -49,6 +53,9 @@ function nextStep() {
     </header>
     <main>
       <CheckoutTitle :product-name="shirt.name" :price="shirt.price" />
+      <button class="btn btn-success mb-4" @click="topkek">
+        test place printful order
+      </button>
       <div class="join join-vertical mb-10 w-full">
         <div class="collapse join-item collapse-arrow border border-base-300">
           <input v-model="stepper" type="radio" value="0">

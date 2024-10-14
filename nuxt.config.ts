@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@pinia/nuxt',
+    'nuxt-security',
   ],
 
   routeRules: {
