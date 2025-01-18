@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { printfulToken } = useRuntimeConfig()
 const route = useRoute()
 const { data: shirts } = await useFetch('/api/getShirt')
 const shirt = shirts.value.find(shirt => shirt.sku === route.params.sku)
@@ -42,7 +43,10 @@ function nextStep() {
 }
 
 async function topkek() {
-  const kek = await $fetch('/api/place-order')
+  const kek = await $fetch('/api/place-order', {
+    method: 'POST',
+    // body,
+  })
 }
 </script>
 
