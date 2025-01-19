@@ -70,7 +70,20 @@ function changeSize(index: number) {
     <p class="mb-6 text-2xl font-bold">
       Sélectionner une Couleur
     </p>
-    <div class="mb-6 grid grid-cols-2 place-content-between gap-x-2 gap-y-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7">
+    <select
+      v-model="activeColor"
+      class="select mb-6 w-full max-w-xs border border-base-content sm:hidden"
+    >
+      <option
+        v-for="(color, index) in colors"
+        :key="index"
+        :value="index"
+        :selected="activeColor === index"
+      >
+        {{ color.name }}
+      </option>
+    </select>
+    <div class="mb-6 hidden grid-cols-2 place-content-between gap-x-2 gap-y-4 sm:grid sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7">
       <button
         v-for="(color, index) in colors"
         :key="index"
