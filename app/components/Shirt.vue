@@ -151,6 +151,7 @@ function changeSize(index: number) {
             <NuxtLink
               class="pretty-link"
               to="https://stanleystella.com/fr-fr/creator-2-0-sttu169"
+              target="_blank"
               external
             >
               T-shirt Stanley/Stella 100% coton biologique vegan
@@ -161,6 +162,7 @@ function changeSize(index: number) {
             <NuxtLink
               to="https://www.printful.com"
               class="pretty-link"
+              target="_blank"
               external
             >
               Printful
@@ -171,6 +173,7 @@ function changeSize(index: number) {
             <NuxtLink
               to="https://dashboard.stripe.com/"
               class="pretty-link"
+              target="_blank"
               external
             >
               Stripe

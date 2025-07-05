@@ -69,9 +69,9 @@ defineEmits(['submit'])
           </div>
         </label>
       </div>
-      <button class="btn btn-accent" @click="$emit('submit')">
-        Enregistrer et continuer
-      </button>
     </div>
+    <button class="btn btn-accent" @click="$emit('submit')">
+      Enregistrer et continuer
+    </button>
   </div>
 </template>
