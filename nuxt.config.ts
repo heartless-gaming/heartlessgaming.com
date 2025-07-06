@@ -58,7 +58,7 @@ export default defineNuxtConfig({
         'logos:discord-icon',
         'mdi:github',
         'mdi:tshirt-crew',
-        'mdi:palette-swatch-variants',
+        'mdi:palette-swatch-variant',
       ],
     },
   },

@@ -1,11 +1,6 @@
 <script setup lang="ts">
-/**
- * loading the theme list from the tailwind config is a pain that would require
- * pre evaluation
- *
- * https://tailwindcss.com/docs/configuration#referencing-in-java-script
- */
-const themes = ['light', 'dark', 'cupcake', 'bumblebee', 'emerald', 'corporate', 'synthwave', 'retro', 'cyberpunk', 'valentine', 'halloween', 'garden', 'forest', 'aqua', 'lofi', 'pastel', 'fantasy', 'wireframe', 'black', 'luxury', 'dracula', 'cmyk', 'autumn', 'business', 'acid', 'lemonade', 'night', 'coffee', 'winter', 'dim', 'nord', 'sunset']
+// TODO : Still have not found a way to reference DaidyUI theme list in JS
+const themes = ['light', 'dark', 'cupcake', 'bumblebee', 'emerald', 'corporate', 'synthwave', 'retro', 'cyberpunk', 'valentine', 'halloween', 'garden', 'forest', 'aqua', 'lofi', 'pastel', 'fantasy', 'wireframe', 'black', 'luxury', 'dracula', 'cmyk', 'autumn', 'business', 'acid', 'lemonade', 'night', 'coffee', 'winter', 'dim', 'nord', 'sunset', 'caramellatte', 'abyss', 'silk']
 
 const currentTheme = useLocalStorage('theme', '')
 </script>
@@ -25,13 +20,19 @@ const currentTheme = useLocalStorage('theme', '')
     >
       <li v-for="(theme, index) in themes" :key="index">
         <input
-          v-model="currentTheme"
-          type="radio"
-          name="theme-dropdown"
-          class="theme-controller btn btn-ghost btn-sm btn-block justify-start"
-          :aria-label="capitalizeFirstLetter(theme)"
-          :value="theme"
+        v-model="currentTheme"
+        type="radio"
+        name="theme-dropdown"
+        class="theme-controller btn btn-ghost btn-primary btn-sm btn-block justify-start"
+        :aria-label="capitalizeFirstLetter(theme)"
+        :value="theme"
         >
+        <button :data-theme="theme" class="absolute top-1.5 right-3 gap-1 bg-base-100" @click="currentTheme = theme">
+          <div class="bg-base-content size-2 rounded-full"></div>
+          <div class="bg-primary size-2 rounded-full"></div>
+          <div class="bg-secondary size-2 rounded-full"></div>
+          <div class="bg-accent size-2 rounded-full"></div>
+        </button>
       </li>
     </ul>
   </div>

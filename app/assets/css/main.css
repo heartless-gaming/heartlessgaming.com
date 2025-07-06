@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: all;
+}
 
 /* This should be refactored one day. Stole it from a CSS tricks */
 .pretty-link {
