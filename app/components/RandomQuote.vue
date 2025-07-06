@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const interval = 60000 // It's in ms so 1000*60*1 that's 1minutes YAY for math
 
-const quote: Ref< string > = ref('We will find a way')
+const quote: Ref<string> = ref('We will find a way')
 
-const quotes = [
+const quotes: string[] = [
   `Bon c'est une bonne addition à mon dossier "grossisant" ! - GuiltysparK`,
   `Oh ah pourquoi ya du sang partout ? ah bah il est mort le vendeur de sushi. - Eljam`,
   `Quest-ce qu'on est sérée, au fond de ce markus ! - Don`,

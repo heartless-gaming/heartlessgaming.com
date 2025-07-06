@@ -1,3 +1,13 @@
+<script setup lang="ts">
+const links = [
+  { app: 'Youtube', href: 'https://www.youtube.com/@heartless.gaming/videos', icon: 'logos:youtube-icon' },
+  { app: 'Twitch', href: 'https://www.twitch.tv/heartlessgaming_live', icon: 'logos:twitch' },
+  { app: 'Mumble', href: 'mumble://heartlessgaming.com', icon: 'simple-icons:mumble' },
+  { app: 'Discord', href: 'https://discord.gg/rWDzacA', icon: 'logos:discord-icon' },
+  { app: 'Github', href: 'https://github.com/heartless-gaming/heartlessgaming.com', icon: 'mdi-github' },
+]
+</script>
+
 <template>
   <div
     class="
@@ -6,71 +16,15 @@
     "
   >
     <div
-      class="tooltip"
-      data-tip="Youtube"
+      v-for="(link, index) in links" :key="index"
+      class="tooltip flex place-content-center"
+      :data-tip="link.app"
     >
       <NuxtLink
-        to="https://www.youtube.com/@heartless.gaming/videos"
-        class="btn btn-ghost"
+        :to="link.href"
       >
         <Icon
-          name="logos:youtube-icon"
-          class="text-4xl"
-        />
-      </NuxtLink>
-    </div>
-    <div
-      class="tooltip"
-      data-tip="Twitch"
-    >
-      <NuxtLink
-        to="https://www.twitch.tv/heartlessgaming_live"
-        class="btn btn-ghost"
-      >
-        <Icon
-          name="logos:twitch"
-          class="text-4xl"
-        />
-      </NuxtLink>
-    </div>
-    <div
-      class="tooltip"
-      data-tip="Mumble"
-    >
-      <NuxtLink
-        to="mumble://heartlessgaming.com"
-        class="btn btn-ghost"
-      >
-        <Icon
-          name="simple-icons:mumble"
-          class="text-4xl"
-        />
-      </NuxtLink>
-    </div>
-    <div
-      class="tooltip"
-      data-tip="Discord"
-    >
-      <NuxtLink
-        to="https://discord.gg/rWDzacA"
-        class="btn btn-ghost"
-      >
-        <Icon
-          name="logos:discord-icon"
-          class="text-4xl"
-        />
-      </NuxtLink>
-    </div>
-    <div
-      class="tooltip"
-      data-tip="Github"
-    >
-      <NuxtLink
-        to="https://github.com/heartless-gaming/heartlessgaming.com"
-        class="btn btn-ghost"
-      >
-        <Icon
-          name="mdi:github"
+          :name="link.icon"
           class="text-4xl"
         />
       </NuxtLink>
