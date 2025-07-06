@@ -1,14 +1,36 @@
 <template>
-  <section class="group mx-4 mb-16 max-w-screen-lg rounded-3xl bg-base-200 px-4 py-8 shadow-xl ring-1 ring-transparent ring-offset-0 ring-offset-base-100 transition hover:ring-4 hover:ring-accent hover:ring-offset-4 sm:px-16 lg:mx-auto">
+  <section
+    class="
+      group mx-4 mb-16 max-w-screen-lg rounded-3xl bg-base-200 px-4 py-8
+      shadow-xl ring-1 ring-transparent ring-offset-0 ring-offset-base-100
+      transition
+      hover:ring-4 hover:ring-accent hover:ring-offset-4
+      sm:px-16
+      lg:mx-auto
+    "
+  >
     <h2 class="mb-3 text-3xl">
       Faire une donation !
     </h2>
-    <div class="grid-cols-3 sm:grid">
-      <div class="flex items-center justify-center sm:justify-normal">
+    <div
+      class="
+        grid-cols-3
+        sm:grid
+      "
+    >
+      <div
+        class="
+          flex items-center justify-center
+          sm:justify-normal
+        "
+      >
         <Icon
           name="game-icons:take-my-money"
           size="13rem"
-          class="-rotate-3 opacity-80 transition group-hover:rotate-6 group-hover:scale-110"
+          class="
+            -rotate-3 opacity-80 transition
+            group-hover:scale-110 group-hover:rotate-6
+          "
         />
       </div>
       <div class="col-span-2 text-lg">
@@ -30,7 +52,7 @@
         </ul>
         <NuxtLink
           to="https://buy.stripe.com/dR6aG3fIr1zg2Qw7ss"
-          class="btn btn-accent btn-lg mb-1 uppercase"
+          class="btn mb-1 uppercase btn-lg btn-accent"
         >
           Take my money !
         </NuxtLink>

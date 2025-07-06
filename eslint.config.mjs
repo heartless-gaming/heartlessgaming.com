@@ -1,15 +1,24 @@
 // @ts-check
 import antfu from '@antfu/eslint-config'
-import tailwind from 'eslint-plugin-tailwindcss'
+import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
-  antfu(
-    {
-      typescript: true,
-      vue: true,
+  {
+    plugins: {
+      'better-tailwindcss': eslintPluginBetterTailwindcss,
     },
-    ...tailwind.configs['flat/recommended'],
-  ),
-
+    rules: {
+      ...eslintPluginBetterTailwindcss.configs['recommended-warn'].rules,
+      // "better-tailwindcss/enforce-consistent-line-wrapping": ["warn", { printWidth: 100 }]
+    },
+    settings: {
+      'better-tailwindcss': {
+        entryPoint: 'app/assets/css/main.css',
+      },
+    },
+  },
+  antfu({
+    // ...@antfu/eslint-config options
+  }),
 )

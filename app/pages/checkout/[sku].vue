@@ -51,17 +51,22 @@ async function topkek() {
 </script>
 
 <template>
-  <div class="container mx-auto px-2 mb-12">
-    <header class="mb-4 sm:mb-6">
+  <div class="container mx-auto mb-12 px-2">
+    <header
+      class="
+        mb-4
+        sm:mb-6
+      "
+    >
       <NavbarCheckout />
     </header>
     <main>
       <CheckoutTitle :product-name="shirt.name" :price="shirt.price" />
-      <button class="btn btn-success mb-4" @click="topkek">
+      <button class="btn mb-4 btn-success" @click="topkek">
         test place printful order
       </button>
-      <div class="join join-vertical mb-10 w-full">
-        <div class="collapse join-item collapse-arrow border border-base-300">
+      <div class="join-vertical mb-10 join w-full">
+        <div class="collapse-arrow collapse join-item border border-base-300">
           <input v-model="stepper" type="radio" value="0">
           <div class="collapse-title text-xl">
             Contact & Adresse
@@ -70,7 +75,7 @@ async function topkek() {
             <CheckoutFormUser @submit="nextStep()" />
           </div>
         </div>
-        <div class="collapse join-item collapse-arrow border border-base-300">
+        <div class="collapse-arrow collapse join-item border border-base-300">
           <input v-model="stepper" type="radio" value="1" :disabled="isShippingLocked">
           <div class="collapse-title text-xl" :class="{ 'opacity-50': isShippingLocked }">
             Livraison
@@ -79,7 +84,7 @@ async function topkek() {
             <CheckoutFormShipping />
           </div>
         </div>
-        <div class="collapse join-item collapse-arrow border border-base-300">
+        <div class="collapse-arrow collapse join-item border border-base-300">
           <input v-model="stepper" type="radio" value="2" :disabled="isPaymentLocked">
           <div class="collapse-title text-xl" :class="{ 'opacity-50': isShippingLocked }">
             Paiement
@@ -89,7 +94,7 @@ async function topkek() {
           </div>
         </div>
       </div>
-      <div class="collapse collapse-arrow bg-base-200">
+      <div class="collapse-arrow collapse bg-base-200">
         <input type="checkbox" checked="true" class="peer">
         <div
           class="collapse-title bg-base-200"

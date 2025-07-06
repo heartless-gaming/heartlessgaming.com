@@ -1,5 +1,10 @@
 <template>
-  <div class="mb-8 grid grid-cols-3 gap-x-2 gap-y-6 sm:grid-cols-5">
+  <div
+    class="
+      mb-8 grid grid-cols-3 gap-x-2 gap-y-6
+      sm:grid-cols-5
+    "
+  >
     <div
       class="tooltip"
       data-tip="Youtube"

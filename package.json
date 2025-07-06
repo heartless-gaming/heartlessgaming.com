@@ -2,6 +2,7 @@
   "name": "nuxt-app",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@10.12.4",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -35,10 +36,10 @@
     "@vueuse/nuxt": "^13.5.0",
     "daisyui": "^5.0.43",
     "eslint": "9.30.1",
+    "eslint-plugin-better-tailwindcss": "^3.4.4",
     "eslint-plugin-tailwindcss": "^3.18.0",
     "nuxt": "^3.17.6",
     "nuxt-security": "^2.2.0",
     "nuxt-svgo": "^4.2.3"
-  },
-  "packageManager": "pnpm@10.12.4"
+  }
 }

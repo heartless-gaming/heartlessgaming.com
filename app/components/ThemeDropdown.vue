@@ -7,7 +7,11 @@ const currentTheme = useLocalStorage('theme', '')
 
 <template>
   <div class="dropdown dropdown-end dropdown-bottom contents">
-    <button tabindex="0" role="button" class="btn btn-ghost h-auto min-h-fit border-none py-2 font-normal">
+    <button
+      tabindex="0" role="button" class="
+        btn h-auto min-h-fit border-none py-2 font-normal btn-ghost
+      "
+    >
       <Icon
         name="mdi:palette-swatch-variant"
         class="text-xl"
@@ -16,22 +20,30 @@ const currentTheme = useLocalStorage('theme', '')
     </button>
     <ul
       tabindex="0"
-      class="dropdown-content z-[1] mt-4 max-h-96 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl"
+      class="
+        dropdown-content z-[1] mt-4 max-h-96 w-52 overflow-y-auto rounded-box
+        bg-base-300 p-2 shadow-2xl
+      "
     >
       <li v-for="(theme, index) in themes" :key="index">
         <input
-        v-model="currentTheme"
-        type="radio"
-        name="theme-dropdown"
-        class="theme-controller btn btn-ghost btn-primary btn-sm btn-block justify-start"
-        :aria-label="capitalizeFirstLetter(theme)"
-        :value="theme"
+          v-model="currentTheme"
+          type="radio"
+          name="theme-dropdown"
+          class="
+            theme-controller btn btn-block justify-start btn-ghost btn-sm
+            btn-primary
+          "
+          :aria-label="capitalizeFirstLetter(theme)"
+          :value="theme"
         >
-        <button :data-theme="theme" class="absolute top-1.5 right-3 gap-1 bg-base-100" @click="currentTheme = theme">
-          <div class="bg-base-content size-2 rounded-full"></div>
-          <div class="bg-primary size-2 rounded-full"></div>
-          <div class="bg-secondary size-2 rounded-full"></div>
-          <div class="bg-accent size-2 rounded-full"></div>
+        <button
+          :data-theme="theme" class="absolute top-1.5 right-3 gap-1 bg-base-100" @click="currentTheme = theme"
+        >
+          <div class="size-2 rounded-full bg-base-content" />
+          <div class="size-2 rounded-full bg-primary" />
+          <div class="size-2 rounded-full bg-secondary" />
+          <div class="size-2 rounded-full bg-accent" />
         </button>
       </li>
     </ul>
