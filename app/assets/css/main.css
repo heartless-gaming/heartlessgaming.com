@@ -3,17 +3,17 @@
   themes: all;
 }
 
-/* This should be refactored one day. Stole it from a CSS tricks */
+/* Stole it from a CSS tricks */
 .pretty-link {
     background:
-    linear-gradient(to right,rgb(61, 75, 197),rgb(100, 123, 200)),
-    linear-gradient(to right,rgb(255, 94, 0), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
-    background-size: 100% 3px, 0 3px;
+    linear-gradient(to right,var(--color-primary),var(--color-secondary)),
+    linear-gradient(to right,var(--color-accent), var(--color-secondary), var(--color-primary));
+    background-size: 100% 2px, 0 2px;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
     transition: background-size 150ms;
 }
 
 .pretty-link:hover {
-    background-size: 0 3px, 100% 3px;
+    background-size: 0 2px, 100% 2px;
 }

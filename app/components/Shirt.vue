@@ -145,7 +145,7 @@ function changeSize(index: number) {
       <div
         class="collapse-content bg-base-200"
       >
-        <ul class="list-inside list-disc pl-4 leading-relaxed">
+        <ul class="list-inside list-disc pl-4 leading-relaxed marker:text-primary">
           <li>
             Broderie sur un
             <NuxtLink
