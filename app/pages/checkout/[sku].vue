@@ -104,7 +104,12 @@ async function topkek() {
         <div
           class="collapse-content bg-base-200"
         >
-          <ul class="list-inside list-disc pl-4 leading-relaxed">
+          <ul
+            class="
+              list-inside list-disc pl-4 leading-relaxed
+              marker:text-primary
+            "
+          >
             <li>L'email saisi servira à assurer le suivi de la commande uniquement</li>
           </ul>
         </div>

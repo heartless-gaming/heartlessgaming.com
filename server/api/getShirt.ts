@@ -1,3 +1,7 @@
+/**
+ * TODO : Cache this call in redis it's already setup it's free real estate !
+ * https://nuxt.com/docs/4.x/guide/directory-structure/server#server-storage
+ */
 export default defineEventHandler(async (event) => {
   const { printfulToken } = useRuntimeConfig(event)
 

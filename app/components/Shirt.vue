@@ -37,6 +37,7 @@ function changeColor(index: number) {
   if (activeSize.value >= sizes.value.length) {
     activeSize.value = 2
   }
+
   updatePrice()
   updateSKU()
 }
