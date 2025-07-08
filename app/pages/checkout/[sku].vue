@@ -60,6 +60,11 @@ async function topkek() {
     >
       <NavbarCheckout />
     </header>
+    <p
+      class="mb-10 animate-bounce text-center text-4xl"
+    >
+      🚧 Page en construction c'est le bordel içi 🚧
+    </p>
     <main>
       <CheckoutTitle :product-name="shirt.name" :price="shirt.price" />
       <button class="btn mb-4 btn-success" @click="topkek">

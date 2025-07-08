@@ -15,7 +15,6 @@ function clipPath() {
 }
 
 onMounted(() => {
-  console.log('mounted');
   clipPath()
   interval = setInterval(clipPath, duration)
 })
