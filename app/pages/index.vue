@@ -12,7 +12,9 @@
           "
           :font-controlled="false"
         />
-        <h1 class="text-3xl font-bold uppercase text-shadow-lg/80">
+        <h1
+          class="text-3xl font-bold uppercase text-shadow-lg"
+        >
           Communauté <abbr title="Groupe de joueur partageant plusieurs jeux en ligne.">Multigaming</abbr>
         </h1>
       </div>

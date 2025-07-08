@@ -6,22 +6,26 @@ const currentTheme = useLocalStorage('theme', '')
 </script>
 
 <template>
-  <div class="dropdown dropdown-end dropdown-bottom contents">
+  <div class="dropdown dropdown-end dropdown-bottom p-0">
     <button
       tabindex="0" role="button" class="
-        btn h-auto min-h-fit border-none py-2 font-normal btn-ghost
+        group flex items-center gap-x-2 px-3 py-1.5
       "
     >
       <Icon
         name="mdi:palette-swatch-variant"
-        class="text-xl"
+        class="
+          text-xl transition-transform duration-300
+          group-hover:-rotate-45
+          group-focus:-rotate-45
+        "
       />
       <span>Themes</span>
     </button>
     <ul
       tabindex="0"
       class="
-        dropdown-content z-[1] mt-4 max-h-96 w-52 overflow-y-auto rounded-box
+        dropdown-content z-1 max-h-96 w-52 overflow-y-auto rounded-box
         bg-base-300 p-2 shadow-2xl
       "
     >

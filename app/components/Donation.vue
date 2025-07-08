@@ -57,7 +57,7 @@
           Take my money !
         </NuxtLink>
         <p class="text-sm">
-          (Nous n'acceptons pas les bitcoicoin)
+          (Nous n'acceptons pas les bitcoincoin)
         </p>
       </div>
     </div>

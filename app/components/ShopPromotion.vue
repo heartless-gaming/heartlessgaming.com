@@ -16,7 +16,7 @@
           lg:text-left
         "
       >
-        <h2 class="text-5xl font-bold">
+        <h2 class="text-5xl font-bold text-shadow-lg">
           Nouveau T-shirt disponible&nbsp;!
         </h2>
         <p class="py-6 text-lg">
