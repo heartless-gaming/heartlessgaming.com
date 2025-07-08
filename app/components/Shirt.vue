@@ -56,14 +56,17 @@ function changeSize(index: number) {
         <a
           :href="activeImagePath"
           class="skeleton ring-primary ring-offset-4 ring-offset-base-100 transition hover:ring-4"
+          v-for="(color, index) in colors" :key="index"
+          v-show="index === activeColor"
         >
-          <NuxtImg
-            format="avif"
+          <NuxtPicture
             sizes="360px sm:500px"
             width="500"
             height="500"
-            :src="activeImagePath"
+            :src="`/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(color.name)}.jpg`"
             class="rounded-box"
+            :img-attrs="{class: 'rounded-box'}"
+            loading="lazy"
           />
         </a>
       </div>
