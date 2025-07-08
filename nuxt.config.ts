@@ -29,8 +29,9 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    redisHost: '',
-    redisPort: 0,
+    redisHost: '127.0.0.1',
+    redisPort: 6379,
+    redisPass: '',
     stripeSecretKey: '',
     printfulToken: '',
     public: {
