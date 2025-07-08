@@ -13,6 +13,9 @@ export default defineNitroPlugin(() => {
     base: 'hg',
   })
 
+  console.log(driver);
+  
+
   // Mount driver
   storage.mount('redis', driver)
 })
