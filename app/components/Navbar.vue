@@ -7,7 +7,7 @@
       "
     >
       <li>
-        <NuxtLink to="/" class="group">
+        <NuxtLink to="/" class="group" aria-label="Retour à la page d'accueil">
           <SvgLogoHeartlessgamingSkull2020
             class="
               size-5 transition-transform

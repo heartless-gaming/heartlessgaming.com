@@ -22,6 +22,7 @@ const links = [
     >
       <NuxtLink
         :to="link.href"
+        :aria-label="`Aller vers ${link.app}`"
       >
         <Icon
           :name="link.icon"
