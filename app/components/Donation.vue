@@ -61,7 +61,7 @@
         >
           Tu le mérites, prends mon argent !
         </NuxtLink>
-        <p class="text-center text-sm italic">
+        <p class="text-center text-sm text-base-content/50 italic">
           (Nous n'acceptons pas les bitcoincoin)
         </p>
       </div>
