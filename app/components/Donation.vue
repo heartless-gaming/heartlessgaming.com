@@ -26,7 +26,7 @@
       >
         <Icon
           name="game-icons:take-my-money"
-          size="13rem"
+          size="16rem"
           class="
             -rotate-3 opacity-80 transition
             group-hover:scale-110 group-hover:rotate-6
@@ -37,26 +37,31 @@
         <p class="mb-4 text-2xl">
           Que faisons-nous avec l'argent ?
         </p>
-        <ul class="mb-6 list-disc pl-8">
-          <li>On paye un serveur pour jouer et communiquer <em>(~30€ par mois)</em>.</li>
-          <li>On paye un nom de domaine parce qu'on retient jamais l'ip du serveur.</li>
-          <li>Rémunérer Markus pour le super logo qu'il nous a crée.</li>
+        <ul
+          class="
+            mb-6 list-disc pl-8
+            marker:text-accent
+          "
+        >
+          <li>On paye un serveur pour jouer et communiquer <em>(~30€ par mois)</em></li>
+          <li>On paye un nom de domaine parce qu'on retient jamais l'ip du serveur</li>
+          <li>Rémunérer Markus pour le super logo qu'il nous a crée</li>
           <li>
             Enrichir <NuxtLink
               class="pretty-link"
               to="https://skullmasher.io"
             >
               l'administrateur
-            </NuxtLink>.
+            </NuxtLink>
           </li>
         </ul>
         <NuxtLink
           to="https://buy.stripe.com/dR6aG3fIr1zg2Qw7ss"
-          class="btn mb-1 uppercase btn-lg btn-accent"
+          class="btn mb-1 mb-2 w-full uppercase btn-lg btn-accent"
         >
-          Take my money !
+          Tu le mérites, prends mon argent !
         </NuxtLink>
-        <p class="text-sm">
+        <p class="text-center text-sm italic">
           (Nous n'acceptons pas les bitcoincoin)
         </p>
       </div>

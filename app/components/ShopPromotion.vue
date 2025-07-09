@@ -28,7 +28,7 @@
         class="
           card w-full max-w-sm shrink-0 bg-base-200 shadow-xl ring-1
           ring-transparent ring-offset-0 ring-offset-base-100 transition
-          hover:ring-4 hover:ring-accent hover:ring-offset-4
+          hover:ring-4 hover:ring-primary hover:ring-offset-4
         "
       >
         <figure class="skeleton rounded-b-none">

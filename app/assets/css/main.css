@@ -3,6 +3,12 @@
   themes: all;
 }
 
+@theme { 
+  --inset-shadow-md: inset 0px 6px 3px rgba(0, 0, 0, 1);
+}
+
+/* inset 0 2px 4px var(--tw-inset-shadow-color, rgb(0 0 0 / 0.05)) */
+
 /* Stole it from a CSS tricks */
 .pretty-link {
     background:

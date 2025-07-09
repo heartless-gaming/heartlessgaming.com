@@ -1,5 +1,7 @@
 <template>
-  <footer class="bg-base-300 px-2 py-12">
+  <footer
+    class="bg-base-300 px-2 py-12 inset-shadow-sm"
+  >
     <div class="mx-auto max-w-lg">
       <FooterIconLinks />
       <p class="mb-6 text-center text-2xl font-bold tracking-wide uppercase">
