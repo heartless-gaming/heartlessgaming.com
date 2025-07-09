@@ -21,8 +21,12 @@ export default defineEventHandler(async (event) => {
     { name: 'Lavender', hex: '#f7ecff' },
     { name: 'White', hex: '#ffffff' },
   ]
+  
+  // Helper to find the shirt ID in the store
+  // const topkek = await $fetch('https://api.printful.com/store/products', { headers })
+  // console.log(topkek);
 
-  const shirtID = 353100084
+  const shirtID = 386501101
   const url = `https://api.printful.com/store/products/${shirtID}`
   const headers = { Authorization: `Bearer ${printfulToken}` }
 

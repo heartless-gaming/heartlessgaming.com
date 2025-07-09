@@ -12,8 +12,8 @@ const { productName, price } = defineProps<Props>()
     <h1 class="mb-2 text-3xl font-bold">
       Passer commande
     </h1>
-    <div class="flex flex-col text-lg sm:flex-row">
-      <span>{{ productName }} - {{ toCurrency(price) }}</span>
-    </div>
+    <h2 class="text-xl">
+      {{ productName }} - {{ toCurrency(price) }}
+    </h2>
   </div>
 </template>

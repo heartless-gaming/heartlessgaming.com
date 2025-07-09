@@ -33,7 +33,7 @@ const isShippingLocked = ref(true)
 const isPaymentLocked = ref(true)
 const stepper = ref(0)
 
-// implement step locking when goin backward or refresh next steps
+// implement step locking when going backward or refresh next steps
 function nextStep() {
   // if (contactformValid) {
   isShippingLocked.value = false
@@ -51,7 +51,7 @@ async function topkek() {
 </script>
 
 <template>
-  <div class="container mx-auto mb-12 px-2">
+  <div class="mx-auto mb-12 max-w-3xl px-2">
     <header
       class="
         mb-4
@@ -67,7 +67,7 @@ async function topkek() {
     </p>
     <main>
       <CheckoutTitle :product-name="shirt.name" :price="shirt.price" />
-      <button class="btn mb-4 btn-success" @click="topkek">
+      <button class="btn mb-4 hidden btn-success" @click="topkek">
         test place printful order
       </button>
       <div class="join-vertical mb-10 join w-full">
@@ -99,7 +99,7 @@ async function topkek() {
           </div>
         </div>
       </div>
-      <div class="collapse-arrow collapse bg-base-200">
+      <div class="collapse-arrow collapse bg-base-300">
         <input type="checkbox" checked="true" class="peer">
         <div
           class="collapse-title bg-base-200"

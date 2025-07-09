@@ -3,108 +3,98 @@ defineEmits(['submit'])
 </script>
 
 <template>
-  <div>
-    <div
+  <form
+    class="
+      grid gap-x-4 gap-y-4
+      sm:grid-cols-4
+    "
+    @submit.prevent="$emit('submit')"
+  >
+    <fieldset
       class="
-        gap-4
-        sm:flex
+        fieldset
+        sm:col-span-2
       "
     >
-      <div>
-        <label class="form-control w-full max-w-xs">
-          <div class="label">
-            <span class="label-text">Prénom</span>
-          </div>
-          <input
-            type="text" placeholder="Ex: Gordon"
-            class="input-bordered input w-full"
-          >
-          <div class="label">
-            <span class="label-text-alt text-warning">Bottom Left label</span>
-          </div>
-        </label>
-      </div>
-      <div>
-        <label class="form-control w-full">
-          <div class="label">
-            <span class="label-text">Nom</span>
-          </div>
-          <input
-            type="text" placeholder="Ex: Freeman" class="
-              input-bordered input w-full
-            "
-          >
-          <div class="label">
-            <span class="label-text-alt text-warning">Bottom Left label</span>
-          </div>
-        </label>
-      </div>
-    </div>
-    <label class="form-control w-full">
-      <div class="label">
-        <span class="label-text">Email</span>
-      </div>
-      <input
-        type="text" placeholder="Ex: g.freeman@blackmesa.fr" class="
-          input-bordered input w-full
-        "
-      >
-      <div class="label">
-        <span class="label-text-alt text-warning">Bottom Left label</span>
-      </div>
-    </label>
-    <label class="form-control w-full">
-      <div class="label">
-        <span class="label-text">Adresse</span>
-      </div>
-      <input
-        type="text" placeholder="Ex: 1 Place Stanislas" class="
-          input-bordered input w-full
-        "
-      >
-      <div class="label">
-        <span class="label-text-alt text-warning">Bottom Left label</span>
-      </div>
-    </label>
-    <div
+      <legend class="fieldset-legend">
+        Prénom
+      </legend>
+      <input type="text" class="input input-lg w-full" placeholder="Gordon">
+    </fieldset>
+    <fieldset
       class="
-        gap-4
-        sm:flex
+        fieldset
+        sm:col-span-2
       "
     >
-      <div>
-        <label class="form-control w-full max-w-xs">
-          <div class="label">
-            <span class="label-text">Code Postal</span>
-          </div>
-          <input
-            type="text" placeholder="Ex: 54000" class="
-              input-bordered input w-full
-            "
-          >
-          <div class="label">
-            <span class="label-text-alt text-warning">Bottom Left label</span>
-          </div>
-        </label>
-      </div>
-      <div>
-        <label class="form-control w-full">
-          <div class="label">
-            <span class="label-text">Ville</span>
-          </div>
-          <input
-            type="text" placeholder="Ex: Nancy" class="
-              input-bordered input w-full
-            "
-          >
-          <div class="label">
-            <span class="label-text-alt text-warning">Bottom Left label</span>
-          </div>
-        </label>
-      </div>
+      <legend class="fieldset-legend">
+        Nom
+      </legend>
+      <input type="text" class="input input-lg w-full" placeholder="Freeman">
+    </fieldset>
+    <fieldset
+      class="
+        fieldset
+        sm:col-span-full
+      "
+    >
+      <legend class="fieldset-legend">
+        Adresse (numéro et nom de la rue)
+      </legend>
+      <input type="text" class="input input-lg w-full" placeholder="42 rue de la déchance du skill">
+    </fieldset>
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend">
+        Code postal
+      </legend>
+      <input type="text" class="input input-lg w-full" placeholder="42666">
+    </fieldset>
+    <fieldset
+      class="
+        fieldset
+        sm:col-span-2
+      "
+    >
+      <legend class="fieldset-legend">
+        Ville
+      </legend>
+      <input type="text" class="input input-lg w-full" placeholder="Beton-Bazoches">
+    </fieldset>
+    <fieldset class="fieldset" disabled>
+      <legend class="fieldset-legend">
+        Pays
+      </legend>
+      <input type="text" class="input input-lg w-full" value="France">
+    </fieldset>
+    <fieldset
+      class="
+        fieldset
+        sm:col-span-2
+      "
+    >
+      <legend class="fieldset-legend">
+        Email
+      </legend>
+      <input type="text" class="input input-lg w-full" placeholder="gordon@blackmesa.com">
+    </fieldset>
+    <fieldset
+      class="
+        fieldset
+        sm:col-span-2
+      "
+    >
+      <legend class="fieldset-legend">
+        Numéro de téléphone (optionnel)
+      </legend>
+      <input type="text" class="input input-lg w-full" placeholder="06 66 42 42 42">
+      <p class="label">
+        Permet de recevoir les mises à jour de livraison en temps réel
+      </p>
+    </fieldset>
+    <div class="sm:col-span-full">
+      <button class="btn btn-success">
+        Enregistrer et continuer
+      </button>
     </div>
-    <button class="btn btn-accent" @click="$emit('submit')">
-      Enregistrer et continuer
-    </button>
-  </div>
+  </form>
 </template>
