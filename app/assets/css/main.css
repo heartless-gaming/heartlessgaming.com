@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source inline("input-xs input-sm input-md input-lg input-xl");
 @plugin "daisyui" {
   themes: all;
 }

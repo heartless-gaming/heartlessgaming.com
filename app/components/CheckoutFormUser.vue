@@ -4,7 +4,7 @@ import { email, exactLength, required, string } from '@regle/rules'
 defineEmits(['submit'])
 
 const requiredMessage = withMessage(required, 'Ce champ est obligatoire')
-
+const size = 'lg'
 const formData = reactive({
   firstName: '',
   lastName: '',
@@ -45,6 +45,7 @@ r$.phone.$touch()
   >
     <Input
       v-model="r$.$value.firstName"
+      :size
       class="sm:col-span-2"
       label="Prénom"
       placeholder="Gordon"
@@ -52,6 +53,7 @@ r$.phone.$touch()
     />
     <Input
       v-model="r$.$value.lastName"
+      :size
       class="sm:col-span-2"
       label="Nom"
       placeholder="Freeman"
@@ -59,6 +61,7 @@ r$.phone.$touch()
     />
     <Input
       v-model="r$.$value.address"
+      :size
       class="sm:col-span-full"
       label="Adresse (numéro et nom de la rue) "
       placeholder="42 rue de la déchance du skill"
@@ -66,12 +69,14 @@ r$.phone.$touch()
     />
     <Input
       v-model="r$.$value.postalCode"
+      :size
       label="Code postal"
       placeholder="42666"
       :errors="r$.$errors.postalCode"
     />
     <Input
       v-model="r$.$value.city"
+      :size
       class="sm:col-span-2"
       label="Ville"
       placeholder="Beton-Bazoches"
@@ -79,25 +84,30 @@ r$.phone.$touch()
     />
     <Input
       v-model="r$.$value.country"
+      :size
       label="Pays"
       :errors="r$.$errors.country"
       disabled
     />
     <Input
       v-model="r$.$value.email"
+      :size
       class="sm:col-span-2"
+      type="email"
       label="Email"
       placeholder="gordon@blackmesa.com"
       :errors="r$.$errors.email"
     />
     <Input
       v-model="r$.$value.phone"
+      :size
+      type="tel"
       class="sm:col-span-2"
       label="Numéro de téléphone (optionnel)"
       placeholder="06 66 42 42 42"
     />
     <div class="sm:col-span-full">
-      <button class="btn btn-success" :disabled="!r$.$correct">
+      <button class="btn btn-lg btn-success" :disabled="!r$.$correct">
         Enregistrer et continuer
       </button>
     </div>

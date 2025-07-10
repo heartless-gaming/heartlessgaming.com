@@ -1,13 +1,21 @@
 <script setup lang="ts">
-const { label, placeholder, errors } = defineProps({
+const { label, placeholder, errors, size } = defineProps({
+  type: { type: String, default: 'text' },
   label: String,
+  size: {
+    type: String,
+    validator(value) {
+      return ['xs', 'sm', 'md', 'lg', 'xl'].includes(value)
+    },
+  },
   placeholder: String,
   errors: { type: Array, default: [] },
 })
 
-watch(() => errors, () => {
-  console.log(errors)
-})
+const inputClass = computed(() => [
+  { 'input-error': errors.length },
+  size ? `input-${size}` : '',
+])
 
 const model = defineModel()
 </script>
@@ -21,10 +29,10 @@ const model = defineModel()
     </legend>
     <input
       v-model="model"
-      type="text"
-      class="input input-lg w-full"
+      :type
+      class="input w-full"
       :placeholder="placeholder"
-      :class="{ 'input-error': errors.length }"
+      :class="inputClass"
     >
     <ul v-if="errors" class="text-error">
       <li v-for="error of errors" :key="error">
