@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const { data: shirts } = await useFetch('/api/getShirt')
+console.log(shirts.value.map(shirt => shirt.sku));
 
 const colors = computed(() => shirts.value.reduce((acc, shirt) => {
   if (!acc.find(color => color.name === shirt.color)) {
@@ -13,9 +14,9 @@ const colors = computed(() => shirts.value.reduce((acc, shirt) => {
 
 const activeColor: Ref<number> = ref(2)
 const activeSize: Ref<number> = ref(2)
-const activeSKU: Ref<string> = ref('669C1FAF72C24_Burgundy-L')
+const activeSKU: Ref<string> = ref('686E635939BA0_Burgundy-L')
 
-const price = ref(23.95)
+const price = ref(25.50)
 const activeImagePath = computed(() => `/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors.value[activeColor.value].name)}.jpg`)
 
 const sizes = computed(() => shirts.value.reduce((acc, shirt) => {

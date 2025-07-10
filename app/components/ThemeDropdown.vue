@@ -34,9 +34,9 @@ const currentTheme = useLocalStorage('theme', '')
           v-model="currentTheme"
           type="radio"
           name="theme-dropdown"
+          :class="{ 'bg-primary': theme === currentTheme, 'text-primary-content': theme === currentTheme }"
           class="
-            theme-controller btn btn-block justify-start btn-ghost btn-sm
-            btn-primary
+            theme-controller btn justify-start btn-ghost btn-sm btn-primary
           "
           :aria-label="capitalizeFirstLetter(theme)"
           :value="theme"
