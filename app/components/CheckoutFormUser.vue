@@ -1,5 +1,38 @@
 <script setup lang="ts">
+import { email, exactLength, required, string } from '@regle/rules'
+
 defineEmits(['submit'])
+
+const requiredMessage = withMessage(required, 'Ce champ est obligatoire')
+
+const formData = reactive({
+  firstName: '',
+  lastName: '',
+  address: '',
+  postalCode: '',
+  city: '',
+  country: 'France',
+  email: '',
+  phone: '',
+})
+
+const formRules = {
+  firstName: { required: requiredMessage },
+  lastName: { required: requiredMessage },
+  address: { required: requiredMessage },
+  postalCode: { required: requiredMessage, exactLength: exactLength(5) },
+  city: { required: requiredMessage },
+  country: { required: requiredMessage },
+  email: {
+    required: requiredMessage,
+    email: withMessage(email, 'Cette adresse e-mail n\'est pas valide'),
+  },
+}
+
+const { r$ } = useRegle(formData, formRules)
+
+r$.country.$touch()
+r$.phone.$touch()
 </script>
 
 <template>
@@ -10,89 +43,61 @@ defineEmits(['submit'])
     "
     @submit.prevent="$emit('submit')"
   >
-    <fieldset
-      class="
-        fieldset
-        sm:col-span-2
-      "
-    >
-      <legend class="fieldset-legend">
-        Prénom
-      </legend>
-      <input type="text" class="input input-lg w-full" placeholder="Gordon">
-    </fieldset>
-    <fieldset
-      class="
-        fieldset
-        sm:col-span-2
-      "
-    >
-      <legend class="fieldset-legend">
-        Nom
-      </legend>
-      <input type="text" class="input input-lg w-full" placeholder="Freeman">
-    </fieldset>
-    <fieldset
-      class="
-        fieldset
-        sm:col-span-full
-      "
-    >
-      <legend class="fieldset-legend">
-        Adresse (numéro et nom de la rue)
-      </legend>
-      <input type="text" class="input input-lg w-full" placeholder="42 rue de la déchance du skill">
-    </fieldset>
-    <fieldset class="fieldset">
-      <legend class="fieldset-legend">
-        Code postal
-      </legend>
-      <input type="text" class="input input-lg w-full" placeholder="42666">
-    </fieldset>
-    <fieldset
-      class="
-        fieldset
-        sm:col-span-2
-      "
-    >
-      <legend class="fieldset-legend">
-        Ville
-      </legend>
-      <input type="text" class="input input-lg w-full" placeholder="Beton-Bazoches">
-    </fieldset>
-    <fieldset class="fieldset" disabled>
-      <legend class="fieldset-legend">
-        Pays
-      </legend>
-      <input type="text" class="input input-lg w-full" value="France">
-    </fieldset>
-    <fieldset
-      class="
-        fieldset
-        sm:col-span-2
-      "
-    >
-      <legend class="fieldset-legend">
-        Email
-      </legend>
-      <input type="text" class="input input-lg w-full" placeholder="gordon@blackmesa.com">
-    </fieldset>
-    <fieldset
-      class="
-        fieldset
-        sm:col-span-2
-      "
-    >
-      <legend class="fieldset-legend">
-        Numéro de téléphone (optionnel)
-      </legend>
-      <input type="text" class="input input-lg w-full" placeholder="06 66 42 42 42">
-      <p class="label">
-        Permet de recevoir les mises à jour de livraison en temps réel
-      </p>
-    </fieldset>
+    <Input
+      v-model="r$.$value.firstName"
+      class="sm:col-span-2"
+      label="Prénom"
+      placeholder="Gordon"
+      :errors="r$.$errors.firstName"
+    />
+    <Input
+      v-model="r$.$value.lastName"
+      class="sm:col-span-2"
+      label="Nom"
+      placeholder="Freeman"
+      :errors="r$.$errors.lastName"
+    />
+    <Input
+      v-model="r$.$value.address"
+      class="sm:col-span-full"
+      label="Adresse (numéro et nom de la rue) "
+      placeholder="42 rue de la déchance du skill"
+      :errors="r$.$errors.address"
+    />
+    <Input
+      v-model="r$.$value.postalCode"
+      label="Code postal"
+      placeholder="42666"
+      :errors="r$.$errors.postalCode"
+    />
+    <Input
+      v-model="r$.$value.city"
+      class="sm:col-span-2"
+      label="Ville"
+      placeholder="Beton-Bazoches"
+      :errors="r$.$errors.city"
+    />
+    <Input
+      v-model="r$.$value.country"
+      label="Pays"
+      :errors="r$.$errors.country"
+      disabled
+    />
+    <Input
+      v-model="r$.$value.email"
+      class="sm:col-span-2"
+      label="Email"
+      placeholder="gordon@blackmesa.com"
+      :errors="r$.$errors.email"
+    />
+    <Input
+      v-model="r$.$value.phone"
+      class="sm:col-span-2"
+      label="Numéro de téléphone (optionnel)"
+      placeholder="06 66 42 42 42"
+    />
     <div class="sm:col-span-full">
-      <button class="btn btn-success">
+      <button class="btn btn-success" :disabled="!r$.$correct">
         Enregistrer et continuer
       </button>
     </div>

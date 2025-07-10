@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@pinia/nuxt',
     'nuxt-security',
+    '@regle/nuxt',
   ],
 
   vite: { plugins: [tailwindcss()] },

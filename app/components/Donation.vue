@@ -57,7 +57,7 @@
         </ul>
         <NuxtLink
           to="https://buy.stripe.com/dR6aG3fIr1zg2Qw7ss"
-          class="btn mb-1 mb-2 w-full uppercase btn-lg btn-accent"
+          class="btn mb-2 w-full uppercase btn-lg btn-accent"
         >
           Tu le mérites, prends mon argent !
         </NuxtLink>

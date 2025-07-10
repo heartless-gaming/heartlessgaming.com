@@ -33,12 +33,14 @@ const isShippingLocked = ref(true)
 const isPaymentLocked = ref(true)
 const stepper = ref(0)
 
+const contactformValid = ref(false)
+
 // implement step locking when going backward or refresh next steps
 function nextStep() {
-  // if (contactformValid) {
-  isShippingLocked.value = false
-  isPaymentLocked.value = false
-  // }
+  if (contactformValid.value) {
+    isShippingLocked.value = false
+    isPaymentLocked.value = false
+  }
   stepper.value++
 }
 
@@ -81,7 +83,12 @@ async function topkek() {
           </div>
         </div>
         <div class="collapse-arrow collapse join-item border border-base-300">
-          <input v-model="stepper" type="radio" value="1" :disabled="isShippingLocked">
+          <input
+            v-model="stepper"
+            type="radio"
+            value="1"
+            :disabled="isShippingLocked"
+          >
           <div class="collapse-title text-xl" :class="{ 'opacity-50': isShippingLocked }">
             Livraison
           </div>
@@ -90,7 +97,12 @@ async function topkek() {
           </div>
         </div>
         <div class="collapse-arrow collapse join-item border border-base-300">
-          <input v-model="stepper" type="radio" value="2" :disabled="isPaymentLocked">
+          <input
+            v-model="stepper"
+            type="radio"
+            value="2"
+            :disabled="isPaymentLocked"
+          >
           <div class="collapse-title text-xl" :class="{ 'opacity-50': isShippingLocked }">
             Paiement
           </div>

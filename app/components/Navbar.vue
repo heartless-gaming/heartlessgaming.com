@@ -13,10 +13,14 @@
     >
       <li>
         <NuxtLink
-          to="/" class="
+          to="/"
+          class="
             group
             hover:bg-base-content/10
-          " aria-label="Retour à la page d'accueil" title="Accueil" exact-active-class="bg-base-content/5"
+          "
+          aria-label="Retour à la page d'accueil"
+          title="Accueil"
+          exact-active-class="bg-base-content/5"
         >
           <SvgLogoHeartlessgamingSkull2020
             class="
@@ -29,10 +33,12 @@
       </li>
       <li>
         <NuxtLink
-          to="/t-shirt-logo-brode-coton" class="
+          to="/t-shirt-logo-brode-coton"
+          class="
             group
             hover:bg-base-content/10
-          " exact-active-class="bg-base-content/5"
+          "
+          exact-active-class="bg-base-content/5"
         >
           <Icon
             name="mdi:tshirt-crew"

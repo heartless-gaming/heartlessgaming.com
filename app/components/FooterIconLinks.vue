@@ -16,7 +16,8 @@ const links = [
     "
   >
     <div
-      v-for="(link, index) in links" :key="index"
+      v-for="(link, index) in links"
+      :key="index"
       class="tooltip flex place-content-center"
       :data-tip="link.app"
     >

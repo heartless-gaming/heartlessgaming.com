@@ -11,7 +11,9 @@
         <p>Pas de cookie 🍪 sur ce site car il fait un régime kéto 🥑</p>
         <p>
           Logo réalisé par Markus - Site réalisé par <NuxtLink
-            to="https://skullmasher.io" external class="pretty-link"
+            to="https://skullmasher.io"
+            external
+            class="pretty-link"
           >
             Skullmasher
           </NuxtLink>

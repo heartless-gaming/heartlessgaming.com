@@ -19,6 +19,11 @@ export default withNuxt(
     },
   },
   antfu({
-    // ...@antfu/eslint-config options
+    rules: {
+      'vue/max-attributes-per-line': ['error', {
+        singleline: { max: 3 },
+        multiline: { max: 1 },
+      }],
+    },
   }),
 )
