@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
     { name: 'Lavender', hex: '#f7ecff' },
     { name: 'White', hex: '#ffffff' },
   ]
-  
+
   // Helper to find the shirt ID in the store
   // const topkek = await $fetch('https://api.printful.com/store/products', { headers })
   // console.log(topkek);

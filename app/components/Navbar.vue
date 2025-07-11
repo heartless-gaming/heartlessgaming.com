@@ -1,15 +1,13 @@
 <template>
-  <div
+  <nav
     class="
-      sticky top-4 z-10 my-4 flex justify-center
+      sticky top-4 z-10 mx-auto my-4 w-fit rounded-box bg-neutral/20 shadow
+      shadow-neutral/60 backdrop-blur-lg
       sm:top-8 sm:my-8
     "
   >
     <ul
-      class="
-        menu menu-horizontal gap-2 rounded-box bg-neutral/30 text-base shadow-lg
-        backdrop-blur-xl
-      "
+      class="menu menu-horizontal gap-2 text-base"
     >
       <li>
         <NuxtLink
@@ -54,5 +52,5 @@
         <ThemeDropdown />
       </li>
     </ul>
-  </div>
+  </nav>
 </template>

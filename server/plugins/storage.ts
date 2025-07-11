@@ -9,7 +9,7 @@ export default defineNitroPlugin(() => {
     host: redisHost,
     port: redisPort,
     username: redisUser,
-    password : redisPass,
+    password: redisPass,
     base: 'hg',
   })
 

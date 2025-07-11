@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const { printfulToken } = useRuntimeConfig()
 const route = useRoute()
 const { data: shirts } = await useFetch('/api/getShirt')
+
 const shirt = shirts.value.find(shirt => shirt.sku === route.params.sku)
 
 // Redirect to shirt page if sku is not correct
@@ -33,27 +33,26 @@ const isShippingLocked = ref(true)
 const isPaymentLocked = ref(true)
 const stepper = ref(0)
 
-const contactformValid = ref(false)
-
 // implement step locking when going backward or refresh next steps
 function nextStep() {
-  if (contactformValid.value) {
-    isShippingLocked.value = false
-    isPaymentLocked.value = false
-  }
+  // calculateShippingRates()
+  isShippingLocked.value = false
+  isPaymentLocked.value = false
+
   stepper.value++
 }
 
-async function topkek() {
-  const kek = await $fetch('/api/place-order', {
-    method: 'POST',
-    // body,
-  })
-}
+const currentTheme = useLocalStorage('theme', '')
 </script>
 
 <template>
   <div class="mx-auto mb-12 max-w-3xl px-2">
+    <input
+      type="radio"
+      class="theme-controller hidden"
+      :value="currentTheme"
+      checked
+    >
     <header
       class="
         mb-4
@@ -63,50 +62,35 @@ async function topkek() {
       <NavbarCheckout />
     </header>
     <p
-      class="mb-10 animate-bounce text-center text-4xl"
+      class="mb-6 animate-bounce text-center text-4xl"
     >
       🚧 Page en construction c'est le bordel içi 🚧
     </p>
     <main>
-      <CheckoutTitle :product-name="shirt.name" :price="shirt.price" />
-      <button class="btn mb-4 hidden btn-success" @click="topkek">
-        test place printful order
-      </button>
-      <div class="join-vertical mb-10 join w-full">
-        <div class="collapse-arrow collapse join-item border border-base-300">
-          <input v-model="stepper" type="radio" value="0">
-          <div class="collapse-title text-xl">
-            Contact & Adresse
+      <CheckoutTitle />
+      <CheckoutPreview :shirt />
+      <div class="">
+        <div class="">
+          <div class="text-xl">
+            Calcul des frais de livraison
           </div>
-          <div class="collapse-content">
+          <div class="">
             <CheckoutFormUser @submit="nextStep()" />
           </div>
         </div>
-        <div class="collapse-arrow collapse join-item border border-base-300">
-          <input
-            v-model="stepper"
-            type="radio"
-            value="1"
-            :disabled="isShippingLocked"
-          >
-          <div class="collapse-title text-xl" :class="{ 'opacity-50': isShippingLocked }">
+        <div class="">
+          <div class="text-xl" :class="{ 'opacity-50': isShippingLocked }">
             Livraison
           </div>
-          <div class="collapse-content">
+          <div class="">
             <CheckoutFormShipping />
           </div>
         </div>
-        <div class="collapse-arrow collapse join-item border border-base-300">
-          <input
-            v-model="stepper"
-            type="radio"
-            value="2"
-            :disabled="isPaymentLocked"
-          >
-          <div class="collapse-title text-xl" :class="{ 'opacity-50': isShippingLocked }">
+        <div class="">
+          <div class="text-xl" :class="{ 'opacity-50': isShippingLocked }">
             Paiement
           </div>
-          <div class="collapse-content">
+          <div>
             <CheckoutFormPayment />
           </div>
         </div>

@@ -44,6 +44,8 @@
     "eslint-plugin-better-tailwindcss": "^3.4.4",
     "nuxt": "^3.17.6",
     "nuxt-security": "^2.2.0",
-    "nuxt-svgo": "^4.2.3"
+    "nuxt-svgo": "^4.2.3",
+    "typescript": "^5.8.3",
+    "vue-tsc": "^3.0.1"
   }
 }

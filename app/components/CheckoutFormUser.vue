@@ -1,21 +1,12 @@
 <script setup lang="ts">
-import { email, exactLength, required, string } from '@regle/rules'
+import { email, exactLength, required } from '@regle/rules'
 
 defineEmits(['submit'])
 
-const requiredMessage = withMessage(required, 'Ce champ est obligatoire')
 const size = 'lg'
-const formData = reactive({
-  firstName: '',
-  lastName: '',
-  address: '',
-  postalCode: '',
-  city: '',
-  country: 'France',
-  email: '',
-  phone: '',
-})
+const formData = useCheckoutUserFormData()
 
+const requiredMessage = withMessage(required, 'Ce champ est obligatoire')
 const formRules = {
   firstName: { required: requiredMessage },
   lastName: { required: requiredMessage },
@@ -107,7 +98,10 @@ r$.phone.$touch()
       placeholder="06 66 42 42 42"
     />
     <div class="sm:col-span-full">
-      <button class="btn btn-lg btn-success" :disabled="!r$.$correct">
+      <button class="btn btn-success">
+        Enregistrer et continuer
+      </button>
+      <button class="btn btn-success" :disabled="!r$.$correct">
         Enregistrer et continuer
       </button>
     </div>

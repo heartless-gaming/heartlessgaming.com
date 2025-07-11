@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flow-root">
     <Navbar />
     <header class="group relative mb-16 text-center">
       <HeroEffect />
