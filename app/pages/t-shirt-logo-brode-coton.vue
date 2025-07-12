@@ -163,7 +163,10 @@ function changeSize(index: number) {
             <button
               v-for="(size, index) in sizes"
               :key="index"
-              class="btn w-28 text-2xl"
+              class="
+                btn w-24 text-2xl
+                sm:w-28
+              "
               :class="{ 'btn-primary': activeSize === index, 'btn-outline': activeSize !== index }"
               @click="changeSize(index)"
             >
@@ -173,69 +176,98 @@ function changeSize(index: number) {
           <p class="mb-8 text-7xl font-bold tracking-wide">
             {{ toCurrency(price) }}
           </p>
-          <div class="mb-16">
-            <NuxtLink
-              class="btn btn-wide uppercase btn-lg btn-primary"
-              :to="`/checkout/${activeSKU}`"
-            >
-              Ajouter au panier
-            </NuxtLink>
-          </div>
-          <div class="collapse-arrow collapse bg-base-200">
-            <input type="checkbox" checked="true" class="peer">
+          <div class="mb-16 flex flex-col gap-4">
             <div
-              class="collapse-title bg-base-200"
+              class="
+                mb-16 flex flex-col gap-x-4 gap-y-4
+                sm:flex-row
+              "
             >
-              Information suplémentaires
-            </div>
-            <div
-              class="collapse-content bg-base-200"
-            >
-              <ul
+              <NuxtLink
                 class="
-                  list-inside list-disc pl-4 leading-relaxed
-                  marker:text-primary
+                  btn btn-block uppercase btn-lg btn-primary
+                  sm:btn-wide
                 "
+                :to="`/checkout/${activeSKU}`"
               >
-                <li>
-                  Broderie sur un
-                  <NuxtLink
-                    class="pretty-link"
-                    to="https://stanleystella.com/fr-fr/creator-2-0-sttu169"
-                    target="_blank"
-                    external
-                  >
-                    T-shirt Stanley/Stella 100% coton biologique vegan
-                  </NuxtLink>
-                </li>
-                <li>
-                  Imprimé à la demande (dropshiping) par
-                  <NuxtLink
-                    to="https://www.printful.com"
-                    class="pretty-link"
-                    target="_blank"
-                    external
-                  >
-                    Printful
-                  </NuxtLink>
-                </li>
-                <li>
-                  Gestion des paiment par
-                  <NuxtLink
-                    to="https://dashboard.stripe.com/"
-                    class="pretty-link"
-                    target="_blank"
-                    external
-                  >
-                    Stripe
-                  </NuxtLink>
-                </li>
-                <li>Cout de fabrication du tee shirt 13,95€ & 19,15€ pour les tailles à partir de 3XL</li>
-                <li>Prix d'expédition entre 3.99€ & 10.59€, ~5€ vers la France depuis la warehouse Printful de Barcelone</li>
-                <li>1.5% + 0.25€ prélevé par Stripe sur chaque transaction</li>
-                <li>Marge maximal sur chaque vente: 6€</li>
-                <li>L'email saisi servira à assurer le suivi de la commande uniquement</li>
-              </ul>
+                Ajouter au panier
+              </NuxtLink>
+              <label
+                for="cart-drawer"
+                class="
+                  btn btn-block uppercase btn-outline btn-lg btn-primary
+                  sm:btn-wide
+                "
+                :to="`/checkout/${activeSKU}`"
+              >
+                Voir mon panier
+              </label>
+              <NuxtLink
+                class="
+                  btn btn-block uppercase btn-outline btn-lg btn-primary
+                  sm:btn-wide
+                "
+                :to="`/checkout/${activeSKU}`"
+              >
+                Paiement
+              </NuxtLink>
+            </div>
+            <div class="collapse-arrow collapse bg-base-200">
+              <input type="checkbox" checked="true" class="peer">
+              <div
+                class="collapse-title bg-base-200"
+              >
+                Information suplémentaires
+              </div>
+              <div
+                class="collapse-content bg-base-200"
+              >
+                <ul
+                  class="
+                    list-inside list-disc pl-4 leading-relaxed
+                    marker:text-primary
+                  "
+                >
+                  <li>
+                    Broderie sur un
+                    <NuxtLink
+                      class="pretty-link"
+                      to="https://stanleystella.com/fr-fr/creator-2-0-sttu169"
+                      target="_blank"
+                      external
+                    >
+                      T-shirt Stanley/Stella 100% coton biologique vegan
+                    </NuxtLink>
+                  </li>
+                  <li>
+                    Imprimé à la demande (dropshiping) par
+                    <NuxtLink
+                      to="https://www.printful.com"
+                      class="pretty-link"
+                      target="_blank"
+                      external
+                    >
+                      Printful
+                    </NuxtLink>
+                  </li>
+                  <li>
+                    Gestion des paiment par
+                    <NuxtLink
+                      to="https://dashboard.stripe.com/"
+                      class="pretty-link"
+                      target="_blank"
+                      external
+                    >
+                      Stripe
+                    </NuxtLink>
+                  </li>
+                  <li>Cout de fabrication du tee shirt 13,95€ & 19,15€ pour les tailles à partir de 3XL</li>
+                  <li>Prix d'expédition entre 3.99€ & 10.59€, ~5€ vers la France depuis la warehouse Printful de Barcelone</li>
+                  <li>1.5% + 0.25€ prélevé par Stripe sur chaque transaction</li>
+                  <li>Marge maximal sur chaque vente: 6€</li>
+                  <li>L'email saisi servira à assurer le suivi de la commande uniquement</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>

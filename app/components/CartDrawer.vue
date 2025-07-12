@@ -4,9 +4,11 @@
     <div class="drawer-content">
       <slot />
     </div>
-    <div class="drawer-side z-20">
+    <div class="drawer-side z-20 duration-100">
       <label for="cart-drawer" aria-label="close sidebar" class="drawer-overlay" />
-      <div class="min-h-full w-80 bg-base-200 p-4 text-base-content">
+      <div
+        class="min-h-full w-80 bg-base-200 p-4 text-base-content duration-150"
+      >
         <CartTitle />
         <CartContent />
       </div>
