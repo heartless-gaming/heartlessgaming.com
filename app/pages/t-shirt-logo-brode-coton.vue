@@ -6,8 +6,10 @@ useHead({
   ],
 })
 
-const route = useRoute()
 const { data: shirts } = await useFetch('/api/getShirt')
+
+const cartStore = useCartStore()
+const { addToCart } = cartStore
 
 const colors = computed(() => shirts.value.reduce((acc, shirt) => {
   if (!acc.find(color => color.name === shirt.color)) {
@@ -40,7 +42,7 @@ const updateSKU = () => activeSKU.value = activeShirt.value.sku
 
 function changeColor(index: number) {
   activeColor.value = index
-  // if the size is not avalable in this color defaults to L
+  // if the size is not available in this color defaults to L
   if (activeSize.value >= sizes.value.length) {
     activeSize.value = 2
   }
@@ -183,15 +185,15 @@ function changeSize(index: number) {
                 sm:flex-row
               "
             >
-              <NuxtLink
+              <button
                 class="
                   btn btn-block uppercase btn-lg btn-primary
                   sm:btn-wide
                 "
-                :to="`/checkout/${activeSKU}`"
+                @click="addToCart(activeShirt)"
               >
                 Ajouter au panier
-              </NuxtLink>
+              </button>
               <label
                 for="cart-drawer"
                 class="

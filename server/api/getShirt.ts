@@ -32,12 +32,15 @@ export default defineEventHandler(async (event) => {
 
   const fetchShirt = await $fetch(url, { headers })
 
+  const productName = fetchShirt.result.sync_product.name
+
   const shirts = fetchShirt.result.sync_variants.map((variant) => {
-    const { availability_status, name, size, retail_price: price, color, sku } = variant
+    const { availability_status, name: variantName, size, retail_price: price, color, sku } = variant
 
     return {
       available: availability_status === 'active',
-      name,
+      name: productName,
+      variantName,
       size,
       price,
       color,

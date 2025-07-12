@@ -8,10 +8,10 @@
       aria-label="close sidebar"
       class="
         grid size-10 place-content-center rounded-full transition-colors
-        hover:bg-base-100
+        hover:bg-primary
       "
     >
-      <Icon name="material-symbols:close-rounded" size="2.2em" />
+      <Icon name="material-symbols:close-rounded" size="2.1em" />
     </label>
   </div>
 </template>
