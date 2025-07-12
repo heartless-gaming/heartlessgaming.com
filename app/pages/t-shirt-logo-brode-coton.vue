@@ -81,7 +81,7 @@ function changeSize(index: number) {
                 "
               >
                 <NuxtPicture
-                  sizes="360px sm:500px"
+                  sizes="320px sm:500px"
                   width="500"
                   height="500"
                   :src="`/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(color.name)}.jpg`"

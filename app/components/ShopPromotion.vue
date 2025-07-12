@@ -26,18 +26,20 @@
       <NuxtLink
         to="t-shirt-logo-brode-coton"
         class="
-          card w-full max-w-sm shrink-0 bg-base-200 shadow-xl ring-1
-          ring-transparent ring-offset-0 ring-offset-base-100 transition
+          card max-w-sm shrink-0 bg-base-200 shadow-xl ring-1 ring-transparent
+          ring-offset-0 ring-offset-base-100 transition
           hover:ring-4 hover:ring-primary hover:ring-offset-4
         "
       >
         <figure class="skeleton rounded-b-none">
           <NuxtPicture
-            sizes="360px sm:500px"
+            sizes="384px"
             width="320"
             height="320"
+            class="w-full"
             src="/img/shirt/embroidered-heartlessgaming-t-shirt-burgundy.jpg"
             alt="Homme portant un tee shirt bordeaux sur fond abstrait"
+            :img-attrs="{ class: 'w-full' }"
           />
         </figure>
         <div class="card-body gap-y-6">
