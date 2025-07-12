@@ -4,9 +4,9 @@
     <div>
       <NuxtLink
         to="/t-shirt-logo-brode-coton"
-        class="btn btn-wide btn-primary"
+        class="btn btn-wide uppercase btn-primary"
       >
-        Voir les T-shirt
+        Voir le T-shirt
       </NuxtLink>
     </div>
   </div>

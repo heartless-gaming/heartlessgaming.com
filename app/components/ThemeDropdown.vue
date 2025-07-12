@@ -6,7 +6,9 @@ const currentTheme = useLocalStorage('theme', '')
 </script>
 
 <template>
-  <div class="dropdown dropdown-end dropdown-bottom p-0">
+  <div
+    class="dropdown dropdown-center dropdown-bottom p-0"
+  >
     <button
       tabindex="0"
       role="button"
@@ -41,15 +43,13 @@ const currentTheme = useLocalStorage('theme', '')
           type="radio"
           name="theme-dropdown"
           :class="{ 'bg-primary': theme === currentTheme, 'text-primary-content': theme === currentTheme }"
-          class="
-            theme-controller btn justify-start btn-ghost btn-sm btn-primary
-          "
+          class="theme-controller btn justify-start btn-ghost btn-primary"
           :aria-label="capitalizeFirstLetter(theme)"
           :value="theme"
         >
         <button
           :data-theme="theme"
-          class="absolute top-1.5 right-3 gap-1 bg-base-100"
+          class="absolute top-2.5 right-3 gap-1 bg-base-100"
           @click="currentTheme = theme"
         >
           <div class="size-2 rounded-full bg-base-content" />
