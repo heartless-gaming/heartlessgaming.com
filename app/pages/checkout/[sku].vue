@@ -33,13 +33,15 @@ const isShippingLocked = ref(true)
 const isPaymentLocked = ref(true)
 const stepper = ref(0)
 
+const isContactFormValid = ref(false)
+
 // implement step locking when going backward or refresh next steps
-function nextStep() {
+function contactFormValidated() {
+  isContactFormValid.value = true
   // calculateShippingRates()
   isShippingLocked.value = false
-  isPaymentLocked.value = false
-
   stepper.value++
+  // isPaymentLocked.value = false
 }
 
 const currentTheme = useLocalStorage('theme', '')
@@ -75,7 +77,8 @@ const currentTheme = useLocalStorage('theme', '')
             Calcul des frais de livraison
           </div>
           <div class="">
-            <CheckoutFormUser @submit="nextStep()" />
+            <CheckoutUserForm v-show="isContactFormValid" @submit="contactFormValidated()" />
+            <CheckoutUserFormPreview v-show="!isContactFormValid" @update-user-form="isContactFormValid = false" />
           </div>
         </div>
         <div class="">

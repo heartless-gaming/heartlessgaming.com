@@ -32,6 +32,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.2",
+    "@iconify-json/material-symbols": "^1.2.29",
+    "@iconify-json/solar": "^1.2.2",
     "@nuxt/eslint": "^1.5.2",
     "@nuxt/icon": "^1.15.0",
     "@nuxt/image": "^1.10.0",

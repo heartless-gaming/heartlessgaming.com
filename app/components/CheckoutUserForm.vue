@@ -22,6 +22,7 @@ const formRules = {
 
 const { r$ } = useRegle(formData, formRules)
 
+// make those field dirty to make sure r$.$correct works for form validation
 r$.country.$touch()
 r$.phone.$touch()
 </script>

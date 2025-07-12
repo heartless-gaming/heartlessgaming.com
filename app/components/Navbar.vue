@@ -7,7 +7,7 @@
     "
   >
     <ul
-      class="menu menu-horizontal gap-2 text-base"
+      class="menu menu-horizontal items-center gap-2 text-base"
     >
       <li>
         <NuxtLink
@@ -22,7 +22,7 @@
         >
           <SvgLogoHeartlessgamingSkull2020
             class="
-              size-6 p-0.5 transition-transform duration-300
+              size-6.5 p-0.5 transition-transform duration-300
               group-hover:-rotate-12
             "
             :font-controlled="false"
@@ -40,16 +40,35 @@
         >
           <Icon
             name="mdi:tshirt-crew"
+            size="1.5em"
             class="
-              text-xl transition-transform duration-300
+              transition-transform duration-300
               group-hover:rotate-12
             "
           />
-          <span>T-shirt</span>
+          <span
+            class="
+              hidden
+              sm:block
+            "
+          >T-shirt</span>
         </NuxtLink>
       </li>
       <li>
         <ThemeDropdown />
+      </li>
+      <li>
+        <label for="cart-drawer" class="drawer-button group">
+          <Icon
+            name="solar:bag-heart-bold"
+            size="1.4em"
+            class="
+              transition-transform duration-300
+              group-hover:scale-125 group-hover:rotate-5
+            "
+          />
+          <span>Panier</span>
+        </label>
       </li>
     </ul>
   </nav>

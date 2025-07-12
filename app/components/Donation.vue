@@ -59,7 +59,13 @@
           to="https://buy.stripe.com/dR6aG3fIr1zg2Qw7ss"
           class="btn mb-2 w-full uppercase btn-lg btn-accent"
         >
-          Tu le mérites, prends mon argent !
+          <span
+            class="
+              hidden
+              md:inline
+            "
+          >Tu le mérites,</span>
+          <span>Prends mon argent !</span>
         </NuxtLink>
         <p class="text-center text-sm text-base-content/50 italic">
           (Nous n'acceptons pas les bitcoincoin)

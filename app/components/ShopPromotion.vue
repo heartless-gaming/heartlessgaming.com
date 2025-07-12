@@ -34,8 +34,8 @@
         <figure class="skeleton rounded-b-none">
           <NuxtPicture
             sizes="360px sm:500px"
-            width="384"
-            height="384"
+            width="320"
+            height="320"
             src="/img/shirt/embroidered-heartlessgaming-t-shirt-burgundy.jpg"
             alt="Homme portant un tee shirt bordeaux sur fond abstrait"
           />

@@ -14,18 +14,24 @@ const currentTheme = useLocalStorage('theme', '')
     >
       <Icon
         name="mdi:palette-swatch-variant"
+        size="1.5em"
         class="
-          text-xl transition-transform duration-300
+          transition-transform duration-300
           group-hover:-rotate-45
           group-focus:-rotate-45
         "
       />
-      <span>Themes</span>
+      <span
+        class="
+          hidden
+          sm:block
+        "
+      >Themes</span>
     </button>
     <ul
       tabindex="0"
       class="
-        dropdown-content z-1 max-h-96 w-52 overflow-y-auto rounded-box
+        dropdown-content z-10 max-h-96 w-52 overflow-y-auto rounded-box
         bg-base-300 p-2 shadow-2xl
       "
     >
