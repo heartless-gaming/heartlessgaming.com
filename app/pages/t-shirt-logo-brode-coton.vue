@@ -9,6 +9,7 @@ useHead({
 const { data: shirts } = await useFetch('/api/getShirt')
 
 const cartStore = useCartStore()
+const { itemCount } = storeToRefs(cartStore)
 const { addToCart } = cartStore
 
 const colors = computed(() => shirts.value.reduce((acc, shirt) => {
@@ -200,19 +201,9 @@ function changeSize(index: number) {
                   btn btn-block uppercase btn-outline btn-lg btn-primary
                   sm:btn-wide
                 "
-                :to="`/checkout/${activeSKU}`"
               >
-                Voir mon panier
+                Voir mon panier <span v-show="itemCount">({{ itemCount }})</span>
               </label>
-              <NuxtLink
-                class="
-                  btn btn-block uppercase btn-outline btn-lg btn-primary
-                  sm:btn-wide
-                "
-                :to="`/checkout/${activeSKU}`"
-              >
-                Paiement
-              </NuxtLink>
             </div>
             <div class="collapse-arrow collapse bg-base-200">
               <input type="checkbox" checked="true" class="peer">

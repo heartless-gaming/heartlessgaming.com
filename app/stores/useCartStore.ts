@@ -1,6 +1,9 @@
 export const useCartStore = defineStore('cart', () => {
   const items = ref([])
+
   const isCartEmpty = computed(() => !items.value.length)
+  const itemCount = computed(() => items.value.length)
+  const total = computed(() => items.value.reduce((acc, item) => acc += Number(item.price), 0))
 
   function addToCart(shirt) {
     items.value.push(shirt)
@@ -10,7 +13,5 @@ export const useCartStore = defineStore('cart', () => {
     items.value.splice(index, 1)
   }
 
-  console.log(items.value)
-
-  return { items, isCartEmpty, addToCart, removeFromCart }
+  return { items, isCartEmpty, addToCart, removeFromCart, itemCount, total }
 })

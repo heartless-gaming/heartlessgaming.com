@@ -7,7 +7,10 @@
     <div class="drawer-side z-20 duration-100">
       <label for="cart-drawer" aria-label="close sidebar" class="drawer-overlay" />
       <div
-        class="min-h-full w-80 bg-base-200 p-4 text-base-content duration-150"
+        class="
+          grid min-h-full w-80 grid-rows-[auto_1fr] bg-base-200 p-4
+          text-base-content duration-150
+        "
       >
         <CartTitle />
         <CartContent />

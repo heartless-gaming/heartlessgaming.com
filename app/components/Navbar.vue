@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const store = useCartStore()
+const { itemCount } = storeToRefs(store)
+</script>
+
 <template>
   <nav
     class="
@@ -67,7 +72,7 @@
               group-hover:scale-125 group-hover:rotate-5
             "
           />
-          <span>Panier</span>
+          <span>Panier <span v-show="itemCount">({{ itemCount }})</span></span>
         </label>
       </li>
     </ul>
