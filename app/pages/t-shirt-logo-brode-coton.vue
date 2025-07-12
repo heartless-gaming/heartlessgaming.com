@@ -132,13 +132,13 @@ function changeSize(index: number) {
                   group-hover:ring-4 group-hover:ring-offset-4
                 "
                 :class="[
-                  activeColor === index ? 'ring-6 ring-success' : `
+                  activeColor === index ? 'ring-6 ring-primary' : `
                     ring-2 ring-base-content
                   `,
                 ]"
                 :style="`background-color: ${color.hex}`"
               />
-              <span class="font-bold tracking-normal" :class="{ 'text-success': activeColor === index }">{{ color.name }}</span>
+              <span class="font-bold tracking-normal" :class="{ 'text-primary': activeColor === index }">{{ color.name }}</span>
             </button>
           </div>
           <div
@@ -164,7 +164,7 @@ function changeSize(index: number) {
               v-for="(size, index) in sizes"
               :key="index"
               class="btn w-28 text-2xl"
-              :class="{ 'btn-success': activeSize === index, 'btn-outline': activeSize !== index }"
+              :class="{ 'btn-primary': activeSize === index, 'btn-outline': activeSize !== index }"
               @click="changeSize(index)"
             >
               {{ size }}
@@ -175,10 +175,10 @@ function changeSize(index: number) {
           </p>
           <div class="mb-16">
             <NuxtLink
-              class="btn uppercase btn-lg btn-accent"
+              class="btn btn-wide uppercase btn-lg btn-primary"
               :to="`/checkout/${activeSKU}`"
             >
-              Acheter
+              Ajouter au panier
             </NuxtLink>
           </div>
           <div class="collapse-arrow collapse bg-base-200">
