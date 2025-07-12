@@ -4,7 +4,7 @@ let interval: NodeJS.Timeout
 
 const max = 110
 const points = 16
-const duration = 10000
+const duration = 3500
 const rand = () => Math.floor(Math.random() * max)
 
 // Generate a random clip path for the effect

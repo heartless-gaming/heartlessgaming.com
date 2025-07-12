@@ -5,24 +5,11 @@
   <section class="hero mb-16">
     <div
       class="
-        hero-content max-w-screen-lg flex-col
-        md:flex-row-reverse
+        hero-content max-w-screen-lg flex-col gap-y-6
+        md:flex-row
         lg:p-0
       "
     >
-      <div
-        class="
-          text-center
-          lg:text-left
-        "
-      >
-        <h2 class="text-5xl font-bold text-shadow-lg">
-          Nouveau T-shirt disponible&nbsp;!
-        </h2>
-        <p class="py-6 text-lg">
-          Distribué en imprésion à la demande par Printful le T-shirt Heartless Gaming unisex est disponible. Paiement en ligne sécurisé par stripe.
-        </p>
-      </div>
       <NuxtLink
         to="t-shirt-logo-brode-coton"
         class="
@@ -46,11 +33,24 @@
           <h3 class="card-title">
             T-shirt Heartless Gaming logo brodé 100% coton
           </h3>
-          <button class="btn uppercase btn-primary">
+          <button class="btn uppercase btn-lg btn-primary">
             Acheter maintenant
           </button>
         </div>
       </NuxtLink>
+      <div
+        class="
+          text-center
+          lg:text-left
+        "
+      >
+        <h2 class="text-5xl font-bold text-shadow-lg">
+          Nouveau T-shirt disponible&nbsp;!
+        </h2>
+        <p class="py-6 text-lg">
+          Distribué en imprésion à la demande par Printful le T-shirt Heartless Gaming unisex est disponible. Paiement en ligne sécurisé par stripe.
+        </p>
+      </div>
     </div>
   </section>
 </template>

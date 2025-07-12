@@ -1,11 +1,10 @@
 <script setup lang="ts">
-const route = useRoute()
-const { data: shirts } = await useFetch('/api/getShirt')
-
-const shirt = shirts.value.find(shirt => shirt.sku === route.params.sku)
+const store = useCartStore()
+const { items, itemCount } = storeToRefs(store)
+console.log(items.value)
 
 // Redirect to shirt page if sku is not correct
-if (!shirt) {
+if (!itemCount.value) {
   navigateTo('/t-shirt-logo-brode-coton')
 }
 
@@ -63,14 +62,8 @@ const currentTheme = useLocalStorage('theme', '')
     >
       <NavbarCheckout />
     </header>
-    <p
-      class="mb-6 animate-bounce text-center text-4xl"
-    >
-      🚧 Page en construction c'est le bordel içi 🚧
-    </p>
     <main>
       <CheckoutTitle />
-      <CheckoutPreview :shirt />
       <div class="">
         <div class="">
           <div class="text-xl">

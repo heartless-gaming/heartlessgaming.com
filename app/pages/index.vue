@@ -2,14 +2,20 @@
   <div class="flow-root">
     <CartDrawer>
       <Navbar />
-      <header class="group relative mb-16 text-center">
+      <header
+        class="
+          group relative mb-8 text-center
+          sm:mb-16
+        "
+      >
         <HeroEffect />
         <div class="mx-auto max-w-xl px-2">
           <SvgLogoHeartlessgamingDark2020
             class="
-              mx-auto box-content max-w-xs px-8 pb-5 drop-shadow-xl/80
+              mx-auto mb-4 box-content max-w-40 drop-shadow-xl/80
               transition-transform duration-1000
               group-hover:scale-105 group-hover:-rotate-2
+              sm:max-w-3xs
             "
             :font-controlled="false"
           />

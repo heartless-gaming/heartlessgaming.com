@@ -1,8 +1,5 @@
 <script setup lang="ts">
-const { shirt } = defineProps(['shirt'])
-console.log(shirt.name)
 
-const formattedProductName = shirt.name.split(' /')[0]
 </script>
 
 <template>
@@ -15,7 +12,7 @@ const formattedProductName = shirt.name.split(' /')[0]
   >
     <div class="grid grid-cols-2 gap-y-4">
       <h2 class="col-span-full text-xl">
-        {{ formattedProductName }}
+        topkek
       </h2>
       <div class="flex items-baseline gap-x-4 text-lg">
         <span>{{ shirt.color }}</span>
