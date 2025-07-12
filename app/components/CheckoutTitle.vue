@@ -1,5 +1,5 @@
 <template>
-  <h1 class="mb-6 text-center text-3xl font-bold">
+  <h1 class="my-6 text-center text-3xl font-bold">
     Passer commande
   </h1>
 </template>

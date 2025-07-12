@@ -217,7 +217,7 @@ function changeSize(index: number) {
               >
                 <ul
                   class="
-                    list-inside list-disc pl-4 leading-relaxed
+                    list-outside list-disc pl-4 leading-relaxed
                     marker:text-primary
                   "
                 >

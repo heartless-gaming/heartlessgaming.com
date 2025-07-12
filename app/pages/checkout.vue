@@ -32,7 +32,7 @@ const isShippingLocked = ref(true)
 const isPaymentLocked = ref(true)
 const stepper = ref(0)
 
-const isContactFormValid = ref(false)
+const isContactFormValid = ref(true)
 
 // implement step locking when going backward or refresh next steps
 function contactFormValidated() {
@@ -54,61 +54,25 @@ const currentTheme = useLocalStorage('theme', '')
       :value="currentTheme"
       checked
     >
-    <header
-      class="
-        mb-4
-        sm:mb-6
-      "
-    >
-      <NavbarCheckout />
-    </header>
     <main>
-      <CheckoutTitle />
-      <div class="">
-        <div class="">
-          <div class="text-xl">
-            Calcul des frais de livraison
+      <div>
+        <CheckoutTitle />
+        <p class="animate-bounce text-center text-2xl">
+          Page en construction
+        </p>
+        <div class="grid gap-y-4">
+          <CheckoutSummary />
+          <div class="hidden">
+            <h2 class="text-2xl">
+              Calcul des frais de livraison
+            </h2>
+            <div>
+              <CheckoutUserForm v-show="!isContactFormValid" @submit="contactFormValidated()" />
+              <CheckoutUserFormPreview v-show="isContactFormValid" @update-user-form="isContactFormValid = false" />
+            </div>
           </div>
-          <div class="">
-            <CheckoutUserForm v-show="isContactFormValid" @submit="contactFormValidated()" />
-            <CheckoutUserFormPreview v-show="!isContactFormValid" @update-user-form="isContactFormValid = false" />
-          </div>
-        </div>
-        <div class="">
-          <div class="text-xl" :class="{ 'opacity-50': isShippingLocked }">
-            Livraison
-          </div>
-          <div class="">
-            <CheckoutFormShipping />
-          </div>
-        </div>
-        <div class="">
-          <div class="text-xl" :class="{ 'opacity-50': isShippingLocked }">
-            Paiement
-          </div>
-          <div>
-            <CheckoutFormPayment />
-          </div>
-        </div>
-      </div>
-      <div class="collapse-arrow collapse bg-base-300">
-        <input type="checkbox" checked="true" class="peer">
-        <div
-          class="collapse-title bg-base-200"
-        >
-          Information suplémentaires
-        </div>
-        <div
-          class="collapse-content bg-base-200"
-        >
-          <ul
-            class="
-              list-inside list-disc pl-4 leading-relaxed
-              marker:text-primary
-            "
-          >
-            <li>L'email saisi servira à assurer le suivi de la commande uniquement</li>
-          </ul>
+          <CheckoutFormShipping />
+          <CheckoutFormPayment />
         </div>
       </div>
     </main>

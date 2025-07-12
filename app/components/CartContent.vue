@@ -32,7 +32,7 @@ const { removeFromCart } = store
       </div>
     </div>
     <div class="mb-6 flex items-center justify-between gap-x-2 text-xl">
-      <span>Total :</span><span class="font-bold">{{ toCurrency(total) }}</span>
+      <span class="uppercase">Sous-total :</span><span class="font-bold">{{ toCurrency(total) }}</span>
     </div>
     <NuxtLink
       class="btn btn-block uppercase btn-lg btn-primary"
