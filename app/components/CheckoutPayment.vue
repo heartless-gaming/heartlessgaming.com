@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <h2 class="mb-4 text-2xl">
+  <CheckoutSubtitle>
     Paiement
-  </h2>
+  </CheckoutSubtitle>
   <p>topkek</p>
 </template>

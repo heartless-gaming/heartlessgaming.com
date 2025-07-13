@@ -1,32 +1,43 @@
 <script setup lang="ts">
-defineEmits(['updateUserForm'])
+const checkoutStore = useCheckoutStore()
+const { isContactFormValid } = storeToRefs(checkoutStore)
+
+const formData = useCheckoutUserFormData()
+const { firstName, lastName, address, postalCode, city, country, email, phone } = toRefs(formData.value)
 </script>
 
 <template>
-  <button class="btn btn-outline" @click="console.log('topkek')">
-    <div>
-      <div class="float-right flex items-center gap-x-2">
-        <span>modifier</span>
-        <Icon size="1.3em" name="mdi:account-edit-outline" />
-      </div>
-      <h1>Checkout User Form Preview Component ! YAAAAAY</h1>
-      <p>get form state & show</p>
-    </div>
-  </button>
   <button
     class="
-      rounded-box border-2 border-base-300 p-4 text-left
-      hover:bg-base-100
+      group btn flex h-auto w-full max-w-sm items-start justify-start py-2
+      text-left text-base btn-outline
     "
-    @click="$emit('updateUserForm') && console.log('topkek')"
+    @click="isContactFormValid = false"
   >
-    <div>
-      <div class="float-right flex items-center gap-x-2">
-        <span>modifier</span>
-        <Icon size="1.3em" name="mdi:account-edit-outline" />
+    <div class="w-full">
+      <div class="grid w-full gap-y-1">
+        <div class="grid grid-cols-6 gap-x-4">
+          <div class="col-span-4">
+            {{ firstName }} {{ lastName }}
+          </div>
+          <div class="col-span-2 flex items-center justify-end gap-x-2">
+            <span
+              class="group-hover:underline"
+            >modifier</span>
+            <Icon size="1.3em" name="mdi:account-edit-outline" />
+          </div>
+        </div>
+        <div>{{ address }}</div>
+        <div class="grid grid-cols-6 gap-x-2">
+          <span>{{ postalCode }}</span>
+          <span class="col-span-3">{{ city }}</span>
+          <span class="col-span-2">{{ country }}</span>
+        </div>
+        <div class="grid grid-cols-6 gap-x-2 gap-x-3">
+          <span class="col-span-4">{{ email }}</span>
+          <span class="col-span-2">{{ phone }}</span>
+        </div>
       </div>
-      <h1>Checkout User Form Preview Component ! YAAAAAY</h1>
-      <p>get form state & show</p>
     </div>
   </button>
 </template>

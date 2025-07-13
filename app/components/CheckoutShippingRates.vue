@@ -3,8 +3,8 @@ const formData = useCheckoutUserFormData()
 </script>
 
 <template>
-  <h2 class="mb-4 text-2xl">
+  <CheckoutSubtitle>
     Calcul des frais de livraison
-  </h2>
+  </CheckoutSubtitle>
   <p>topkek</p>
 </template>

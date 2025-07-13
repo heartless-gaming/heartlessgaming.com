@@ -1,5 +1,5 @@
 export const useCartStore = defineStore('cart', () => {
-  const items = ref([])
+  const items = ref([{ available: true, name: 'T-shirt Heartless Gaming logo brodé 100% coton', variantName: 'T-shirt Heartless Gaming logo brodé 100% coton / Burgundy / L', size: 'L', price: '25.50', color: 'Burgundy', hex: '#801f24', sku: '686E635939BA0_Burgundy-L' }, { available: true, name: 'T-shirt Heartless Gaming logo brodé 100% coton', variantName: 'T-shirt Heartless Gaming logo brodé 100% coton / Burgundy / L', size: 'L', price: '25.50', color: 'Burgundy', hex: '#801f24', sku: '686E635939BA0_Burgundy-L' }])
 
   const isCartEmpty = computed(() => !items.value.length)
   const itemCount = computed(() => items.value.length)

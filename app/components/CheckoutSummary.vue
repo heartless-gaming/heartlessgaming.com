@@ -5,9 +5,9 @@ const { items, itemCount, total } = storeToRefs(store)
 
 <template>
   <section>
-    <h2 class="mb-4 text-2xl">
+    <CheckoutSubtitle>
       Résumé de la commande
-    </h2>
+    </CheckoutSubtitle>
     <div class="collapse-arrow collapse bg-base-300">
       <input type="checkbox" class="peer">
       <div

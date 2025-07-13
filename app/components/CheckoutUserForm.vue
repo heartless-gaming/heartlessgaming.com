@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { email, exactLength, required } from '@regle/rules'
 
-defineEmits(['submit'])
+const checkoutStore = useCheckoutStore()
+const { isContactFormValid } = storeToRefs(checkoutStore)
 
 const size = 'lg'
 const formData = useCheckoutUserFormData()
@@ -33,7 +34,7 @@ r$.phone.$touch()
       grid gap-x-4 gap-y-4
       sm:grid-cols-4
     "
-    @submit.prevent="$emit('submit')"
+    @submit.prevent="isContactFormValid = true"
   >
     <Input
       v-model="r$.$value.firstName"

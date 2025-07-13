@@ -1,7 +1,9 @@
 <script setup lang="ts">
-const store = useCartStore()
-const { items, itemCount } = storeToRefs(store)
-console.log(items.value)
+const cartStore = useCartStore()
+const { items, itemCount } = storeToRefs(cartStore)
+
+const checkoutStore = useCheckoutStore()
+const { isContactFormValid } = storeToRefs(checkoutStore)
 
 // Redirect to shirt page if sku is not correct
 if (!itemCount.value) {
@@ -32,8 +34,6 @@ const isShippingLocked = ref(true)
 const isPaymentLocked = ref(true)
 const stepper = ref(0)
 
-const isContactFormValid = ref(true)
-
 // implement step locking when going backward or refresh next steps
 function contactFormValidated() {
   isContactFormValid.value = true
@@ -43,7 +43,10 @@ function contactFormValidated() {
   // isPaymentLocked.value = false
 }
 
-const currentTheme = useLocalStorage('theme', '')
+const currentTheme = ref('')
+onMounted(() => {
+  currentTheme.value = localStorage.getItem('theme')
+})
 </script>
 
 <template>
@@ -62,17 +65,9 @@ const currentTheme = useLocalStorage('theme', '')
         </p>
         <div class="grid gap-y-4">
           <CheckoutSummary />
-          <div class="hidden">
-            <h2 class="text-2xl">
-              Calcul des frais de livraison
-            </h2>
-            <div>
-              <CheckoutUserForm v-show="!isContactFormValid" @submit="contactFormValidated()" />
-              <CheckoutUserFormPreview v-show="isContactFormValid" @update-user-form="isContactFormValid = false" />
-            </div>
-          </div>
-          <CheckoutFormShipping />
-          <CheckoutFormPayment />
+          <CheckoutShippingInfo />
+          <CheckoutShippingRates />
+          <CheckoutPayment />
         </div>
       </div>
     </main>
