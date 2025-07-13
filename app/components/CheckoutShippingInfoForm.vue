@@ -5,7 +5,7 @@ const checkoutStore = useCheckoutStore()
 const { isContactFormValid } = storeToRefs(checkoutStore)
 
 const size = 'lg'
-const formData = useCheckoutUserFormData()
+const formData = useCheckoutShippingInfoFormData()
 
 const requiredMessage = withMessage(required, 'Ce champ est obligatoire')
 const formRules = {

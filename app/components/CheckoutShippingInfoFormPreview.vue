@@ -2,7 +2,7 @@
 const checkoutStore = useCheckoutStore()
 const { isContactFormValid } = storeToRefs(checkoutStore)
 
-const formData = useCheckoutUserFormData()
+const formData = useCheckoutShippingInfoFormData()
 const { firstName, lastName, address, postalCode, city, country, email, phone } = toRefs(formData.value)
 </script>
 
