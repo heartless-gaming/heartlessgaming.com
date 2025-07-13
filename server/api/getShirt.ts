@@ -30,15 +30,17 @@ export default defineEventHandler(async (event) => {
   const url = `https://api.printful.com/store/products/${shirtID}`
   const headers = { Authorization: `Bearer ${printfulToken}` }
 
-  const fetchShirt = await $fetch(url, { headers })
+  const fetchedShirts = await $fetch(url, { headers })
+  // console.log(fetchedShirts.result.sync_variants)
 
-  const productName = fetchShirt.result.sync_product.name
+  const productName = fetchedShirts.result.sync_product.name
 
-  const shirts = fetchShirt.result.sync_variants.map((variant) => {
-    const { availability_status, name: variantName, size, retail_price: price, color, sku } = variant
+  const shirts = fetchedShirts.result.sync_variants.map((variant) => {
+    const { availability_status, variant_id, name: variantName, size, retail_price: price, color, sku } = variant
 
     return {
       available: availability_status === 'active',
+      variant_id,
       name: productName,
       variantName,
       size,

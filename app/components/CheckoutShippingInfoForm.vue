@@ -100,10 +100,16 @@ r$.phone.$touch()
       placeholder="06 66 42 42 42"
     />
     <div class="sm:col-span-full">
-      <button class="btn btn-success">
-        Enregistrer et continuer
+      <button class="btn animate-bounce btn-info">
+        magic dev button that let you pass anyway ¯\_(ツ)_/¯
       </button>
-      <button class="btn btn-success" :disabled="!r$.$correct">
+      <button
+        class="
+          btn btn-block btn-success
+          sm:btn-wide
+        "
+        :disabled="!r$.$correct"
+      >
         Enregistrer et continuer
       </button>
     </div>

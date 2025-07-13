@@ -60,8 +60,8 @@ onMounted(() => {
     <main>
       <div>
         <CheckoutTitle />
-        <p class="animate-bounce text-center text-2xl">
-          Page en construction
+        <p class="my-10 animate-bounce text-center text-6xl">
+          🚧 Page en construction 🚧
         </p>
         <div class="grid gap-y-4">
           <CheckoutSummary />
