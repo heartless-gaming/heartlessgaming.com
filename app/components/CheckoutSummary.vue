@@ -16,9 +16,14 @@ const { items, itemCount, total } = storeToRefs(store)
         {{ itemCount }} articles - {{ toCurrency(total) }}
       </div>
       <div
-        class="collapse-content bg-base-200"
+        class="collapse-content bg-base-200 px-0"
       >
-        <div class="divide-y divide-primary">
+        <div
+          class="
+            divide-y divide-primary px-2
+            sm:px-4
+          "
+        >
           <div
             v-for="(item, index) in items"
             :key="index"
@@ -33,9 +38,15 @@ const { items, itemCount, total } = storeToRefs(store)
               class="aspect-square size-25"
               width="100"
               height="100"
+              :img-attrs="{ class: 'rounded-box' }"
             />
             <div>
-              <p class="mb-2 text-lg">
+              <p
+                class="
+                  mb-2 text-lg
+                  sm:text-xl
+                "
+              >
                 {{ item.name }}
               </p>
               <div class="flex gap-x-6">

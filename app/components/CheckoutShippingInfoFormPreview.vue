@@ -9,8 +9,8 @@ const { firstName, lastName, address, postalCode, city, country, email, phone } 
 <template>
   <button
     class="
-      group btn flex h-auto w-full max-w-sm items-start justify-start py-2
-      text-left text-base btn-outline
+      group btn flex h-auto max-w-sm items-start justify-start py-2 text-left
+      text-base btn-outline
     "
     @click="isContactFormValid = false"
   >
@@ -33,7 +33,12 @@ const { firstName, lastName, address, postalCode, city, country, email, phone } 
           <span class="col-span-3">{{ city }}</span>
           <span class="col-span-2">{{ country }}</span>
         </div>
-        <div class="grid grid-cols-6 gap-x-2 gap-x-3">
+        <div
+          class="
+            grid gap-x-2
+            sm:grid-cols-6
+          "
+        >
           <span class="col-span-4">{{ email }}</span>
           <span class="col-span-2">{{ phone }}</span>
         </div>

@@ -10,7 +10,7 @@ function formatShippingRateName(shippingRateName: string = '') {
   return str
 }
 
-function formatRateType(rateType) {
+function formatRateType(rateType: string = '') {
   switch (rateType) {
     case 'STANDARD':
       break
@@ -26,11 +26,33 @@ function formatRateType(rateType) {
 <template>
   <div class="grid gap-y-4">
     <button
-      v-for="(shippingRate, index) in shippingRates"
+      v-for="shippingRate in shippingRates"
       :key="shippingRate.id"
       class="
-        group btn grid btn-block grid-cols-12 justify-between py-2 text-left
+        group btn btn-block px-2 py-2 text-left text-base btn-ghost btn-outline
+        btn-xl btn-primary
+        sm:hidden
+      "
+      :class="{ 'btn-active': pickedShippingRate === shippingRate.id }"
+      @click="pickedShippingRate = shippingRate.id"
+    >
+      <div class="w-full">
+        <div class="flex justify-between">
+          <span>{{ formatRateType(shippingRate.id) }}</span>
+          <span class="text-right font-bold">{{ toCurrency(shippingRate.rate) }}</span>
+        </div>
+        <div class="col-span-8">
+          {{ formatShippingRateName(shippingRate.name) }}
+        </div>
+      </div>
+    </button>
+    <button
+      v-for="shippingRate in shippingRates"
+      :key="shippingRate.id"
+      class="
+        group btn hidden btn-block grid-cols-12 justify-between py-2 text-left
         text-base btn-ghost btn-outline btn-xl btn-primary
+        sm:grid
       "
       :class="{ 'btn-active': pickedShippingRate === shippingRate.id }"
       @click="pickedShippingRate = shippingRate.id"
