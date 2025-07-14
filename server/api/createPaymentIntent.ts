@@ -12,7 +12,6 @@ export default defineEventHandler(async (event) => {
     paymentIntent = await stripe.paymentIntents.create({
       currency: 'eur',
       amount: orderAmount,
-      automatic_payment_methods: { enabled: true },
     })
 
     // Send publishable key and PaymentIntent details to client

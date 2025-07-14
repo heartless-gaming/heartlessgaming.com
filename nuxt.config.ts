@@ -65,6 +65,8 @@ export default defineNuxtConfig({
         'mdi:account-edit-outline',
         'solar:bag-heart-bold',
         'material-symbols:close-rounded',
+        'famicons:warning-outline',
+        'hugeicons:checkmark-circle-03',
       ],
     },
   },

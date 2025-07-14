@@ -13,6 +13,8 @@
         />
       </div>
     </div>
-    <span class="text-base-content/50">Calcul des frais de livraison en cours...</span>
+    <span class="text-base-content/50">
+      <slot />
+    </span>
   </div>
 </template>

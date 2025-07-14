@@ -32,6 +32,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.2",
+    "@iconify-json/famicons": "^1.2.0",
+    "@iconify-json/hugeicons": "^1.2.6",
     "@iconify-json/material-symbols": "^1.2.29",
     "@iconify-json/solar": "^1.2.2",
     "@nuxt/eslint": "^1.5.2",
@@ -40,6 +42,7 @@
     "@nuxt/scripts": "^0.11.8",
     "@pinia/nuxt": "^0.11.1",
     "@regle/nuxt": "1.5.2",
+    "@stripe/stripe-js": "^7.4.0",
     "@vueuse/nuxt": "^13.5.0",
     "daisyui": "^5.0.43",
     "eslint": "9.30.1",

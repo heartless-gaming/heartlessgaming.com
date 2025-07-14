@@ -50,7 +50,9 @@ async function calculateShippingRates() {
   <button class="btn btn-info" @click="calculateShippingRates">
     DEV BUTTON: CALCULATE THE SHIPPING RATE
   </button>
-  <CheckoutShippingRatesLoader v-show="isFetching" />
+  <CoolLoader v-show="isFetching">
+    Calcul des frais de livraison en cours...
+  </CoolLoader>
   <CheckoutShippingRatesError v-if="isError" />
   <CheckoutShippingRatesDetails v-show="shippingRates.length" :shipping-rates />
 </template>
