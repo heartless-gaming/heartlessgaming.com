@@ -39,6 +39,7 @@ const quotes: string[] = [
   `Si ta pas d'attestation tu respecte pas le pare-feu (couvre-feu) Eljam - Zenix`,
   `Pourquoi y a une pizza 4 fromages sur ma cg ? - Eljam`,
   `We will find a way - Skullmasher`,
+  `T'as passé ta vie à faire des choses bien, c'est pas le moment d'arnaquer les gens - Markus`,
   // `Eljam :"c'est la force centripete" Don : "Comme le human" Eljam & Don : "le human centripete !"`,
   // `Quand c'est une merde que tu es obligé d'utiliser, c'est toujours mieu si elle est un peu poli - Eljam`
 ]
