@@ -28,24 +28,32 @@ const activeSKU: Ref<string> = ref('687588552F037_True-Navy-L')
 const price = ref(25.50)
 const activeImagePath = computed(() => `/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors.value[activeColor.value].name)}.jpg`)
 
+// get shirts from activeColor return sizes and avalaibility status
 const sizes = computed(() => shirts.value.reduce((acc, shirt) => {
-  if (shirt.color === colors.value[activeColor.value].name && !acc.includes(shirt.size)) {
-    acc.push(shirt.size)
+  const { color, size, available } = shirt
+
+  if (color === colors.value[activeColor.value].name && !acc.includes(size)) {
+    acc.push({ name: size, available })
   }
 
   return acc
 }, []))
 
-const activeShirt = computed(() => shirts.value.find(shirt => shirt.color === colors.value[activeColor.value].name && shirt.size === sizes.value[activeSize.value]))
+const activeShirt = computed(() => shirts.value.find(shirt => shirt.color === colors.value[activeColor.value].name && shirt.size === sizes.value[activeSize.value].name))
 
 const updatePrice = () => price.value = activeShirt.value.price
 const updateSKU = () => activeSKU.value = activeShirt.value.sku
 
 function changeColor(index: number) {
   activeColor.value = index
-  // if the size is not available in this color defaults to L
-  if (activeSize.value >= sizes.value.length) {
-    activeSize.value = 2
+  while (!activeShirt.value.available) {
+    // find the closest available lower size to the current one
+    activeSize.value--
+
+    // no lowest size found
+    if (activeSize.value === -1) {
+      break
+    }
   }
 
   updatePrice()
@@ -95,6 +103,7 @@ function changeSize(index: number) {
               </a>
             </div>
           </div>
+          <p>ActiveShirt : {{ activeShirt }}</p>
           <p class="mb-6 text-2xl font-bold">
             Sélectionner une Couleur
           </p>
@@ -171,10 +180,10 @@ function changeSize(index: number) {
                 sm:w-28
               "
               :class="{ 'btn-primary': activeSize === index, 'btn-outline': activeSize !== index }"
-              :disabled="!activeShirt.available"
+              :disabled="!size.available"
               @click="changeSize(index)"
             >
-              {{ size }}
+              {{ size.name }}
             </button>
           </div>
           <p class="mb-8 text-7xl font-bold tracking-wide">
