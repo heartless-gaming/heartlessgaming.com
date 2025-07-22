@@ -23,7 +23,7 @@ const colors = computed(() => shirts.value.reduce((acc, shirt) => {
 
 const activeColor: Ref<number> = ref(2)
 const activeSize: Ref<number> = ref(2)
-const activeSKU: Ref<string> = ref('686E635939BA0_Burgundy-L')
+const activeSKU: Ref<string> = ref('687588552F037_True-Navy-L')
 
 const price = ref(25.50)
 const activeImagePath = computed(() => `/img/shirt/embroidered-heartlessgaming-t-shirt-${toKebab(colors.value[activeColor.value].name)}.jpg`)
@@ -153,6 +153,7 @@ function changeSize(index: number) {
             <p class="text-2xl font-bold">
               Sélectionner une Taille
             </p>
+            <p>{{ activeShirt }}</p>
             <span>
               <NuxtLink
                 class="pretty-link"
@@ -171,6 +172,7 @@ function changeSize(index: number) {
                 sm:w-28
               "
               :class="{ 'btn-primary': activeSize === index, 'btn-outline': activeSize !== index }"
+              :disabled="!activeShirt.available"
               @click="changeSize(index)"
             >
               {{ size }}

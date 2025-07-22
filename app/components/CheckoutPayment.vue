@@ -25,7 +25,7 @@ const options = {
   },
 }
 
-let clientSecret = ref({})
+const clientSecret = ref({ clientSecret: '' })
 let elements
 let stripe
 
@@ -66,7 +66,7 @@ async function submitOrder() {
   // Use the clientSecret and Elements instance to confirm the setup
   const { error } = await stripe.confirmPayment({
     elements,
-    clientSecret: clientSecret.value.client,
+    clientSecret: clientSecret.value.clientSecret,
     confirmParams: { return_url },
     // Uncomment below if you only want redirect for redirect-based payments
     // redirect: "if_required",
