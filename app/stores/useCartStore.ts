@@ -1,7 +1,7 @@
 export const useCartStore = defineStore('cart', () => {
   const items = ref([
-    { available: true, variant_id: 14946, name: 'T-shirt Heartless Gaming logo brodé 100% coton', variantName: 'T-shirt Heartless Gaming logo brodé 100% coton / Burgundy / L', size: 'L', price: '25.50', color: 'Burgundy', hex: '#801f24', sku: '686E635939BA0_Burgundy-L' },
-    { available: true, variant_id: 14946, name: 'T-shirt Heartless Gaming logo brodé 100% coton', variantName: 'T-shirt Heartless Gaming logo brodé 100% coton / Burgundy / L', size: 'L', price: '25.50', color: 'Burgundy', hex: '#801f24', sku: '686E635939BA0_Burgundy-L' },
+    { available: true, variant_id: 15114, name: 'T-shirt Heartless Gaming logo brodé 100% coton', variantName: 'T-shirt Heartless Gaming logo brodé 100% coton / Black / S', size: 'S', price: '29.95', color: 'Black', hex: '#282828', sku: '687588552F037_Black-S' },
+    { available: true, variant_id: 15123, name: 'T-shirt Heartless Gaming logo brodé 100% coton', variantName: 'T-shirt Heartless Gaming logo brodé 100% coton / Red / XL', size: 'XL', price: '27.75', color: 'Red', hex: '#ba2142', sku: '687588552F037_Red-XL' },
   ])
 
   const isCartEmpty = computed(() => !items.value.length)

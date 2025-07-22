@@ -153,7 +153,6 @@ function changeSize(index: number) {
             <p class="text-2xl font-bold">
               Sélectionner une Taille
             </p>
-            <p>{{ activeShirt }}</p>
             <span>
               <NuxtLink
                 class="pretty-link"
