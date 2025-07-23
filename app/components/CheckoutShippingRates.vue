@@ -2,7 +2,7 @@
 const cartStore = useCartStore()
 const { items: cartItems } = storeToRefs(cartStore)
 
-const userData = useCheckoutShippingInfoFormData()
+const userData = useStateCheckoutShippingInfoFormData()
 const { address, city, postalCode, phone } = toValue(userData.value)
 
 const isFetching = ref(false)

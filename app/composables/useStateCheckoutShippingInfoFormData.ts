@@ -1,4 +1,4 @@
-export function useCheckoutShippingInfoFormData() {
+export function useStateCheckoutShippingInfoFormData() {
   return useState('checkoutShippingInfoFormData', () => ({
     firstName: 'Skullmasher',
     lastName: 'Heartless',

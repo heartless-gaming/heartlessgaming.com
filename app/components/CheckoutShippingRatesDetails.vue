@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const { shippingRates } = defineProps(['shippingRates'])
-
-const pickedShippingRate = ref('STANDARD')
+const pickedShippingRate = useStateCheckoutShippingRates()
 
 function formatShippingRateName(shippingRateName: string = '') {
   let str = shippingRateName.split('(')[1]

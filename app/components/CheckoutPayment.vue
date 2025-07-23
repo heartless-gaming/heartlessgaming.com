@@ -1,8 +1,10 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig()
-
-// const return_url = 'http://localhost:3000/order-complete'
-const return_url = 'https://heartlessgaming.com/order-complete'
+const userData = useStateCheckoutShippingInfoFormData()
+const shippingRate = useStateCheckoutShippingRates()
+const cartStore = useCartStore()
+const { items: cartItems } = storeToRefs(cartStore)
+const thankYouPage = '/order-complete'
 
 const paymentEl = ref(null)
 const { onLoaded } = useScriptStripe()
@@ -25,6 +27,7 @@ const options = {
   },
 }
 
+// Your stripe implementation can always be refactored
 const clientSecret = ref({ clientSecret: '' })
 let elements
 let stripe
@@ -37,7 +40,14 @@ async function generatePaymentForm() {
   isFetching.value = true
   paymentHasError.value = false
 
-  clientSecret.value = await $fetch('/api/createPaymentIntent')
+  clientSecret.value = await $fetch('/api/createPaymentIntent', {
+    method: 'POST',
+    body: {
+      cartItems: cartItems.value,
+      userData: userData.value,
+      shippingRate: shippingRate.value,
+    },
+  }).catch(error => paymentHasError.value = true)
 
   onLoaded(async ({ Stripe }) => {
     stripe = Stripe(runtimeConfig.public.stripePublicKey)
@@ -45,9 +55,10 @@ async function generatePaymentForm() {
 
     const paymentElement = elements.create('payment', options)
     paymentElement.mount(paymentEl.value)
+
+    showPaymentForm.value = true
   })
 
-  showPaymentForm.value = true
   isFetching.value = false
 }
 
@@ -67,7 +78,7 @@ async function submitOrder() {
   const { error } = await stripe.confirmPayment({
     elements,
     clientSecret: clientSecret.value.clientSecret,
-    confirmParams: { return_url },
+    confirmParams: { return_url: document.location.origin + thankYouPage },
     // Uncomment below if you only want redirect for redirect-based payments
     // redirect: "if_required",
   })
@@ -102,7 +113,7 @@ async function submitOrder() {
     <div ref="paymentEl" />
   </div>
   <button
-    v-show="showPaymentForm"
+    :disabled="!showPaymentForm"
     class="btn btn-block btn-xl btn-primary"
     :class="{ 'btn-disabled': paymentInProcess }"
     @click="submitOrder"

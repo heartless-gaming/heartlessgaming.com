@@ -103,7 +103,6 @@ function changeSize(index: number) {
               </a>
             </div>
           </div>
-          <p>ActiveShirt : {{ activeShirt }}</p>
           <p class="mb-6 text-2xl font-bold">
             Sélectionner une Couleur
           </p>
