@@ -100,9 +100,6 @@ r$.phone.$touch()
       placeholder="06 66 42 42 42"
     />
     <div class="sm:col-span-full">
-      <button class="btn animate-bounce btn-info">
-        magic dev button that let you pass anyway ¯\_(ツ)_/¯
-      </button>
       <button
         class="
           btn btn-block btn-success

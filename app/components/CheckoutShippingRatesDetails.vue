@@ -17,6 +17,9 @@ function formatRateType(rateType: string = '') {
     case 'PRINTFUL_FAST':
       rateType = 'EXPRESS'
       break
+    case 'STANDARD_CARBON_OFFSET':
+      rateType = 'CARBON OFFSET'
+      break
   }
 
   return rateType
@@ -63,8 +66,8 @@ function updateShippingRate(shippingRate) {
       :class="{ 'btn-active': pickedShippingRate === shippingRate.id }"
       @click="updateShippingRate(shippingRate)"
     >
-      <span class="col-span-2">{{ formatRateType(shippingRate.id) }}</span>
-      <span class="col-span-8">{{ formatShippingRateName(shippingRate.name) }}</span>
+      <span class="col-span-3">{{ formatRateType(shippingRate.id) }}</span>
+      <span class="col-span-7">{{ formatShippingRateName(shippingRate.name) }}</span>
       <span class="col-span-2 text-right text-2xl font-bold">{{ toCurrency(shippingRate.rate) }}</span>
     </button>
   </div>
