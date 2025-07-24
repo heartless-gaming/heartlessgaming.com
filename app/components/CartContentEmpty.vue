@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const shirtPage = '/t-shirt-logo-brode-coton'
+const shirtPage = '/original-skull'
 </script>
 
 <template>

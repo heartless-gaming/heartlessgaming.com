@@ -11,10 +11,10 @@
       "
     >
       <NuxtLink
-        to="t-shirt-logo-brode-coton"
+        to="original-skull"
         class="
           card max-w-sm shrink-0 bg-base-200 shadow-xl ring-1 ring-transparent
-          ring-offset-0 ring-offset-base-100 transition
+          ring-offset-0 ring-offset-base-100 transition card-lg
           hover:ring-4 hover:ring-primary hover:ring-offset-4
         "
       >
@@ -24,18 +24,23 @@
             width="320"
             height="320"
             class="w-full"
-            src="/img/shirt/embroidered-heartlessgaming-t-shirt-burgundy.jpg"
-            alt="Homme portant un tee shirt bordeaux sur fond abstrait"
+            src="/img/shirt/embroidered-heartlessgaming-t-shirt-true-navy.jpg"
+            alt="Homme portant un tee shirt bleu foncé sur fond abstrait"
             :img-attrs="{ class: 'w-full' }"
           />
         </figure>
-        <div class="card-body gap-y-6">
+        <div class="card-body">
           <h3 class="card-title">
-            T-shirt Heartless Gaming logo brodé 100% coton
+            Original Skull
           </h3>
-          <button class="btn uppercase btn-lg btn-primary">
-            Acheter maintenant
-          </button>
+          <p>
+            T-shirt en coton avec logo Heartless Brodé
+          </p>
+          <div class="card-actions">
+            <button class="btn btn-block uppercase btn-lg btn-primary">
+              Acheter maintenant
+            </button>
+          </div>
         </div>
       </NuxtLink>
       <div

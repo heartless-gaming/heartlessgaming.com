@@ -7,7 +7,7 @@ const { isContactFormValid } = storeToRefs(checkoutStore)
 
 // Redirect to shirt page if sku is not correct
 if (!itemCount.value) {
-  navigateTo('/t-shirt-logo-brode-coton')
+  navigateTo('/original-skull')
 }
 
 const { public: publicKeys } = useRuntimeConfig()

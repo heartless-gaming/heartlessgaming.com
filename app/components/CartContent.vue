@@ -10,7 +10,7 @@ const { removeFromCart } = store
       <div
         v-for="(item, index) in items"
         :key="index"
-        class="flex gap-x-2 px-2 py-4"
+        class="flex gap-x-4 px-2 py-4"
       >
         <div class="grow">
           <p class="mb-2 text-lg">

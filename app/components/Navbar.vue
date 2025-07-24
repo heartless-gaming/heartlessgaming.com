@@ -36,7 +36,7 @@ const { itemCount } = storeToRefs(store)
       </li>
       <li>
         <NuxtLink
-          to="/t-shirt-logo-brode-coton"
+          to="/original-skull"
           class="
             group
             hover:bg-base-content/10
