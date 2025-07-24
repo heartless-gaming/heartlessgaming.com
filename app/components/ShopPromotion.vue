@@ -34,7 +34,7 @@
             Original Skull
           </h3>
           <p>
-            T-shirt en coton avec logo Heartless Brodé
+            T-shirt 100% coton avec logo brodé
           </p>
           <div class="card-actions">
             <button class="btn btn-block uppercase btn-lg btn-primary">

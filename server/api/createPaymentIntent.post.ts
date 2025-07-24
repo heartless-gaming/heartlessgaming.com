@@ -70,11 +70,35 @@ export default defineEventHandler(async (event) => {
     const amount = await calculateTotalOrderPrice()
     const description = cartItems.map(i => `${i.variantName} ${toCurrency(i.price)}`).join('\n')
 
+    // todo: search if the user already exist before creating it
+    const customer = await stripe.customers.create({
+      name: `${userData.firstName} ${userData.lastName}`,
+      email: userData.email,
+      phone: userData.phone,
+      address: {
+        line1: userData.address,
+        country: 'FR',
+        city: userData.city,
+        postal_code: userData.postalCode,
+      },
+      shipping: {
+        address: {
+          line1: userData.address,
+          country: 'FR',
+          city: userData.city,
+          postal_code: userData.postalCode,
+        },
+        name: `${userData.firstName} ${userData.lastName}`,
+        phone: userData.phone,
+      },
+    })
+
     const paymentIntent = await stripe.paymentIntents.create({
       currency: 'eur',
       amount,
       receipt_email: userData.email,
       description,
+      customer: customer.id,
     })
 
     // Send publishable key and PaymentIntent details to client

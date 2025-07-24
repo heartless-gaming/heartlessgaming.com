@@ -153,22 +153,11 @@ function changeSize(index: number) {
             </button>
           </div>
           <div
-            class="
-              mb-6 items-baseline gap-x-2
-              sm:flex
-            "
+            class="mb-6"
           >
             <p class="text-2xl font-bold">
               Sélectionner une Taille
             </p>
-            <span>
-              <NuxtLink
-                class="pretty-link"
-                to="https://res.cloudinary.com/www-stanleystella-com/image/upload/v1633603833/Product%20Content/Product%20Sheets/fr_FR/STTU169.pdf"
-              >
-                Guide des tailles
-              </NuxtLink>
-            </span>
           </div>
           <div class="mb-6 flex flex-wrap gap-4">
             <button
@@ -234,11 +223,11 @@ function changeSize(index: number) {
                     Broderie sur un
                     <NuxtLink
                       class="pretty-link"
-                      to="https://stanleystella.com/fr-fr/creator-2-0-sttu169"
+                      to="https://www.comfortcolors.com/us/en/1717-heavyweight-adult-tee-en_us"
                       target="_blank"
                       external
                     >
-                      T-shirt Stanley/Stella 100% coton biologique vegan
+                      T-shirt Comfort Colors 100% coton
                     </NuxtLink>
                   </li>
                   <li>
@@ -252,22 +241,6 @@ function changeSize(index: number) {
                       Printful
                     </NuxtLink>
                   </li>
-                  <li>
-                    Gestion des paiment par
-                    <NuxtLink
-                      to="https://dashboard.stripe.com/"
-                      class="pretty-link"
-                      target="_blank"
-                      external
-                    >
-                      Stripe
-                    </NuxtLink>
-                  </li>
-                  <li>Cout de fabrication du tee shirt 13,95€ & 19,15€ pour les tailles à partir de 3XL</li>
-                  <li>Prix d'expédition entre 3.99€ & 10.59€, ~5€ vers la France depuis la warehouse Printful de Barcelone</li>
-                  <li>1.5% + 0.25€ prélevé par Stripe sur chaque transaction</li>
-                  <li>Marge maximal sur chaque vente: 6€</li>
-                  <li>L'email saisi servira à assurer le suivi de la commande uniquement</li>
                 </ul>
               </div>
             </div>
