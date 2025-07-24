@@ -1,9 +1,13 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig()
 const userData = useStateCheckoutShippingInfoFormData()
-const shippingRate = useStateCheckoutShippingRates()
+const pickedShippingRate = useStatePickedShippingRates()
+const shippingRatePrice = useStateShippingRatesPrice()
+
 const cartStore = useCartStore()
-const { items: cartItems } = storeToRefs(cartStore)
+const { items: cartItems, total: cartTotal } = storeToRefs(cartStore)
+const checkoutStore = useCheckoutStore()
+const { isContactFormValid } = storeToRefs(checkoutStore)
 const thankYouPage = '/order-complete'
 
 const paymentEl = ref(null)
@@ -14,6 +18,7 @@ const isFetching = shallowRef(false)
 const showPaymentForm = shallowRef(false)
 const paymentInProcess = shallowRef(false)
 const paymentHasError = shallowRef(false)
+const totalPrice = computed(() => (cartTotal.value * 100 + shippingRatePrice.value * 100) / 100)
 
 // Stripe Elements appearance & options
 const appearance = {
@@ -45,7 +50,7 @@ async function generatePaymentForm() {
     body: {
       cartItems: cartItems.value,
       userData: userData.value,
-      shippingRate: shippingRate.value,
+      shippingRate: pickedShippingRate.value,
     },
   }).catch(error => paymentHasError.value = true)
 
@@ -89,35 +94,47 @@ async function submitOrder() {
 
   paymentInProcess.value = false
 }
+
+watch([isContactFormValid, pickedShippingRate], () => {
+  if (isContactFormValid.value && pickedShippingRate.value) {
+    generatePaymentForm()
+    return
+  }
+
+  showPaymentForm.value = false
+})
 </script>
 
 <template>
-  <CheckoutSubtitle>
-    Paiement
-  </CheckoutSubtitle>
-  <button class="btn btn-info" @click="generatePaymentForm">
-    DEV BUTTON: CREATE PAYMENT INTENT
-  </button>
-  <CoolLoader v-show="isFetching" class="min-h-72">
-    Génération du formulaire de paiement en cours...
-  </CoolLoader>
-  <div v-show="paymentHasError" class="alert alert-warning">
-    <Icon name="famicons:warning-outline" size="1.8em" />
-    <span>Le paiement a échoué. Veuillez vérifier vos informations bancaire.</span>
-  </div>
-  <div
-    v-show="showPaymentForm"
-    data-theme="nord"
-    class="mb-6 min-h-72 rounded-box p-2"
-  >
-    <div ref="paymentEl" />
-  </div>
-  <button
-    :disabled="!showPaymentForm"
-    class="btn btn-block btn-xl btn-primary"
-    :class="{ 'btn-disabled': paymentInProcess }"
-    @click="submitOrder"
-  >
-    Commander
-  </button>
+  <section>
+    <CheckoutSubtitle
+      :class="{ 'text-base-content/50': !isContactFormValid }"
+      class="flex gap-x-2"
+    >
+      <span>Paiement</span>
+      <span v-show="shippingRatePrice" class="font-bold">{{ toCurrency(totalPrice) }}</span>
+    </CheckoutSubtitle>
+    <CoolLoader v-show="isFetching" class="min-h-72">
+      Génération du formulaire de paiement en cours...
+    </CoolLoader>
+    <div v-show="paymentHasError" class="mb-6 alert alert-warning">
+      <Icon name="famicons:warning-outline" size="1.8em" />
+      <span>Le paiement a échoué. Veuillez vérifier vos informations bancaire.</span>
+    </div>
+    <div
+      v-show="showPaymentForm"
+      data-theme="nord"
+      class="min-h-72 rounded-box p-2"
+    >
+      <div ref="paymentEl" />
+    </div>
+    <button
+      :disabled="!showPaymentForm"
+      class="btn mt-6 btn-block btn-xl btn-primary"
+      :class="{ 'btn-disabled': paymentInProcess }"
+      @click="submitOrder"
+    >
+      <span>Commander</span>
+    </button>
+  </section>
 </template>

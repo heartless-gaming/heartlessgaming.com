@@ -1,8 +1,12 @@
 <script setup lang="ts">
+const checkoutStore = useCheckoutStore()
+const { isContactFormValid } = storeToRefs(checkoutStore)
 const cartStore = useCartStore()
 const { items: cartItems } = storeToRefs(cartStore)
 
 const userData = useStateCheckoutShippingInfoFormData()
+const pickedShippingRate = useStatePickedShippingRates()
+const shippingRatePrice = useStateShippingRatesPrice()
 const { address, city, postalCode, phone } = toValue(userData.value)
 
 const isFetching = ref(false)
@@ -40,19 +44,27 @@ async function calculateShippingRates() {
   }
 
   shippingRates.value = response.shippingRates.result
+  pickedShippingRate.value = shippingRates.value[0].id
+  shippingRatePrice.value = Number(shippingRates.value[0].rate)
 
   isFetching.value = false
 }
+
+watchEffect(() => {
+  if (isContactFormValid.value)
+    calculateShippingRates()
+})
 </script>
 
 <template>
-  <CheckoutSubtitle>Calcul des frais de livraison</CheckoutSubtitle>
-  <button class="btn btn-info" @click="calculateShippingRates">
-    DEV BUTTON: CALCULATE THE SHIPPING RATE
-  </button>
-  <CoolLoader v-show="isFetching">
-    Calcul des frais de livraison en cours...
-  </CoolLoader>
-  <CheckoutShippingRatesError v-if="isError" />
-  <CheckoutShippingRatesDetails v-show="shippingRates.length" :shipping-rates />
+  <section>
+    <CheckoutSubtitle :class="{ 'text-base-content/50': !isContactFormValid }">
+      Frais de livraison
+    </CheckoutSubtitle>
+    <CoolLoader v-show="isFetching">
+      Calcul des frais de livraison en cours...
+    </CoolLoader>
+    <CheckoutShippingRatesError v-if="isError" />
+    <CheckoutShippingRatesDetails v-show="isContactFormValid" :shipping-rates />
+  </section>
 </template>

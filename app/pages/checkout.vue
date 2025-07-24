@@ -30,19 +30,6 @@ async function buy() {
   })
 }
 
-const isShippingLocked = ref(true)
-const isPaymentLocked = ref(true)
-const stepper = ref(0)
-
-// implement step locking when going backward or refresh next steps
-function contactFormValidated() {
-  isContactFormValid.value = true
-  // calculateShippingRates()
-  isShippingLocked.value = false
-  stepper.value++
-  // isPaymentLocked.value = false
-}
-
 const currentTheme = ref('')
 onMounted(() => {
   currentTheme.value = localStorage.getItem('theme')
@@ -71,6 +58,7 @@ onMounted(() => {
         <div class="grid gap-y-4">
           <CheckoutSummary />
           <CheckoutShippingInfo />
+          <div class="divider" />
           <CheckoutShippingRates />
           <CheckoutPayment />
         </div>

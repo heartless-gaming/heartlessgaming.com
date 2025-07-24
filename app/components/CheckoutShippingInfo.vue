@@ -4,7 +4,7 @@ const { isContactFormValid } = storeToRefs(checkoutStore)
 </script>
 
 <template>
-  <div>
+  <section>
     <CheckoutSubtitle>
       Information de livraison
     </CheckoutSubtitle>
@@ -12,5 +12,5 @@ const { isContactFormValid } = storeToRefs(checkoutStore)
       <CheckoutShippingInfoForm v-show="!isContactFormValid" />
       <CheckoutShippingInfoFormPreview v-show="isContactFormValid" />
     </div>
-  </div>
+  </section>
 </template>

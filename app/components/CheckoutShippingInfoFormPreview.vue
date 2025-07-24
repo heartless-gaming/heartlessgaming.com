@@ -2,8 +2,17 @@
 const checkoutStore = useCheckoutStore()
 const { isContactFormValid } = storeToRefs(checkoutStore)
 
+const pickedShippingRates = useStatePickedShippingRates()
+const shippingRatesPrice = useStateShippingRatesPrice()
 const formData = useStateCheckoutShippingInfoFormData()
 const { firstName, lastName, address, postalCode, city, country, email, phone } = toRefs(formData.value)
+
+function updateForm() {
+  isContactFormValid.value = false
+  pickedShippingRates.value = ''
+  shippingRatesPrice.value = 0
+  console.log(shippingRatesPrice.value)
+}
 </script>
 
 <template>
@@ -12,7 +21,7 @@ const { firstName, lastName, address, postalCode, city, country, email, phone } 
       group btn flex h-auto max-w-sm items-start justify-start py-2 text-left
       text-base btn-outline
     "
-    @click="isContactFormValid = false"
+    @click="updateForm"
   >
     <div class="w-full">
       <div class="grid w-full gap-y-1">

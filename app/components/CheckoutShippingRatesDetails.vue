@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { shippingRates } = defineProps(['shippingRates'])
-const pickedShippingRate = useStateCheckoutShippingRates()
+const pickedShippingRate = useStatePickedShippingRates()
+const shippingRatePrice = useStateShippingRatesPrice()
 
 function formatShippingRateName(shippingRateName: string = '') {
   let str = shippingRateName.split('(')[1]
@@ -20,6 +21,12 @@ function formatRateType(rateType: string = '') {
 
   return rateType
 }
+
+function updateShippingRate(shippingRate) {
+  console.log(`topkek : ${shippingRate}`)
+  pickedShippingRate.value = shippingRate.id
+  shippingRatePrice.value = Number(shippingRate.rate)
+}
 </script>
 
 <template>
@@ -33,7 +40,7 @@ function formatRateType(rateType: string = '') {
         sm:hidden
       "
       :class="{ 'btn-active': pickedShippingRate === shippingRate.id }"
-      @click="pickedShippingRate = shippingRate.id"
+      @click="updateShippingRate(shippingRate)"
     >
       <div class="w-full">
         <div class="flex justify-between">
@@ -54,7 +61,7 @@ function formatRateType(rateType: string = '') {
         sm:grid
       "
       :class="{ 'btn-active': pickedShippingRate === shippingRate.id }"
-      @click="pickedShippingRate = shippingRate.id"
+      @click="updateShippingRate(shippingRate)"
     >
       <span class="col-span-2">{{ formatRateType(shippingRate.id) }}</span>
       <span class="col-span-8">{{ formatShippingRateName(shippingRate.name) }}</span>
