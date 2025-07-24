@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   const { stripeSecretKey } = useRuntimeConfig(event)
   const body = await readBody(event)
   const { cartItems, userData } = body
-  const itemsSkus = cartItems.map(item => item.sku)
+  const shirtSku = '687588552F037'
   const stripe = new Stripe(stripeSecretKey)
   const shirts = await $fetch('/api/getShirt')
 
@@ -47,19 +47,10 @@ export default defineEventHandler(async (event) => {
     return shippingRate.rate * 100
   }
 
-  /**
-   * Takes skus from the client cart and calculate the total amount of the order
-   *
-   * This allows sku manipulation on the client side
-   * I'll manually be placing every order myself anyway on printful website
-   *
-   * todo: fix this if manually checking every orders becomes tiresome
-   *
-   * Also recalculates shipping rate to make sure it's the right prices
-   */
+  // Check SKU & Shipping rates from Printful to avoid client side manipulation
   const calculateTotalOrderPrice = async () => {
-    const itemsPrice = itemsSkus.reduce((acc, sku) => {
-      const shirt = shirts.find(shirt => shirt.sku === sku)
+    const itemsPrice = cartItems.reduce((acc, item) => {
+      const shirt = shirts.find(shirt => shirt.sku === item.sku && item.sku.includes(shirtSku))
 
       // Throw if the sku is not found in our shirts query
       if (shirt === undefined) {
@@ -77,11 +68,13 @@ export default defineEventHandler(async (event) => {
 
   try {
     const amount = await calculateTotalOrderPrice()
+    const description = cartItems.map(i => `${i.variantName} ${toCurrency(i.price)}`).join('\n')
 
     const paymentIntent = await stripe.paymentIntents.create({
       currency: 'eur',
       amount,
       receipt_email: userData.email,
+      description,
     })
 
     // Send publishable key and PaymentIntent details to client
