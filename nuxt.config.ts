@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/api/getShirt': { cache: { maxAge: 5, base: 'redis' } },
-    '/checkout': {
+    '/checkout': { // Idon't know why this does I just want my payment to work
       security: {
         headers: {
           crossOriginEmbedderPolicy: 'unsafe-none',
@@ -85,6 +85,7 @@ export default defineNuxtConfig({
     },
   },
 
+  // Idon't know why this works
   // https://nuxt-security.vercel.app/advanced/faq#paypal
   security: {
     headers: {
