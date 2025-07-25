@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@pinia/nuxt',
-    // 'nuxt-security',
+    'nuxt-security',
     '@regle/nuxt',
   ],
 
