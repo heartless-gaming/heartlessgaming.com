@@ -1,4 +1,6 @@
 <script setup lang="ts">
+definePageMeta({ middleware: ['external-route'] })
+
 const cartStore = useCartStore()
 const { items, itemCount } = storeToRefs(cartStore)
 
