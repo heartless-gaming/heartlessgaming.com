@@ -27,6 +27,14 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/api/getShirt': { cache: { maxAge: 5, base: 'redis' } },
+    '/checkout': {
+      security: {
+        headers: {
+          crossOriginEmbedderPolicy: 'unsafe-none',
+          crossOriginResourcePolicy: 'cross-origin',
+        },
+      },
+    },
   },
 
   runtimeConfig: {
@@ -76,4 +84,20 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+
+  // https://nuxt-security.vercel.app/advanced/faq#paypal
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        'img-src': [
+          '\'self\'',
+          'data:',
+          'https://stripe.com',
+          'https://js.stripe.com',
+        ],
+      },
+      strictTransportSecurity: { magAge: 0 },
+    },
+  },
+
 })

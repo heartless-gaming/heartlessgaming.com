@@ -42,6 +42,7 @@ const { removeFromCart } = store
     <NuxtLink
       class="btn btn-block uppercase btn-lg btn-primary"
       to="/checkout"
+      external
     >
       Paiement
     </NuxtLink>
