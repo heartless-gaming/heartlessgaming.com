@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@pinia/nuxt',
-    'nuxt-security',
+    // 'nuxt-security',
     '@regle/nuxt',
   ],
 
@@ -76,11 +76,4 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
-
-  security: {
-    headers: {
-      crossOriginOpenerPolicy: false,
-    },
-  },
-
 })
