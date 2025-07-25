@@ -76,4 +76,11 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+
+  security: {
+    headers: {
+      crossOriginOpenerPolicy: false,
+    },
+  },
+
 })
