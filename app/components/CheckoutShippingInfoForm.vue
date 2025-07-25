@@ -62,7 +62,7 @@ r$.phone.$touch()
     />
     <Input
       v-model="r$.$value.postalCode"
-      type="number"
+      inputmode="numeric"
       :size
       label="Code postal"
       placeholder="42666"
