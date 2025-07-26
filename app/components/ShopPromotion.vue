@@ -53,7 +53,7 @@
           Nouveau T-shirt disponible&nbsp;!
         </h2>
         <p class="py-6 text-lg">
-          Distribué en imprésion à la demande par Printful le T-shirt Heartless Gaming unisex est disponible. Paiement en ligne sécurisé par stripe.
+          Distribué en impression à la demande par Printful le T-shirt Heartless Gaming unisex est disponible. Paiement en ligne sécurisé par stripe.
         </p>
       </div>
     </div>
