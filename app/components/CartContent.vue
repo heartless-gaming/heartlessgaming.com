@@ -2,6 +2,19 @@
 const store = useCartStore()
 const { items, isCartEmpty, total } = storeToRefs(store)
 const { removeFromCart } = store
+
+const isFetching = ref(false)
+
+// errors are not handle here ¯\_(ツ)_/¯ LET ME SHIP
+async function saveCart() {
+  isFetching.value = true
+  const response = await $fetch('/api/saveCart', { method: 'POST', body: {
+    items: items.value,
+    total: total.value,
+  } })
+
+  await navigateTo({ path: '/checkout', query: { cartId: response.id } })
+}
 </script>
 
 <template>
@@ -39,12 +52,14 @@ const { removeFromCart } = store
     <div class="mb-6 flex items-center justify-between gap-x-2 text-xl">
       <span class="uppercase">Sous-total :</span><span class="font-bold">{{ toCurrency(total) }}</span>
     </div>
-    <NuxtLink
+    <button
       class="btn btn-block uppercase btn-lg btn-primary"
-      to="/checkout"
+      :disabled="isFetching"
+      @click="saveCart"
     >
-      Paiement
-    </NuxtLink>
+      <span>Paiement</span>
+      <span v-show="isFetching" class="loading loading-xl loading-infinity" />
+    </button>
   </div>
   <CartContentEmpty v-show="isCartEmpty" />
 </template>
