@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* This should be refactor one day. Stole it from a CSS tricks */
+/* This should be refactored one day. Stole it from a CSS tricks */
 .pretty-link {
     background:
     linear-gradient(to right,rgb(61, 75, 197),rgb(100, 123, 200)),
