@@ -1,16 +1,21 @@
 <script setup lang="ts">
 definePageMeta({ middleware: ['external-route'] })
-
+const route = useRoute()
+const cartId = route.query?.cartId
 const cartStore = useCartStore()
-const { items, itemCount } = storeToRefs(cartStore)
+const { items } = storeToRefs(cartStore)
 
-const checkoutStore = useCheckoutStore()
-const { isContactFormValid } = storeToRefs(checkoutStore)
-
-// Redirect to shirt page if sku is not correct
-if (!itemCount.value) {
+if (!cartId)
   navigateTo('/original-skull')
-}
+
+const cartKey = `cart:${cartId}`
+const cartExist = await $fetch('/api/cartExist', { method: 'POST', body: { cartKey } })
+
+if (!cartExist)
+  navigateTo('/original-skull')
+
+const foundCart = await $fetch('/api/getCart', { method: 'POST', body: { cartKey } })
+items.value = foundCart.items
 
 const { public: publicKeys } = useRuntimeConfig()
 const paymentEl = ref(null)
@@ -22,11 +27,9 @@ async function buy() {
   const { clientSecret } = await $fetch('/api/create-payment-intent')
 
   onLoaded(({ Stripe }) => {
-    // console.log(clientSecret)
     const stripe = Stripe(publicKeys.stripePublicKey)
     const elements = stripe.elements({ clientSecret })
     const paymentElement = elements.create('payment', clientSecret)
-    // console.log(paymentElement)
 
     paymentElement.mount(paymentEl.value)
   })
