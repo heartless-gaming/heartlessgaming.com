@@ -40,6 +40,7 @@ const quotes: string[] = [
   `Pourquoi y a une pizza 4 fromages sur ma cg ? - Eljam`,
   `We will find a way - Skullmasher`,
   `T'as passé ta vie à faire des choses bien, c'est pas le moment d'arnaquer les gens - Markus`,
+  `Pourquoi y a-t-il un squellette dans la base ? Ah non, c'est Erik - Magixx`,
   // `Eljam :"c'est la force centripete" Don : "Comme le human" Eljam & Don : "le human centripete !"`,
   // `Quand c'est une merde que tu es obligé d'utiliser, c'est toujours mieu si elle est un peu poli - Eljam`
 ]
